@@ -53,10 +53,10 @@ class ExportJsonTest {
         assetsFile.writeText(jsonOutput, Charsets.UTF_8)
 
         // Write to root game_content.json (for GitHub repository)
-        File("../game_content.json").let {
-            if (it.exists() || it.parentFile.exists()) it.writeText(jsonOutput, Charsets.UTF_8)
+        val rootFile = File("../game_content.json")
+        if (rootFile.exists() || rootFile.parentFile?.exists() == true) {
+            rootFile.writeText(jsonOutput, Charsets.UTF_8)
         }
-        File("game_content.json").writeText(jsonOutput, Charsets.UTF_8)
 
         println("Successfully generated Master game_content.json with:")
         println(" - Game items: ${existingItems.size}")

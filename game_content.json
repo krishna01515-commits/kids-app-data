@@ -920,28 +920,28 @@
       {
         "id": "ma_1",
         "char": "1",
-        "wordHindi": "एक (One)",
+        "wordHindi": "एक (1 चमकता सूरज)",
         "wordEnglish": "One Sun",
         "emoji": "☀️",
         "phonetic": "एक",
         "hindiAudioSentence": "१ - यह है संख्या एक! आसमान में चमकता हुआ एक सूरज!",
-        "funFactHindi": "सूरज केवल एक है जो पूरी दुनिया को रोशनी देता है।"
+        "funFactHindi": "हमारे सौर मंडल में केवल एक ही सूर्य है।"
       },
       {
         "id": "ma_2",
         "char": "2",
-        "wordHindi": "दो (Two)",
+        "wordHindi": "दो (2 प्यारी आँखें)",
         "wordEnglish": "Two Eyes",
         "emoji": "👀",
         "phonetic": "दो",
         "hindiAudioSentence": "२ - यह है संख्या दो! हमारी देखने वाली दो प्यारी आंखें!",
-        "funFactHindi": "हमारे दो हाथ और दो पैर होते हैं।"
+        "funFactHindi": "आँखों की मदद से हम पूरी दुनिया के रंग देखते हैं।"
       },
       {
         "id": "ma_3",
         "char": "3",
-        "wordHindi": "तीन (Three)",
-        "wordEnglish": "Three Wheels",
+        "wordHindi": "तीन (3 पहियों का रिक्शा)",
+        "wordEnglish": "Three Wheels Rickshaw",
         "emoji": "🛺",
         "phonetic": "तीन",
         "hindiAudioSentence": "३ - यह है संख्या तीन! ऑटो रिक्शा के होते हैं तीन पहिए!",
@@ -950,17 +950,17 @@
       {
         "id": "ma_4",
         "char": "4",
-        "wordHindi": "चार (Four)",
-        "wordEnglish": "Four Legs",
-        "emoji": "🧸",
+        "wordHindi": "चार (4 पायों की मेज)",
+        "wordEnglish": "Four Legs Table",
+        "emoji": "🪑",
         "phonetic": "चार",
-        "hindiAudioSentence": "४ - यह है संख्या चार! कार और मेज के होते हैं चार पाए!",
+        "hindiAudioSentence": "४ - यह है संख्या चार! मेज और कुर्सी के होते हैं चार पाए!",
         "funFactHindi": "गाय, घोड़ा और हाथी सभी के चार पैर होते हैं।"
       },
       {
         "id": "ma_5",
         "char": "5",
-        "wordHindi": "पाँच (Five)",
+        "wordHindi": "पाँच (5 उंगलियाँ)",
         "wordEnglish": "Five Fingers",
         "emoji": "🖐️",
         "phonetic": "पाँच",
@@ -970,48 +970,48 @@
       {
         "id": "ma_6",
         "char": "6",
-        "wordHindi": "छह (Six)",
-        "wordEnglish": "Six Legs Insect",
-        "emoji": "🐝",
+        "wordHindi": "छह (6 पैरों वाली चींटी)",
+        "wordEnglish": "Six Legs Ant",
+        "emoji": "🐜",
         "phonetic": "छह",
-        "hindiAudioSentence": "६ - यह है संख्या छह! मधुमक्खी और चींटी की होती हैं छह टांगें!",
-        "funFactHindi": "कीट-पतंगों के छह पैर होते हैं।"
+        "hindiAudioSentence": "६ - यह है संख्या छह! नन्हीं चींटी के होते हैं छह पैर!",
+        "funFactHindi": "सभी कीड़ों और तितलियों के छह पैर होते हैं।"
       },
       {
         "id": "ma_7",
         "char": "7",
-        "wordHindi": "सात (Seven)",
+        "wordHindi": "सात (7 रंगों का इंद्रधनुष)",
         "wordEnglish": "Seven Colors Rainbow",
         "emoji": "🌈",
         "phonetic": "सात",
-        "hindiAudioSentence": "७ - यह है संख्या सात! इंद्रधनुष में होते हैं सात रंग और हफ्ते में सात दिन!",
+        "hindiAudioSentence": "७ - यह है संख्या सात! इंद्रधनुष में होते हैं सात प्यारे रंग!",
         "funFactHindi": "सात सुर मिलकर संगीत की सरगम बनाते हैं: सा रे ग म प ध नि।"
       },
       {
         "id": "ma_8",
         "char": "8",
-        "wordHindi": "आठ (Eight)",
+        "wordHindi": "आठ (8 भुजाओं वाला ऑक्टोपस)",
         "wordEnglish": "Eight Arms Octopus",
         "emoji": "🐙",
         "phonetic": "आठ",
         "hindiAudioSentence": "८ - यह है संख्या आठ! ऑक्टोपस की होती हैं आठ भुजाएं!",
-        "funFactHindi": "मकड़ी के भी आठ पैर होते हैं।"
+        "funFactHindi": "ऑक्टोपस के आठ हाथ और तीन दिल होते हैं।"
       },
       {
         "id": "ma_9",
         "char": "9",
-        "wordHindi": "नौ (Nine)",
-        "wordEnglish": "Nine Planets & Gems",
-        "emoji": "🪐",
+        "wordHindi": "नौ (9 अनमोल नवरत्न)",
+        "wordEnglish": "Nine Gems Navratna",
+        "emoji": "💎",
         "phonetic": "नौ",
-        "hindiAudioSentence": "९ - यह है संख्या नौ! नवरत्न और नौ ग्रह!",
+        "hindiAudioSentence": "९ - यह है संख्या नौ! राजा के नौ अनमोल नवरत्न!",
         "funFactHindi": "नौ सबसे बड़ी एकल अंक संख्या है।"
       },
       {
         "id": "ma_10",
         "char": "10",
-        "wordHindi": "दस (Ten)",
-        "wordEnglish": "Ten Fingers Both Hands",
+        "wordHindi": "दस (10 दोनों हाथों की उंगलियाँ)",
+        "wordEnglish": "Ten Fingers",
         "emoji": "🙌",
         "phonetic": "दस",
         "hindiAudioSentence": "१० - यह है संख्या दस! दोनों हाथों की कुल दस उंगलियाँ!",
@@ -1020,902 +1020,902 @@
       {
         "id": "ma_11",
         "char": "11",
-        "wordHindi": "ग्यारह (11)",
-        "wordEnglish": "Eleven (11)",
-        "emoji": "🔢",
+        "wordHindi": "ग्यारह (11 क्रिकेट के खिलाड़ी)",
+        "wordEnglish": "Eleven Cricket Players",
+        "emoji": "🏏",
         "phonetic": "ग्यारह",
-        "hindiAudioSentence": "संख्या 11! 11 मतलब ग्यारह!",
-        "funFactHindi": "संख्या 11 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "११ - ग्यारह! क्रिकेट की एक टीम में होते हैं ११ खिलाड़ी!",
+        "funFactHindi": "क्रिकेट और फुटबॉल दोनों में ११-११ खिलाड़ी खेलते हैं।"
       },
       {
         "id": "ma_12",
         "char": "12",
-        "wordHindi": "बारह (12)",
-        "wordEnglish": "Twelve (12)",
-        "emoji": "🔢",
+        "wordHindi": "बारह (12 केले (एक दर्जन))",
+        "wordEnglish": "Twelve Bananas - One Dozen",
+        "emoji": "🍌",
         "phonetic": "बारह",
-        "hindiAudioSentence": "संख्या 12! 12 मतलब बारह!",
-        "funFactHindi": "संख्या 12 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "१२ - बारह! एक दर्जन में होते हैं १२ मीठे केले!",
+        "funFactHindi": "एक साल में १२ महीने होते हैं और एक दर्जन में १२ वस्तुएं।"
       },
       {
         "id": "ma_13",
         "char": "13",
-        "wordHindi": "तेरह (13)",
-        "wordEnglish": "Thirteen (13)",
-        "emoji": "🔢",
+        "wordHindi": "तेरह (13 गरम रोटियां)",
+        "wordEnglish": "Thirteen Fresh Breads",
+        "emoji": "🥖",
         "phonetic": "तेरह",
-        "hindiAudioSentence": "संख्या 13! 13 मतलब तेरह!",
-        "funFactHindi": "संख्या 13 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "१३ - तेरह! टोकरी में रखीं १३ गरम-गरम रोटियां!",
+        "funFactHindi": "१३ को बेकर्स दर्जन भी कहा जाता है।"
       },
       {
         "id": "ma_14",
         "char": "14",
-        "wordHindi": "चौदह (14)",
-        "wordEnglish": "Fourteen (14)",
-        "emoji": "🔢",
+        "wordHindi": "चौदह (14वीं का पूरा चाँद)",
+        "wordEnglish": "Fourteen - Full Moon",
+        "emoji": "🌕",
         "phonetic": "चौदह",
-        "hindiAudioSentence": "संख्या 14! 14 मतलब चौदह!",
-        "funFactHindi": "संख्या 14 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "१४ - चौदह! आकाश में चमकता चौदहवीं का सुंदर गोल चाँद!",
+        "funFactHindi": "चौदह दिनों में चंद्रमा धीरे-धीरे पूरा गोल हो जाता है।"
       },
       {
         "id": "ma_15",
         "char": "15",
-        "wordHindi": "पंद्रह (15)",
-        "wordEnglish": "Fifteen (15)",
-        "emoji": "🔢",
+        "wordHindi": "पंद्रह (15 अगस्त तिरंगा)",
+        "wordEnglish": "Fifteen - August Independence",
+        "emoji": "🇮🇳",
         "phonetic": "पंद्रह",
-        "hindiAudioSentence": "संख्या 15! 15 मतलब पंद्रह!",
-        "funFactHindi": "संख्या 15 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "१५ - पंद्रह! १५ अगस्त स्वतंत्रता दिवस पर फहराते हैं तिरंगा!",
+        "funFactHindi": "१५ अगस्त १९४७ को हमारा प्यारा भारत देश आजाद हुआ था।"
       },
       {
         "id": "ma_16",
         "char": "16",
-        "wordHindi": "सोलह (16)",
-        "wordEnglish": "Sixteen (16)",
-        "emoji": "🔢",
+        "wordHindi": "सोलह (16 रंग-बिरंगे फूल)",
+        "wordEnglish": "Sixteen Colorful Flowers",
+        "emoji": "🌸",
         "phonetic": "सोलह",
-        "hindiAudioSentence": "संख्या 16! 16 मतलब सोलह!",
-        "funFactHindi": "संख्या 16 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "१६ - सोलह! बगीचे में खिले १६ महकते रंग-बिरंगे फूल!",
+        "funFactHindi": "सोलह एक पूर्ण वर्ग संख्या है (४ x ४ = १६)।"
       },
       {
         "id": "ma_17",
         "char": "17",
-        "wordHindi": "सत्रह (17)",
-        "wordEnglish": "Seventeen (17)",
-        "emoji": "🔢",
+        "wordHindi": "सत्रह (17 नटखट तोते)",
+        "wordEnglish": "Seventeen Green Parrots",
+        "emoji": "🦜",
         "phonetic": "सत्रह",
-        "hindiAudioSentence": "संख्या 17! 17 मतलब सत्रह!",
-        "funFactHindi": "संख्या 17 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "१७ - सत्रह! पेड़ की डाल पर बैठे १७ नटखट तोते!",
+        "funFactHindi": "तोता इंसानों की मीठी बोली की नकल कर सकता है।"
       },
       {
         "id": "ma_18",
         "char": "18",
-        "wordHindi": "अठारह (18)",
-        "wordEnglish": "Eighteen (18)",
-        "emoji": "🔢",
+        "wordHindi": "अठारह (18 साल वोट की उम्र)",
+        "wordEnglish": "Eighteen - Voting Age",
+        "emoji": "🗳️",
         "phonetic": "अठारह",
-        "hindiAudioSentence": "संख्या 18! 18 मतलब अठारह!",
-        "funFactHindi": "संख्या 18 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "१८ - अठारह! १८ वर्ष की उम्र में मिलता है मतदान का अधिकार!",
+        "funFactHindi": "१८ साल की उम्र में नागरिक देश का जिम्मेदार वोटर बनता है।"
       },
       {
         "id": "ma_19",
         "char": "19",
-        "wordHindi": "उन्नीस (19)",
-        "wordEnglish": "Nineteen (19)",
-        "emoji": "🔢",
+        "wordHindi": "उन्नीस (19 खिलौना कारें)",
+        "wordEnglish": "Nineteen Toy Cars",
+        "emoji": "🚗",
         "phonetic": "उन्नीस",
-        "hindiAudioSentence": "संख्या 19! 19 मतलब उन्नीस!",
-        "funFactHindi": "संख्या 19 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "१९ - उन्नीस! खेलने के लिए सजीं १९ सुंदर रंगीन कारें!",
+        "funFactHindi": "उन्नीस बीस से ठीक एक कम होता है।"
       },
       {
         "id": "ma_20",
         "char": "20",
-        "wordHindi": "बीस (20)",
-        "wordEnglish": "Twenty (20)",
-        "emoji": "🔟",
+        "wordHindi": "बीस (20 हाथ-पैर की उंगलियाँ)",
+        "wordEnglish": "Twenty Fingers & Toes",
+        "emoji": "🦶",
         "phonetic": "बीस",
-        "hindiAudioSentence": "संख्या 20! 20 मतलब बीस!",
-        "funFactHindi": "संख्या 20 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "२० - बीस! हाथ और पैर दोनों मिलाकर कुल २० उंगलियाँ!",
+        "funFactHindi": "हमारे हाथों और पैरों की उंगलियों की कुल संख्या २० होती है।"
       },
       {
         "id": "ma_21",
         "char": "21",
-        "wordHindi": "इक्कीस (21)",
-        "wordEnglish": "Twenty One (21)",
-        "emoji": "🔢",
+        "wordHindi": "इक्कीस (21 शगुन के सिक्के)",
+        "wordEnglish": "Twenty-One Lucky Coins",
+        "emoji": "🪙",
         "phonetic": "इक्कीस",
-        "hindiAudioSentence": "संख्या 21! 21 मतलब इक्कीस!",
-        "funFactHindi": "संख्या 21 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "२१ - इक्कीस! शगुन के लिफाफे में रखे २१ चमकदार सिक्के!",
+        "funFactHindi": "२१ को भारत में बहुत शुभ और मंगलकारी माना जाता है।"
       },
       {
         "id": "ma_22",
         "char": "22",
-        "wordHindi": "बाईस (22)",
-        "wordEnglish": "Twenty Two (22)",
-        "emoji": "🔢",
+        "wordHindi": "बाईस (22 तैरती बत्तखें)",
+        "wordEnglish": "Twenty-Two Swimming Ducks",
+        "emoji": "🦆",
         "phonetic": "बाईस",
-        "hindiAudioSentence": "संख्या 22! 22 मतलब बाईस!",
-        "funFactHindi": "संख्या 22 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "२२ - बाईस! नीले तालाब में तैरतीं २२ प्यारी बत्तखें!",
+        "funFactHindi": "बत्तख के पंख वाटरप्रूफ होते हैं, वे पानी में नहीं भीगते।"
       },
       {
         "id": "ma_23",
         "char": "23",
-        "wordHindi": "तेईस (23)",
-        "wordEnglish": "Twenty Three (23)",
-        "emoji": "🔢",
+        "wordHindi": "तेईस (23 चमकीले सितारे)",
+        "wordEnglish": "Twenty-Three Shining Stars",
+        "emoji": "⭐",
         "phonetic": "तेईस",
-        "hindiAudioSentence": "संख्या 23! 23 मतलब तेईस!",
-        "funFactHindi": "संख्या 23 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "२३ - तेईस! रात के आकाश में टिमटिमाते २३ चमकीले सितारे!",
+        "funFactHindi": "मनुष्य के शरीर में २३ जोड़े गुणसूत्र होते हैं।"
       },
       {
         "id": "ma_24",
         "char": "24",
-        "wordHindi": "चौबीस (24)",
-        "wordEnglish": "Twenty Four (24)",
-        "emoji": "🔢",
+        "wordHindi": "चौबीस (24 घंटे और चक्र की तीलियां)",
+        "wordEnglish": "Twenty-Four Hours & Spokes",
+        "emoji": "⏰",
         "phonetic": "चौबीस",
-        "hindiAudioSentence": "संख्या 24! 24 मतलब चौबीस!",
-        "funFactHindi": "संख्या 24 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "२४ - चौबीस! एक दिन-रात में २४ घंटे और अशोक चक्र में २४ तीलियां!",
+        "funFactHindi": "समय का पहिया हमेशा २४ घंटे आगे बढ़ता रहता है।"
       },
       {
         "id": "ma_25",
         "char": "25",
-        "wordHindi": "पच्चीस (25)",
-        "wordEnglish": "Twenty Five (25)",
+        "wordHindi": "पच्चीस (25 सिल्वर जुबली)",
+        "wordEnglish": "Twenty-Five Silver Jubilee",
         "emoji": "🥈",
         "phonetic": "पच्चीस",
-        "hindiAudioSentence": "संख्या 25! 25 मतलब पच्चीस!",
-        "funFactHindi": "संख्या 25 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "२५ - पच्चीस! २५ साल पूरे होने पर मनाते हैं सिल्वर जुबली!",
+        "funFactHindi": "२५ मिलकर १०० का एक-चौथाई हिस्सा बनाते हैं।"
       },
       {
         "id": "ma_26",
         "char": "26",
-        "wordHindi": "छब्बीस (26)",
-        "wordEnglish": "Twenty Six (26)",
-        "emoji": "🔢",
+        "wordHindi": "छब्बीस (26 जनवरी गणतंत्र दिवस)",
+        "wordEnglish": "Twenty-Six - Republic Day",
+        "emoji": "🎖️",
         "phonetic": "छब्बीस",
-        "hindiAudioSentence": "संख्या 26! 26 मतलब छब्बीस!",
-        "funFactHindi": "संख्या 26 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "२६ - छब्बीस! २६ जनवरी को हम मनाते हैं गणतंत्र दिवस!",
+        "funFactHindi": "अंग्रेजी वर्णमाला में कुल २६ अक्षर होते हैं।"
       },
       {
         "id": "ma_27",
         "char": "27",
-        "wordHindi": "सत्ताईस (27)",
-        "wordEnglish": "Twenty Seven (27)",
-        "emoji": "🔢",
+        "wordHindi": "सत्ताईस (27 आकाशीय नक्षत्र)",
+        "wordEnglish": "Twenty-Seven Constellations",
+        "emoji": "✨",
         "phonetic": "सत्ताईस",
-        "hindiAudioSentence": "संख्या 27! 27 मतलब सत्ताईस!",
-        "funFactHindi": "संख्या 27 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "२७ - सत्ताईस! आकाश में तारों के २७ विशेष नक्षत्र!",
+        "funFactHindi": "भारतीय खगोल विज्ञान में २७ नक्षत्र माने गए हैं।"
       },
       {
         "id": "ma_28",
         "char": "28",
-        "wordHindi": "अट्ठाईस (28)",
-        "wordEnglish": "Twenty Eight (28)",
-        "emoji": "🔢",
+        "wordHindi": "अट्ठाईस (28 दिन फरवरी के)",
+        "wordEnglish": "Twenty-Eight Days of Feb",
+        "emoji": "🗓️",
         "phonetic": "अट्ठाईस",
-        "hindiAudioSentence": "संख्या 28! 28 मतलब अट्ठाईस!",
-        "funFactHindi": "संख्या 28 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "२८ - अट्ठाइस! सामान्य वर्ष में फरवरी महीने में होते हैं २८ दिन!",
+        "funFactHindi": "फरवरी साल का सबसे छोटा महीना होता है।"
       },
       {
         "id": "ma_29",
         "char": "29",
-        "wordHindi": "उनतीस (29)",
-        "wordEnglish": "Twenty Nine (29)",
-        "emoji": "🔢",
+        "wordHindi": "उनतीस (29 दिन लीप ईयर फरवरी)",
+        "wordEnglish": "Twenty-Nine Leap Year Days",
+        "emoji": "📅",
         "phonetic": "उनतीस",
-        "hindiAudioSentence": "संख्या 29! 29 मतलब उनतीस!",
-        "funFactHindi": "संख्या 29 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "२९ - उनतीस! लीप वर्ष में फरवरी के होते हैं २९ दिन!",
+        "funFactHindi": "हर चार साल में एक बार लीप ईयर आता है।"
       },
       {
         "id": "ma_30",
         "char": "30",
-        "wordHindi": "तीस (30)",
-        "wordEnglish": "Thirty (30)",
-        "emoji": "🔟",
+        "wordHindi": "तीस (30 दिन एक महीने में)",
+        "wordEnglish": "Thirty Days in a Month",
+        "emoji": "📆",
         "phonetic": "तीस",
-        "hindiAudioSentence": "संख्या 30! 30 मतलब तीस!",
-        "funFactHindi": "संख्या 30 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "३० - तीस! ज्यादातर महीनों में होते हैं कुल ३० दिन!",
+        "funFactHindi": "अप्रैल, जून, सितंबर और नवंबर में ३०-३० दिन होते हैं।"
       },
       {
         "id": "ma_31",
         "char": "31",
-        "wordHindi": "इकतीस (31)",
-        "wordEnglish": "Thirty One (31)",
-        "emoji": "🔢",
+        "wordHindi": "इकतीस (31 दिन बड़े महीनों में)",
+        "wordEnglish": "Thirty-One Days in Long Months",
+        "emoji": "📅",
         "phonetic": "इकतीस",
-        "hindiAudioSentence": "संख्या 31! 31 मतलब इकतीस!",
-        "funFactHindi": "संख्या 31 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "३१ - इकत्तीस! जनवरी और दिसंबर जैसे बड़े महीनों में होते हैं ३१ दिन!",
+        "funFactHindi": "साल के सात महीनों में ३१ दिन होते हैं।"
       },
       {
         "id": "ma_32",
         "char": "32",
-        "wordHindi": "बत्तीस (32)",
-        "wordEnglish": "Thirty Two (32)",
-        "emoji": "🔢",
+        "wordHindi": "बत्तीस (32 मजबूत दाँत)",
+        "wordEnglish": "Thirty-Two Strong Teeth",
+        "emoji": "🦷",
         "phonetic": "बत्तीस",
-        "hindiAudioSentence": "संख्या 32! 32 मतलब बत्तीस!",
-        "funFactHindi": "संख्या 32 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "३२ - बत्तीस! मुस्कुराते चेहरे में कुल ३२ मजबूत दाँत!",
+        "funFactHindi": "एक वयस्क इंसान के मुंह में कुल ३२ स्थायी दांत होते हैं।"
       },
       {
         "id": "ma_33",
         "char": "33",
-        "wordHindi": "तैंतीस (33)",
-        "wordEnglish": "Thirty Three (33)",
-        "emoji": "🔢",
+        "wordHindi": "तैंतीस (33 मीठी टॉफियाँ)",
+        "wordEnglish": "Thirty-Three Sweet Candies",
+        "emoji": "🍬",
         "phonetic": "तैंतीस",
-        "hindiAudioSentence": "संख्या 33! 33 मतलब तैंतीस!",
-        "funFactHindi": "संख्या 33 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "३३ - तैंतीस! जन्मदिन की पार्टी में बंटीं ३३ मीठी टॉफियाँ!",
+        "funFactHindi": "३३ को ३ से भाग देने पर पूरा-पूरा ११ आता है।"
       },
       {
         "id": "ma_34",
         "char": "34",
-        "wordHindi": "चौंतीस (34)",
-        "wordEnglish": "Thirty Four (34)",
-        "emoji": "🔢",
+        "wordHindi": "चौंतीस (34 रसीले सेब)",
+        "wordEnglish": "Thirty-Four Juicy Apples",
+        "emoji": "🍎",
         "phonetic": "चौंतीस",
-        "hindiAudioSentence": "संख्या 34! 34 मतलब चौंतीस!",
-        "funFactHindi": "संख्या 34 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "३४ - चौंतीस! फलों की टोकरी में रखे ३४ लाल-लाल सेब!",
+        "funFactHindi": "रोजाना एक सेब खाने से सेहत बहुत अच्छी रहती है।"
       },
       {
         "id": "ma_35",
         "char": "35",
-        "wordHindi": "पैंतीस (35)",
-        "wordEnglish": "Thirty Five (35)",
-        "emoji": "🔢",
+        "wordHindi": "पैंतीस (35 रंगीन गुब्बारे)",
+        "wordEnglish": "Thirty-Five Colorful Balloons",
+        "emoji": "🎈",
         "phonetic": "पैंतीस",
-        "hindiAudioSentence": "संख्या 35! 35 मतलब पैंतीस!",
-        "funFactHindi": "संख्या 35 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "३५ - पैंतीस! मेले में हवा में लहराते ३५ रंग-बिरंगे गुब्बारे!",
+        "funFactHindi": "५ x ७ मिलकर पैंतीस बनते हैं।"
       },
       {
         "id": "ma_36",
         "char": "36",
-        "wordHindi": "छत्तीस (36)",
-        "wordEnglish": "Thirty Six (36)",
-        "emoji": "🔢",
+        "wordHindi": "छत्तीस (36 रंगीन पेंसिलें)",
+        "wordEnglish": "Thirty-Six Colored Pencils",
+        "emoji": "✏️",
         "phonetic": "छत्तीस",
-        "hindiAudioSentence": "संख्या 36! 36 मतलब छत्तीस!",
-        "funFactHindi": "संख्या 36 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "३६ - छत्तीस! चित्रकारी के बॉक्स में सजीं ३६ रंगीन पेंसिलें!",
+        "funFactHindi": "३६ छह का वर्ग है (६ x ६ = ३६)।"
       },
       {
         "id": "ma_37",
         "char": "37",
-        "wordHindi": "सैंतीस (37)",
-        "wordEnglish": "Thirty Seven (37)",
-        "emoji": "🔢",
+        "wordHindi": "सैंतीस (37 उड़ती तितलियाँ)",
+        "wordEnglish": "Thirty-Seven Butterflies",
+        "emoji": "🦋",
         "phonetic": "सैंतीस",
-        "hindiAudioSentence": "संख्या 37! 37 मतलब सैंतीस!",
-        "funFactHindi": "संख्या 37 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "३७ - सैंतीस! बगीचे में फूलों पर मंडरातीं ३७ सुंदर तितलियाँ!",
+        "funFactHindi": "३७ एक अभाज्य संख्या (प्राइम नंबर) है।"
       },
       {
         "id": "ma_38",
         "char": "38",
-        "wordHindi": "अड़तीस (38)",
-        "wordEnglish": "Thirty Eight (38)",
-        "emoji": "🔢",
+        "wordHindi": "अड़तीस (38 मीठे आम)",
+        "wordEnglish": "Thirty-Eight Sweet Mangoes",
+        "emoji": "🥭",
         "phonetic": "अड़तीस",
-        "hindiAudioSentence": "संख्या 38! 38 मतलब अड़तीस!",
-        "funFactHindi": "संख्या 38 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "३८ - अड़तीस! पेड़ से तोड़े गए ३८ रसीले मीठे आम!",
+        "funFactHindi": "आम को फलों का राजा कहा जाता है।"
       },
       {
         "id": "ma_39",
         "char": "39",
-        "wordHindi": "उनतालीस (39)",
-        "wordEnglish": "Thirty Nine (39)",
-        "emoji": "🔢",
+        "wordHindi": "उनतालीस (39 रसीली स्ट्रॉबेरी)",
+        "wordEnglish": "Thirty-Nine Strawberries",
+        "emoji": "🍓",
         "phonetic": "उनतालीस",
-        "hindiAudioSentence": "संख्या 39! 39 मतलब उनतालीस!",
-        "funFactHindi": "संख्या 39 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "३९ - उनतालीस! प्लेट में सजीं ३९ ताजी और मीठी स्ट्रॉबेरी!",
+        "funFactHindi": "स्ट्रॉबेरी के बीज फल के बाहर होते हैं।"
       },
       {
         "id": "ma_40",
         "char": "40",
-        "wordHindi": "चालीस (40)",
-        "wordEnglish": "Forty (40)",
-        "emoji": "🔟",
+        "wordHindi": "चालीस (40 पृष्ठों की किताब)",
+        "wordEnglish": "Forty Pages Book",
+        "emoji": "📖",
         "phonetic": "चालीस",
-        "hindiAudioSentence": "संख्या 40! 40 मतलब चालीस!",
-        "funFactHindi": "संख्या 40 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "४० - चालीस! परियों की कहानी वाली ४० पन्नों की रंगीन किताब!",
+        "funFactHindi": "४० चार दहाइयों (१० x ४ = ४०) के बराबर होता है।"
       },
       {
         "id": "ma_41",
         "char": "41",
-        "wordHindi": "इकतालीस (41)",
-        "wordEnglish": "Forty One (41)",
-        "emoji": "🔢",
+        "wordHindi": "इकतालीस (41 बजती घंटियाँ)",
+        "wordEnglish": "Forty-One Temple Bells",
+        "emoji": "🔔",
         "phonetic": "इकतालीस",
-        "hindiAudioSentence": "संख्या 41! 41 मतलब इकतालीस!",
-        "funFactHindi": "संख्या 41 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "४१ - इकतालीस! मंदिर में टुनटुन बजतीं ४१ पवित्र घंटियाँ!",
+        "funFactHindi": "घंटी की आवाज से मन प्रसन्न होता है।"
       },
       {
         "id": "ma_42",
         "char": "42",
-        "wordHindi": "बयालीस (42)",
-        "wordEnglish": "Forty Two (42)",
-        "emoji": "🔢",
+        "wordHindi": "बयालीस (42 नन्हें कछुए)",
+        "wordEnglish": "Forty-Two Little Turtles",
+        "emoji": "🐢",
         "phonetic": "बयालीस",
-        "hindiAudioSentence": "संख्या 42! 42 मतलब बयालीस!",
-        "funFactHindi": "संख्या 42 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "४२ - बयालीस! रेत पर धीरे-धीरे चलते ४२ नन्हें कछुए!",
+        "funFactHindi": "कछुआ १०० से भी ज्यादा सालों तक जी सकता है।"
       },
       {
         "id": "ma_43",
         "char": "43",
-        "wordHindi": "तैंतालीस (43)",
-        "wordEnglish": "Forty Three (43)",
-        "emoji": "🔢",
+        "wordHindi": "तैंतालीस (43 स्वादिष्ट डोनट्स)",
+        "wordEnglish": "Forty-Three Sweet Donuts",
+        "emoji": "🍩",
         "phonetic": "तैंतालीस",
-        "hindiAudioSentence": "संख्या 43! 43 मतलब तैंतालीस!",
-        "funFactHindi": "संख्या 43 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "४३ - तैंतालीस! बेकरी में ताजे बने ४३ गोल-गोल मीठे डोनट्स!",
+        "funFactHindi": "४३ एक अभाज्य संख्या है।"
       },
       {
         "id": "ma_44",
         "char": "44",
-        "wordHindi": "चवालीस (44)",
-        "wordEnglish": "Forty Four (44)",
-        "emoji": "🔢",
+        "wordHindi": "चवालीस (44 वाटर कलर शेड्स)",
+        "wordEnglish": "Forty-Four Watercolor Shades",
+        "emoji": "🎨",
         "phonetic": "चवालीस",
-        "hindiAudioSentence": "संख्या 44! 44 मतलब चवालीस!",
-        "funFactHindi": "संख्या 44 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "४४ - चवालीस! पेंटिंग किट में रखे ४४ जादुई वाटर कलर!",
+        "funFactHindi": "४४ चार से पूरी तरह विभाजित होता है।"
       },
       {
         "id": "ma_45",
         "char": "45",
-        "wordHindi": "पैंतालीस (45)",
-        "wordEnglish": "Forty Five (45)",
-        "emoji": "🔢",
+        "wordHindi": "पैंतालीस (45 मिनट का स्कूल पीरियड)",
+        "wordEnglish": "Forty-Five Minutes School Period",
+        "emoji": "⏱️",
         "phonetic": "पैंतालीस",
-        "hindiAudioSentence": "संख्या 45! 45 मतलब पैंतालीस!",
-        "funFactHindi": "संख्या 45 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "४५ - पैंतालीस! स्कूल की कक्षा का ४५ मिनट का मजेदार पीरियड!",
+        "funFactHindi": "४५ मिनट एक घंटे का तीन-चौथाई समय होता है।"
       },
       {
         "id": "ma_46",
         "char": "46",
-        "wordHindi": "छियालीस (46)",
-        "wordEnglish": "Forty Six (46)",
-        "emoji": "🔢",
+        "wordHindi": "छियालीस (46 अंतरिक्ष रॉकेट)",
+        "wordEnglish": "Forty-Six Space Rockets",
+        "emoji": "🚀",
         "phonetic": "छियालीस",
-        "hindiAudioSentence": "संख्या 46! 46 मतलब छियालीस!",
-        "funFactHindi": "संख्या 46 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "४६ - छियालीस! अंतरिक्ष की ओर उड़ते ४६ तेज रफ्तार रॉकेट!",
+        "funFactHindi": "मानव शरीर की कोशिकाओं में ४६ क्रोमोसोम होते हैं।"
       },
       {
         "id": "ma_47",
         "char": "47",
-        "wordHindi": "सैंतालीस (47)",
-        "wordEnglish": "Forty Seven (47)",
-        "emoji": "🔢",
+        "wordHindi": "सैंतालीस (47 मीठे संतरे)",
+        "wordEnglish": "Forty-Seven Sweet Oranges",
+        "emoji": "🍊",
         "phonetic": "सैंतालीस",
-        "hindiAudioSentence": "संख्या 47! 47 मतलब सैंतालीस!",
-        "funFactHindi": "संख्या 47 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "४७ - सैंतालीस! टोकरी में भरे ४७ रसदार और मीठे संतरे!",
+        "funFactHindi": "संतरे में भरपूर विटामिन सी होता है।"
       },
       {
         "id": "ma_48",
         "char": "48",
-        "wordHindi": "अड़तालीस (48)",
-        "wordEnglish": "Forty Eight (48)",
-        "emoji": "🔢",
+        "wordHindi": "अड़तालीस (48 जंगल के शेर)",
+        "wordEnglish": "Forty-Eight Mighty Lions",
+        "emoji": "🦁",
         "phonetic": "अड़तालीस",
-        "hindiAudioSentence": "संख्या 48! 48 मतलब अड़तालीस!",
-        "funFactHindi": "संख्या 48 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "४८ - अड़तालीस! हरे-भरे जंगल में दहाड़ते ४८ बलशाली शेर!",
+        "funFactHindi": "शेर की दहाड़ बहुत दूर तक गूंजती है।"
       },
       {
         "id": "ma_49",
         "char": "49",
-        "wordHindi": "उनचास (49)",
-        "wordEnglish": "Forty Nine (49)",
-        "emoji": "🔢",
+        "wordHindi": "उनचास (49 प्यारे पांडा)",
+        "wordEnglish": "Forty-Nine Cute Pandas",
+        "emoji": "🐼",
         "phonetic": "उनचास",
-        "hindiAudioSentence": "संख्या 49! 49 मतलब उनचास!",
-        "funFactHindi": "संख्या 49 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "४९ - उनचास! बांस खाते हुए ४९ प्यारे और गोल-मटोल पांडा!",
+        "funFactHindi": "४९ सात का वर्ग है (७ x ७ = ४९)।"
       },
       {
         "id": "ma_50",
         "char": "50",
-        "wordHindi": "पचास (50)",
-        "wordEnglish": "Fifty (50)",
-        "emoji": "🌟",
+        "wordHindi": "पचास (50 रनों का अर्धशतक)",
+        "wordEnglish": "Fifty - Half Century",
+        "emoji": "🏏",
         "phonetic": "पचास",
-        "hindiAudioSentence": "संख्या 50! 50 मतलब पचास!",
-        "funFactHindi": "संख्या 50 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "५० - पचास! बल्लेबाज ने पूरे किए शानदार ५० रन अर्धशतक!",
+        "funFactHindi": "५० पूरे १०० का आधा (५०%) होता है।"
       },
       {
         "id": "ma_51",
         "char": "51",
-        "wordHindi": "इक्यावन (51)",
-        "wordEnglish": "Fifty One (51)",
-        "emoji": "🔢",
+        "wordHindi": "इक्यावन (51 शगुन के उपहार)",
+        "wordEnglish": "Fifty-One Auspicious Gifts",
+        "emoji": "🎁",
         "phonetic": "इक्यावन",
-        "hindiAudioSentence": "संख्या 51! 51 मतलब इक्यावन!",
-        "funFactHindi": "संख्या 51 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "५१ - इक्यावन! शादी और त्योहार पर दिए जाने वाले ५१ सुंदर उपहार!",
+        "funFactHindi": "५१ को भारतीय परंपरा में शुभ अंक माना जाता है।"
       },
       {
         "id": "ma_52",
         "char": "52",
-        "wordHindi": "बावन (52)",
-        "wordEnglish": "Fifty Two (52)",
-        "emoji": "🔢",
+        "wordHindi": "बावन (52 ताश के पत्ते और सप्ताह)",
+        "wordEnglish": "Fifty-Two Cards & Weeks",
+        "emoji": "🃏",
         "phonetic": "बावन",
-        "hindiAudioSentence": "संख्या 52! 52 मतलब बावन!",
-        "funFactHindi": "संख्या 52 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "५२ - बावन! साल में होते हैं ५२ सप्ताह और ताश में ५२ पत्ते!",
+        "funFactHindi": "एक वर्ष में कुल ५२ सप्ताह होते हैं।"
       },
       {
         "id": "ma_53",
         "char": "53",
-        "wordHindi": "तिरपन (53)",
-        "wordEnglish": "Fifty Three (53)",
-        "emoji": "🔢",
+        "wordHindi": "तिरपन (53 बच्चों की साइकिलें)",
+        "wordEnglish": "Fifty-Three Kids Bicycles",
+        "emoji": "🚲",
         "phonetic": "तिरपन",
-        "hindiAudioSentence": "संख्या 53! 53 मतलब तिरपन!",
-        "funFactHindi": "संख्या 53 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "५३ - तिरपन! पार्क में दौड़तीं ५३ रंगीन और तेज साइकिलें!",
+        "funFactHindi": "साइकिल चलाना सेहत के लिए बहुत अच्छा व्यायाम है।"
       },
       {
         "id": "ma_54",
         "char": "54",
-        "wordHindi": "चौवन (54)",
-        "wordEnglish": "Fifty Four (54)",
-        "emoji": "🔢",
+        "wordHindi": "चौवन (54 मीठे तरबूज)",
+        "wordEnglish": "Fifty-Four Sweet Watermelons",
+        "emoji": "🍉",
         "phonetic": "चौवन",
-        "hindiAudioSentence": "संख्या 54! 54 मतलब चौवन!",
-        "funFactHindi": "संख्या 54 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "५४ - चौवन! खेत में पके ५४ रसीले और ठंडे-मीठे तरबूज!",
+        "funFactHindi": "तरबूज में लगभग ९२ प्रतिशत पानी होता है।"
       },
       {
         "id": "ma_55",
         "char": "55",
-        "wordHindi": "बचपन (55)",
-        "wordEnglish": "Fifty Five (55)",
-        "emoji": "🔢",
+        "wordHindi": "बचपन (55 स्वादिष्ट कपकेक्स)",
+        "wordEnglish": "Fifty-Five Sweet Cupcakes",
+        "emoji": "🧁",
         "phonetic": "बचपन",
-        "hindiAudioSentence": "संख्या 55! 55 मतलब बचपन!",
-        "funFactHindi": "संख्या 55 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "५५ - पचपन! क्रीम और चेरी से सजे ५५ स्वादिष्ट कपकेक्स!",
+        "funFactHindi": "५५ में दोनों अंक ५ और ५ एक समान हैं।"
       },
       {
         "id": "ma_56",
         "char": "56",
-        "wordHindi": "छप्पन (56)",
-        "wordEnglish": "Fifty Six (56)",
-        "emoji": "🔢",
+        "wordHindi": "छप्पन (56 प्रकार के छप्पन भोग)",
+        "wordEnglish": "Fifty-Six Royal Dishes",
+        "emoji": "🍛",
         "phonetic": "छप्पन",
-        "hindiAudioSentence": "संख्या 56! 56 मतलब छप्पन!",
-        "funFactHindi": "संख्या 56 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "५६ - छप्पन! मंदिर में भगवान को अर्पित किए गए ५६ प्रकार के भोग!",
+        "funFactHindi": "भारतीय संस्कृति में 'छप्पन भोग' बहुत प्रसिद्ध है।"
       },
       {
         "id": "ma_57",
         "char": "57",
-        "wordHindi": "सत्तावन (57)",
-        "wordEnglish": "Fifty Seven (57)",
-        "emoji": "🔢",
+        "wordHindi": "सत्तावन (57 सुरीले गिटार)",
+        "wordEnglish": "Fifty-Seven Musical Guitars",
+        "emoji": "🎸",
         "phonetic": "सत्तावन",
-        "hindiAudioSentence": "संख्या 57! 57 मतलब सत्तावन!",
-        "funFactHindi": "संख्या 57 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "५७ - सत्तावन! संगीत की कक्षा में बजते ५७ सुरीले गिटार!",
+        "funFactHindi": "संगीत सुनने से मन शांत और खुश रहता है।"
       },
       {
         "id": "ma_58",
         "char": "58",
-        "wordHindi": "अट्ठावन (58)",
-        "wordEnglish": "Fifty Eight (58)",
-        "emoji": "🔢",
+        "wordHindi": "अट्ठावन (58 उड़ते हवाई जहाज)",
+        "wordEnglish": "Fifty-Eight Flying Airplanes",
+        "emoji": "✈️",
         "phonetic": "अट्ठावन",
-        "hindiAudioSentence": "संख्या 58! 58 मतलब अट्ठावन!",
-        "funFactHindi": "संख्या 58 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "५८ - अट्ठावन! बादलों के ऊपर उड़ते ५८ सफेद हवाई जहाज!",
+        "funFactHindi": "हवाई जहाज दूर देशों की यात्रा बहुत आसान बनाते हैं।"
       },
       {
         "id": "ma_59",
         "char": "59",
-        "wordHindi": "उनसठ (59)",
-        "wordEnglish": "Fifty Nine (59)",
-        "emoji": "🔢",
+        "wordHindi": "उनसठ (59 खिले हुए सूरजमुखी)",
+        "wordEnglish": "Fifty-Nine Golden Sunflowers",
+        "emoji": "🌻",
         "phonetic": "उनसठ",
-        "hindiAudioSentence": "संख्या 59! 59 मतलब उनसठ!",
-        "funFactHindi": "संख्या 59 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "५९ - उनसठ! धूप में मुस्कुराते ५९ खिले हुए पीले सूरजमुखी!",
+        "funFactHindi": "सूरजमुखी का फूल हमेशा सूरज की ओर मुंह करता है।"
       },
       {
         "id": "ma_60",
         "char": "60",
-        "wordHindi": "साठ (60)",
-        "wordEnglish": "Sixty (60)",
-        "emoji": "🔟",
+        "wordHindi": "साठ (60 सेकंड और मिनट)",
+        "wordEnglish": "Sixty Seconds & Minutes",
+        "emoji": "⏱️",
         "phonetic": "साठ",
-        "hindiAudioSentence": "संख्या 60! 60 मतलब साठ!",
-        "funFactHindi": "संख्या 60 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "६० - साठ! एक मिनट में ६० सेकंड और एक घंटे में ६० मिनट!",
+        "funFactHindi": "घड़ी की सुई ६० सेकंड पूरे करते ही एक मिनट बढ़ाती है।"
       },
       {
         "id": "ma_61",
         "char": "61",
-        "wordHindi": "इकसठ (61)",
-        "wordEnglish": "Sixty One (61)",
-        "emoji": "🔢",
+        "wordHindi": "इकसठ (61 रसीले अंगूर)",
+        "wordEnglish": "Sixty-One Sweet Grapes",
+        "emoji": "🍇",
         "phonetic": "इकसठ",
-        "hindiAudioSentence": "संख्या 61! 61 मतलब इकसठ!",
-        "funFactHindi": "संख्या 61 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "६१ - इकसठ! बेल पर लटके ६१ रसीले और मीठे अंगूर!",
+        "funFactHindi": "अंगूर गुच्छों में लगते हैं और बहुत स्वादिष्ट होते हैं।"
       },
       {
         "id": "ma_62",
         "char": "62",
-        "wordHindi": "बासठ (62)",
-        "wordEnglish": "Sixty Two (62)",
-        "emoji": "🔢",
+        "wordHindi": "बासठ (62 मुलायम टेडी बियर)",
+        "wordEnglish": "Sixty-Two Teddy Bears",
+        "emoji": "🧸",
         "phonetic": "बासठ",
-        "hindiAudioSentence": "संख्या 62! 62 मतलब बासठ!",
-        "funFactHindi": "संख्या 62 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "६२ - बासठ! खिलौने की दुकान में बैठे ६२ मुलायम टेडी बियर!",
+        "funFactHindi": "टेडी बियर बच्चों का सबसे प्यारा दोस्त होता है।"
       },
       {
         "id": "ma_63",
         "char": "63",
-        "wordHindi": "तिरसठ (63)",
-        "wordEnglish": "Sixty Three (63)",
-        "emoji": "🔢",
+        "wordHindi": "तिरसठ (63 चंचल डॉल्फ़िन)",
+        "wordEnglish": "Sixty-Three Ocean Dolphins",
+        "emoji": "🐬",
         "phonetic": "तिरसठ",
-        "hindiAudioSentence": "संख्या 63! 63 मतलब तिरसठ!",
-        "funFactHindi": "संख्या 63 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "६३ - तिरसठ! समंदर की लहरों पर कूदतीं ६३ चंचल डॉल्फ़िन!",
+        "funFactHindi": "डॉल्फ़िन बहुत समझदार और मित्रवत जीव है।"
       },
       {
         "id": "ma_64",
         "char": "64",
-        "wordHindi": "चौंसठ (64)",
-        "wordEnglish": "Sixty Four (64)",
-        "emoji": "🔢",
+        "wordHindi": "चौंसठ (64 शतरंज बोर्ड के खाने)",
+        "wordEnglish": "Sixty-Four Chess Squares",
+        "emoji": "♟️",
         "phonetic": "चौंसठ",
-        "hindiAudioSentence": "संख्या 64! 64 मतलब चौंसठ!",
-        "funFactHindi": "संख्या 64 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "६४ - चौंसठ! शतरंज के बोर्ड पर होते हैं कुल ६४ काले और सफेद खाने!",
+        "funFactHindi": "शतरंज का खेल भारत में ही शुरू हुआ था।"
       },
       {
         "id": "ma_65",
         "char": "65",
-        "wordHindi": "पैंसठ (65)",
-        "wordEnglish": "Sixty Five (65)",
-        "emoji": "🔢",
+        "wordHindi": "पैंसठ (65 आइसक्रीम कोन)",
+        "wordEnglish": "Sixty-Five Ice Cream Cones",
+        "emoji": "🍦",
         "phonetic": "पैंसठ",
-        "hindiAudioSentence": "संख्या 65! 65 मतलब पैंसठ!",
-        "funFactHindi": "संख्या 65 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "६५ - पैंसठ! ठंडी-मीठी वैनिला और चॉकलेट की ६५ आइसक्रीम!",
+        "funFactHindi": "गर्मियों में ठंडी आइसक्रीम सबको बहुत भाती है।"
       },
       {
         "id": "ma_66",
         "char": "66",
-        "wordHindi": "छियासठ (66)",
-        "wordEnglish": "Sixty Six (66)",
-        "emoji": "🔢",
+        "wordHindi": "छियासठ (66 ट्रेन के डिब्बे)",
+        "wordEnglish": "Sixty-Six Train Wagons",
+        "emoji": "🚂",
         "phonetic": "छियासठ",
-        "hindiAudioSentence": "संख्या 66! 66 मतलब छियासठ!",
-        "funFactHindi": "संख्या 66 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "६६ - छियासठ! पटरी पर छुक-छुक दौड़ती लंबी ट्रेन के ६६ डिब्बे!",
+        "funFactHindi": "ट्रेन बहुत सारा सामान और यात्रियों को ले जाती है।"
       },
       {
         "id": "ma_67",
         "char": "67",
-        "wordHindi": "सड़सठ (67)",
-        "wordEnglish": "Sixty Seven (67)",
-        "emoji": "🔢",
+        "wordHindi": "सड़सठ (67 खट्टे-मीठे अनानास)",
+        "wordEnglish": "Sixty-Seven Juicy Pineapples",
+        "emoji": "🍍",
         "phonetic": "सड़सठ",
-        "hindiAudioSentence": "संख्या 67! 67 मतलब सड़सठ!",
-        "funFactHindi": "संख्या 67 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "६७ - सड़सठ! बाग में पके ६७ खट्टे-मीठे रसीले अनानास!",
+        "funFactHindi": "अनानास पाचन तंत्र के लिए बहुत फायदेमंद होता है।"
       },
       {
         "id": "ma_68",
         "char": "68",
-        "wordHindi": "अड़सठ (68)",
-        "wordEnglish": "Sixty Eight (68)",
-        "emoji": "🔢",
+        "wordHindi": "अड़सठ (68 नटखट पिल्ले)",
+        "wordEnglish": "Sixty-Eight Playful Puppies",
+        "emoji": "🐶",
         "phonetic": "अड़सठ",
-        "hindiAudioSentence": "संख्या 68! 68 मतलब अड़सठ!",
-        "funFactHindi": "संख्या 68 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "६८ - अड़सठ! आंगन में गेंद से खेलते ६८ नटखट पिल्ले!",
+        "funFactHindi": "कुत्ता बहुत वफादार और सच्चा साथी होता है।"
       },
       {
         "id": "ma_69",
         "char": "69",
-        "wordHindi": "उनहत्तर (69)",
-        "wordEnglish": "Sixty Nine (69)",
-        "emoji": "🔢",
+        "wordHindi": "उनहत्तर (69 रंगीन छाते)",
+        "wordEnglish": "Sixty-Nine Rain Umbrellas",
+        "emoji": "☂️",
         "phonetic": "उनहत्तर",
-        "hindiAudioSentence": "संख्या 69! 69 मतलब उनहत्तर!",
-        "funFactHindi": "संख्या 69 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "६९ - उनहत्तर! बारिश में खुले ६९ सुंदर और रंग-बिरंगे छाते!",
+        "funFactHindi": "छाता हमें बारिश में भीगने से बचाता है।"
       },
       {
         "id": "ma_70",
         "char": "70",
-        "wordHindi": "सत्तर (70)",
-        "wordEnglish": "Seventy (70)",
-        "emoji": "🔟",
+        "wordHindi": "सत्तर (70 सुनहरी ट्रॉफियां)",
+        "wordEnglish": "Seventy Golden Trophies",
+        "emoji": "🏆",
         "phonetic": "सत्तर",
-        "hindiAudioSentence": "संख्या 70! 70 मतलब सत्तर!",
-        "funFactHindi": "संख्या 70 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "७० - सत्तर! खेलकूद प्रतियोगिता में जीती गईं ७० सुनहरी ट्रॉफियां!",
+        "funFactHindi": "७० सात दहाइयों (१० x ७ = ७०) के बराबर होता है।"
       },
       {
         "id": "ma_71",
         "char": "71",
-        "wordHindi": "इकहत्तर (71)",
-        "wordEnglish": "Seventy One (71)",
-        "emoji": "🔢",
+        "wordHindi": "इकहत्तर (71 रसीली लाल चेरी)",
+        "wordEnglish": "Seventy-One Red Cherries",
+        "emoji": "🍒",
         "phonetic": "इकहत्तर",
-        "hindiAudioSentence": "संख्या 71! 71 मतलब इकहत्तर!",
-        "funFactHindi": "संख्या 71 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "७१ - इकहत्तर! पेड़ पर लगीं ७१ चमकदार और मीठी लाल चेरी!",
+        "funFactHindi": "चेरी का रंग बहुत सुंदर और चटक लाल होता है।"
       },
       {
         "id": "ma_72",
         "char": "72",
-        "wordHindi": "बहत्तर (72)",
-        "wordEnglish": "Seventy Two (72)",
-        "emoji": "🔢",
+        "wordHindi": "बहत्तर (72 दिल की धड़कनें)",
+        "wordEnglish": "Seventy-Two Heartbeats/Min",
+        "emoji": "❤️",
         "phonetic": "बहत्तर",
-        "hindiAudioSentence": "संख्या 72! 72 मतलब बहत्तर!",
-        "funFactHindi": "संख्या 72 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "७२ - बहत्तर! १ मिनट में स्वस्थ दिल धड़कता है लगभग ७२ बार!",
+        "funFactHindi": "हमारा दिल बिना रुके हमेशा धड़कता रहता है।"
       },
       {
         "id": "ma_73",
         "char": "73",
-        "wordHindi": "तिहत्तर (73)",
-        "wordEnglish": "Seventy Three (73)",
-        "emoji": "🔢",
+        "wordHindi": "तिहत्तर (73 मजबूत ट्रैक्टर)",
+        "wordEnglish": "Seventy-Three Farm Tractors",
+        "emoji": "🚜",
         "phonetic": "तिहत्तर",
-        "hindiAudioSentence": "संख्या 73! 73 मतलब तिहत्तर!",
-        "funFactHindi": "संख्या 73 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "७३ - तिहत्तर! लहलहाते खेतों में जुताई करते ७३ मजबूत ट्रैक्टर!",
+        "funFactHindi": "ट्रैक्टर किसानों का सबसे मददगार वाहन है।"
       },
       {
         "id": "ma_74",
         "char": "74",
-        "wordHindi": "चौहत्तर (74)",
-        "wordEnglish": "Seventy Four (74)",
-        "emoji": "🔢",
+        "wordHindi": "चौहत्तर (74 उड़ते हेलीकॉप्टर)",
+        "wordEnglish": "Seventy-Four Flying Helicopters",
+        "emoji": "🚁",
         "phonetic": "चौहत्तर",
-        "hindiAudioSentence": "संख्या 74! 74 मतलब चौहत्तर!",
-        "funFactHindi": "संख्या 74 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "७४ - चौहत्तर! आसमान में पंख घुमाते ७४ तेज हेलीकॉप्टर!",
+        "funFactHindi": "हेलीकॉप्टर किसी भी जगह सीधे उतर सकता है।"
       },
       {
         "id": "ma_75",
         "char": "75",
-        "wordHindi": "पचहत्तर (75)",
-        "wordEnglish": "Seventy Five (75)",
+        "wordHindi": "पचहत्तर (75 अमृत महोत्सव)",
+        "wordEnglish": "Seventy-Five - Platinum Jubilee",
         "emoji": "🥇",
         "phonetic": "पचहत्तर",
-        "hindiAudioSentence": "संख्या 75! 75 मतलब पचहत्तर!",
-        "funFactHindi": "संख्या 75 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "७५ - पचहत्तर! ७५ साल पूरे होने पर मनाया जाता है हीरक जयंती अमृत महोत्सव!",
+        "funFactHindi": "७५ पूरे १०० का तीन-चौथाई (३/४) हिस्सा होता है।"
       },
       {
         "id": "ma_76",
         "char": "76",
-        "wordHindi": "छिहत्तर (76)",
-        "wordEnglish": "Seventy Six (76)",
-        "emoji": "🔢",
+        "wordHindi": "छिहत्तर (76 गरमा-गरम भुट्टे)",
+        "wordEnglish": "Seventy-Six Sweet Corns",
+        "emoji": "🌽",
         "phonetic": "छिहत्तर",
-        "hindiAudioSentence": "संख्या 76! 76 मतलब छिहत्तर!",
-        "funFactHindi": "संख्या 76 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "७६ - छिहत्तर! बारिश के मौसम में भुने गए ७६ गरमा-गरम भुट्टे!",
+        "funFactHindi": "भुट्टा खाने से शरीर को ऊर्जा मिलती है।"
       },
       {
         "id": "ma_77",
         "char": "77",
-        "wordHindi": "सतहत्तर (77)",
-        "wordEnglish": "Seventy Seven (77)",
-        "emoji": "🔢",
+        "wordHindi": "सतहत्तर (77 लाल-लाल गाजरें)",
+        "wordEnglish": "Seventy-Seven Red Carrots",
+        "emoji": "🥕",
         "phonetic": "सतहत्तर",
-        "hindiAudioSentence": "संख्या 77! 77 मतलब सतहत्तर!",
-        "funFactHindi": "संख्या 77 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "७७ - सतहत्तर! खरगोश को बहुत पसंद आने वाली ७७ लाल गाजरें!",
+        "funFactHindi": "गाजर खाने से आंखों की दृष्टि तेज होती है।"
       },
       {
         "id": "ma_78",
         "char": "78",
-        "wordHindi": "अठहत्तर (78)",
-        "wordEnglish": "Seventy Eight (78)",
-        "emoji": "🔢",
+        "wordHindi": "अठहत्तर (78 प्यारी बिल्लियाँ)",
+        "wordEnglish": "Seventy-Eight Playful Cats",
+        "emoji": "🐱",
         "phonetic": "अठहत्तर",
-        "hindiAudioSentence": "संख्या 78! 78 मतलब अठहत्तर!",
-        "funFactHindi": "संख्या 78 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "७८ - अठहत्तर! दूध पीती और म्याऊं करतीं ७८ प्यारी बिल्लियाँ!",
+        "funFactHindi": "बिल्ली अंधेरे में भी बहुत साफ देख सकती है।"
       },
       {
         "id": "ma_79",
         "char": "79",
-        "wordHindi": "उन्यासी (79)",
-        "wordEnglish": "Seventy Nine (79)",
-        "emoji": "🔢",
+        "wordHindi": "उन्यासी (79 चालाक लोमड़ियां)",
+        "wordEnglish": "Seventy-Nine Clever Foxes",
+        "emoji": "🦊",
         "phonetic": "उन्यासी",
-        "hindiAudioSentence": "संख्या 79! 79 मतलब उन्यासी!",
-        "funFactHindi": "संख्या 79 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "७९ - उन्यासी! जंगल में छुपकर रहने वाली ७९ होशियार लोमड़ियां!",
+        "funFactHindi": "लोमड़ी बहुत चतुर और फुर्तीली होती है।"
       },
       {
         "id": "ma_80",
         "char": "80",
-        "wordHindi": "अस्सी (80)",
-        "wordEnglish": "Eighty (80)",
-        "emoji": "🔟",
+        "wordHindi": "अस्सी (80 हवा में उड़ते बैलून)",
+        "wordEnglish": "Eighty Sky Balloons",
+        "emoji": "🎈",
         "phonetic": "अस्सी",
-        "hindiAudioSentence": "संख्या 80! 80 मतलब अस्सी!",
-        "funFactHindi": "संख्या 80 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "८० - अस्सी! नीले गगन में दूर उड़ते ८० रंग-बिरंगे हॉट एयर बैलून!",
+        "funFactHindi": "८० आठ दहाइयों (१० x ८ = ८०) के बराबर होता है।"
       },
       {
         "id": "ma_81",
         "char": "81",
-        "wordHindi": "इक्यासी (81)",
-        "wordEnglish": "Eighty One (81)",
-        "emoji": "🔢",
+        "wordHindi": "इक्यासी (81 फुर्तीले खरगोश)",
+        "wordEnglish": "Eighty-One Jumping Rabbits",
+        "emoji": "🐰",
         "phonetic": "इक्यासी",
-        "hindiAudioSentence": "संख्या 81! 81 मतलब इक्यासी!",
-        "funFactHindi": "संख्या 81 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "८१ - इक्यासी! हरी घास पर उछलते-कूदते ८१ सफेद खरगोश!",
+        "funFactHindi": "८१ नौ का वर्ग है (९ x ९ = ८१)।"
       },
       {
         "id": "ma_82",
         "char": "82",
-        "wordHindi": "बयासी (82)",
-        "wordEnglish": "Eighty Two (82)",
-        "emoji": "🔢",
+        "wordHindi": "बयासी (82 कूदते मेंढक)",
+        "wordEnglish": "Eighty-Two Hopping Frogs",
+        "emoji": "🐸",
         "phonetic": "बयासी",
-        "hindiAudioSentence": "संख्या 82! 82 मतलब बयासी!",
-        "funFactHindi": "संख्या 82 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "८२ - बयासी! बारिश में पानी में छलांग लगाते ८२ नन्हें मेंढक!",
+        "funFactHindi": "मेंढक पानी और जमीन दोनों जगह रह सकते हैं।"
       },
       {
         "id": "ma_83",
         "char": "83",
-        "wordHindi": "तिरासी (83)",
-        "wordEnglish": "Eighty Three (83)",
-        "emoji": "🔢",
+        "wordHindi": "तिरासी (83 विशालकाय हाथी)",
+        "wordEnglish": "Eighty-Three Mighty Elephants",
+        "emoji": "🐘",
         "phonetic": "तिरासी",
-        "hindiAudioSentence": "संख्या 83! 83 मतलब तिरासी!",
-        "funFactHindi": "संख्या 83 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "८३ - तिरासी! जंगल में सूंड उठाए चलते ८३ विशालकाय हाथी!",
+        "funFactHindi": "हाथी जमीन पर रहने वाला सबसे बड़ा जानवर है।"
       },
       {
         "id": "ma_84",
         "char": "84",
-        "wordHindi": "चौरासी (84)",
-        "wordEnglish": "Eighty Four (84)",
-        "emoji": "🔢",
+        "wordHindi": "चौरासी (84 लंबे जिराफ)",
+        "wordEnglish": "Eighty-Four Tall Giraffes",
+        "emoji": "🦒",
         "phonetic": "चौरासी",
-        "hindiAudioSentence": "संख्या 84! 84 मतलब चौरासी!",
-        "funFactHindi": "संख्या 84 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "८४ - चौरासी! ऊंची डालियों से पत्ते खाते ८४ लंबे जिराफ!",
+        "funFactHindi": "जिराफ दुनिया का सबसे लंबा जानवर होता है।"
       },
       {
         "id": "ma_85",
         "char": "85",
-        "wordHindi": "पचासी (85)",
-        "wordEnglish": "Eighty Five (85)",
-        "emoji": "🔢",
+        "wordHindi": "पचासी (85 नटखट बंदर)",
+        "wordEnglish": "Eighty-Five Climbing Monkeys",
+        "emoji": "🐵",
         "phonetic": "पचासी",
-        "hindiAudioSentence": "संख्या 85! 85 मतलब पचासी!",
-        "funFactHindi": "संख्या 85 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "८५ - पचासी! पेड़ों की डालियों पर झूलते ८५ नटखट बंदर!",
+        "funFactHindi": "बंदर केले बड़े चाव से छीलकर खाते हैं।"
       },
       {
         "id": "ma_86",
         "char": "86",
-        "wordHindi": "छियासी (86)",
-        "wordEnglish": "Eighty Six (86)",
-        "emoji": "🔢",
+        "wordHindi": "छियासी (86 सुंदर ज़ेबरा)",
+        "wordEnglish": "Eighty-Six Striped Zebras",
+        "emoji": "🦓",
         "phonetic": "छियासी",
-        "hindiAudioSentence": "संख्या 86! 86 मतलब छियासी!",
-        "funFactHindi": "संख्या 86 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "८६ - छियासी! काली और सफेद धारियों वाले ८६ सुंदर ज़ेबरा!",
+        "funFactHindi": "हर ज़ेबरा के शरीर की धारियां अनोखी होती हैं।"
       },
       {
         "id": "ma_87",
         "char": "87",
-        "wordHindi": "सत्तासी (87)",
-        "wordEnglish": "Eighty Eight (87)",
-        "emoji": "🔢",
+        "wordHindi": "सत्तासी (87 नारियल के पेड़)",
+        "wordEnglish": "Eighty-Seven Coconut Trees",
+        "emoji": "🥥",
         "phonetic": "सत्तासी",
-        "hindiAudioSentence": "संख्या 87! 87 मतलब सत्तासी!",
-        "funFactHindi": "संख्या 87 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "८७ - सत्तासी! समुद्र किनारे लहराते ८७ ऊँचे नारियल के पेड़!",
+        "funFactHindi": "नारियल का पानी बहुत पौष्टिक होता है।"
       },
       {
         "id": "ma_88",
         "char": "88",
-        "wordHindi": "अट्ठासी (88)",
-        "wordEnglish": "Eighty Eight (88)",
-        "emoji": "🔢",
+        "wordHindi": "अट्ठासी (88 पियानो की कुंजियां)",
+        "wordEnglish": "Eighty-Eight Piano Keys",
+        "emoji": "🎹",
         "phonetic": "अट्ठासी",
-        "hindiAudioSentence": "संख्या 88! 88 मतलब अट्ठासी!",
-        "funFactHindi": "संख्या 88 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "८८ - अट्ठासी! पियानो में सुरीली धुन निकालने वाली कुल ८८ कुंजियां!",
+        "funFactHindi": "एक पूरे पियानो में कुल ८८ चाबियां होती हैं।"
       },
       {
         "id": "ma_89",
         "char": "89",
-        "wordHindi": "नवासी (89)",
-        "wordEnglish": "Eighty Nine (89)",
-        "emoji": "🔢",
+        "wordHindi": "नवासी (89 ताजे अमरूद)",
+        "wordEnglish": "Eighty-Nine Fresh Guavas",
+        "emoji": "🍈",
         "phonetic": "नवासी",
-        "hindiAudioSentence": "संख्या 89! 89 मतलब नवासी!",
-        "funFactHindi": "संख्या 89 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "८९ - नवासी! पेड़ से तोड़े गए ८९ ताजे और मीठे अमरूद!",
+        "funFactHindi": "अमरूद में बहुत सारा विटामिन सी होता है।"
       },
       {
         "id": "ma_90",
         "char": "90",
-        "wordHindi": "नब्बे (90)",
-        "wordEnglish": "Ninety (90)",
-        "emoji": "🔟",
+        "wordHindi": "नब्बे (90 अंश का समकोण)",
+        "wordEnglish": "Ninety - Right Angle 90°",
+        "emoji": "📐",
         "phonetic": "नब्बे",
-        "hindiAudioSentence": "संख्या 90! 90 मतलब नब्बे!",
-        "funFactHindi": "संख्या 90 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "९० - नब्बे! गणित में सीधा कोण होता है ठीक ९० अंश का समकोण!",
+        "funFactHindi": "९० डिग्री के कोण को समकोण कहते हैं।"
       },
       {
         "id": "ma_91",
         "char": "91",
-        "wordHindi": "इक्यानवे (91)",
-        "wordEnglish": "Ninety One (91)",
-        "emoji": "🔢",
+        "wordHindi": "इक्यानवे (91 रसीले आड़ू)",
+        "wordEnglish": "Ninety-One Juicy Peaches",
+        "emoji": "🍑",
         "phonetic": "इक्यानवे",
-        "hindiAudioSentence": "संख्या 91! 91 मतलब इक्यानवे!",
-        "funFactHindi": "संख्या 91 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "९१ - इक्यानवे! बगीचे में पके ९१ मुलायम और मीठे आड़ू!",
+        "funFactHindi": "आड़ू एक खुशबूदार और स्वादिष्ट पहाड़ी फल है।"
       },
       {
         "id": "ma_92",
         "char": "92",
-        "wordHindi": "बावनवे (92)",
-        "wordEnglish": "Ninety Two (92)",
-        "emoji": "🔢",
+        "wordHindi": "बावनवे (92 हरे एवोकाडो)",
+        "wordEnglish": "Ninety-Two Green Avocados",
+        "emoji": "🥑",
         "phonetic": "बावनवे",
-        "hindiAudioSentence": "संख्या 92! 92 मतलब बावनवे!",
-        "funFactHindi": "संख्या 92 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "९२ - बावनवे! सेहत के लिए फायदेमंद ९२ ताजे हरे एवोकाडो!",
+        "funFactHindi": "एवोकाडो दिल के लिए बहुत सेहतमंद होता है।"
       },
       {
         "id": "ma_93",
         "char": "93",
-        "wordHindi": "तिरानवे (93)",
-        "wordEnglish": "Ninety Three (93)",
-        "emoji": "🔢",
+        "wordHindi": "तिरानवे (93 क्रिस्पी पॉपकॉर्न)",
+        "wordEnglish": "Ninety-Three Popcorn Bags",
+        "emoji": "🍿",
         "phonetic": "तिरानवे",
-        "hindiAudioSentence": "संख्या 93! 93 मतलब तिरानवे!",
-        "funFactHindi": "संख्या 93 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "९३ - तिरानवे! गरमा-गरम फूटे ९३ पैकेट कुरकुरे पॉपकॉर्न!",
+        "funFactHindi": "मक्के के दाने गर्म होने पर पॉपकॉर्न बनते हैं।"
       },
       {
         "id": "ma_94",
         "char": "94",
-        "wordHindi": "चौरानवे (94)",
-        "wordEnglish": "Ninety Four (94)",
-        "emoji": "🔢",
+        "wordHindi": "चौरानवे (94 स्वादिष्ट कुकीज)",
+        "wordEnglish": "Ninety-Four Crispy Cookies",
+        "emoji": "🍪",
         "phonetic": "चौरानवे",
-        "hindiAudioSentence": "संख्या 94! 94 मतलब चौरानवे!",
-        "funFactHindi": "संख्या 94 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "९४ - चौरानवे! ओवन में बेक की गईं ९४ स्वादिष्ट चॉकलेट कुकीज!",
+        "funFactHindi": "दूध और कुकीज बच्चों को बहुत भाते हैं।"
       },
       {
         "id": "ma_95",
         "char": "95",
-        "wordHindi": "पंचानवे (95)",
-        "wordEnglish": "Ninety Five (95)",
-        "emoji": "🔢",
+        "wordHindi": "पंचानवे (95 मीठी चॉकलेट बार्स)",
+        "wordEnglish": "Ninety-Five Chocolate Bars",
+        "emoji": "🍫",
         "phonetic": "पंचानवे",
-        "hindiAudioSentence": "संख्या 95! 95 मतलब पंचानवे!",
-        "funFactHindi": "संख्या 95 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "९५ - पंचानवे! बच्चों की मनपसंद ९५ मीठी चॉकलेट बार्स!",
+        "funFactHindi": "चॉकलेट कोको के पौधों से बनाई जाती है।"
       },
       {
         "id": "ma_96",
         "char": "96",
-        "wordHindi": "छियानवे (96)",
-        "wordEnglish": "Ninety Six (96)",
-        "emoji": "🔢",
+        "wordHindi": "छियानवे (96 जन्मदिन के केक)",
+        "wordEnglish": "Ninety-Six Birthday Cakes",
+        "emoji": "🎂",
         "phonetic": "छियानवे",
-        "hindiAudioSentence": "संख्या 96! 96 मतलब छियानवे!",
-        "funFactHindi": "संख्या 96 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "९६ - छियानवे! मोमबत्ती लगे हुए ९६ सुंदर और मीठे केक!",
+        "funFactHindi": "जन्मदिन पर केक काटने से खुशियां बढ़ती हैं।"
       },
       {
         "id": "ma_97",
         "char": "97",
-        "wordHindi": "सत्तानवे (97)",
-        "wordEnglish": "Ninety Seven (97)",
-        "emoji": "🔢",
+        "wordHindi": "सत्तानवे (97 मीठी लॉलीपॉप)",
+        "wordEnglish": "Ninety-Seven Sweet Lollipops",
+        "emoji": "🍭",
         "phonetic": "सत्तानवे",
-        "hindiAudioSentence": "संख्या 97! 97 मतलब सत्तानवे!",
-        "funFactHindi": "संख्या 97 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "९७ - सत्तानवे! रंग-बिरंगी गोल और मीठी ९७ रसदार लॉलीपॉप!",
+        "funFactHindi": "९७ दो अंकों की सबसे बड़ी अभाज्य संख्या है।"
       },
       {
         "id": "ma_98",
         "char": "98",
-        "wordHindi": "अट्ठानवे (98)",
-        "wordEnglish": "Ninety Eight (98)",
-        "emoji": "🔢",
+        "wordHindi": "अट्ठानवे (98 शहद की शीशियाँ)",
+        "wordEnglish": "Ninety-Eight Honey Jars",
+        "emoji": "🍯",
         "phonetic": "अट्ठानवे",
-        "hindiAudioSentence": "संख्या 98! 98 मतलब अट्ठानवे!",
-        "funFactHindi": "संख्या 98 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "९८ - अट्ठानवे! मधुमक्खियों के छत्ते से निकला ९८ शीशी शुद्ध शहद!",
+        "funFactHindi": "शहद कभी खराब नहीं होता, हमेशा ताजा रहता है।"
       },
       {
         "id": "ma_99",
         "char": "99",
-        "wordHindi": "निन्यानवे (99)",
-        "wordEnglish": "Ninety Nine (99)",
-        "emoji": "🔢",
+        "wordHindi": "निन्यानवे (99 सोने के सिक्के)",
+        "wordEnglish": "Ninety-Nine Golden Coins",
+        "emoji": "🪙",
         "phonetic": "निन्यानवे",
-        "hindiAudioSentence": "संख्या 99! 99 मतलब निन्यानवे!",
-        "funFactHindi": "संख्या 99 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "९९ - निन्यानवे! खजाने के बक्से में रखे ९९ चमचमाते सोने के सिक्के!",
+        "funFactHindi": "९९ दो अंकों की सबसे बड़ी संख्या है।"
       },
       {
         "id": "ma_100",
         "char": "100",
-        "wordHindi": "सौ (100)",
-        "wordEnglish": "One Hundred (100)",
+        "wordHindi": "सौ (100 पूरा शतक)",
+        "wordEnglish": "One Hundred - Full Century!",
         "emoji": "💯",
         "phonetic": "सौ",
-        "hindiAudioSentence": "संख्या 100! 100 मतलब सौ!",
-        "funFactHindi": "संख्या 100 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+        "hindiAudioSentence": "१०० - सौ! बधाई हो! पूरे १०० रन बनाकर लग गया शानदार शतक!",
+        "funFactHindi": "सौ तीन अंकों की सबसे पहली और सबसे छोटी संख्या है।"
       }
     ]
   },

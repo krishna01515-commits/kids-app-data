@@ -209,18 +209,27 @@ fun Level1AlphabetCardsScreen(
                     )
 
                     // Hindi & English Word Label
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Column(
+                        modifier = Modifier.padding(horizontal = 8.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
                         Text(
-                            text = "${card.char} से ${card.wordHindi}",
+                            text = if (card.char.toIntOrNull() != null || subject == SubjectType.MATH) {
+                                "${card.char} : ${card.wordHindi}"
+                            } else {
+                                "${card.char} से ${card.wordHindi}"
+                            },
                             fontWeight = FontWeight.Black,
-                            fontSize = 32.sp,
-                            color = if (isDarkMode) Color.White else Color(0xFF263238)
+                            fontSize = if (card.wordHindi.length > 22) 22.sp else if (card.wordHindi.length > 15) 26.sp else 32.sp,
+                            color = if (isDarkMode) Color.White else Color(0xFF263238),
+                            textAlign = TextAlign.Center
                         )
                         Text(
                             text = card.wordEnglish,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 18.sp,
-                            color = if (isDarkMode) Color(0xFFA5B0E0) else Color(0xFF546E7A)
+                            fontSize = 17.sp,
+                            color = if (isDarkMode) Color(0xFFA5B0E0) else Color(0xFF546E7A),
+                            textAlign = TextAlign.Center
                         )
                     }
 
