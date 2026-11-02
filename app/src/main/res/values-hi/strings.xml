@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">चुटकी किड्स लर्निंग 3D</string>
+    <string name="btn_start">शुरू करें</string>
+    <string name="btn_continue">आगे बढ़ो</string>
+    <string name="btn_back">पीछे</string>
+    <string name="btn_next">अगला</string>
+    <string name="praise_correct">शाबाश!</string>
+    <string name="praise_try_again">फिर से कोशिश करो!</string>
+    <string name="tab_home">होम</string>
+    <string name="tab_subjects">विषय</string>
+    <string name="tab_games">खेल</string>
+    <string name="tab_leaderboard">रैंक</string>
+    <string name="tab_profile">प्रोफाइल</string>
+    <string name="lang_hindi">हिंदी</string>
+    <string name="lang_english">English</string>
+</resources>
+

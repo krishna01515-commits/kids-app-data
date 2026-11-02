@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 1. Magical Book at base (y=66 to y=84) -->
+    <!-- Book Cover Base Shadow -->
+    <path
+        android:fillColor="#33000000"
+        android:pathData="M26,80 C36,77 48,80 54,83 C60,80 72,77 82,80 L84,84 C74,81 60,84 54,87 C48,84 34,81 24,84 Z" />
+
+    <!-- Book Outer Cover (Cyan & Pink) -->
+    <path
+        android:fillColor="#FF00D2D3"
+        android:pathData="M24,78 C36,75 48,78 54,81 L54,85 C48,82 36,79 24,82 Z" />
+    <path
+        android:fillColor="#FFFF4081"
+        android:pathData="M54,81 C60,78 72,75 84,78 L84,82 C72,79 60,82 54,85 Z" />
+
+    <!-- Open Book Pages (Warm White / Cream) -->
+    <!-- Left Page -->
+    <path
+        android:pathData="M25,76 C36,72 47,75 53,79 L53,82 C47,78 36,75 25,79 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="25"
+                android:startY="75"
+                android:endX="53"
+                android:endY="81"
+                android:type="linear">
+                <item android:color="#FFFFFFFF" android:offset="0.0" />
+                <item android:color="#FFFFF3D6" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Right Page -->
+    <path
+        android:pathData="M55,79 C61,75 72,72 83,76 L83,79 C72,75 61,78 55,82 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="55"
+                android:startY="75"
+                android:endX="83"
+                android:endY="81"
+                android:type="linear">
+                <item android:color="#FFFFF3D6" android:offset="0.0" />
+                <item android:color="#FFFFFFFF" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Page text hint lines -->
+    <path
+        android:fillColor="#40FF9F43"
+        android:pathData="M30,76.5 C36,74.5 44,76 48,78 L48,78.8 C44,76.8 36,75.3 30,77.3 Z" />
+    <path
+        android:fillColor="#40FF9F43"
+        android:pathData="M60,78 C64,76 72,74.5 78,76.5 L78,77.3 C72,75.3 64,76.8 60,78.8 Z" />
+
+    <!-- Red Bookmark Ribbon -->
+    <path
+        android:fillColor="#FFEE5253"
+        android:pathData="M53,81 L55,81 L55.5,88 L54,86.5 L52.5,88 Z" />
+
+
+    <!-- 2. Cute 3D Golden Star Mascot -->
+    <!-- Star Body with 3D Radial Gradient -->
+    <path
+        android:pathData="M54,30
+        C56,30 58.5,39 61,42
+        C65,42.5 74,43 75.5,45
+        C77,47 70,53 68.5,56
+        C70,60 73.5,69 72,71
+        C70.5,72.5 62,67.5 59,66
+        C56,64.5 52,64.5 49,66
+        C46,67.5 37.5,72.5 36,71
+        C34.5,69 38,60 39.5,56
+        C38,53 31,47 32.5,45
+        C34,43 43,42.5 47,42
+        C49.5,39 52,30 54,30 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerX="51"
+                android:centerY="46"
+                android:gradientRadius="26"
+                android:type="radial">
+                <item android:color="#FFFFF9B0" android:offset="0.0" />
+                <item android:color="#FFFFD32A" android:offset="0.45" />
+                <item android:color="#FFFFA801" android:offset="0.85" />
+                <item android:color="#FFFF8800" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Star Belly Soft Highlight -->
+    <path
+        android:fillColor="#40FFFFFF"
+        android:pathData="M54,44 C61,44 65,49 65,55 C65,60 60,63 54,63 C48,63 43,60 43,55 C43,49 47,44 54,44 Z" />
+
+    <!-- 3. Face Features: Big Anime Cartoon Eyes & Rosy Cheeks -->
+    <!-- Rosy Cheeks -->
+    <path
+        android:fillColor="#80FF6B81"
+        android:pathData="M43,56 C45,56 46.5,57.5 46.5,59 C46.5,60.5 45,61.5 43,61.5 C41,61.5 39.5,60.5 39.5,59 C39.5,57.5 41,56 43,56 Z" />
+    <path
+        android:fillColor="#80FF6B81"
+        android:pathData="M65,56 C67,56 68.5,57.5 68.5,59 C68.5,60.5 67,61.5 65,61.5 C63,61.5 61.5,60.5 61.5,59 C61.5,57.5 63,56 65,56 Z" />
+
+    <!-- Left Eye -->
+    <path
+        android:fillColor="#FF1E272E"
+        android:pathData="M47.5,49 C49.5,49 51,51 51,53.5 C51,56 49.5,57.5 47.5,57.5 C45.5,57.5 44,56 44,53.5 C44,51 45.5,49 47.5,49 Z" />
+    <!-- Left Eye Sparkles -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M46.2,50.5 C47,50.5 47.7,51.2 47.7,52 C47.7,52.8 47,53.5 46.2,53.5 C45.4,53.5 44.7,52.8 44.7,52 C44.7,51.2 45.4,50.5 46.2,50.5 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M48.8,54 C49.3,54 49.7,54.4 49.7,54.9 C49.7,55.4 49.3,55.8 48.8,55.8 C48.3,55.8 47.9,55.4 47.9,54.9 C47.9,54.4 48.3,54 48.8,54 Z" />
+
+    <!-- Right Eye -->
+    <path
+        android:fillColor="#FF1E272E"
+        android:pathData="M60.5,49 C62.5,49 64,51 64,53.5 C64,56 62.5,57.5 60.5,57.5 C58.5,57.5 57,56 57,53.5 C57,51 58.5,49 60.5,49 Z" />
+    <!-- Right Eye Sparkles -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M59.2,50.5 C60,50.5 60.7,51.2 60.7,52 C60.7,52.8 60,53.5 59.2,53.5 C58.4,53.5 57.7,52.8 57.7,52 C57.7,51.2 58.4,50.5 59.2,50.5 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M61.8,54 C62.3,54 62.7,54.4 62.7,54.9 C62.7,55.4 62.3,55.8 61.8,55.8 C61.3,55.8 60.9,55.4 60.9,54.9 C60.9,54.4 61.3,54 61.8,54 Z" />
+
+    <!-- Cute Smiling Open Mouth -->
+    <path
+        android:fillColor="#FFD63031"
+        android:pathData="M50.5,57 C50.5,57 52,61.5 54,61.5 C56,61.5 57.5,57 57.5,57 Z" />
+    <!-- Tongue in Mouth -->
+    <path
+        android:fillColor="#FFFF7675"
+        android:pathData="M52,59 C52.8,59 54,60 54,61.5 C54.8,61 55.5,59.8 56,59 Z" />
+
+
+    <!-- 4. Cute Waving Arms / Pencil in Hand -->
+    <!-- Magic Pencil in Right Hand -->
+    <!-- Pencil Body (Red & Cream) -->
+    <path
+        android:fillColor="#FFEE5253"
+        android:pathData="M70,47 L78,37 L81,39.5 L73,49.5 Z" />
+    <path
+        android:fillColor="#FFFFD2A5"
+        android:pathData="M78,37 L81,39.5 L82.5,35 Z" />
+    <!-- Pencil Lead -->
+    <path
+        android:fillColor="#FF2D3436"
+        android:pathData="M81.5,36.5 L82.5,35 L81,35.5 Z" />
+    <!-- Magic Sparkle at Pencil Tip -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M83,34 L84.2,30 L85.5,34 L89.5,35.2 L85.5,36.5 L84.2,40.5 L83,36.5 L79,35.2 Z" />
+
+
+    <!-- 5. Scholar / Graduation Mortarboard Cap on Top of Star -->
+    <!-- Cap Base Band (Royal Violet) -->
+    <path
+        android:fillColor="#FF341F97"
+        android:pathData="M47,33 C47,33 47,35 54,35 C61,35 61,33 61,33 L60,37 C60,37 59,38.5 54,38.5 C49,38.5 48,37 48,37 Z" />
+
+    <!-- Cap Mortarboard Diamond Top (Rich Violet with bevel) -->
+    <path
+        android:pathData="M54,23 L71,29 L54,35 L37,29 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="37"
+                android:startY="23"
+                android:endX="71"
+                android:endY="35"
+                android:type="linear">
+                <item android:color="#FF5F27CD" android:offset="0.0" />
+                <item android:color="#FF341F97" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Top Highlight on Cap Diamond -->
+    <path
+        android:fillColor="#40FFFFFF"
+        android:pathData="M54,24 L68,29 L54,33 L40,29 Z" />
+
+    <!-- Center Cap Button (Gold) -->
+    <path
+        android:fillColor="#FFFFD700"
+        android:pathData="M52.5,28.5 C52.5,27.7 53.2,27 54,27 C54.8,27 55.5,27.7 55.5,28.5 C55.5,29.3 54.8,30 54,30 C53.2,30 52.5,29.3 52.5,28.5 Z" />
+
+    <!-- Golden Swinging Tassel -->
+    <path
+        android:fillColor="#FFFFA801"
+        android:pathData="M54,28.5 C56,28.5 63,30 65,34 L66,33.5 C64,29.5 56.5,28 54,28 Z" />
+    <path
+        android:fillColor="#FFFFD700"
+        android:pathData="M64.5,33.5 L67.5,34 L68,39 L65,39 Z" />
+
+</vector>

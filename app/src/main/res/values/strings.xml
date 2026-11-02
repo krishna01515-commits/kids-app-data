@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Chutki Kids 3D</string>
+    <string name="btn_start">Start Learning</string>
+    <string name="btn_continue">Continue</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_next">Next</string>
+    <string name="praise_correct">Great Job!</string>
+    <string name="praise_try_again">Try Again!</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_subjects">Subjects</string>
+    <string name="tab_games">Games</string>
+    <string name="tab_leaderboard">Ranks</string>
+    <string name="tab_profile">Profile</string>
+    <string name="lang_hindi">हिंदी</string>
+    <string name="lang_english">English</string>
+</resources>

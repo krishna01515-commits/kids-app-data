@@ -1,0 +1,163 @@
+[
+  {
+    "id": 1,
+    "name_en": "Apple",
+    "name_hi": "सेब",
+    "audio_text_en": "Apple. An apple is a sweet, red, and healthy fruit.",
+    "audio_text_hi": "सेब। सेब एक मीठा, लाल और स्वास्थ्यवर्धक फल है।",
+    "level": 1
+  },
+  {
+    "id": 2,
+    "name_en": "Banana",
+    "name_hi": "केला",
+    "audio_text_en": "Banana. A sweet yellow fruit that gives lots of energy.",
+    "audio_text_hi": "केला। केला एक मीठा और पीला फल है जो बहुत ऊर्जा देता है।",
+    "level": 1
+  },
+  {
+    "id": 3,
+    "name_en": "Mango",
+    "name_hi": "आम",
+    "audio_text_en": "Mango. Mango is juicy, sweet, and known as the king of fruits.",
+    "audio_text_hi": "आम। आम फलों का राजा है और बहुत रसीला व मीठा होता है।",
+    "level": 1
+  },
+  {
+    "id": 4,
+    "name_en": "Orange",
+    "name_hi": "संतरा",
+    "audio_text_en": "Orange. A round, tangy and juicy citrus fruit rich in vitamin C.",
+    "audio_text_hi": "संतरा। संतरा एक खट्टा-मीठा रसीला फल है जिसमें विटामिन सी होता है।",
+    "level": 2
+  },
+  {
+    "id": 5,
+    "name_en": "Grapes",
+    "name_hi": "अंगूर",
+    "audio_text_en": "Grapes. Small and sweet berries that grow together in bunches.",
+    "audio_text_hi": "अंगूर। अंगूर गुच्छों में लगने वाले छोटे, मीठे और रसीले फल हैं।",
+    "level": 2
+  },
+  {
+    "id": 6,
+    "name_en": "Watermelon",
+    "name_hi": "तरबूज",
+    "audio_text_en": "Watermelon. A big green summer fruit that is red, sweet, and juicy inside.",
+    "audio_text_hi": "तरबूज। तरबूज गर्मियों का बड़ा फल है जो अंदर से लाल और बहुत रसीला होता है।",
+    "level": 3
+  },
+  {
+    "id": 7,
+    "name_en": "Papaya",
+    "name_hi": "पपीता",
+    "audio_text_en": "Papaya. A soft and sweet tropical fruit that is good for health and digestion.",
+    "audio_text_hi": "पपीता। पपीता एक स्वादिष्ट पीला फल है जो सेहत और पाचन के लिए बहुत लाभकारी है।",
+    "level": 3
+  },
+  {
+    "id": 8,
+    "name_en": "Cow",
+    "name_hi": "गाय",
+    "audio_text_en": "Cow. The cow is a gentle domestic animal that gives us fresh and healthy milk.",
+    "audio_text_hi": "गाय। गाय एक सीधी और शांत पालतू पशु है जो हमें पौष्टिक दूध देती है।",
+    "level": 1
+  },
+  {
+    "id": 9,
+    "name_en": "Dog",
+    "name_hi": "कुत्ता",
+    "audio_text_en": "Dog. The dog is a loyal and faithful friend who guards our home and barks woof woof.",
+    "audio_text_hi": "कुत्ता। कुत्ता एक वफादार पालतू जानवर है जो घर की रखवाली करता है और भौं-भौं करता है।",
+    "level": 1
+  },
+  {
+    "id": 10,
+    "name_en": "Cat",
+    "name_hi": "बिल्ली",
+    "audio_text_en": "Cat. The cat is a cute and playful pet that drinks milk and says meow meow.",
+    "audio_text_hi": "बिल्ली। बिल्ली एक प्यारी और फुर्तीली पालतू जानवर है जो म्याऊं-म्याऊं करती है।",
+    "level": 1
+  },
+  {
+    "id": 11,
+    "name_en": "Lion",
+    "name_hi": "शेर",
+    "audio_text_en": "Lion. The lion is known as the king of the jungle and has a powerful roar.",
+    "audio_text_hi": "शेर। शेर जंगल का राजा कहलाता है और जंगल में जोर से दहाड़ता है।",
+    "level": 2
+  },
+  {
+    "id": 12,
+    "name_en": "Elephant",
+    "name_hi": "हाथी",
+    "audio_text_en": "Elephant. The elephant is the largest land animal with big ears and a long trunk.",
+    "audio_text_hi": "हाथी। हाथी जमीन पर रहने वाला सबसे बड़ा जानवर है जिसके बड़े कान और लंबी सूंड होती है।",
+    "level": 2
+  },
+  {
+    "id": 13,
+    "name_en": "Tiger",
+    "name_hi": "बाघ",
+    "audio_text_en": "Tiger. The tiger is a magnificent wild cat with black stripes and the national animal of India.",
+    "audio_text_hi": "बाघ। बाघ भारत का राष्ट्रीय पशु है जिसके शरीर पर सुंदर काली धारियां होती हैं।",
+    "level": 3
+  },
+  {
+    "id": 14,
+    "name_en": "Monkey",
+    "name_hi": "बंदर",
+    "audio_text_en": "Monkey. The monkey is a naughty and clever animal that loves jumping on trees.",
+    "audio_text_hi": "बंदर। बंदर एक नटखट और चालाक जानवर है जो पेड़ों पर कूदता है और सबको हंसाता है।",
+    "level": 3
+  },
+  {
+    "id": 15,
+    "name_en": "One",
+    "name_hi": "एक",
+    "audio_text_en": "One. Number one stands for a single item, just like our one bright sun in the sky.",
+    "audio_text_hi": "एक। संख्या एक, जैसे आसमान में चमकता हुआ अकेला सूरज।",
+    "level": 1
+  },
+  {
+    "id": 16,
+    "name_en": "Two",
+    "name_hi": "दो",
+    "audio_text_en": "Two. Number two represents a pair, like our two bright eyes and two hands.",
+    "audio_text_hi": "दो। संख्या दो, जैसे हमारी देखने के लिए दो आँखें और काम करने के लिए दो हाथ।",
+    "level": 1
+  },
+  {
+    "id": 17,
+    "name_en": "Three",
+    "name_hi": "तीन",
+    "audio_text_en": "Three. Number three, like the three colors in our national flag and three wheels of a rickshaw.",
+    "audio_text_hi": "तीन। संख्या तीन, जैसे हमारे तिरंगे झंडे के तीन रंग और ऑटो के तीन पहिए।",
+    "level": 2
+  },
+  {
+    "id": 18,
+    "name_en": "Four",
+    "name_hi": "चार",
+    "audio_text_en": "Four. Number four, like the four wheels of a car and four legs of a table.",
+    "audio_text_hi": "चार। संख्या चार, जैसे कार के चार पहिए और मेज के चार पाए।",
+    "level": 2
+  },
+  {
+    "id": 19,
+    "name_en": "Five",
+    "name_hi": "पाँच",
+    "audio_text_en": "Five. Number five, like the five fingers on each hand.",
+    "audio_text_hi": "पाँच। संख्या पाँच, जैसे हमारे एक हाथ में पाँच उंगलियाँ होती हैं।",
+    "level": 3
+  },
+  {
+    "id": 20,
+    "name_en": "Six",
+    "name_hi": "छह",
+    "audio_text_en": "Six. Number six, like the six sides of a cube and six legs of a honeybee.",
+    "audio_text_hi": "छह। संख्या छह, जैसे तितलियों और मधुमक्खियों के छह पैर होते हैं।",
+    "level": 3
+  }
+]
+
