@@ -1,0 +1,70 @@
+package com.kidslearning.chutki
+
+import com.google.gson.GsonBuilder
+import com.kidslearning.chutki.data.ContentRepository
+import com.kidslearning.chutki.data.LearningContentRepository
+import com.kidslearning.chutki.data.MasterAppContent
+import org.junit.Test
+import java.io.File
+
+class ExportJsonTest {
+
+    @Test
+    fun exportCompleteGameContentJson() {
+        // 1. Read existing 20 game items
+        val assetsFile = File("src/main/assets/game_content.json")
+        val existingItems = if (assetsFile.exists()) {
+            ContentRepository.parseJson(assetsFile.readText())
+        } else emptyList()
+
+        // 2. Collect all alphabet cards (Hindi, English, Math 1-100)
+        val alphabetCardsMap = mapOf(
+            "hindi" to LearningContentRepository.getAlphabetCards("hindi"),
+            "english" to LearningContentRepository.getAlphabetCards("english"),
+            "math" to LearningContentRepository.getMathCards1To100()
+        )
+
+        // 3. Collect all word blends
+        val wordBlendsMap = mapOf(
+            "hindi" to LearningContentRepository.getWordBlends("hindi"),
+            "english" to LearningContentRepository.getWordBlends("english"),
+            "math" to LearningContentRepository.getWordBlends("math")
+        )
+
+        // 4. Collect all quizzes
+        val quizzesMap = mapOf(
+            "hindi" to LearningContentRepository.getQuizzes("hindi"),
+            "english" to LearningContentRepository.getQuizzes("english"),
+            "math" to LearningContentRepository.getQuizzes("math")
+        )
+
+        // 5. Build master structure
+        val master = MasterAppContent(
+            game_items = existingItems,
+            alphabet_cards = alphabetCardsMap,
+            word_blends = wordBlendsMap,
+            quiz_questions = quizzesMap
+        )
+
+        val gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
+        val jsonOutput = gson.toJson(master)
+
+        // Write to assets/game_content.json
+        assetsFile.writeText(jsonOutput, Charsets.UTF_8)
+
+        // Write to root game_content.json (for GitHub repository)
+        File("../game_content.json").let {
+            if (it.exists() || it.parentFile.exists()) it.writeText(jsonOutput, Charsets.UTF_8)
+        }
+        File("game_content.json").writeText(jsonOutput, Charsets.UTF_8)
+
+        println("Successfully generated Master game_content.json with:")
+        println(" - Game items: ${existingItems.size}")
+        println(" - Hindi cards: ${alphabetCardsMap["hindi"]?.size}")
+        println(" - English cards: ${alphabetCardsMap["english"]?.size}")
+        println(" - Math cards: ${alphabetCardsMap["math"]?.size}")
+        println(" - Hindi blends: ${wordBlendsMap["hindi"]?.size}")
+        println(" - Quizzes: ${quizzesMap["hindi"]?.size}")
+    }
+}
+

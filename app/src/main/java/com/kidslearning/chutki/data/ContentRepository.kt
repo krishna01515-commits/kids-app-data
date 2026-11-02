@@ -5,8 +5,10 @@ import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
+import com.kidslearning.chutki.model.AlphabetCard
 import com.kidslearning.chutki.model.GameContent
 import com.kidslearning.chutki.model.QuizQuestion
+import com.kidslearning.chutki.model.WordBlend
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -63,6 +65,20 @@ data class CountCollectRoundData(
 )
 
 /**
+ * Master Data Class representing the complete remote app structure:
+ * 1. game_items (20 bilingual fruits, animals, numbers)
+ * 2. alphabet_cards (Hindi vowels/consonants, English A-Z, Math 1-100)
+ * 3. word_blends (Hindi, English, Math word builder blends)
+ * 4. quiz_questions (Quizzes and riddles)
+ */
+data class MasterAppContent(
+    val game_items: List<GameContent>? = null,
+    val alphabet_cards: Map<String, List<AlphabetCard>>? = null,
+    val word_blends: Map<String, List<WordBlend>>? = null,
+    val quiz_questions: Map<String, List<QuizQuestion>>? = null
+)
+
+/**
  * Singleton repository responsible for managing bilingual learning content.
  *
  * Capabilities:
@@ -98,6 +114,15 @@ object ContentRepository {
 
     @Volatile
     private var inMemoryItems: List<GameContent> = emptyList()
+
+    @Volatile
+    private var inMemoryAlphabetCards: Map<String, List<AlphabetCard>> = emptyMap()
+
+    @Volatile
+    private var inMemoryWordBlends: Map<String, List<WordBlend>> = emptyMap()
+
+    @Volatile
+    private var inMemoryQuizQuestions: Map<String, List<QuizQuestion>> = emptyMap()
 
     private val _contentFlow = MutableStateFlow<List<GameContent>>(emptyList())
     val contentFlow: StateFlow<List<GameContent>> = _contentFlow.asStateFlow()
@@ -281,17 +306,52 @@ object ContentRepository {
     }
 
     /**
-     * Parses a JSON string into a list of GameContent objects.
+     * Parses a JSON string.
+     * Supports both:
+     * 1. MasterAppContent JSON Object: contains game_items, alphabet_cards, word_blends, quiz_questions.
+     * 2. Direct JSON Array: contains a list of GameContent items.
      */
     fun parseJson(jsonString: String?): List<GameContent> {
         if (jsonString.isNullOrBlank()) return emptyList()
+        val trimmed = jsonString.trim()
         return try {
-            val listType = object : TypeToken<List<GameContent>>() {}.type
-            gson.fromJson<List<GameContent>>(jsonString, listType) ?: emptyList()
+            if (trimmed.startsWith("{")) {
+                val masterType = object : TypeToken<MasterAppContent>() {}.type
+                val master: MasterAppContent? = gson.fromJson(trimmed, masterType)
+                if (master != null) {
+                    master.alphabet_cards?.let { inMemoryAlphabetCards = it }
+                    master.word_blends?.let { inMemoryWordBlends = it }
+                    master.quiz_questions?.let { inMemoryQuizQuestions = it }
+                    master.game_items ?: emptyList()
+                } else {
+                    emptyList()
+                }
+            } else {
+                val listType = object : TypeToken<List<GameContent>>() {}.type
+                gson.fromJson<List<GameContent>>(trimmed, listType) ?: emptyList()
+            }
         } catch (e: Exception) {
             Log.e(TAG, "JSON parsing error: ${e.message}", e)
             emptyList()
         }
+    }
+
+    /**
+     * Dynamic Learning Content Query Methods (Bilingual Alphabets, Word Blends, Quizzes)
+     */
+    fun getDynamicAlphabetCards(subjectId: String): List<AlphabetCard> {
+        ensureLoaded(appContext)
+        return inMemoryAlphabetCards[subjectId.lowercase()] ?: emptyList()
+    }
+
+    fun getDynamicWordBlends(subjectId: String): List<WordBlend> {
+        ensureLoaded(appContext)
+        return inMemoryWordBlends[subjectId.lowercase()] ?: emptyList()
+    }
+
+    fun getDynamicQuizzes(subjectId: String): List<QuizQuestion> {
+        ensureLoaded(appContext)
+        return inMemoryQuizQuestions[subjectId.lowercase()] ?: emptyList()
     }
 
     // -------------------------------------------------------------

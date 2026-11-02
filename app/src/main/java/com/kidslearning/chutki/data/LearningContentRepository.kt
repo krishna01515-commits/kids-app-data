@@ -75,6 +75,10 @@ object LearningContentRepository {
 
     // 2. Alphabet Cards (Level 1)
     fun getAlphabetCards(subjectId: String): List<AlphabetCard> {
+        val dynamicCards = ContentRepository.getDynamicAlphabetCards(subjectId)
+        if (dynamicCards.isNotEmpty()) {
+            return dynamicCards
+        }
         return when (subjectId.lowercase()) {
             "hindi" -> listOf(
                 // ---- स्वर (Vowels) ----
@@ -847,109 +851,164 @@ object LearningContentRepository {
                 )
             )
 
-            else -> listOf( // Math
-                AlphabetCard(
-                    id = "ma_1",
-                    char = "1",
-                    wordHindi = "एक (One)",
-                    wordEnglish = "One Sun",
-                    emoji = "☀️",
-                    phonetic = "एक",
-                    hindiAudioSentence = "१ - यह है संख्या एक! आसमान में चमकता हुआ एक सूरज!",
-                    funFactHindi = "सूरज केवल एक है जो पूरी दुनिया को रोशनी देता है।"
-                ),
-                AlphabetCard(
-                    id = "ma_2",
-                    char = "2",
-                    wordHindi = "दो (Two)",
-                    wordEnglish = "Two Eyes",
-                    emoji = "👀",
-                    phonetic = "दो",
-                    hindiAudioSentence = "२ - यह है संख्या दो! हमारी देखने वाली दो प्यारी आंखें!",
-                    funFactHindi = "हमारे दो हाथ और दो पैर होते हैं।"
-                ),
-                AlphabetCard(
-                    id = "ma_3",
-                    char = "3",
-                    wordHindi = "तीन (Three)",
-                    wordEnglish = "Three Wheels",
-                    emoji = "🛺",
-                    phonetic = "तीन",
-                    hindiAudioSentence = "३ - यह है संख्या तीन! ऑटो रिक्शा के होते हैं तीन पहिए!",
-                    funFactHindi = "ट्रैफिक लाइट में भी तीन रंग होते हैं: लाल, पीला और हरा।"
-                ),
-                AlphabetCard(
-                    id = "ma_4",
-                    char = "4",
-                    wordHindi = "चार (Four)",
-                    wordEnglish = "Four Legs",
-                    emoji = "🧸",
-                    phonetic = "चार",
-                    hindiAudioSentence = "४ - यह है संख्या चार! कार और मेज के होते हैं चार पाए!",
-                    funFactHindi = "गाय, घोड़ा और हाथी सभी के चार पैर होते हैं।"
-                ),
-                AlphabetCard(
-                    id = "ma_5",
-                    char = "5",
-                    wordHindi = "पाँच (Five)",
-                    wordEnglish = "Five Fingers",
-                    emoji = "🖐️",
-                    phonetic = "पाँच",
-                    hindiAudioSentence = "५ - यह है संख्या पाँच! हमारे एक हाथ में होती हैं पाँच उंगलियाँ!",
-                    funFactHindi = "पाँच उंगलियाँ मिलकर एक मजबूत मुट्ठी बनाती हैं।"
-                ),
-                AlphabetCard(
-                    id = "ma_6",
-                    char = "6",
-                    wordHindi = "छह (Six)",
-                    wordEnglish = "Six Legs Insect",
-                    emoji = "🐝",
-                    phonetic = "छह",
-                    hindiAudioSentence = "६ - यह है संख्या छह! मधुमक्खी और चींटी की होती हैं छह टांगें!",
-                    funFactHindi = "कीट-पतंगों के छह पैर होते हैं।"
-                ),
-                AlphabetCard(
-                    id = "ma_7",
-                    char = "7",
-                    wordHindi = "सात (Seven)",
-                    wordEnglish = "Seven Colors Rainbow",
-                    emoji = "🌈",
-                    phonetic = "सात",
-                    hindiAudioSentence = "७ - यह है संख्या सात! इंद्रधनुष में होते हैं सात रंग और हफ्ते में सात दिन!",
-                    funFactHindi = "सात सुर मिलकर संगीत की सरगम बनाते हैं: सा रे ग म प ध नि।"
-                ),
-                AlphabetCard(
-                    id = "ma_8",
-                    char = "8",
-                    wordHindi = "आठ (Eight)",
-                    wordEnglish = "Eight Arms Octopus",
-                    emoji = "🐙",
-                    phonetic = "आठ",
-                    hindiAudioSentence = "८ - यह है संख्या आठ! ऑक्टोपस की होती हैं आठ भुजाएं!",
-                    funFactHindi = "मकड़ी के भी आठ पैर होते हैं।"
-                ),
-                AlphabetCard(
-                    id = "ma_9",
-                    char = "9",
-                    wordHindi = "नौ (Nine)",
-                    wordEnglish = "Nine Planets & Gems",
-                    emoji = "🪐",
-                    phonetic = "नौ",
-                    hindiAudioSentence = "९ - यह है संख्या नौ! नवरत्न और नौ ग्रह!",
-                    funFactHindi = "नौ सबसे बड़ी एकल अंक संख्या है।"
-                ),
-                AlphabetCard(
-                    id = "ma_10",
-                    char = "10",
-                    wordHindi = "दस (Ten)",
-                    wordEnglish = "Ten Fingers Both Hands",
-                    emoji = "🙌",
-                    phonetic = "दस",
-                    hindiAudioSentence = "१० - यह है संख्या दस! दोनों हाथों की कुल दस उंगलियाँ!",
-                    funFactHindi = "दस मिलकर एक दहाई बनती है।"
-                )
+            else -> getMathCards1To100()
+        }
+    }
+
+    private val hindiNumbers1To100 = listOf(
+        "एक", "दो", "तीन", "चार", "पाँच", "छह", "सात", "आठ", "नौ", "दस",
+        "ग्यारह", "बारह", "तेरह", "चौदह", "पंद्रह", "सोलह", "सत्रह", "अठारह", "उन्नीस", "बीस",
+        "इक्कीस", "बाईस", "तेईस", "चौबीस", "पच्चीस", "छब्बीस", "सत्ताईस", "अट्ठाईस", "उनतीस", "तीस",
+        "इकतीस", "बत्तीस", "तैंतीस", "चौंतीस", "पैंतीस", "छत्तीस", "सैंतीस", "अड़तीस", "उनतालीस", "चालीस",
+        "इकतालीस", "बयालीस", "तैंतालीस", "चवालीस", "पैंतालीस", "छियालीस", "सैंतालीस", "अड़तालीस", "उनचास", "पचास",
+        "इक्यावन", "बावन", "तिरपन", "चौवन", "बचपन", "छप्पन", "सत्तावन", "अट्ठावन", "उनसठ", "साठ",
+        "इकसठ", "बासठ", "तिरसठ", "चौंसठ", "पैंसठ", "छियासठ", "सड़सठ", "अड़सठ", "उनहत्तर", "सत्तर",
+        "इकहत्तर", "बहत्तर", "तिहत्तर", "चौहत्तर", "पचहत्तर", "छिहत्तर", "सतहत्तर", "अठहत्तर", "उन्यासी", "अस्सी",
+        "इक्यासी", "बयासी", "तिरासी", "चौरासी", "पचासी", "छियासी", "सत्तासी", "अट्ठासी", "नवासी", "नब्बे",
+        "इक्यानवे", "बावनवे", "तिरानवे", "चौरानवे", "पंचानवे", "छियानवे", "सत्तानवे", "अट्ठानवे", "निन्यानवे", "सौ"
+    )
+
+    private val englishNumbers1To100 = listOf(
+        "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+        "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty",
+        "Twenty One", "Twenty Two", "Twenty Three", "Twenty Four", "Twenty Five", "Twenty Six", "Twenty Seven", "Twenty Eight", "Twenty Nine", "Thirty",
+        "Thirty One", "Thirty Two", "Thirty Three", "Thirty Four", "Thirty Five", "Thirty Six", "Thirty Seven", "Thirty Eight", "Thirty Nine", "Forty",
+        "Forty One", "Forty Two", "Forty Three", "Forty Four", "Forty Five", "Forty Six", "Forty Seven", "Forty Eight", "Forty Nine", "Fifty",
+        "Fifty One", "Fifty Two", "Fifty Three", "Fifty Four", "Fifty Five", "Fifty Six", "Fifty Seven", "Fifty Eight", "Fifty Nine", "Sixty",
+        "Sixty One", "Sixty Two", "Sixty Three", "Sixty Four", "Sixty Five", "Sixty Six", "Sixty Seven", "Sixty Eight", "Sixty Nine", "Seventy",
+        "Seventy One", "Seventy Two", "Seventy Three", "Seventy Four", "Seventy Five", "Seventy Six", "Seventy Seven", "Seventy Eight", "Seventy Nine", "Eighty",
+        "Eighty One", "Eighty Two", "Eighty Three", "Eighty Four", "Eighty Five", "Eighty Six", "Eighty Eight", "Eighty Eight", "Eighty Nine", "Ninety",
+        "Ninety One", "Ninety Two", "Ninety Three", "Ninety Four", "Ninety Five", "Ninety Six", "Ninety Seven", "Ninety Eight", "Ninety Nine", "One Hundred"
+    )
+
+    fun getMathCards1To100(): List<AlphabetCard> {
+        val base1To10 = listOf(
+            AlphabetCard(
+                id = "ma_1",
+                char = "1",
+                wordHindi = "एक (One)",
+                wordEnglish = "One Sun",
+                emoji = "☀️",
+                phonetic = "एक",
+                hindiAudioSentence = "१ - यह है संख्या एक! आसमान में चमकता हुआ एक सूरज!",
+                funFactHindi = "सूरज केवल एक है जो पूरी दुनिया को रोशनी देता है।"
+            ),
+            AlphabetCard(
+                id = "ma_2",
+                char = "2",
+                wordHindi = "दो (Two)",
+                wordEnglish = "Two Eyes",
+                emoji = "👀",
+                phonetic = "दो",
+                hindiAudioSentence = "२ - यह है संख्या दो! हमारी देखने वाली दो प्यारी आंखें!",
+                funFactHindi = "हमारे दो हाथ और दो पैर होते हैं।"
+            ),
+            AlphabetCard(
+                id = "ma_3",
+                char = "3",
+                wordHindi = "तीन (Three)",
+                wordEnglish = "Three Wheels",
+                emoji = "🛺",
+                phonetic = "तीन",
+                hindiAudioSentence = "३ - यह है संख्या तीन! ऑटो रिक्शा के होते हैं तीन पहिए!",
+                funFactHindi = "ट्रैफिक लाइट में भी तीन रंग होते हैं: लाल, पीला और हरा।"
+            ),
+            AlphabetCard(
+                id = "ma_4",
+                char = "4",
+                wordHindi = "चार (Four)",
+                wordEnglish = "Four Legs",
+                emoji = "🧸",
+                phonetic = "चार",
+                hindiAudioSentence = "४ - यह है संख्या चार! कार और मेज के होते हैं चार पाए!",
+                funFactHindi = "गाय, घोड़ा और हाथी सभी के चार पैर होते हैं।"
+            ),
+            AlphabetCard(
+                id = "ma_5",
+                char = "5",
+                wordHindi = "पाँच (Five)",
+                wordEnglish = "Five Fingers",
+                emoji = "🖐️",
+                phonetic = "पाँच",
+                hindiAudioSentence = "५ - यह है संख्या पाँच! हमारे एक हाथ में होती हैं पाँच उंगलियाँ!",
+                funFactHindi = "पाँच उंगलियाँ मिलकर एक मजबूत मुट्ठी बनाती हैं।"
+            ),
+            AlphabetCard(
+                id = "ma_6",
+                char = "6",
+                wordHindi = "छह (Six)",
+                wordEnglish = "Six Legs Insect",
+                emoji = "🐝",
+                phonetic = "छह",
+                hindiAudioSentence = "६ - यह है संख्या छह! मधुमक्खी और चींटी की होती हैं छह टांगें!",
+                funFactHindi = "कीट-पतंगों के छह पैर होते हैं।"
+            ),
+            AlphabetCard(
+                id = "ma_7",
+                char = "7",
+                wordHindi = "सात (Seven)",
+                wordEnglish = "Seven Colors Rainbow",
+                emoji = "🌈",
+                phonetic = "सात",
+                hindiAudioSentence = "७ - यह है संख्या सात! इंद्रधनुष में होते हैं सात रंग और हफ्ते में सात दिन!",
+                funFactHindi = "सात सुर मिलकर संगीत की सरगम बनाते हैं: सा रे ग म प ध नि।"
+            ),
+            AlphabetCard(
+                id = "ma_8",
+                char = "8",
+                wordHindi = "आठ (Eight)",
+                wordEnglish = "Eight Arms Octopus",
+                emoji = "🐙",
+                phonetic = "आठ",
+                hindiAudioSentence = "८ - यह है संख्या आठ! ऑक्टोपस की होती हैं आठ भुजाएं!",
+                funFactHindi = "मकड़ी के भी आठ पैर होते हैं।"
+            ),
+            AlphabetCard(
+                id = "ma_9",
+                char = "9",
+                wordHindi = "नौ (Nine)",
+                wordEnglish = "Nine Planets & Gems",
+                emoji = "🪐",
+                phonetic = "नौ",
+                hindiAudioSentence = "९ - यह है संख्या नौ! नवरत्न और नौ ग्रह!",
+                funFactHindi = "नौ सबसे बड़ी एकल अंक संख्या है।"
+            ),
+            AlphabetCard(
+                id = "ma_10",
+                char = "10",
+                wordHindi = "दस (Ten)",
+                wordEnglish = "Ten Fingers Both Hands",
+                emoji = "🙌",
+                phonetic = "दस",
+                hindiAudioSentence = "१० - यह है संख्या दस! दोनों हाथों की कुल दस उंगलियाँ!",
+                funFactHindi = "दस मिलकर एक दहाई बनती है।"
+            )
+        )
+
+        val cards11To100 = (11..100).map { num ->
+            val idx = num - 1
+            val hiName = hindiNumbers1To100.getOrElse(idx) { "$num" }
+            val enName = englishNumbers1To100.getOrElse(idx) { "$num" }
+            val emoji = when (num) {
+                100 -> "💯"
+                50 -> "🌟"
+                25 -> "🥈"
+                75 -> "🥇"
+                else -> if (num % 10 == 0) "🔟" else "🔢"
+            }
+            AlphabetCard(
+                id = "ma_$num",
+                char = "$num",
+                wordHindi = "$hiName ($num)",
+                wordEnglish = "$enName ($num)",
+                emoji = emoji,
+                phonetic = hiName,
+                hindiAudioSentence = "संख्या $num! $num मतलब $hiName!",
+                funFactHindi = "संख्या $num बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
             )
         }
+
+        return base1To10 + cards11To100
     }
 
     // 3. Tracing Letters (Level 2) - Includes ALL alphabets for every subject
@@ -1088,6 +1147,10 @@ object LearningContentRepository {
 
     // 4. Word & Blend Combination (Level 3)
     fun getWordBlends(subjectId: String): List<WordBlend> {
+        val dynamicBlends = ContentRepository.getDynamicWordBlends(subjectId)
+        if (dynamicBlends.isNotEmpty()) {
+            return dynamicBlends
+        }
         return when (subjectId.lowercase()) {
             "hindi" -> listOf(
                 WordBlend(
@@ -1368,6 +1431,10 @@ object LearningContentRepository {
 
     // 5. Interactive Quizzes (Level 4)
     fun getQuizzes(subjectId: String): List<QuizQuestion> {
+        val dynamicQuizzes = ContentRepository.getDynamicQuizzes(subjectId)
+        if (dynamicQuizzes.isNotEmpty()) {
+            return dynamicQuizzes
+        }
         return when (subjectId.lowercase()) {
             "hindi" -> listOf(
                 QuizQuestion(

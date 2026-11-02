@@ -1,163 +1,2464 @@
-[
-  {
-    "id": 1,
-    "name_en": "Apple",
-    "name_hi": "सेब",
-    "audio_text_en": "Apple. An apple is a sweet, red, and healthy fruit.",
-    "audio_text_hi": "सेब। सेब एक मीठा, लाल और स्वास्थ्यवर्धक फल है।",
-    "level": 1
+{
+  "game_items": [
+    {
+      "id": 1,
+      "name_en": "Apple",
+      "name_hi": "सेब",
+      "audio_text_en": "Apple. An apple is a sweet, red, and healthy fruit.",
+      "audio_text_hi": "सेब। सेब एक मीठा, लाल और स्वास्थ्यवर्धक फल है।",
+      "level": 1
+    },
+    {
+      "id": 2,
+      "name_en": "Banana",
+      "name_hi": "केला",
+      "audio_text_en": "Banana. A sweet yellow fruit that gives lots of energy.",
+      "audio_text_hi": "केला। केला एक मीठा और पीला फल है जो बहुत ऊर्जा देता है।",
+      "level": 1
+    },
+    {
+      "id": 3,
+      "name_en": "Mango",
+      "name_hi": "आम",
+      "audio_text_en": "Mango. Mango is juicy, sweet, and known as the king of fruits.",
+      "audio_text_hi": "आम। आम फलों का राजा है और बहुत रसीला व मीठा होता है।",
+      "level": 1
+    },
+    {
+      "id": 4,
+      "name_en": "Orange",
+      "name_hi": "संतरा",
+      "audio_text_en": "Orange. A round, tangy and juicy citrus fruit rich in vitamin C.",
+      "audio_text_hi": "संतरा। संतरा एक खट्टा-मीठा रसीला फल है जिसमें विटामिन सी होता है।",
+      "level": 2
+    },
+    {
+      "id": 5,
+      "name_en": "Grapes",
+      "name_hi": "अंगूर",
+      "audio_text_en": "Grapes. Small and sweet berries that grow together in bunches.",
+      "audio_text_hi": "अंगूर। अंगूर गुच्छों में लगने वाले छोटे, मीठे और रसीले फल हैं।",
+      "level": 2
+    },
+    {
+      "id": 6,
+      "name_en": "Watermelon",
+      "name_hi": "तरबूज",
+      "audio_text_en": "Watermelon. A big green summer fruit that is red, sweet, and juicy inside.",
+      "audio_text_hi": "तरबूज। तरबूज गर्मियों का बड़ा फल है जो अंदर से लाल और बहुत रसीला होता है।",
+      "level": 3
+    },
+    {
+      "id": 7,
+      "name_en": "Papaya",
+      "name_hi": "पपीता",
+      "audio_text_en": "Papaya. A soft and sweet tropical fruit that is good for health and digestion.",
+      "audio_text_hi": "पपीता। पपीता एक स्वादिष्ट पीला फल है जो सेहत और पाचन के लिए बहुत लाभकारी है।",
+      "level": 3
+    },
+    {
+      "id": 8,
+      "name_en": "Cow",
+      "name_hi": "गाय",
+      "audio_text_en": "Cow. The cow is a gentle domestic animal that gives us fresh and healthy milk.",
+      "audio_text_hi": "गाय। गाय एक सीधी और शांत पालतू पशु है जो हमें पौष्टिक दूध देती है।",
+      "level": 1
+    },
+    {
+      "id": 9,
+      "name_en": "Dog",
+      "name_hi": "कुत्ता",
+      "audio_text_en": "Dog. The dog is a loyal and faithful friend who guards our home and barks woof woof.",
+      "audio_text_hi": "कुत्ता। कुत्ता एक वफादार पालतू जानवर है जो घर की रखवाली करता है और भौं-भौं करता है।",
+      "level": 1
+    },
+    {
+      "id": 10,
+      "name_en": "Cat",
+      "name_hi": "बिल्ली",
+      "audio_text_en": "Cat. The cat is a cute and playful pet that drinks milk and says meow meow.",
+      "audio_text_hi": "बिल्ली। बिल्ली एक प्यारी और फुर्तीली पालतू जानवर है जो म्याऊं-म्याऊं करती है।",
+      "level": 1
+    },
+    {
+      "id": 11,
+      "name_en": "Lion",
+      "name_hi": "शेर",
+      "audio_text_en": "Lion. The lion is known as the king of the jungle and has a powerful roar.",
+      "audio_text_hi": "शेर। शेर जंगल का राजा कहलाता है और जंगल में जोर से दहाड़ता है।",
+      "level": 2
+    },
+    {
+      "id": 12,
+      "name_en": "Elephant",
+      "name_hi": "हाथी",
+      "audio_text_en": "Elephant. The elephant is the largest land animal with big ears and a long trunk.",
+      "audio_text_hi": "हाथी। हाथी जमीन पर रहने वाला सबसे बड़ा जानवर है जिसके बड़े कान और लंबी सूंड होती है।",
+      "level": 2
+    },
+    {
+      "id": 13,
+      "name_en": "Tiger",
+      "name_hi": "बाघ",
+      "audio_text_en": "Tiger. The tiger is a magnificent wild cat with black stripes and the national animal of India.",
+      "audio_text_hi": "बाघ। बाघ भारत का राष्ट्रीय पशु है जिसके शरीर पर सुंदर काली धारियां होती हैं।",
+      "level": 3
+    },
+    {
+      "id": 14,
+      "name_en": "Monkey",
+      "name_hi": "बंदर",
+      "audio_text_en": "Monkey. The monkey is a naughty and clever animal that loves jumping on trees.",
+      "audio_text_hi": "बंदर। बंदर एक नटखट और चालाक जानवर है जो पेड़ों पर कूदता है और सबको हंसाता है।",
+      "level": 3
+    },
+    {
+      "id": 15,
+      "name_en": "One",
+      "name_hi": "एक",
+      "audio_text_en": "One. Number one stands for a single item, just like our one bright sun in the sky.",
+      "audio_text_hi": "एक। संख्या एक, जैसे आसमान में चमकता हुआ अकेला सूरज।",
+      "level": 1
+    },
+    {
+      "id": 16,
+      "name_en": "Two",
+      "name_hi": "दो",
+      "audio_text_en": "Two. Number two represents a pair, like our two bright eyes and two hands.",
+      "audio_text_hi": "दो। संख्या दो, जैसे हमारी देखने के लिए दो आँखें और काम करने के लिए दो हाथ।",
+      "level": 1
+    },
+    {
+      "id": 17,
+      "name_en": "Three",
+      "name_hi": "तीन",
+      "audio_text_en": "Three. Number three, like the three colors in our national flag and three wheels of a rickshaw.",
+      "audio_text_hi": "तीन। संख्या तीन, जैसे हमारे तिरंगे झंडे के तीन रंग और ऑटो के तीन पहिए।",
+      "level": 2
+    },
+    {
+      "id": 18,
+      "name_en": "Four",
+      "name_hi": "चार",
+      "audio_text_en": "Four. Number four, like the four wheels of a car and four legs of a table.",
+      "audio_text_hi": "चार। संख्या चार, जैसे कार के चार पहिए और मेज के चार पाए।",
+      "level": 2
+    },
+    {
+      "id": 19,
+      "name_en": "Five",
+      "name_hi": "पाँच",
+      "audio_text_en": "Five. Number five, like the five fingers on each hand.",
+      "audio_text_hi": "पाँच। संख्या पाँच, जैसे हमारे एक हाथ में पाँच उंगलियाँ होती हैं।",
+      "level": 3
+    },
+    {
+      "id": 20,
+      "name_en": "Six",
+      "name_hi": "छह",
+      "audio_text_en": "Six. Number six, like the six sides of a cube and six legs of a honeybee.",
+      "audio_text_hi": "छह। संख्या छह, जैसे तितलियों और मधुमक्खियों के छह पैर होते हैं।",
+      "level": 3
+    }
+  ],
+  "alphabet_cards": {
+    "hindi": [
+      {
+        "id": "hi_a",
+        "char": "अ",
+        "wordHindi": "अनार",
+        "wordEnglish": "Pomegranate",
+        "emoji": "🍎",
+        "phonetic": "A",
+        "hindiAudioSentence": "अ से अनार! अनार के दाने लाल लाल और बहुत मीठे होते हैं!",
+        "funFactHindi": "अनार खाने से सेहत अच्छी होती है और खून बढ़ता है।"
+      },
+      {
+        "id": "hi_aa",
+        "char": "आ",
+        "wordHindi": "आम",
+        "wordEnglish": "Mango",
+        "emoji": "🥭",
+        "phonetic": "Aa",
+        "hindiAudioSentence": "आ से आम! आम फलों का राजा है!",
+        "funFactHindi": "गर्मियों में मीठा-मीठा रसीला आम सबको पसंद आता है।"
+      },
+      {
+        "id": "hi_i",
+        "char": "इ",
+        "wordHindi": "इमली",
+        "wordEnglish": "Tamarind",
+        "emoji": "🌿",
+        "phonetic": "I",
+        "hindiAudioSentence": "इ से इमली! खट्टी मीठी इमली!",
+        "funFactHindi": "इमली की चटनी बहुत स्वादिष्ट बनती है।"
+      },
+      {
+        "id": "hi_ee",
+        "char": "ई",
+        "wordHindi": "ईख",
+        "wordEnglish": "Sugarcane",
+        "emoji": "🎋",
+        "phonetic": "Ee",
+        "hindiAudioSentence": "ई से ईख! ईख मतलब मीठा गन्ना!",
+        "funFactHindi": "ईख के रस से मीठा गुड़ और चीनी बनती है।"
+      },
+      {
+        "id": "hi_u",
+        "char": "उ",
+        "wordHindi": "उल्लू",
+        "wordEnglish": "Owl",
+        "emoji": "🦉",
+        "phonetic": "U",
+        "hindiAudioSentence": "उ से उल्लू! रात को जागे उल्लू भाई!",
+        "funFactHindi": "उल्लू रात के अंधेरे में भी बहुत साफ देख सकता है।"
+      },
+      {
+        "id": "hi_oo",
+        "char": "ऊ",
+        "wordHindi": "ऊन",
+        "wordEnglish": "Wool",
+        "emoji": "🧶",
+        "phonetic": "Oo",
+        "hindiAudioSentence": "ऊ से ऊन! ऊन से बनते हैं गर्म-गर्म स्वेटर!",
+        "funFactHindi": "सर्दियों में ऊनी कपड़े हमें ठंड से बचाते हैं।"
+      },
+      {
+        "id": "hi_ri",
+        "char": "ऋ",
+        "wordHindi": "ऋषि",
+        "wordEnglish": "Sage",
+        "emoji": "🧘",
+        "phonetic": "Ri",
+        "hindiAudioSentence": "ऋ से ऋषि! ज्ञान और तपस्या की मूरत ऋषि मुनि!",
+        "funFactHindi": "ऋषि मुनि प्रकृति के बीच शांति से ध्यान लगाते हैं।"
+      },
+      {
+        "id": "hi_e",
+        "char": "ए",
+        "wordHindi": "एड़ी",
+        "wordEnglish": "Heel",
+        "emoji": "🦶",
+        "phonetic": "E",
+        "hindiAudioSentence": "ए से एड़ी! हमारे पैरों की मजबूत एड़ी!",
+        "funFactHindi": "एड़ी के सहारे हम सीधे खड़े होते हैं और दौड़ते हैं।"
+      },
+      {
+        "id": "hi_ai",
+        "char": "ऐ",
+        "wordHindi": "ऐनक",
+        "wordEnglish": "Spectacles",
+        "emoji": "👓",
+        "phonetic": "Ai",
+        "hindiAudioSentence": "ऐ से ऐनक! दादा जी की प्यारी ऐनक!",
+        "funFactHindi": "ऐनक लगाने से छोटी चीजें भी साफ दिखाई देती हैं।"
+      },
+      {
+        "id": "hi_o",
+        "char": "ओ",
+        "wordHindi": "ओखली",
+        "wordEnglish": "Mortar",
+        "emoji": "🥣",
+        "phonetic": "O",
+        "hindiAudioSentence": "ओ से ओखली! मसाले कूटने वाली पत्थर की ओखली!",
+        "funFactHindi": "ओखली में कुटे मसाले खाने में स्वाद बढ़ाते हैं।"
+      },
+      {
+        "id": "hi_au",
+        "char": "औ",
+        "wordHindi": "औरत",
+        "wordEnglish": "Woman",
+        "emoji": "👩",
+        "phonetic": "Au",
+        "hindiAudioSentence": "औ से औरत! सबकी देखभाल करने वाली प्यारी मां!",
+        "funFactHindi": "माता-पिता का आदर करना सबसे अच्छी आदत है।"
+      },
+      {
+        "id": "hi_am",
+        "char": "अं",
+        "wordHindi": "अंगूर",
+        "wordEnglish": "Grapes",
+        "emoji": "🍇",
+        "phonetic": "Am",
+        "hindiAudioSentence": "अं से अंगूर! गुच्छों में लटके मीठे-मीठे अंगूर!",
+        "funFactHindi": "अंगूर काले और हरे दोनों रंगों के होते हैं।"
+      },
+      {
+        "id": "hi_ah",
+        "char": "अः",
+        "wordHindi": "अः (खाली)",
+        "wordEnglish": "Aha (Empty)",
+        "emoji": "👏",
+        "phonetic": "Ah",
+        "hindiAudioSentence": "अः से होता है खाली! मिलकर बजाओ बच्चों ताली!",
+        "funFactHindi": "यहाँ हमारे सभी स्वर पूरे होते हैं!"
+      },
+      {
+        "id": "hi_k",
+        "char": "क",
+        "wordHindi": "कबूतर",
+        "wordEnglish": "Pigeon",
+        "emoji": "🕊️",
+        "phonetic": "Ka",
+        "hindiAudioSentence": "क से कबूतर! गुटर गूँ करता शांत कबूतर!",
+        "funFactHindi": "कबूतर आसमान में बहुत ऊँची और दूर तक उड़ान भरता है।"
+      },
+      {
+        "id": "hi_kh",
+        "char": "ख",
+        "wordHindi": "खरगोश",
+        "wordEnglish": "Rabbit",
+        "emoji": "🐰",
+        "phonetic": "Kha",
+        "hindiAudioSentence": "ख से खरगोश! प्यारा, सफेद और फुर्तीला खरगोश!",
+        "funFactHindi": "खरगोश को लाल-लाल गाजर खाना बहुत पसंद है।"
+      },
+      {
+        "id": "hi_g",
+        "char": "ग",
+        "wordHindi": "गमला",
+        "wordEnglish": "Flower Pot",
+        "emoji": "🪴",
+        "phonetic": "Ga",
+        "hindiAudioSentence": "ग से गमला! गमले में खिले सुंदर रंग-बिरंगे फूल!",
+        "funFactHindi": "पेड़-पौधे हमें ताजी और शुद्ध ऑक्सीजन देते हैं।"
+      },
+      {
+        "id": "hi_gh",
+        "char": "घ",
+        "wordHindi": "घर",
+        "wordEnglish": "House",
+        "emoji": "🏠",
+        "phonetic": "Gha",
+        "hindiAudioSentence": "घ से घर! हमारा प्यारा और खुशहाल घर!",
+        "funFactHindi": "घर में हम अपने पूरे परिवार के साथ मिल-जुलकर रहते हैं।"
+      },
+      {
+        "id": "hi_nga",
+        "char": "ङ",
+        "wordHindi": "ङ (खाली)",
+        "wordEnglish": "Nga",
+        "emoji": "🔔",
+        "phonetic": "Nga",
+        "hindiAudioSentence": "ङ से होता है खाली! क वर्ग हुआ पूरा, बजाओ ताली!",
+        "funFactHindi": "ङ पंचमाक्षर कहलाता है।"
+      },
+      {
+        "id": "hi_ch",
+        "char": "च",
+        "wordHindi": "चम्मच",
+        "wordEnglish": "Spoon",
+        "emoji": "🥄",
+        "phonetic": "Cha",
+        "hindiAudioSentence": "च से चम्मच! खीर और हलवा खाने वाली चम्मच!",
+        "funFactHindi": "चम्मच से खाना खाने से हाथ साफ रहते हैं।"
+      },
+      {
+        "id": "hi_chh",
+        "char": "छ",
+        "wordHindi": "छतरी",
+        "wordEnglish": "Umbrella",
+        "emoji": "☂️",
+        "phonetic": "Chha",
+        "hindiAudioSentence": "छ से छतरी! बारिश और धूप से बचाने वाली रंगीन छतरी!",
+        "funFactHindi": "बरसात में छतरी लगाने से हम भीगने से बचते हैं।"
+      },
+      {
+        "id": "hi_j",
+        "char": "ज",
+        "wordHindi": "जहाज",
+        "wordEnglish": "Ship",
+        "emoji": "🚢",
+        "phonetic": "Ja",
+        "hindiAudioSentence": "ज से जहाज! समंदर की लहरों पर तैरता पानी का जहाज!",
+        "funFactHindi": "पानी का जहाज बहुत बड़ा होता है और भारी सामान ले जाता है।"
+      },
+      {
+        "id": "hi_jh",
+        "char": "झ",
+        "wordHindi": "झंडा",
+        "wordEnglish": "Flag",
+        "emoji": "🇮🇳",
+        "phonetic": "Jha",
+        "hindiAudioSentence": "झ से झंडा! हमारा प्यारा तिरंगा झंडा!",
+        "funFactHindi": "हमारे राष्ट्रीय ध्वज में तीन रंग होते हैं: केसरिया, सफेद और हरा।"
+      },
+      {
+        "id": "hi_nya",
+        "char": "ञ",
+        "wordHindi": "ञ (खाली)",
+        "wordEnglish": "Nya",
+        "emoji": "✨",
+        "phonetic": "Nya",
+        "hindiAudioSentence": "ञ से होता है खाली! च वर्ग हुआ पूरा, बजाओ ताली!",
+        "funFactHindi": "ञ भी पंचम वर्ण है।"
+      },
+      {
+        "id": "hi_t_hard",
+        "char": "ट",
+        "wordHindi": "टमाटर",
+        "wordEnglish": "Tomato",
+        "emoji": "🍅",
+        "phonetic": "Ta",
+        "hindiAudioSentence": "ट से टमाटर! गोल मटोल लाल टमाटर!",
+        "funFactHindi": "टमाटर में विटामिन सी होता है जो इम्युनिटी बढ़ाता है।"
+      },
+      {
+        "id": "hi_th_hard",
+        "char": "ठ",
+        "wordHindi": "ठठेरा",
+        "wordEnglish": "Coppersmith",
+        "emoji": "🔨",
+        "phonetic": "Tha",
+        "hindiAudioSentence": "ठ से ठठेरा! ठक-ठक बर्तन बनाने वाले ठठेरा!",
+        "funFactHindi": "ठठेरा धातु के बर्तन बनाते हैं।"
+      },
+      {
+        "id": "hi_d_hard",
+        "char": "ड",
+        "wordHindi": "डमरू",
+        "wordEnglish": "Damru",
+        "emoji": "🪘",
+        "phonetic": "Da",
+        "hindiAudioSentence": "ड से डमरू! डम-डम बाजे प्यारा डमरू!",
+        "funFactHindi": "डमरू बजाने से बहुत मधुर संगीत निकलता है।"
+      },
+      {
+        "id": "hi_dh_hard",
+        "char": "ढ",
+        "wordHindi": "ढोलक",
+        "wordEnglish": "Dholak",
+        "emoji": "🥁",
+        "phonetic": "Dha",
+        "hindiAudioSentence": "ढ से ढोलक! ढम-ढम बजती खुशियों की ढोलक!",
+        "funFactHindi": "त्योहारों और शादी में ढोलक बजाई जाती है।"
+      },
+      {
+        "id": "hi_na_hard",
+        "char": "ण",
+        "wordHindi": "बाण (ण)",
+        "wordEnglish": "Arrow",
+        "emoji": "🏹",
+        "phonetic": "Nna",
+        "hindiAudioSentence": "ण से बाण! तीर-कमान का लक्ष्य भेदने वाला बाण!",
+        "funFactHindi": "ण वर्ण शब्दों के बीच या अंत में आता है।"
+      },
+      {
+        "id": "hi_t_soft",
+        "char": "त",
+        "wordHindi": "तरबूज",
+        "wordEnglish": "Watermelon",
+        "emoji": "🍉",
+        "phonetic": "Ta",
+        "hindiAudioSentence": "त से तरबूज! गर्मियों का ठंडा-ठंडा मीठा तरबूज!",
+        "funFactHindi": "तरबूज में 90% पानी होता है जो शरीर को हाइड्रेटेड रखता है।"
+      },
+      {
+        "id": "hi_th_soft",
+        "char": "थ",
+        "wordHindi": "थर्मस",
+        "wordEnglish": "Thermos",
+        "emoji": "🍶",
+        "phonetic": "Tha",
+        "hindiAudioSentence": "थ से थर्मस! गर्म दूध को गर्म रखे, ठंडे पानी को ठंडा!",
+        "funFactHindi": "थर्मस में तापमान लंबे समय तक वैसा ही रहता है।"
+      },
+      {
+        "id": "hi_d_soft",
+        "char": "द",
+        "wordHindi": "दीपक",
+        "wordEnglish": "Diya",
+        "emoji": "🪔",
+        "phonetic": "Da",
+        "hindiAudioSentence": "द से दीपक! अंधकार मिटाकर रोशनी फैलाने वाला दीपक!",
+        "funFactHindi": "दिवाली पर हम पूरे घर में मिट्टी के दीपक जलाते हैं।"
+      },
+      {
+        "id": "hi_dh_soft",
+        "char": "ध",
+        "wordHindi": "धनुष",
+        "wordEnglish": "Bow",
+        "emoji": "🏹",
+        "phonetic": "Dha",
+        "hindiAudioSentence": "ध से धनुष! मर्यादा पुरुषोत्तम श्री राम जी का धनुष!",
+        "funFactHindi": "धनुष से एकाग्रता और लक्ष्य साधना सीखते हैं।"
+      },
+      {
+        "id": "hi_n_soft",
+        "char": "न",
+        "wordHindi": "नल",
+        "wordEnglish": "Tap",
+        "emoji": "🚰",
+        "phonetic": "Na",
+        "hindiAudioSentence": "न से नल! पानी देता प्यारा नल, जल को कभी मत बहाओ!",
+        "funFactHindi": "जल ही जीवन है, इसलिए नल बंद रखना चाहिए।"
+      },
+      {
+        "id": "hi_p",
+        "char": "प",
+        "wordHindi": "पतंग",
+        "wordEnglish": "Kite",
+        "emoji": "🪁",
+        "phonetic": "Pa",
+        "hindiAudioSentence": "प से पतंग! हवा में गोते लगाती रंग-बिरंगी पतंग!",
+        "funFactHindi": "मकर संक्रांति पर आसमान में हजारों पतंगें उड़ती हैं।"
+      },
+      {
+        "id": "hi_ph",
+        "char": "फ",
+        "wordHindi": "फल",
+        "wordEnglish": "Fruits",
+        "emoji": "🍎",
+        "phonetic": "Pha",
+        "hindiAudioSentence": "फ से फल! ताजे-ताजे फल खाओ, तंदुरुस्त बन जाओ!",
+        "funFactHindi": "रोज ताजे फल खाने से शरीर को सभी विटामिन्स मिलते हैं।"
+      },
+      {
+        "id": "hi_b",
+        "char": "ब",
+        "wordHindi": "बस",
+        "wordEnglish": "Bus",
+        "emoji": "🚌",
+        "phonetic": "Ba",
+        "hindiAudioSentence": "ब से बस! स्कूल ले जाने वाली प्यारी पीली बस!",
+        "funFactHindi": "बस में हम दोस्तों के साथ सफर का आनंद लेते हैं।"
+      },
+      {
+        "id": "hi_bh",
+        "char": "भ",
+        "wordHindi": "भालू",
+        "wordEnglish": "Bear",
+        "emoji": "🐻",
+        "phonetic": "Bha",
+        "hindiAudioSentence": "भ से भालू! जंगल में झूमता हुआ प्यारा मोटा भालू!",
+        "funFactHindi": "भालू को मीठा-मीठा शहद खाना बहुत पसंद होता है।"
+      },
+      {
+        "id": "hi_m",
+        "char": "म",
+        "wordHindi": "मछली",
+        "wordEnglish": "Fish",
+        "emoji": "🐟",
+        "phonetic": "Ma",
+        "hindiAudioSentence": "म से मछली! मछली जल की रानी है, जीवन उसका पानी है!",
+        "funFactHindi": "मछलियां गलफड़ों (gills) से पानी के अंदर सांस लेती हैं।"
+      },
+      {
+        "id": "hi_y",
+        "char": "य",
+        "wordHindi": "यज्ञ",
+        "wordEnglish": "Yajna",
+        "emoji": "🔥",
+        "phonetic": "Ya",
+        "hindiAudioSentence": "य से यज्ञ! पवित्र अग्नि और मंत्रों वाला पावन यज्ञ!",
+        "funFactHindi": "यज्ञ करने से वातावरण शुद्ध और सुगंधित होता है।"
+      },
+      {
+        "id": "hi_r",
+        "char": "र",
+        "wordHindi": "रथ",
+        "wordEnglish": "Chariot",
+        "emoji": "🎠",
+        "phonetic": "Ra",
+        "hindiAudioSentence": "र से रथ! घोड़ों से चलने वाला राजाओं का सुंदर रथ!",
+        "funFactHindi": "प्राचीन काल में राजा रथ पर सवार होकर चलते थे।"
+      },
+      {
+        "id": "hi_l",
+        "char": "ल",
+        "wordHindi": "लट्टू",
+        "wordEnglish": "Spinning Top",
+        "emoji": "🪀",
+        "phonetic": "La",
+        "hindiAudioSentence": "ल से लट्टू! जमीन पर गोल-गोल फिरकी की तरह नाचता लट्टू!",
+        "funFactHindi": "लट्टू घुमाना बच्चों का बहुत पसंदीदा खेल है।"
+      },
+      {
+        "id": "hi_v",
+        "char": "व",
+        "wordHindi": "वट (वृक्ष)",
+        "wordEnglish": "Banyan Tree",
+        "emoji": "🌳",
+        "phonetic": "Va",
+        "hindiAudioSentence": "व से वट! छाया देने वाला विशाल बरगद का पेड़!",
+        "funFactHindi": "बरगद हमारा राष्ट्रीय वृक्ष है और सैकड़ों साल जीता है।"
+      },
+      {
+        "id": "hi_sh",
+        "char": "श",
+        "wordHindi": "शलजम",
+        "wordEnglish": "Turnip",
+        "emoji": "🥗",
+        "phonetic": "Sha",
+        "hindiAudioSentence": "श से शलजम! सेहतमंद और स्वादिष्ट शलजम!",
+        "funFactHindi": "शलजम का सलाद खाने से पाचन तंत्र अच्छा रहता है।"
+      },
+      {
+        "id": "hi_shh",
+        "char": "ष",
+        "wordHindi": "षट्कोण",
+        "wordEnglish": "Hexagon",
+        "emoji": "⬡",
+        "phonetic": "Shha",
+        "hindiAudioSentence": "ष से षट्कोण! छह कोनों वाला सुंदर गणितीय आकार!",
+        "funFactHindi": "षट्कोण में छह समान भुजाएं और छह कोण होते हैं।"
+      },
+      {
+        "id": "hi_s",
+        "char": "स",
+        "wordHindi": "सूरज",
+        "wordEnglish": "Sun",
+        "emoji": "☀️",
+        "phonetic": "Sa",
+        "hindiAudioSentence": "स से सूरज! सुबह-सुबह सुनहरी रोशनी लेकर आता सूरज!",
+        "funFactHindi": "सूरज से हमें धूप, ऊर्जा और विटामिन डी मिलता है।"
+      },
+      {
+        "id": "hi_h",
+        "char": "ह",
+        "wordHindi": "हाथी",
+        "wordEnglish": "Elephant",
+        "emoji": "🐘",
+        "phonetic": "Ha",
+        "hindiAudioSentence": "ह से हाथी! सूंड हिलाता बड़ा और समझदार हाथी राजा!",
+        "funFactHindi": "हाथी की याददाश्त बहुत तेज होती है।"
+      },
+      {
+        "id": "hi_ksh",
+        "char": "क्ष",
+        "wordHindi": "क्षत्रिय",
+        "wordEnglish": "Warrior",
+        "emoji": "⚔️",
+        "phonetic": "Ksha",
+        "hindiAudioSentence": "क्ष से क्षत्रिय! देश और धर्म की रक्षा करने वाले वीर क्षत्रिय!",
+        "funFactHindi": "क और ष मिलकर 'क्ष' बनता है।"
+      },
+      {
+        "id": "hi_tr",
+        "char": "त्र",
+        "wordHindi": "त्रिशूल",
+        "wordEnglish": "Trident",
+        "emoji": "🔱",
+        "phonetic": "Tra",
+        "hindiAudioSentence": "त्र से त्रिशूल! तीन धारदार नोकों वाला पावन त्रिशूल!",
+        "funFactHindi": "त और र मिलकर 'त्र' बनता है।"
+      },
+      {
+        "id": "hi_gy",
+        "char": "ज्ञ",
+        "wordHindi": "ज्ञानी",
+        "wordEnglish": "Wise / Scholar",
+        "emoji": "📚",
+        "phonetic": "Gya",
+        "hindiAudioSentence": "ज्ञ से ज्ञानी! मन लगाकर पढ़ने वाले बच्चे बनते हैं ज्ञानी!",
+        "funFactHindi": "ज और ञ मिलकर 'ज्ञ' बनता है। संपूर्ण वर्णमाला पूर्ण हुई!"
+      }
+    ],
+    "english": [
+      {
+        "id": "en_a",
+        "char": "A",
+        "wordHindi": "ऐपल (सेब)",
+        "wordEnglish": "Apple",
+        "emoji": "🍎",
+        "phonetic": "ए / ऐ",
+        "hindiAudioSentence": "A for Apple! ऐपल माने मीठा लाल सेब! रोज एक सेब खाओ, डॉक्टर को दूर भगाओ!",
+        "funFactHindi": "An apple a day keeps the doctor away!"
+      },
+      {
+        "id": "en_b",
+        "char": "B",
+        "wordHindi": "बॉल (गेंद)",
+        "wordEnglish": "Ball",
+        "emoji": "⚽",
+        "phonetic": "बी / ब",
+        "hindiAudioSentence": "B for Ball! बॉल मतलब खेलने वाली गोल गेंद!",
+        "funFactHindi": "गेंद से हम बैट-बॉल और फुटबॉल खेल सकते हैं।"
+      },
+      {
+        "id": "en_c",
+        "char": "C",
+        "wordHindi": "कैट (बिल्ली)",
+        "wordEnglish": "Cat",
+        "emoji": "🐱",
+        "phonetic": "सी / क",
+        "hindiAudioSentence": "C for Cat! कैट मतलब म्याऊं-म्याऊं करती बिल्ली मौसी!",
+        "funFactHindi": "बिल्ली को दूध पीना बहुत पसंद होता है।"
+      },
+      {
+        "id": "en_d",
+        "char": "D",
+        "wordHindi": "डॉग (कुत्ता)",
+        "wordEnglish": "Dog",
+        "emoji": "🐶",
+        "phonetic": "डी / ड",
+        "hindiAudioSentence": "D for Dog! डॉग मतलब वफादार कुत्ता!",
+        "funFactHindi": "डॉग इंसानों का सबसे सच्चा दोस्त होता है।"
+      },
+      {
+        "id": "en_e",
+        "char": "E",
+        "wordHindi": "एलिफेंट (हाथी)",
+        "wordEnglish": "Elephant",
+        "emoji": "🐘",
+        "phonetic": "ई / ए",
+        "hindiAudioSentence": "E for Elephant! एलिफेंट मतलब लंबी सूंड वाला बड़ा हाथी!",
+        "funFactHindi": "हाथी जमीन पर रहने वाला सबसे विशाल जानवर है।"
+      },
+      {
+        "id": "en_f",
+        "char": "F",
+        "wordHindi": "फिश (मछली)",
+        "wordEnglish": "Fish",
+        "emoji": "🐟",
+        "phonetic": "एफ / फ",
+        "hindiAudioSentence": "F for Fish! मछली जल की रानी है, जीवन उसका पानी है!",
+        "funFactHindi": "मछलियां पानी के अंदर सांस ले सकती हैं।"
+      },
+      {
+        "id": "en_g",
+        "char": "G",
+        "wordHindi": "ग्रेप्स (अंगूर)",
+        "wordEnglish": "Grapes",
+        "emoji": "🍇",
+        "phonetic": "जी / ग",
+        "hindiAudioSentence": "G for Grapes! ग्रेप्स मतलब मीठे-मीठे रसीले अंगूर!",
+        "funFactHindi": "अंगूर गुच्छों में लगते हैं और काले व हरे दोनों होते हैं।"
+      },
+      {
+        "id": "en_h",
+        "char": "H",
+        "wordHindi": "हॉर्स (घोड़ा)",
+        "wordEnglish": "Horse",
+        "emoji": "🐴",
+        "phonetic": "एच / ह",
+        "hindiAudioSentence": "H for Horse! हॉर्स मतलब सरपट दौड़ने वाला घोड़ा!",
+        "funFactHindi": "घोड़ा खड़े-खड़े भी सो सकता है।"
+      },
+      {
+        "id": "en_i",
+        "char": "I",
+        "wordHindi": "आइसक्रीम",
+        "wordEnglish": "Ice Cream",
+        "emoji": "🍦",
+        "phonetic": "आई",
+        "hindiAudioSentence": "I for Ice Cream! ठंडी-मीठी स्वादिष्ट आइसक्रीम!",
+        "funFactHindi": "गर्मियों में आइसक्रीम खाना सबको भाता है।"
+      },
+      {
+        "id": "en_j",
+        "char": "J",
+        "wordHindi": "जग",
+        "wordEnglish": "Jug",
+        "emoji": "🥛",
+        "phonetic": "जे / ज",
+        "hindiAudioSentence": "J for Jug! पानी और जूस भरने वाला जग!",
+        "funFactHindi": "जग से हम गिलास में पानी डालते हैं।"
+      },
+      {
+        "id": "en_k",
+        "char": "K",
+        "wordHindi": "काइट (पतंग)",
+        "wordEnglish": "Kite",
+        "emoji": "🪁",
+        "phonetic": "के / क",
+        "hindiAudioSentence": "K for Kite! काइट मतलब आसमान में उड़ती पतंग!",
+        "funFactHindi": "हवा के साथ पतंग बहुत ऊँची उड़ती है।"
+      },
+      {
+        "id": "en_l",
+        "char": "L",
+        "wordHindi": "लायन (शेर)",
+        "wordEnglish": "Lion",
+        "emoji": "🦁",
+        "phonetic": "एल / ल",
+        "hindiAudioSentence": "L for Lion! जंगल का राजा बब्बर शेर!",
+        "funFactHindi": "शेर की दहाड़ कई किलोमीटर दूर तक सुनाई देती है।"
+      },
+      {
+        "id": "en_m",
+        "char": "M",
+        "wordHindi": "मंकी (बंदर)",
+        "wordEnglish": "Monkey",
+        "emoji": "🐵",
+        "phonetic": "एम / म",
+        "hindiAudioSentence": "M for Monkey! डाल-डाल कूदने वाला नटखट बंदर!",
+        "funFactHindi": "बंदर को मीठा केला खाना बहुत पसंद है।"
+      },
+      {
+        "id": "en_n",
+        "char": "N",
+        "wordHindi": "नेस्ट (घोंसला)",
+        "wordEnglish": "Nest",
+        "emoji": "🪺",
+        "phonetic": "एन / न",
+        "hindiAudioSentence": "N for Nest! चिड़िया का प्यारा तिनकों वाला घोंसला!",
+        "funFactHindi": "चिड़िया घोंसले में अपने अंडे और बच्चे सुरक्षित रखती है।"
+      },
+      {
+        "id": "en_o",
+        "char": "O",
+        "wordHindi": "ऑरेंज (संतरा)",
+        "wordEnglish": "Orange",
+        "emoji": "🍊",
+        "phonetic": "ओ",
+        "hindiAudioSentence": "O for Orange! खट्टा-मीठा रसीला संतरा!",
+        "funFactHindi": "संतरे में विटामिन सी भरपूर मात्रा में होता है।"
+      },
+      {
+        "id": "en_p",
+        "char": "P",
+        "wordHindi": "पैरट (तोता)",
+        "wordEnglish": "Parrot",
+        "emoji": "🦜",
+        "phonetic": "पी / प",
+        "hindiAudioSentence": "P for Parrot! हरी-हरी मिर्च खाने वाला हरा तोता!",
+        "funFactHindi": "तोता इंसानों की तरह बोलना भी सीख सकता है।"
+      },
+      {
+        "id": "en_q",
+        "char": "Q",
+        "wordHindi": "क्वीन (रानी)",
+        "wordEnglish": "Queen",
+        "emoji": "👸",
+        "phonetic": "क्यू / क्व",
+        "hindiAudioSentence": "Q for Queen! सुंदर ताज पहनने वाली दयालु रानी!",
+        "funFactHindi": "रानी अपने राज्य के लोगों से बहुत प्यार करती है।"
+      },
+      {
+        "id": "en_r",
+        "char": "R",
+        "wordHindi": "रेनबो (इंद्रधनुष)",
+        "wordEnglish": "Rainbow",
+        "emoji": "🌈",
+        "phonetic": "आर / र",
+        "hindiAudioSentence": "R for Rainbow! बारिश के बाद आसमान में चमकता सात रंगों का इंद्रधनुष!",
+        "funFactHindi": "रेनबो में सात रंग होते हैं: बैंगनी, नीला, आसमानी, हरा, पीला, नारंगी, लाल।"
+      },
+      {
+        "id": "en_s",
+        "char": "S",
+        "wordHindi": "सन (सूरज)",
+        "wordEnglish": "Sun",
+        "emoji": "☀️",
+        "phonetic": "एस / स",
+        "hindiAudioSentence": "S for Sun! दुनिया को रोशनी देने वाला चमकता सूरज!",
+        "funFactHindi": "सूरज पूर्व दिशा से उगता है और पश्चिम में छिपता है।"
+      },
+      {
+        "id": "en_t",
+        "char": "T",
+        "wordHindi": "ट्री (पेड़)",
+        "wordEnglish": "Tree",
+        "emoji": "🌳",
+        "phonetic": "टी / ट",
+        "hindiAudioSentence": "T for Tree! शीतल छाया और मीठे फल देने वाला पेड़!",
+        "funFactHindi": "पेड़ हमें साफ हवा देते हैं, हमें पौधे लगाने चाहिए।"
+      },
+      {
+        "id": "en_u",
+        "char": "U",
+        "wordHindi": "अंब्रेला (छतरी)",
+        "wordEnglish": "Umbrella",
+        "emoji": "☂️",
+        "phonetic": "यू / अ",
+        "hindiAudioSentence": "U for Umbrella! बारिश से बचाने वाली रंगीन छतरी!",
+        "funFactHindi": "छतरी हमें भीगने से बचाती है।"
+      },
+      {
+        "id": "en_v",
+        "char": "V",
+        "wordHindi": "वैन (गाड़ी)",
+        "wordEnglish": "Van",
+        "emoji": "🚐",
+        "phonetic": "वी / व",
+        "hindiAudioSentence": "V for Van! स्कूल और सैर पर ले जाने वाली वैन!",
+        "funFactHindi": "वैन में चार पहिए होते हैं।"
+      },
+      {
+        "id": "en_w",
+        "char": "W",
+        "wordHindi": "वॉच (घड़ी)",
+        "wordEnglish": "Watch",
+        "emoji": "⌚",
+        "phonetic": "डब्ल्यू / व",
+        "hindiAudioSentence": "W for Watch! टिक-टिक करके सही समय बताने वाली घड़ी!",
+        "funFactHindi": "समय का सदुपयोग करना बहुत जरूरी है।"
+      },
+      {
+        "id": "en_x",
+        "char": "X",
+        "wordHindi": "ज़ाइलोफ़ोन (वाद्य यंत्र)",
+        "wordEnglish": "Xylophone",
+        "emoji": "🎵",
+        "phonetic": "एक्स",
+        "hindiAudioSentence": "X for Xylophone! मधुर संगीत बजाने वाला रंग-बिरंगा बाजा!",
+        "funFactHindi": "इस पर छड़ी से मारने पर मीठी धुन निकलती है।"
+      },
+      {
+        "id": "en_y",
+        "char": "Y",
+        "wordHindi": "याक (पहाड़ी बैल)",
+        "wordEnglish": "Yak",
+        "emoji": "🐂",
+        "phonetic": "वाई / य",
+        "hindiAudioSentence": "Y for Yak! बर्फीले पहाड़ों पर रहने वाला लंबे बालों वाला याक!",
+        "funFactHindi": "याक ठंड में भी आराम से रह सकता है।"
+      },
+      {
+        "id": "en_z",
+        "char": "Z",
+        "wordHindi": "ज़ेबरा",
+        "wordEnglish": "Zebra",
+        "emoji": "🦓",
+        "phonetic": "ज़ेड / ज़",
+        "hindiAudioSentence": "Z for Zebra! काली और सफेद धारियों वाला सुंदर ज़ेबरा!",
+        "funFactHindi": "हर ज़ेबरा की धारियां बिल्कुल अलग और अनोखी होती हैं।"
+      }
+    ],
+    "math": [
+      {
+        "id": "ma_1",
+        "char": "1",
+        "wordHindi": "एक (One)",
+        "wordEnglish": "One Sun",
+        "emoji": "☀️",
+        "phonetic": "एक",
+        "hindiAudioSentence": "१ - यह है संख्या एक! आसमान में चमकता हुआ एक सूरज!",
+        "funFactHindi": "सूरज केवल एक है जो पूरी दुनिया को रोशनी देता है।"
+      },
+      {
+        "id": "ma_2",
+        "char": "2",
+        "wordHindi": "दो (Two)",
+        "wordEnglish": "Two Eyes",
+        "emoji": "👀",
+        "phonetic": "दो",
+        "hindiAudioSentence": "२ - यह है संख्या दो! हमारी देखने वाली दो प्यारी आंखें!",
+        "funFactHindi": "हमारे दो हाथ और दो पैर होते हैं।"
+      },
+      {
+        "id": "ma_3",
+        "char": "3",
+        "wordHindi": "तीन (Three)",
+        "wordEnglish": "Three Wheels",
+        "emoji": "🛺",
+        "phonetic": "तीन",
+        "hindiAudioSentence": "३ - यह है संख्या तीन! ऑटो रिक्शा के होते हैं तीन पहिए!",
+        "funFactHindi": "ट्रैफिक लाइट में भी तीन रंग होते हैं: लाल, पीला और हरा।"
+      },
+      {
+        "id": "ma_4",
+        "char": "4",
+        "wordHindi": "चार (Four)",
+        "wordEnglish": "Four Legs",
+        "emoji": "🧸",
+        "phonetic": "चार",
+        "hindiAudioSentence": "४ - यह है संख्या चार! कार और मेज के होते हैं चार पाए!",
+        "funFactHindi": "गाय, घोड़ा और हाथी सभी के चार पैर होते हैं।"
+      },
+      {
+        "id": "ma_5",
+        "char": "5",
+        "wordHindi": "पाँच (Five)",
+        "wordEnglish": "Five Fingers",
+        "emoji": "🖐️",
+        "phonetic": "पाँच",
+        "hindiAudioSentence": "५ - यह है संख्या पाँच! हमारे एक हाथ में होती हैं पाँच उंगलियाँ!",
+        "funFactHindi": "पाँच उंगलियाँ मिलकर एक मजबूत मुट्ठी बनाती हैं।"
+      },
+      {
+        "id": "ma_6",
+        "char": "6",
+        "wordHindi": "छह (Six)",
+        "wordEnglish": "Six Legs Insect",
+        "emoji": "🐝",
+        "phonetic": "छह",
+        "hindiAudioSentence": "६ - यह है संख्या छह! मधुमक्खी और चींटी की होती हैं छह टांगें!",
+        "funFactHindi": "कीट-पतंगों के छह पैर होते हैं।"
+      },
+      {
+        "id": "ma_7",
+        "char": "7",
+        "wordHindi": "सात (Seven)",
+        "wordEnglish": "Seven Colors Rainbow",
+        "emoji": "🌈",
+        "phonetic": "सात",
+        "hindiAudioSentence": "७ - यह है संख्या सात! इंद्रधनुष में होते हैं सात रंग और हफ्ते में सात दिन!",
+        "funFactHindi": "सात सुर मिलकर संगीत की सरगम बनाते हैं: सा रे ग म प ध नि।"
+      },
+      {
+        "id": "ma_8",
+        "char": "8",
+        "wordHindi": "आठ (Eight)",
+        "wordEnglish": "Eight Arms Octopus",
+        "emoji": "🐙",
+        "phonetic": "आठ",
+        "hindiAudioSentence": "८ - यह है संख्या आठ! ऑक्टोपस की होती हैं आठ भुजाएं!",
+        "funFactHindi": "मकड़ी के भी आठ पैर होते हैं।"
+      },
+      {
+        "id": "ma_9",
+        "char": "9",
+        "wordHindi": "नौ (Nine)",
+        "wordEnglish": "Nine Planets & Gems",
+        "emoji": "🪐",
+        "phonetic": "नौ",
+        "hindiAudioSentence": "९ - यह है संख्या नौ! नवरत्न और नौ ग्रह!",
+        "funFactHindi": "नौ सबसे बड़ी एकल अंक संख्या है।"
+      },
+      {
+        "id": "ma_10",
+        "char": "10",
+        "wordHindi": "दस (Ten)",
+        "wordEnglish": "Ten Fingers Both Hands",
+        "emoji": "🙌",
+        "phonetic": "दस",
+        "hindiAudioSentence": "१० - यह है संख्या दस! दोनों हाथों की कुल दस उंगलियाँ!",
+        "funFactHindi": "दस मिलकर एक दहाई बनती है।"
+      },
+      {
+        "id": "ma_11",
+        "char": "11",
+        "wordHindi": "ग्यारह (11)",
+        "wordEnglish": "Eleven (11)",
+        "emoji": "🔢",
+        "phonetic": "ग्यारह",
+        "hindiAudioSentence": "संख्या 11! 11 मतलब ग्यारह!",
+        "funFactHindi": "संख्या 11 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_12",
+        "char": "12",
+        "wordHindi": "बारह (12)",
+        "wordEnglish": "Twelve (12)",
+        "emoji": "🔢",
+        "phonetic": "बारह",
+        "hindiAudioSentence": "संख्या 12! 12 मतलब बारह!",
+        "funFactHindi": "संख्या 12 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_13",
+        "char": "13",
+        "wordHindi": "तेरह (13)",
+        "wordEnglish": "Thirteen (13)",
+        "emoji": "🔢",
+        "phonetic": "तेरह",
+        "hindiAudioSentence": "संख्या 13! 13 मतलब तेरह!",
+        "funFactHindi": "संख्या 13 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_14",
+        "char": "14",
+        "wordHindi": "चौदह (14)",
+        "wordEnglish": "Fourteen (14)",
+        "emoji": "🔢",
+        "phonetic": "चौदह",
+        "hindiAudioSentence": "संख्या 14! 14 मतलब चौदह!",
+        "funFactHindi": "संख्या 14 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_15",
+        "char": "15",
+        "wordHindi": "पंद्रह (15)",
+        "wordEnglish": "Fifteen (15)",
+        "emoji": "🔢",
+        "phonetic": "पंद्रह",
+        "hindiAudioSentence": "संख्या 15! 15 मतलब पंद्रह!",
+        "funFactHindi": "संख्या 15 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_16",
+        "char": "16",
+        "wordHindi": "सोलह (16)",
+        "wordEnglish": "Sixteen (16)",
+        "emoji": "🔢",
+        "phonetic": "सोलह",
+        "hindiAudioSentence": "संख्या 16! 16 मतलब सोलह!",
+        "funFactHindi": "संख्या 16 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_17",
+        "char": "17",
+        "wordHindi": "सत्रह (17)",
+        "wordEnglish": "Seventeen (17)",
+        "emoji": "🔢",
+        "phonetic": "सत्रह",
+        "hindiAudioSentence": "संख्या 17! 17 मतलब सत्रह!",
+        "funFactHindi": "संख्या 17 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_18",
+        "char": "18",
+        "wordHindi": "अठारह (18)",
+        "wordEnglish": "Eighteen (18)",
+        "emoji": "🔢",
+        "phonetic": "अठारह",
+        "hindiAudioSentence": "संख्या 18! 18 मतलब अठारह!",
+        "funFactHindi": "संख्या 18 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_19",
+        "char": "19",
+        "wordHindi": "उन्नीस (19)",
+        "wordEnglish": "Nineteen (19)",
+        "emoji": "🔢",
+        "phonetic": "उन्नीस",
+        "hindiAudioSentence": "संख्या 19! 19 मतलब उन्नीस!",
+        "funFactHindi": "संख्या 19 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_20",
+        "char": "20",
+        "wordHindi": "बीस (20)",
+        "wordEnglish": "Twenty (20)",
+        "emoji": "🔟",
+        "phonetic": "बीस",
+        "hindiAudioSentence": "संख्या 20! 20 मतलब बीस!",
+        "funFactHindi": "संख्या 20 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_21",
+        "char": "21",
+        "wordHindi": "इक्कीस (21)",
+        "wordEnglish": "Twenty One (21)",
+        "emoji": "🔢",
+        "phonetic": "इक्कीस",
+        "hindiAudioSentence": "संख्या 21! 21 मतलब इक्कीस!",
+        "funFactHindi": "संख्या 21 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_22",
+        "char": "22",
+        "wordHindi": "बाईस (22)",
+        "wordEnglish": "Twenty Two (22)",
+        "emoji": "🔢",
+        "phonetic": "बाईस",
+        "hindiAudioSentence": "संख्या 22! 22 मतलब बाईस!",
+        "funFactHindi": "संख्या 22 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_23",
+        "char": "23",
+        "wordHindi": "तेईस (23)",
+        "wordEnglish": "Twenty Three (23)",
+        "emoji": "🔢",
+        "phonetic": "तेईस",
+        "hindiAudioSentence": "संख्या 23! 23 मतलब तेईस!",
+        "funFactHindi": "संख्या 23 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_24",
+        "char": "24",
+        "wordHindi": "चौबीस (24)",
+        "wordEnglish": "Twenty Four (24)",
+        "emoji": "🔢",
+        "phonetic": "चौबीस",
+        "hindiAudioSentence": "संख्या 24! 24 मतलब चौबीस!",
+        "funFactHindi": "संख्या 24 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_25",
+        "char": "25",
+        "wordHindi": "पच्चीस (25)",
+        "wordEnglish": "Twenty Five (25)",
+        "emoji": "🥈",
+        "phonetic": "पच्चीस",
+        "hindiAudioSentence": "संख्या 25! 25 मतलब पच्चीस!",
+        "funFactHindi": "संख्या 25 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_26",
+        "char": "26",
+        "wordHindi": "छब्बीस (26)",
+        "wordEnglish": "Twenty Six (26)",
+        "emoji": "🔢",
+        "phonetic": "छब्बीस",
+        "hindiAudioSentence": "संख्या 26! 26 मतलब छब्बीस!",
+        "funFactHindi": "संख्या 26 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_27",
+        "char": "27",
+        "wordHindi": "सत्ताईस (27)",
+        "wordEnglish": "Twenty Seven (27)",
+        "emoji": "🔢",
+        "phonetic": "सत्ताईस",
+        "hindiAudioSentence": "संख्या 27! 27 मतलब सत्ताईस!",
+        "funFactHindi": "संख्या 27 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_28",
+        "char": "28",
+        "wordHindi": "अट्ठाईस (28)",
+        "wordEnglish": "Twenty Eight (28)",
+        "emoji": "🔢",
+        "phonetic": "अट्ठाईस",
+        "hindiAudioSentence": "संख्या 28! 28 मतलब अट्ठाईस!",
+        "funFactHindi": "संख्या 28 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_29",
+        "char": "29",
+        "wordHindi": "उनतीस (29)",
+        "wordEnglish": "Twenty Nine (29)",
+        "emoji": "🔢",
+        "phonetic": "उनतीस",
+        "hindiAudioSentence": "संख्या 29! 29 मतलब उनतीस!",
+        "funFactHindi": "संख्या 29 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_30",
+        "char": "30",
+        "wordHindi": "तीस (30)",
+        "wordEnglish": "Thirty (30)",
+        "emoji": "🔟",
+        "phonetic": "तीस",
+        "hindiAudioSentence": "संख्या 30! 30 मतलब तीस!",
+        "funFactHindi": "संख्या 30 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_31",
+        "char": "31",
+        "wordHindi": "इकतीस (31)",
+        "wordEnglish": "Thirty One (31)",
+        "emoji": "🔢",
+        "phonetic": "इकतीस",
+        "hindiAudioSentence": "संख्या 31! 31 मतलब इकतीस!",
+        "funFactHindi": "संख्या 31 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_32",
+        "char": "32",
+        "wordHindi": "बत्तीस (32)",
+        "wordEnglish": "Thirty Two (32)",
+        "emoji": "🔢",
+        "phonetic": "बत्तीस",
+        "hindiAudioSentence": "संख्या 32! 32 मतलब बत्तीस!",
+        "funFactHindi": "संख्या 32 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_33",
+        "char": "33",
+        "wordHindi": "तैंतीस (33)",
+        "wordEnglish": "Thirty Three (33)",
+        "emoji": "🔢",
+        "phonetic": "तैंतीस",
+        "hindiAudioSentence": "संख्या 33! 33 मतलब तैंतीस!",
+        "funFactHindi": "संख्या 33 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_34",
+        "char": "34",
+        "wordHindi": "चौंतीस (34)",
+        "wordEnglish": "Thirty Four (34)",
+        "emoji": "🔢",
+        "phonetic": "चौंतीस",
+        "hindiAudioSentence": "संख्या 34! 34 मतलब चौंतीस!",
+        "funFactHindi": "संख्या 34 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_35",
+        "char": "35",
+        "wordHindi": "पैंतीस (35)",
+        "wordEnglish": "Thirty Five (35)",
+        "emoji": "🔢",
+        "phonetic": "पैंतीस",
+        "hindiAudioSentence": "संख्या 35! 35 मतलब पैंतीस!",
+        "funFactHindi": "संख्या 35 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_36",
+        "char": "36",
+        "wordHindi": "छत्तीस (36)",
+        "wordEnglish": "Thirty Six (36)",
+        "emoji": "🔢",
+        "phonetic": "छत्तीस",
+        "hindiAudioSentence": "संख्या 36! 36 मतलब छत्तीस!",
+        "funFactHindi": "संख्या 36 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_37",
+        "char": "37",
+        "wordHindi": "सैंतीस (37)",
+        "wordEnglish": "Thirty Seven (37)",
+        "emoji": "🔢",
+        "phonetic": "सैंतीस",
+        "hindiAudioSentence": "संख्या 37! 37 मतलब सैंतीस!",
+        "funFactHindi": "संख्या 37 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_38",
+        "char": "38",
+        "wordHindi": "अड़तीस (38)",
+        "wordEnglish": "Thirty Eight (38)",
+        "emoji": "🔢",
+        "phonetic": "अड़तीस",
+        "hindiAudioSentence": "संख्या 38! 38 मतलब अड़तीस!",
+        "funFactHindi": "संख्या 38 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_39",
+        "char": "39",
+        "wordHindi": "उनतालीस (39)",
+        "wordEnglish": "Thirty Nine (39)",
+        "emoji": "🔢",
+        "phonetic": "उनतालीस",
+        "hindiAudioSentence": "संख्या 39! 39 मतलब उनतालीस!",
+        "funFactHindi": "संख्या 39 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_40",
+        "char": "40",
+        "wordHindi": "चालीस (40)",
+        "wordEnglish": "Forty (40)",
+        "emoji": "🔟",
+        "phonetic": "चालीस",
+        "hindiAudioSentence": "संख्या 40! 40 मतलब चालीस!",
+        "funFactHindi": "संख्या 40 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_41",
+        "char": "41",
+        "wordHindi": "इकतालीस (41)",
+        "wordEnglish": "Forty One (41)",
+        "emoji": "🔢",
+        "phonetic": "इकतालीस",
+        "hindiAudioSentence": "संख्या 41! 41 मतलब इकतालीस!",
+        "funFactHindi": "संख्या 41 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_42",
+        "char": "42",
+        "wordHindi": "बयालीस (42)",
+        "wordEnglish": "Forty Two (42)",
+        "emoji": "🔢",
+        "phonetic": "बयालीस",
+        "hindiAudioSentence": "संख्या 42! 42 मतलब बयालीस!",
+        "funFactHindi": "संख्या 42 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_43",
+        "char": "43",
+        "wordHindi": "तैंतालीस (43)",
+        "wordEnglish": "Forty Three (43)",
+        "emoji": "🔢",
+        "phonetic": "तैंतालीस",
+        "hindiAudioSentence": "संख्या 43! 43 मतलब तैंतालीस!",
+        "funFactHindi": "संख्या 43 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_44",
+        "char": "44",
+        "wordHindi": "चवालीस (44)",
+        "wordEnglish": "Forty Four (44)",
+        "emoji": "🔢",
+        "phonetic": "चवालीस",
+        "hindiAudioSentence": "संख्या 44! 44 मतलब चवालीस!",
+        "funFactHindi": "संख्या 44 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_45",
+        "char": "45",
+        "wordHindi": "पैंतालीस (45)",
+        "wordEnglish": "Forty Five (45)",
+        "emoji": "🔢",
+        "phonetic": "पैंतालीस",
+        "hindiAudioSentence": "संख्या 45! 45 मतलब पैंतालीस!",
+        "funFactHindi": "संख्या 45 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_46",
+        "char": "46",
+        "wordHindi": "छियालीस (46)",
+        "wordEnglish": "Forty Six (46)",
+        "emoji": "🔢",
+        "phonetic": "छियालीस",
+        "hindiAudioSentence": "संख्या 46! 46 मतलब छियालीस!",
+        "funFactHindi": "संख्या 46 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_47",
+        "char": "47",
+        "wordHindi": "सैंतालीस (47)",
+        "wordEnglish": "Forty Seven (47)",
+        "emoji": "🔢",
+        "phonetic": "सैंतालीस",
+        "hindiAudioSentence": "संख्या 47! 47 मतलब सैंतालीस!",
+        "funFactHindi": "संख्या 47 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_48",
+        "char": "48",
+        "wordHindi": "अड़तालीस (48)",
+        "wordEnglish": "Forty Eight (48)",
+        "emoji": "🔢",
+        "phonetic": "अड़तालीस",
+        "hindiAudioSentence": "संख्या 48! 48 मतलब अड़तालीस!",
+        "funFactHindi": "संख्या 48 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_49",
+        "char": "49",
+        "wordHindi": "उनचास (49)",
+        "wordEnglish": "Forty Nine (49)",
+        "emoji": "🔢",
+        "phonetic": "उनचास",
+        "hindiAudioSentence": "संख्या 49! 49 मतलब उनचास!",
+        "funFactHindi": "संख्या 49 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_50",
+        "char": "50",
+        "wordHindi": "पचास (50)",
+        "wordEnglish": "Fifty (50)",
+        "emoji": "🌟",
+        "phonetic": "पचास",
+        "hindiAudioSentence": "संख्या 50! 50 मतलब पचास!",
+        "funFactHindi": "संख्या 50 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_51",
+        "char": "51",
+        "wordHindi": "इक्यावन (51)",
+        "wordEnglish": "Fifty One (51)",
+        "emoji": "🔢",
+        "phonetic": "इक्यावन",
+        "hindiAudioSentence": "संख्या 51! 51 मतलब इक्यावन!",
+        "funFactHindi": "संख्या 51 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_52",
+        "char": "52",
+        "wordHindi": "बावन (52)",
+        "wordEnglish": "Fifty Two (52)",
+        "emoji": "🔢",
+        "phonetic": "बावन",
+        "hindiAudioSentence": "संख्या 52! 52 मतलब बावन!",
+        "funFactHindi": "संख्या 52 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_53",
+        "char": "53",
+        "wordHindi": "तिरपन (53)",
+        "wordEnglish": "Fifty Three (53)",
+        "emoji": "🔢",
+        "phonetic": "तिरपन",
+        "hindiAudioSentence": "संख्या 53! 53 मतलब तिरपन!",
+        "funFactHindi": "संख्या 53 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_54",
+        "char": "54",
+        "wordHindi": "चौवन (54)",
+        "wordEnglish": "Fifty Four (54)",
+        "emoji": "🔢",
+        "phonetic": "चौवन",
+        "hindiAudioSentence": "संख्या 54! 54 मतलब चौवन!",
+        "funFactHindi": "संख्या 54 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_55",
+        "char": "55",
+        "wordHindi": "बचपन (55)",
+        "wordEnglish": "Fifty Five (55)",
+        "emoji": "🔢",
+        "phonetic": "बचपन",
+        "hindiAudioSentence": "संख्या 55! 55 मतलब बचपन!",
+        "funFactHindi": "संख्या 55 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_56",
+        "char": "56",
+        "wordHindi": "छप्पन (56)",
+        "wordEnglish": "Fifty Six (56)",
+        "emoji": "🔢",
+        "phonetic": "छप्पन",
+        "hindiAudioSentence": "संख्या 56! 56 मतलब छप्पन!",
+        "funFactHindi": "संख्या 56 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_57",
+        "char": "57",
+        "wordHindi": "सत्तावन (57)",
+        "wordEnglish": "Fifty Seven (57)",
+        "emoji": "🔢",
+        "phonetic": "सत्तावन",
+        "hindiAudioSentence": "संख्या 57! 57 मतलब सत्तावन!",
+        "funFactHindi": "संख्या 57 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_58",
+        "char": "58",
+        "wordHindi": "अट्ठावन (58)",
+        "wordEnglish": "Fifty Eight (58)",
+        "emoji": "🔢",
+        "phonetic": "अट्ठावन",
+        "hindiAudioSentence": "संख्या 58! 58 मतलब अट्ठावन!",
+        "funFactHindi": "संख्या 58 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_59",
+        "char": "59",
+        "wordHindi": "उनसठ (59)",
+        "wordEnglish": "Fifty Nine (59)",
+        "emoji": "🔢",
+        "phonetic": "उनसठ",
+        "hindiAudioSentence": "संख्या 59! 59 मतलब उनसठ!",
+        "funFactHindi": "संख्या 59 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_60",
+        "char": "60",
+        "wordHindi": "साठ (60)",
+        "wordEnglish": "Sixty (60)",
+        "emoji": "🔟",
+        "phonetic": "साठ",
+        "hindiAudioSentence": "संख्या 60! 60 मतलब साठ!",
+        "funFactHindi": "संख्या 60 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_61",
+        "char": "61",
+        "wordHindi": "इकसठ (61)",
+        "wordEnglish": "Sixty One (61)",
+        "emoji": "🔢",
+        "phonetic": "इकसठ",
+        "hindiAudioSentence": "संख्या 61! 61 मतलब इकसठ!",
+        "funFactHindi": "संख्या 61 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_62",
+        "char": "62",
+        "wordHindi": "बासठ (62)",
+        "wordEnglish": "Sixty Two (62)",
+        "emoji": "🔢",
+        "phonetic": "बासठ",
+        "hindiAudioSentence": "संख्या 62! 62 मतलब बासठ!",
+        "funFactHindi": "संख्या 62 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_63",
+        "char": "63",
+        "wordHindi": "तिरसठ (63)",
+        "wordEnglish": "Sixty Three (63)",
+        "emoji": "🔢",
+        "phonetic": "तिरसठ",
+        "hindiAudioSentence": "संख्या 63! 63 मतलब तिरसठ!",
+        "funFactHindi": "संख्या 63 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_64",
+        "char": "64",
+        "wordHindi": "चौंसठ (64)",
+        "wordEnglish": "Sixty Four (64)",
+        "emoji": "🔢",
+        "phonetic": "चौंसठ",
+        "hindiAudioSentence": "संख्या 64! 64 मतलब चौंसठ!",
+        "funFactHindi": "संख्या 64 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_65",
+        "char": "65",
+        "wordHindi": "पैंसठ (65)",
+        "wordEnglish": "Sixty Five (65)",
+        "emoji": "🔢",
+        "phonetic": "पैंसठ",
+        "hindiAudioSentence": "संख्या 65! 65 मतलब पैंसठ!",
+        "funFactHindi": "संख्या 65 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_66",
+        "char": "66",
+        "wordHindi": "छियासठ (66)",
+        "wordEnglish": "Sixty Six (66)",
+        "emoji": "🔢",
+        "phonetic": "छियासठ",
+        "hindiAudioSentence": "संख्या 66! 66 मतलब छियासठ!",
+        "funFactHindi": "संख्या 66 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_67",
+        "char": "67",
+        "wordHindi": "सड़सठ (67)",
+        "wordEnglish": "Sixty Seven (67)",
+        "emoji": "🔢",
+        "phonetic": "सड़सठ",
+        "hindiAudioSentence": "संख्या 67! 67 मतलब सड़सठ!",
+        "funFactHindi": "संख्या 67 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_68",
+        "char": "68",
+        "wordHindi": "अड़सठ (68)",
+        "wordEnglish": "Sixty Eight (68)",
+        "emoji": "🔢",
+        "phonetic": "अड़सठ",
+        "hindiAudioSentence": "संख्या 68! 68 मतलब अड़सठ!",
+        "funFactHindi": "संख्या 68 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_69",
+        "char": "69",
+        "wordHindi": "उनहत्तर (69)",
+        "wordEnglish": "Sixty Nine (69)",
+        "emoji": "🔢",
+        "phonetic": "उनहत्तर",
+        "hindiAudioSentence": "संख्या 69! 69 मतलब उनहत्तर!",
+        "funFactHindi": "संख्या 69 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_70",
+        "char": "70",
+        "wordHindi": "सत्तर (70)",
+        "wordEnglish": "Seventy (70)",
+        "emoji": "🔟",
+        "phonetic": "सत्तर",
+        "hindiAudioSentence": "संख्या 70! 70 मतलब सत्तर!",
+        "funFactHindi": "संख्या 70 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_71",
+        "char": "71",
+        "wordHindi": "इकहत्तर (71)",
+        "wordEnglish": "Seventy One (71)",
+        "emoji": "🔢",
+        "phonetic": "इकहत्तर",
+        "hindiAudioSentence": "संख्या 71! 71 मतलब इकहत्तर!",
+        "funFactHindi": "संख्या 71 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_72",
+        "char": "72",
+        "wordHindi": "बहत्तर (72)",
+        "wordEnglish": "Seventy Two (72)",
+        "emoji": "🔢",
+        "phonetic": "बहत्तर",
+        "hindiAudioSentence": "संख्या 72! 72 मतलब बहत्तर!",
+        "funFactHindi": "संख्या 72 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_73",
+        "char": "73",
+        "wordHindi": "तिहत्तर (73)",
+        "wordEnglish": "Seventy Three (73)",
+        "emoji": "🔢",
+        "phonetic": "तिहत्तर",
+        "hindiAudioSentence": "संख्या 73! 73 मतलब तिहत्तर!",
+        "funFactHindi": "संख्या 73 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_74",
+        "char": "74",
+        "wordHindi": "चौहत्तर (74)",
+        "wordEnglish": "Seventy Four (74)",
+        "emoji": "🔢",
+        "phonetic": "चौहत्तर",
+        "hindiAudioSentence": "संख्या 74! 74 मतलब चौहत्तर!",
+        "funFactHindi": "संख्या 74 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_75",
+        "char": "75",
+        "wordHindi": "पचहत्तर (75)",
+        "wordEnglish": "Seventy Five (75)",
+        "emoji": "🥇",
+        "phonetic": "पचहत्तर",
+        "hindiAudioSentence": "संख्या 75! 75 मतलब पचहत्तर!",
+        "funFactHindi": "संख्या 75 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_76",
+        "char": "76",
+        "wordHindi": "छिहत्तर (76)",
+        "wordEnglish": "Seventy Six (76)",
+        "emoji": "🔢",
+        "phonetic": "छिहत्तर",
+        "hindiAudioSentence": "संख्या 76! 76 मतलब छिहत्तर!",
+        "funFactHindi": "संख्या 76 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_77",
+        "char": "77",
+        "wordHindi": "सतहत्तर (77)",
+        "wordEnglish": "Seventy Seven (77)",
+        "emoji": "🔢",
+        "phonetic": "सतहत्तर",
+        "hindiAudioSentence": "संख्या 77! 77 मतलब सतहत्तर!",
+        "funFactHindi": "संख्या 77 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_78",
+        "char": "78",
+        "wordHindi": "अठहत्तर (78)",
+        "wordEnglish": "Seventy Eight (78)",
+        "emoji": "🔢",
+        "phonetic": "अठहत्तर",
+        "hindiAudioSentence": "संख्या 78! 78 मतलब अठहत्तर!",
+        "funFactHindi": "संख्या 78 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_79",
+        "char": "79",
+        "wordHindi": "उन्यासी (79)",
+        "wordEnglish": "Seventy Nine (79)",
+        "emoji": "🔢",
+        "phonetic": "उन्यासी",
+        "hindiAudioSentence": "संख्या 79! 79 मतलब उन्यासी!",
+        "funFactHindi": "संख्या 79 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_80",
+        "char": "80",
+        "wordHindi": "अस्सी (80)",
+        "wordEnglish": "Eighty (80)",
+        "emoji": "🔟",
+        "phonetic": "अस्सी",
+        "hindiAudioSentence": "संख्या 80! 80 मतलब अस्सी!",
+        "funFactHindi": "संख्या 80 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_81",
+        "char": "81",
+        "wordHindi": "इक्यासी (81)",
+        "wordEnglish": "Eighty One (81)",
+        "emoji": "🔢",
+        "phonetic": "इक्यासी",
+        "hindiAudioSentence": "संख्या 81! 81 मतलब इक्यासी!",
+        "funFactHindi": "संख्या 81 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_82",
+        "char": "82",
+        "wordHindi": "बयासी (82)",
+        "wordEnglish": "Eighty Two (82)",
+        "emoji": "🔢",
+        "phonetic": "बयासी",
+        "hindiAudioSentence": "संख्या 82! 82 मतलब बयासी!",
+        "funFactHindi": "संख्या 82 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_83",
+        "char": "83",
+        "wordHindi": "तिरासी (83)",
+        "wordEnglish": "Eighty Three (83)",
+        "emoji": "🔢",
+        "phonetic": "तिरासी",
+        "hindiAudioSentence": "संख्या 83! 83 मतलब तिरासी!",
+        "funFactHindi": "संख्या 83 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_84",
+        "char": "84",
+        "wordHindi": "चौरासी (84)",
+        "wordEnglish": "Eighty Four (84)",
+        "emoji": "🔢",
+        "phonetic": "चौरासी",
+        "hindiAudioSentence": "संख्या 84! 84 मतलब चौरासी!",
+        "funFactHindi": "संख्या 84 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_85",
+        "char": "85",
+        "wordHindi": "पचासी (85)",
+        "wordEnglish": "Eighty Five (85)",
+        "emoji": "🔢",
+        "phonetic": "पचासी",
+        "hindiAudioSentence": "संख्या 85! 85 मतलब पचासी!",
+        "funFactHindi": "संख्या 85 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_86",
+        "char": "86",
+        "wordHindi": "छियासी (86)",
+        "wordEnglish": "Eighty Six (86)",
+        "emoji": "🔢",
+        "phonetic": "छियासी",
+        "hindiAudioSentence": "संख्या 86! 86 मतलब छियासी!",
+        "funFactHindi": "संख्या 86 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_87",
+        "char": "87",
+        "wordHindi": "सत्तासी (87)",
+        "wordEnglish": "Eighty Eight (87)",
+        "emoji": "🔢",
+        "phonetic": "सत्तासी",
+        "hindiAudioSentence": "संख्या 87! 87 मतलब सत्तासी!",
+        "funFactHindi": "संख्या 87 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_88",
+        "char": "88",
+        "wordHindi": "अट्ठासी (88)",
+        "wordEnglish": "Eighty Eight (88)",
+        "emoji": "🔢",
+        "phonetic": "अट्ठासी",
+        "hindiAudioSentence": "संख्या 88! 88 मतलब अट्ठासी!",
+        "funFactHindi": "संख्या 88 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_89",
+        "char": "89",
+        "wordHindi": "नवासी (89)",
+        "wordEnglish": "Eighty Nine (89)",
+        "emoji": "🔢",
+        "phonetic": "नवासी",
+        "hindiAudioSentence": "संख्या 89! 89 मतलब नवासी!",
+        "funFactHindi": "संख्या 89 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_90",
+        "char": "90",
+        "wordHindi": "नब्बे (90)",
+        "wordEnglish": "Ninety (90)",
+        "emoji": "🔟",
+        "phonetic": "नब्बे",
+        "hindiAudioSentence": "संख्या 90! 90 मतलब नब्बे!",
+        "funFactHindi": "संख्या 90 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_91",
+        "char": "91",
+        "wordHindi": "इक्यानवे (91)",
+        "wordEnglish": "Ninety One (91)",
+        "emoji": "🔢",
+        "phonetic": "इक्यानवे",
+        "hindiAudioSentence": "संख्या 91! 91 मतलब इक्यानवे!",
+        "funFactHindi": "संख्या 91 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_92",
+        "char": "92",
+        "wordHindi": "बावनवे (92)",
+        "wordEnglish": "Ninety Two (92)",
+        "emoji": "🔢",
+        "phonetic": "बावनवे",
+        "hindiAudioSentence": "संख्या 92! 92 मतलब बावनवे!",
+        "funFactHindi": "संख्या 92 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_93",
+        "char": "93",
+        "wordHindi": "तिरानवे (93)",
+        "wordEnglish": "Ninety Three (93)",
+        "emoji": "🔢",
+        "phonetic": "तिरानवे",
+        "hindiAudioSentence": "संख्या 93! 93 मतलब तिरानवे!",
+        "funFactHindi": "संख्या 93 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_94",
+        "char": "94",
+        "wordHindi": "चौरानवे (94)",
+        "wordEnglish": "Ninety Four (94)",
+        "emoji": "🔢",
+        "phonetic": "चौरानवे",
+        "hindiAudioSentence": "संख्या 94! 94 मतलब चौरानवे!",
+        "funFactHindi": "संख्या 94 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_95",
+        "char": "95",
+        "wordHindi": "पंचानवे (95)",
+        "wordEnglish": "Ninety Five (95)",
+        "emoji": "🔢",
+        "phonetic": "पंचानवे",
+        "hindiAudioSentence": "संख्या 95! 95 मतलब पंचानवे!",
+        "funFactHindi": "संख्या 95 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_96",
+        "char": "96",
+        "wordHindi": "छियानवे (96)",
+        "wordEnglish": "Ninety Six (96)",
+        "emoji": "🔢",
+        "phonetic": "छियानवे",
+        "hindiAudioSentence": "संख्या 96! 96 मतलब छियानवे!",
+        "funFactHindi": "संख्या 96 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_97",
+        "char": "97",
+        "wordHindi": "सत्तानवे (97)",
+        "wordEnglish": "Ninety Seven (97)",
+        "emoji": "🔢",
+        "phonetic": "सत्तानवे",
+        "hindiAudioSentence": "संख्या 97! 97 मतलब सत्तानवे!",
+        "funFactHindi": "संख्या 97 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_98",
+        "char": "98",
+        "wordHindi": "अट्ठानवे (98)",
+        "wordEnglish": "Ninety Eight (98)",
+        "emoji": "🔢",
+        "phonetic": "अट्ठानवे",
+        "hindiAudioSentence": "संख्या 98! 98 मतलब अट्ठानवे!",
+        "funFactHindi": "संख्या 98 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_99",
+        "char": "99",
+        "wordHindi": "निन्यानवे (99)",
+        "wordEnglish": "Ninety Nine (99)",
+        "emoji": "🔢",
+        "phonetic": "निन्यानवे",
+        "hindiAudioSentence": "संख्या 99! 99 मतलब निन्यानवे!",
+        "funFactHindi": "संख्या 99 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      },
+      {
+        "id": "ma_100",
+        "char": "100",
+        "wordHindi": "सौ (100)",
+        "wordEnglish": "One Hundred (100)",
+        "emoji": "💯",
+        "phonetic": "सौ",
+        "hindiAudioSentence": "संख्या 100! 100 मतलब सौ!",
+        "funFactHindi": "संख्या 100 बहुत महत्वपूर्ण है। चलो आगे सीखते हैं!"
+      }
+    ]
   },
-  {
-    "id": 2,
-    "name_en": "Banana",
-    "name_hi": "केला",
-    "audio_text_en": "Banana. A sweet yellow fruit that gives lots of energy.",
-    "audio_text_hi": "केला। केला एक मीठा और पीला फल है जो बहुत ऊर्जा देता है।",
-    "level": 1
+  "word_blends": {
+    "hindi": [
+      {
+        "id": "hi_blend_1",
+        "subjectId": "hindi",
+        "char1": "क",
+        "char2": "ल",
+        "operatorSymbol": "+",
+        "resultWord": "कल",
+        "meaningHindi": "कल (Kal) - आने वाला या बीता हुआ दिन",
+        "emoji": "📅",
+        "audioExplanationHindi": "क... और ल... मिलकर बना... कल! कल हम सब पार्क घूमने जाएंगे!"
+      },
+      {
+        "id": "hi_blend_2",
+        "subjectId": "hindi",
+        "char1": "ज",
+        "char2": "ल",
+        "operatorSymbol": "+",
+        "resultWord": "जल",
+        "meaningHindi": "जल (Jal) - पीने का शुद्ध पानी",
+        "emoji": "💧",
+        "audioExplanationHindi": "ज... और ल... मिलकर बना... जल! जल ही जीवन है!"
+      },
+      {
+        "id": "hi_blend_3",
+        "subjectId": "hindi",
+        "char1": "घ",
+        "char2": "र",
+        "operatorSymbol": "+",
+        "resultWord": "घर",
+        "meaningHindi": "घर (Ghar) - जहाँ हम सब रहते हैं",
+        "emoji": "🏠",
+        "audioExplanationHindi": "घ... और र... मिलकर बना... घर! हमारा प्यारा घर!"
+      },
+      {
+        "id": "hi_blend_4",
+        "subjectId": "hindi",
+        "char1": "ब",
+        "char2": "स",
+        "operatorSymbol": "+",
+        "resultWord": "बस",
+        "meaningHindi": "बस (Bus) - स्कूल जाने वाली बस",
+        "emoji": "🚌",
+        "audioExplanationHindi": "ब... और स... मिलकर बना... बस! पीली स्कूल बस!"
+      },
+      {
+        "id": "hi_blend_5",
+        "subjectId": "hindi",
+        "char1": "फ",
+        "char2": "ल",
+        "operatorSymbol": "+",
+        "resultWord": "फल",
+        "meaningHindi": "फल (Fal) - मीठे और ताजे फल",
+        "emoji": "🍎",
+        "audioExplanationHindi": "फ... और ल... मिलकर बना... फल! ताजे फल खाओ!"
+      },
+      {
+        "id": "hi_blend_6",
+        "subjectId": "hindi",
+        "char1": "न",
+        "char2": "ल",
+        "operatorSymbol": "+",
+        "resultWord": "नल",
+        "meaningHindi": "नल (Nal) - पानी देने वाला नल",
+        "emoji": "🚰",
+        "audioExplanationHindi": "न... और ल... मिलकर बना... नल! नल से ताजा पानी लो!"
+      },
+      {
+        "id": "hi_blend_7",
+        "subjectId": "hindi",
+        "char1": "र",
+        "char2": "थ",
+        "operatorSymbol": "+",
+        "resultWord": "रथ",
+        "meaningHindi": "रथ (Rath) - राजा का सुंदर रथ",
+        "emoji": "🎠",
+        "audioExplanationHindi": "र... और थ... मिलकर बना... रथ! रथ पर सवार राजा!"
+      },
+      {
+        "id": "hi_blend_8",
+        "subjectId": "hindi",
+        "char1": "द",
+        "char2": "स",
+        "operatorSymbol": "+",
+        "resultWord": "दस",
+        "meaningHindi": "दस (Das) - संख्या 10",
+        "emoji": "🔟",
+        "audioExplanationHindi": "द... और स... मिलकर बना... दस! 10 उंगलियाँ!"
+      },
+      {
+        "id": "hi_blend_9",
+        "subjectId": "hindi",
+        "char1": "ह",
+        "char2": "ल",
+        "operatorSymbol": "+",
+        "resultWord": "हल",
+        "meaningHindi": "हल (Hal) - खेत जोतने वाला हल या समस्या का समाधान",
+        "emoji": "🚜",
+        "audioExplanationHindi": "ह... और ल... मिलकर बना... हल! किसान का हल!"
+      },
+      {
+        "id": "hi_blend_10",
+        "subjectId": "hindi",
+        "char1": "ध",
+        "char2": "न",
+        "operatorSymbol": "+",
+        "resultWord": "धन",
+        "meaningHindi": "धन (Dhan) - संपत्ति और विद्या धन",
+        "emoji": "💰",
+        "audioExplanationHindi": "ध... और न... मिलकर बना... धन! विद्या सबसे बड़ा धन है!"
+      },
+      {
+        "id": "hi_blend_11",
+        "subjectId": "hindi",
+        "char1": "ज",
+        "char2": "ग",
+        "operatorSymbol": "+",
+        "resultWord": "जग",
+        "meaningHindi": "जग (Jag) - पानी का जग या पूरी दुनिया",
+        "emoji": "🥛",
+        "audioExplanationHindi": "ज... और ग... मिलकर बना... जग! जग में पानी भरो!"
+      },
+      {
+        "id": "hi_blend_12",
+        "subjectId": "hindi",
+        "char1": "स",
+        "char2": "च",
+        "operatorSymbol": "+",
+        "resultWord": "सच",
+        "meaningHindi": "सच (Sach) - हमेशा सच बोलो",
+        "emoji": "✨",
+        "audioExplanationHindi": "स... और च... मिलकर बना... सच! सदा सत्य बोलो!"
+      }
+    ],
+    "english": [
+      {
+        "id": "en_blend_1",
+        "subjectId": "english",
+        "char1": "A",
+        "char2": "T",
+        "operatorSymbol": "+",
+        "resultWord": "AT",
+        "meaningHindi": "AT - किसी जगह पर होना (Look AT the toy)",
+        "emoji": "📍",
+        "audioExplanationHindi": "A plus T makes... AT! Look AT Priya Didi!"
+      },
+      {
+        "id": "en_blend_2",
+        "subjectId": "english",
+        "char1": "I",
+        "char2": "N",
+        "operatorSymbol": "+",
+        "resultWord": "IN",
+        "meaningHindi": "IN - अंदर होना (Ball is IN the box)",
+        "emoji": "📥",
+        "audioExplanationHindi": "I plus N makes... IN! The fish is IN water!"
+      },
+      {
+        "id": "en_blend_3",
+        "subjectId": "english",
+        "char1": "O",
+        "char2": "N",
+        "operatorSymbol": "+",
+        "resultWord": "ON",
+        "meaningHindi": "ON - ऊपर होना (Book is ON table)",
+        "emoji": "🔛",
+        "audioExplanationHindi": "O plus N makes... ON! Cap is ON my head!"
+      },
+      {
+        "id": "en_blend_4",
+        "subjectId": "english",
+        "char1": "G",
+        "char2": "O",
+        "operatorSymbol": "+",
+        "resultWord": "GO",
+        "meaningHindi": "GO - जाना या चलना (Ready, Steady, GO!)",
+        "emoji": "🏃",
+        "audioExplanationHindi": "G plus O makes... GO! Let's GO to school!"
+      },
+      {
+        "id": "en_blend_5",
+        "subjectId": "english",
+        "char1": "N",
+        "char2": "O",
+        "operatorSymbol": "+",
+        "resultWord": "NO",
+        "meaningHindi": "NO - नहीं कहना (NO means nahii)",
+        "emoji": "🙅",
+        "audioExplanationHindi": "N plus O makes... NO! Say NO to junk food!"
+      },
+      {
+        "id": "en_blend_6",
+        "subjectId": "english",
+        "char1": "U",
+        "char2": "P",
+        "operatorSymbol": "+",
+        "resultWord": "UP",
+        "meaningHindi": "UP - ऊपर देखना या उठना (Look UP in sky)",
+        "emoji": "⬆️",
+        "audioExplanationHindi": "U plus P makes... UP! Sun is UP in the sky!"
+      },
+      {
+        "id": "en_blend_7",
+        "subjectId": "english",
+        "char1": "M",
+        "char2": "E",
+        "operatorSymbol": "+",
+        "resultWord": "ME",
+        "meaningHindi": "ME - मुझे / मैं (Listen to ME)",
+        "emoji": "🙋",
+        "audioExplanationHindi": "M plus E makes... ME! Give the toy to ME!"
+      },
+      {
+        "id": "en_blend_8",
+        "subjectId": "english",
+        "char1": "H",
+        "char2": "E",
+        "operatorSymbol": "+",
+        "resultWord": "HE",
+        "meaningHindi": "HE - वह लड़का (HE is my friend)",
+        "emoji": "👦",
+        "audioExplanationHindi": "H plus E makes... HE! HE is studying!"
+      }
+    ],
+    "math": [
+      {
+        "id": "ma_blend_1",
+        "subjectId": "math",
+        "char1": "1",
+        "char2": "1",
+        "operatorSymbol": "+",
+        "resultWord": "2",
+        "meaningHindi": "1 + 1 = 2 (एक और एक मिलकर बने दो)",
+        "emoji": "✌️",
+        "audioExplanationHindi": "एक सेब... और एक और सेब... मिलकर बने दो सेब! 1 + 1 = 2!"
+      },
+      {
+        "id": "ma_blend_2",
+        "subjectId": "math",
+        "char1": "2",
+        "char2": "1",
+        "operatorSymbol": "+",
+        "resultWord": "3",
+        "meaningHindi": "2 + 1 = 3 (दो और एक मिलकर बने तीन)",
+        "emoji": "🎈",
+        "audioExplanationHindi": "दो गुब्बारे... और एक गुब्बारा... कुल हुए तीन गुब्बारे! 2 + 1 = 3!"
+      },
+      {
+        "id": "ma_blend_3",
+        "subjectId": "math",
+        "char1": "2",
+        "char2": "2",
+        "operatorSymbol": "+",
+        "resultWord": "4",
+        "meaningHindi": "2 + 2 = 4 (दो और दो मिलकर बने चार)",
+        "emoji": "🍀",
+        "audioExplanationHindi": "दो और दो जोड़ने पर बनते हैं चार! 2 + 2 = 4!"
+      },
+      {
+        "id": "ma_blend_4",
+        "subjectId": "math",
+        "char1": "3",
+        "char2": "2",
+        "operatorSymbol": "+",
+        "resultWord": "5",
+        "meaningHindi": "3 + 2 = 5 (तीन और दो मिलकर बने पाँच)",
+        "emoji": "⭐",
+        "audioExplanationHindi": "तीन सितारे और दो सितारे... कुल पाँच चमकते सितारे! 3 + 2 = 5!"
+      },
+      {
+        "id": "ma_blend_5",
+        "subjectId": "math",
+        "char1": "4",
+        "char2": "1",
+        "operatorSymbol": "+",
+        "resultWord": "5",
+        "meaningHindi": "4 + 1 = 5 (चार और एक मिलकर बने पाँच)",
+        "emoji": "🖐️",
+        "audioExplanationHindi": "चार गेंद और एक गेंद... कुल हुईं पाँच गेंदें! 4 + 1 = 5!"
+      },
+      {
+        "id": "ma_blend_6",
+        "subjectId": "math",
+        "char1": "5",
+        "char2": "5",
+        "operatorSymbol": "+",
+        "resultWord": "10",
+        "meaningHindi": "5 + 5 = 10 (पाँच और पाँच मिलकर बने दस)",
+        "emoji": "🙌",
+        "audioExplanationHindi": "पाँच उंगलियाँ और पाँच उंगलियाँ... मिलकर बनीं दस उंगलियाँ! 5 + 5 = 10!"
+      }
+    ]
   },
-  {
-    "id": 3,
-    "name_en": "Mango",
-    "name_hi": "आम",
-    "audio_text_en": "Mango. Mango is juicy, sweet, and known as the king of fruits.",
-    "audio_text_hi": "आम। आम फलों का राजा है और बहुत रसीला व मीठा होता है।",
-    "level": 1
-  },
-  {
-    "id": 4,
-    "name_en": "Orange",
-    "name_hi": "संतरा",
-    "audio_text_en": "Orange. A round, tangy and juicy citrus fruit rich in vitamin C.",
-    "audio_text_hi": "संतरा। संतरा एक खट्टा-मीठा रसीला फल है जिसमें विटामिन सी होता है।",
-    "level": 2
-  },
-  {
-    "id": 5,
-    "name_en": "Grapes",
-    "name_hi": "अंगूर",
-    "audio_text_en": "Grapes. Small and sweet berries that grow together in bunches.",
-    "audio_text_hi": "अंगूर। अंगूर गुच्छों में लगने वाले छोटे, मीठे और रसीले फल हैं।",
-    "level": 2
-  },
-  {
-    "id": 6,
-    "name_en": "Watermelon",
-    "name_hi": "तरबूज",
-    "audio_text_en": "Watermelon. A big green summer fruit that is red, sweet, and juicy inside.",
-    "audio_text_hi": "तरबूज। तरबूज गर्मियों का बड़ा फल है जो अंदर से लाल और बहुत रसीला होता है।",
-    "level": 3
-  },
-  {
-    "id": 7,
-    "name_en": "Papaya",
-    "name_hi": "पपीता",
-    "audio_text_en": "Papaya. A soft and sweet tropical fruit that is good for health and digestion.",
-    "audio_text_hi": "पपीता। पपीता एक स्वादिष्ट पीला फल है जो सेहत और पाचन के लिए बहुत लाभकारी है।",
-    "level": 3
-  },
-  {
-    "id": 8,
-    "name_en": "Cow",
-    "name_hi": "गाय",
-    "audio_text_en": "Cow. The cow is a gentle domestic animal that gives us fresh and healthy milk.",
-    "audio_text_hi": "गाय। गाय एक सीधी और शांत पालतू पशु है जो हमें पौष्टिक दूध देती है।",
-    "level": 1
-  },
-  {
-    "id": 9,
-    "name_en": "Dog",
-    "name_hi": "कुत्ता",
-    "audio_text_en": "Dog. The dog is a loyal and faithful friend who guards our home and barks woof woof.",
-    "audio_text_hi": "कुत्ता। कुत्ता एक वफादार पालतू जानवर है जो घर की रखवाली करता है और भौं-भौं करता है।",
-    "level": 1
-  },
-  {
-    "id": 10,
-    "name_en": "Cat",
-    "name_hi": "बिल्ली",
-    "audio_text_en": "Cat. The cat is a cute and playful pet that drinks milk and says meow meow.",
-    "audio_text_hi": "बिल्ली। बिल्ली एक प्यारी और फुर्तीली पालतू जानवर है जो म्याऊं-म्याऊं करती है।",
-    "level": 1
-  },
-  {
-    "id": 11,
-    "name_en": "Lion",
-    "name_hi": "शेर",
-    "audio_text_en": "Lion. The lion is known as the king of the jungle and has a powerful roar.",
-    "audio_text_hi": "शेर। शेर जंगल का राजा कहलाता है और जंगल में जोर से दहाड़ता है।",
-    "level": 2
-  },
-  {
-    "id": 12,
-    "name_en": "Elephant",
-    "name_hi": "हाथी",
-    "audio_text_en": "Elephant. The elephant is the largest land animal with big ears and a long trunk.",
-    "audio_text_hi": "हाथी। हाथी जमीन पर रहने वाला सबसे बड़ा जानवर है जिसके बड़े कान और लंबी सूंड होती है।",
-    "level": 2
-  },
-  {
-    "id": 13,
-    "name_en": "Tiger",
-    "name_hi": "बाघ",
-    "audio_text_en": "Tiger. The tiger is a magnificent wild cat with black stripes and the national animal of India.",
-    "audio_text_hi": "बाघ। बाघ भारत का राष्ट्रीय पशु है जिसके शरीर पर सुंदर काली धारियां होती हैं।",
-    "level": 3
-  },
-  {
-    "id": 14,
-    "name_en": "Monkey",
-    "name_hi": "बंदर",
-    "audio_text_en": "Monkey. The monkey is a naughty and clever animal that loves jumping on trees.",
-    "audio_text_hi": "बंदर। बंदर एक नटखट और चालाक जानवर है जो पेड़ों पर कूदता है और सबको हंसाता है।",
-    "level": 3
-  },
-  {
-    "id": 15,
-    "name_en": "One",
-    "name_hi": "एक",
-    "audio_text_en": "One. Number one stands for a single item, just like our one bright sun in the sky.",
-    "audio_text_hi": "एक। संख्या एक, जैसे आसमान में चमकता हुआ अकेला सूरज।",
-    "level": 1
-  },
-  {
-    "id": 16,
-    "name_en": "Two",
-    "name_hi": "दो",
-    "audio_text_en": "Two. Number two represents a pair, like our two bright eyes and two hands.",
-    "audio_text_hi": "दो। संख्या दो, जैसे हमारी देखने के लिए दो आँखें और काम करने के लिए दो हाथ।",
-    "level": 1
-  },
-  {
-    "id": 17,
-    "name_en": "Three",
-    "name_hi": "तीन",
-    "audio_text_en": "Three. Number three, like the three colors in our national flag and three wheels of a rickshaw.",
-    "audio_text_hi": "तीन। संख्या तीन, जैसे हमारे तिरंगे झंडे के तीन रंग और ऑटो के तीन पहिए।",
-    "level": 2
-  },
-  {
-    "id": 18,
-    "name_en": "Four",
-    "name_hi": "चार",
-    "audio_text_en": "Four. Number four, like the four wheels of a car and four legs of a table.",
-    "audio_text_hi": "चार। संख्या चार, जैसे कार के चार पहिए और मेज के चार पाए।",
-    "level": 2
-  },
-  {
-    "id": 19,
-    "name_en": "Five",
-    "name_hi": "पाँच",
-    "audio_text_en": "Five. Number five, like the five fingers on each hand.",
-    "audio_text_hi": "पाँच। संख्या पाँच, जैसे हमारे एक हाथ में पाँच उंगलियाँ होती हैं।",
-    "level": 3
-  },
-  {
-    "id": 20,
-    "name_en": "Six",
-    "name_hi": "छह",
-    "audio_text_en": "Six. Number six, like the six sides of a cube and six legs of a honeybee.",
-    "audio_text_hi": "छह। संख्या छह, जैसे तितलियों और मधुमक्खियों के छह पैर होते हैं।",
-    "level": 3
+  "quiz_questions": {
+    "hindi": [
+      {
+        "id": 101,
+        "subjectId": "hindi",
+        "questionHindi": "इनमें से 'क' से कबूतर कौन सा है?",
+        "promptEmoji": "🕊️",
+        "options": [
+          "ग",
+          "क",
+          "म",
+          "न"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "शाबाश! बिल्कुल सही! 'क' से कबूतर!",
+        "explanationHindi": "क अक्षर से कबूतर बनता है।"
+      },
+      {
+        "id": 102,
+        "subjectId": "hindi",
+        "questionHindi": "'आम' का पहला अक्षर क्या है?",
+        "promptEmoji": "🥭",
+        "options": [
+          "अ",
+          "ई",
+          "आ",
+          "उ"
+        ],
+        "correctIndex": 2,
+        "praiseHindi": "अरे वाह! बहुत खूब! 'आ' से आम!",
+        "explanationHindi": "आम शब्द 'आ' से शुरू होता है।"
+      },
+      {
+        "id": 103,
+        "subjectId": "hindi",
+        "questionHindi": "क + ल मिलकर कौन सा शब्द बनता है?",
+        "promptEmoji": "🧩",
+        "options": [
+          "कम",
+          "कल",
+          "कट",
+          "कस"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "शानदार! क + ल = कल!",
+        "explanationHindi": "क और ल जोड़ने पर 'कल' बनता है।"
+      },
+      {
+        "id": 104,
+        "subjectId": "hindi",
+        "questionHindi": "'मछली' का पहला अक्षर कौन सा है?",
+        "promptEmoji": "🐟",
+        "options": [
+          "प",
+          "फ",
+          "ब",
+          "म"
+        ],
+        "correctIndex": 3,
+        "praiseHindi": "अरे वाह! म से मछली जल की रानी!",
+        "explanationHindi": "मछली शब्द 'म' अक्षर से शुरू होता है।"
+      },
+      {
+        "id": 105,
+        "subjectId": "hindi",
+        "questionHindi": "ज + ल मिलकर क्या बनता है?",
+        "promptEmoji": "💧",
+        "options": [
+          "जल",
+          "जग",
+          "जन",
+          "जब"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "बहुत खूब! ज + ल = जल (पानी)!",
+        "explanationHindi": "ज और ल मिलकर जल बनता है।"
+      },
+      {
+        "id": 106,
+        "subjectId": "hindi",
+        "questionHindi": "इनमें से 'त' से तरबूज कौन सा है?",
+        "promptEmoji": "🍉",
+        "options": [
+          "द",
+          "थ",
+          "त",
+          "ध"
+        ],
+        "correctIndex": 2,
+        "praiseHindi": "शाबाश! 'त' से मीठा तरबूज!",
+        "explanationHindi": "त वर्ण से तरबूज बनता है।"
+      },
+      {
+        "id": 107,
+        "subjectId": "hindi",
+        "questionHindi": "ब + स मिलकर कौन सा वाहन बनता है?",
+        "promptEmoji": "🚌",
+        "options": [
+          "बल",
+          "बस",
+          "बक",
+          "बम"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "कमाल कर दिया! ब + स = बस!",
+        "explanationHindi": "ब और स मिलकर 'बस' बनता है।"
+      },
+      {
+        "id": 108,
+        "subjectId": "hindi",
+        "questionHindi": "वर्णमाला का अंतिम संयुक्त व्यंजन कौन सा है?",
+        "promptEmoji": "📚",
+        "options": [
+          "क्ष",
+          "त्र",
+          "ज्ञ",
+          "ह"
+        ],
+        "correctIndex": 2,
+        "praiseHindi": "अद्भुत! 'ज्ञ' से ज्ञानी!",
+        "explanationHindi": "ज्ञानी का 'ज्ञ' संयुक्त व्यंजन है।"
+      }
+    ],
+    "english": [
+      {
+        "id": 201,
+        "subjectId": "english",
+        "questionHindi": "Which letter is for 'Apple' 🍎?",
+        "promptEmoji": "🍎",
+        "options": [
+          "B",
+          "A",
+          "C",
+          "D"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "Superb! A is for Apple!",
+        "explanationHindi": "Apple starts with letter A."
+      },
+      {
+        "id": 202,
+        "subjectId": "english",
+        "questionHindi": "What does 'G + O' make?",
+        "promptEmoji": "🏃",
+        "options": [
+          "GO",
+          "NO",
+          "TO",
+          "SO"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "Awesome! G + O makes GO!",
+        "explanationHindi": "G and O blend together as GO."
+      },
+      {
+        "id": 203,
+        "subjectId": "english",
+        "questionHindi": "Which letter makes the sound of 'Cat' 🐱?",
+        "promptEmoji": "🐱",
+        "options": [
+          "D",
+          "F",
+          "C",
+          "P"
+        ],
+        "correctIndex": 2,
+        "praiseHindi": "Great Job! C for Cat!",
+        "explanationHindi": "C sounds like /k/ in Cat."
+      },
+      {
+        "id": 204,
+        "subjectId": "english",
+        "questionHindi": "Which letter is for 'Lion' 🦁?",
+        "promptEmoji": "🦁",
+        "options": [
+          "L",
+          "M",
+          "N",
+          "O"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "Brilliant! L is for Lion!",
+        "explanationHindi": "Lion starts with letter L."
+      }
+    ],
+    "math": [
+      {
+        "id": 301,
+        "subjectId": "math",
+        "questionHindi": "1 + 1 कितना होता है?",
+        "promptEmoji": "🍎 + 🍎",
+        "options": [
+          "1",
+          "3",
+          "2",
+          "4"
+        ],
+        "correctIndex": 2,
+        "praiseHindi": "बहुत बढ़िया! 1 + 1 = 2!",
+        "explanationHindi": "एक और एक जोड़ने पर दो बनता है।"
+      },
+      {
+        "id": 302,
+        "subjectId": "math",
+        "questionHindi": "इनमें से कौन सा अंक '3' है?",
+        "promptEmoji": "🛺 (तीन पहिए)",
+        "options": [
+          "5",
+          "3",
+          "2",
+          "1"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "शाबाश! यह अंक ३ (Three) है!",
+        "explanationHindi": "रिक्शा के ३ पहिए होते हैं।"
+      },
+      {
+        "id": 303,
+        "subjectId": "math",
+        "questionHindi": "2 + 2 कितना होता है?",
+        "promptEmoji": "🎈🎈 + 🎈🎈",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "कमाल कर दिया! 2 + 2 = 4!",
+        "explanationHindi": "दो और दो जोड़ने पर चार बनता है।"
+      },
+      {
+        "id": 304,
+        "subjectId": "math",
+        "questionHindi": "5 + 5 कितना होता है?",
+        "promptEmoji": "🖐️ + 🖐️",
+        "options": [
+          "8",
+          "9",
+          "10",
+          "12"
+        ],
+        "correctIndex": 2,
+        "praiseHindi": "शाबाश! 5 + 5 = 10 (दस)!",
+        "explanationHindi": "दोनों हाथों की दस उंगलियाँ होती हैं।"
+      }
+    ]
   }
-]
-
+}
