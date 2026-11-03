@@ -40,6 +40,7 @@ import com.kidslearning.chutki.audio.HindiTtsManager
 import com.kidslearning.chutki.audio.SoundEffectHelper
 import com.kidslearning.chutki.theme.CandyOrange
 import com.kidslearning.chutki.theme.CorrectGreen
+import com.kidslearning.chutki.data.UserPreferencesManager
 import com.kidslearning.chutki.ui.components.ClayButton
 import com.kidslearning.chutki.ui.components.ClayCard
 import com.kidslearning.chutki.ui.components.LevelMilestoneCelebration
@@ -66,6 +67,7 @@ fun JigsawPuzzleGame(
     isDarkMode: Boolean,
     isEnglish: Boolean = false,
     ttsManager: HindiTtsManager?,
+    userPrefs: UserPreferencesManager? = null,
     onBack: () -> Unit,
     onReward: (xp: Int, stars: Int) -> Unit
 ) {
@@ -162,11 +164,19 @@ fun JigsawPuzzleGame(
         )
     }
 
-    var puzzleIdx by remember { mutableIntStateOf(0) }
-    var currentLevel by remember { mutableIntStateOf(1) }
+    val (savedLevel, savedScore) = remember {
+        userPrefs?.getGameProgress("JIGSAW_PUZZLE") ?: Pair(1, 0)
+    }
+    var puzzleIdx by remember { mutableIntStateOf(savedScore.coerceAtLeast(0)) }
+    var currentLevel by remember { mutableIntStateOf(savedLevel.coerceAtLeast(1)) }
     var streakCombo by remember { mutableIntStateOf(0) }
     var isProcessing by remember { mutableStateOf(false) }
     var showMilestoneDialog by remember { mutableStateOf(false) }
+
+    // Persist game level and puzzle index
+    LaunchedEffect(currentLevel, puzzleIdx) {
+        userPrefs?.saveGameProgress("JIGSAW_PUZZLE", currentLevel, puzzleIdx)
+    }
 
     val current = puzzleTargets[puzzleIdx % puzzleTargets.size]
     val placedPieceIds = remember(puzzleIdx) { mutableStateListOf<Int>() }

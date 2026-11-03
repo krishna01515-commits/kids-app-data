@@ -59,6 +59,7 @@ import com.kidslearning.chutki.ui.screens.games.ShadowMatchingGame
 import com.kidslearning.chutki.ui.screens.games.ShapeColorSorterGame
 import com.kidslearning.chutki.ui.screens.games.SizeComparisonGame
 import com.kidslearning.chutki.ui.screens.games.WordMatchGame
+import com.kidslearning.chutki.data.UserPreferencesManager
 
 @Composable
 fun QuizScreen(
@@ -66,6 +67,7 @@ fun QuizScreen(
     isDarkMode: Boolean,
     isEnglish: Boolean = false,
     ttsManager: HindiTtsManager?,
+    userPrefs: UserPreferencesManager? = null,
     onBack: () -> Unit,
     onAddReward: (xp: Int, stars: Int) -> Unit = { _, _ -> },
     onQuizAnswered: (questionId: Int) -> Unit = {}
@@ -98,6 +100,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -107,6 +110,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -116,6 +120,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -125,6 +130,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -136,6 +142,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -145,6 +152,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -154,6 +162,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -163,6 +172,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -174,6 +184,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -183,6 +194,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -192,6 +204,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -203,6 +216,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -212,6 +226,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -221,6 +236,7 @@ fun QuizScreen(
                     isDarkMode = isDarkMode,
                     isEnglish = isEnglish,
                     ttsManager = ttsManager,
+                    userPrefs = userPrefs,
                     onBack = { activeGame = null },
                     onReward = rewardHandler
                 )
@@ -399,6 +415,8 @@ fun QuizScreen(
 
         items(categoryGames) { game ->
             val catColor = Color(selectedCategory.themeColorHex)
+            val (savedLvl, savedScr) = userPrefs?.getGameProgress(game.name) ?: Pair(1, 0)
+            val isLastPlayed = userPrefs?.getLastPlayedGame() == game.name
 
             ClayCard(
                 modifier = Modifier
@@ -411,6 +429,7 @@ fun QuizScreen(
                         } else {
                             ttsManager?.speak("चलो खेलते हैं: ${game.titleHindi}!")
                         }
+                        userPrefs?.setLastPlayedGame(game.name)
                         activeGame = game
                     },
                 cornerRadius = 24.dp,
@@ -467,6 +486,24 @@ fun QuizScreen(
                                 text = "⭐".repeat(game.starReward),
                                 fontSize = 12.sp
                             )
+                            if (savedLvl > 1 || savedScr > 0) {
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = if (isEnglish) "Lvl $savedLvl • Score $savedScr" else "लेवल $savedLvl • स्कोर $savedScr",
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = CorrectGreen
+                                )
+                            }
+                            if (isLastPlayed) {
+                                Spacer(modifier = Modifier.width(6.dp))
+                                Text(
+                                    text = if (isEnglish) "• Last Played" else "• पिछली बार खेला",
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = CandyOrange
+                                )
+                            }
                         }
                     }
 
@@ -475,7 +512,7 @@ fun QuizScreen(
                         modifier = Modifier
                             .size(40.dp)
                             .clip(CircleShape)
-                            .background(catColor),
+                            .background(if (savedLvl > 1 || savedScr > 0) CorrectGreen else catColor),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(text = "▶", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)

@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.sp
 import com.kidslearning.chutki.audio.HindiTtsManager
 import com.kidslearning.chutki.audio.SoundEffectHelper
 import com.kidslearning.chutki.data.ProceduralGameEngine
+import com.kidslearning.chutki.data.UserPreferencesManager
 import com.kidslearning.chutki.theme.CandyOrange
 import com.kidslearning.chutki.theme.CorrectGreen
 import com.kidslearning.chutki.ui.components.ClayButton
@@ -54,16 +55,25 @@ fun CardFlipMemoryGame(
     isDarkMode: Boolean,
     isEnglish: Boolean = false,
     ttsManager: HindiTtsManager?,
+    userPrefs: UserPreferencesManager? = null,
     onBack: () -> Unit,
     onReward: (xp: Int, stars: Int) -> Unit
 ) {
-    var gameLevel by remember { mutableIntStateOf(1) }
-    var roundScore by remember { mutableIntStateOf(0) }
+    val (savedLevel, savedScore) = remember {
+        userPrefs?.getGameProgress("CARD_MEMORY") ?: Pair(1, 0)
+    }
+    var gameLevel by remember { mutableIntStateOf(savedLevel.coerceAtLeast(1)) }
+    var roundScore by remember { mutableIntStateOf(savedScore.coerceAtLeast(0)) }
     var currentStreak by remember { mutableIntStateOf(0) }
-    var roundCount by remember { mutableIntStateOf(1) }
+    var roundCount by remember { mutableIntStateOf(savedScore.coerceAtLeast(0) + 1) }
 
     var cards by remember {
         mutableStateOf(ProceduralGameEngine.generateCardMemoryCards(gameLevel))
+    }
+
+    // Persist game level and score automatically
+    LaunchedEffect(gameLevel, roundScore) {
+        userPrefs?.saveGameProgress("CARD_MEMORY", gameLevel, roundScore, roundCount)
     }
 
     val matchedIds = remember { mutableStateListOf<Int>() }

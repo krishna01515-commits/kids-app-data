@@ -95,10 +95,10 @@ class UserPreferencesManager(context: Context) {
         val quizzes = getCompletedSet("${sub}_quiz_completed").size
 
         val totalActivities = when (sub) {
-            "hindi" -> 49 + 49 + 8 + 4
-            "english" -> 26 + 26 + 8 + 4
-            "math" -> 10 + 10 + 8 + 4
-            else -> 50
+            "hindi" -> 49 + 49 + 200 + 8
+            "english" -> 26 + 26 + 200 + 8
+            "math" -> 100 + 100 + 200 + 8
+            else -> 100
         }
 
         val completed = cards + tracing + words + quizzes
@@ -149,6 +149,12 @@ class UserPreferencesManager(context: Context) {
         if (hindiPct >= 20 || xp >= 600) badges++
         if (rank <= 3 && xp >= 700) badges++
 
+        val lastType = prefs.getString("last_active_program_type", "LEVEL_1_CARDS") ?: "LEVEL_1_CARDS"
+        val lastSubject = prefs.getString("last_active_subject", "hindi") ?: "hindi"
+        val lastLevel = prefs.getInt("last_active_level", 1)
+        val lastLabel = prefs.getString("last_active_item_label", "") ?: ""
+        val lastGame = prefs.getString("last_active_game_key", null)
+
         return UserProfile(
             id = prefs.getString("user_id", "kid_default") ?: "kid_default",
             name = prefs.getString("kid_name", "आरव (नन्हे उस्ताद)") ?: "आरव (नन्हे उस्ताद)",
@@ -180,7 +186,13 @@ class UserPreferencesManager(context: Context) {
             lettersTracedCount = totalTracing,
             wordsBuiltCount = totalWords,
             quizzesSolvedCount = totalQuiz,
-            unlockedBadgesCount = badges
+            unlockedBadgesCount = badges,
+
+            lastActiveType = lastType,
+            lastActiveSubjectId = lastSubject,
+            lastActiveLevel = lastLevel,
+            lastActiveItemLabel = lastLabel,
+            lastActiveGameKey = lastGame
         )
     }
 
@@ -370,22 +382,28 @@ class UserPreferencesManager(context: Context) {
         val sub = subjectId.lowercase()
         return when (levelNumber) {
             1 -> {
-                val max = when (sub) { "hindi" -> 49; "english" -> 26; else -> 10 }
+                val max = when (sub) { "hindi" -> 49; "english" -> 26; else -> 100 }
                 val count = getCompletedSet("${sub}_cards_completed").size
-                ((count.toFloat() / max) * 100).toInt().coerceIn(0, 100)
+                val lastIdx = getLastCardIndex(sub) + 1
+                val effective = maxOf(count, lastIdx)
+                ((effective.toFloat() / max) * 100).toInt().coerceIn(0, 100)
             }
             2 -> {
-                val max = when (sub) { "hindi" -> 49; "english" -> 26; else -> 10 }
+                val max = when (sub) { "hindi" -> 49; "english" -> 26; else -> 100 }
                 val count = getCompletedSet("${sub}_tracing_completed").size
-                ((count.toFloat() / max) * 100).toInt().coerceIn(0, 100)
+                val lastIdx = getLastTracingIndex(sub) + 1
+                val effective = maxOf(count, lastIdx)
+                ((effective.toFloat() / max) * 100).toInt().coerceIn(0, 100)
             }
             3 -> {
                 val count = getCompletedSet("${sub}_words_completed").size
-                ((count.toFloat() / 8) * 100).toInt().coerceIn(0, 100)
+                val lastIdx = getLastBlendIndex(sub) + 1
+                val effective = maxOf(count, lastIdx)
+                ((effective.toFloat() / 200) * 100).toInt().coerceIn(0, 100)
             }
             4 -> {
                 val count = getCompletedSet("${sub}_quiz_completed").size
-                ((count.toFloat() / 4) * 100).toInt().coerceIn(0, 100)
+                ((count.toFloat() / 8) * 100).toInt().coerceIn(0, 100)
             }
             5 -> {
                 val unlocked = prefs.getInt("${sub}_unlocked_level", 1)
@@ -463,5 +481,150 @@ class UserPreferencesManager(context: Context) {
             .apply()
 
         _userProfileState.value = buildProfile()
+    }
+
+    // =========================================================================
+    // 1. EXACT LEARNING ITEM PROGRESS (Per Subject & Level)
+    // =========================================================================
+
+    // Level 1: Last Card Index per subject
+    fun getLastCardIndex(subjectId: String): Int {
+        return prefs.getInt("last_card_index_${subjectId.lowercase()}", 0)
+    }
+
+    fun setLastCardIndex(subjectId: String, index: Int, cardLabel: String = "") {
+        val sub = subjectId.lowercase()
+        prefs.edit()
+            .putInt("last_card_index_$sub", index)
+            .putString("last_active_program_type", "LEVEL_1_CARDS")
+            .putString("last_active_subject", sub)
+            .putInt("last_active_level", 1)
+            .putInt("last_active_item_index", index)
+            .putString("last_active_item_label", cardLabel)
+            .apply()
+        _userProfileState.value = buildProfile()
+    }
+
+    // Level 2: Last Tracing Letter Index per subject
+    fun getLastTracingIndex(subjectId: String): Int {
+        return prefs.getInt("last_tracing_index_${subjectId.lowercase()}", 0)
+    }
+
+    fun setLastTracingIndex(subjectId: String, index: Int, char: String = "") {
+        val sub = subjectId.lowercase()
+        prefs.edit()
+            .putInt("last_tracing_index_$sub", index)
+            .putString("last_tracing_char_$sub", char)
+            .putString("last_active_program_type", "LEVEL_2_TRACING")
+            .putString("last_active_subject", sub)
+            .putInt("last_active_level", 2)
+            .putInt("last_active_item_index", index)
+            .putString("last_active_item_label", char)
+            .apply()
+        _userProfileState.value = buildProfile()
+    }
+
+    // Level 3: Last Word Blend Index per subject (out of 200 words!)
+    fun getLastBlendIndex(subjectId: String): Int {
+        return prefs.getInt("last_blend_index_${subjectId.lowercase()}", 0)
+    }
+
+    fun setLastBlendIndex(subjectId: String, index: Int, word: String = "") {
+        val sub = subjectId.lowercase()
+        prefs.edit()
+            .putInt("last_blend_index_$sub", index)
+            .putString("last_blend_word_$sub", word)
+            .putString("last_active_program_type", "LEVEL_3_WORD_BUILDER")
+            .putString("last_active_subject", sub)
+            .putInt("last_active_level", 3)
+            .putInt("last_active_item_index", index)
+            .putString("last_active_item_label", word)
+            .apply()
+        _userProfileState.value = buildProfile()
+    }
+
+    // =========================================================================
+    // 2. GAMING PROGRESS (All Games)
+    // =========================================================================
+
+    fun getGameProgress(gameKey: String): Pair<Int, Int> {
+        val key = gameKey.lowercase()
+        val level = prefs.getInt("game_level_$key", 1)
+        val score = prefs.getInt("game_score_$key", 0)
+        return Pair(level, score)
+    }
+
+    fun saveGameProgress(gameKey: String, level: Int, score: Int, roundCount: Int = 1) {
+        val key = gameKey.lowercase()
+        prefs.edit()
+            .putInt("game_level_$key", level)
+            .putInt("game_score_$key", score)
+            .putInt("game_round_$key", roundCount)
+            .putString("last_played_game", gameKey)
+            .putString("last_active_program_type", "GAME")
+            .putString("last_active_game_key", gameKey)
+            .putString("last_active_item_label", "Level $level • Score $score")
+            .apply()
+        _userProfileState.value = buildProfile()
+    }
+
+    fun getLastPlayedGame(): String? {
+        return prefs.getString("last_played_game", null)
+    }
+
+    fun setLastPlayedGame(gameKey: String) {
+        prefs.edit()
+            .putString("last_played_game", gameKey)
+            .putString("last_active_program_type", "GAME")
+            .putString("last_active_game_key", gameKey)
+            .apply()
+        _userProfileState.value = buildProfile()
+    }
+
+    fun resetGameProgress(gameKey: String) {
+        val key = gameKey.lowercase()
+        prefs.edit()
+            .remove("game_level_$key")
+            .remove("game_score_$key")
+            .remove("game_round_$key")
+            .apply()
+        _userProfileState.value = buildProfile()
+    }
+
+    fun resetLevelProgress(subjectId: String, levelNumber: Int) {
+        val sub = subjectId.lowercase()
+        val editor = prefs.edit()
+        when (levelNumber) {
+            1 -> editor.remove("last_card_index_$sub")
+            2 -> {
+                editor.remove("last_tracing_index_$sub")
+                editor.remove("last_tracing_char_$sub")
+            }
+            3 -> {
+                editor.remove("last_blend_index_$sub")
+                editor.remove("last_blend_word_$sub")
+            }
+        }
+        editor.apply()
+        _userProfileState.value = buildProfile()
+    }
+
+    data class LastActiveProgram(
+        val type: String, // "LEVEL_1_CARDS", "LEVEL_2_TRACING", "LEVEL_3_WORD_BUILDER", "GAME", "QUIZ"
+        val subjectId: String,
+        val level: Int,
+        val itemIndex: Int,
+        val itemLabel: String,
+        val gameKey: String?
+    )
+
+    fun getLastActiveProgram(): LastActiveProgram {
+        val type = prefs.getString("last_active_program_type", "LEVEL_1_CARDS") ?: "LEVEL_1_CARDS"
+        val subject = prefs.getString("last_active_subject", "hindi") ?: "hindi"
+        val level = prefs.getInt("last_active_level", 1)
+        val itemIndex = prefs.getInt("last_active_item_index", 0)
+        val itemLabel = prefs.getString("last_active_item_label", "") ?: ""
+        val gameKey = prefs.getString("last_active_game_key", null)
+        return LastActiveProgram(type, subject, level, itemIndex, itemLabel, gameKey)
     }
 }

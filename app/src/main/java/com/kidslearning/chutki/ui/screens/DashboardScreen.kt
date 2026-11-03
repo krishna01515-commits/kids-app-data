@@ -312,7 +312,7 @@ fun DashboardScreen(
                                 .padding(horizontal = 10.dp, vertical = 4.dp)
                         ) {
                             Text(
-                                text = if (isEn) "Active Subject" else "सक्रिय विषय",
+                                text = if (isEn) "Resume Progress 🔄" else "जहाँ छोड़ा था वहीं से सीखें 🔄",
                                 color = Color.White,
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 11.sp
@@ -321,8 +321,24 @@ fun DashboardScreen(
 
                         Spacer(modifier = Modifier.height(6.dp))
 
+                        val resumeTitle = when (userProfile.lastActiveType) {
+                            "LEVEL_1_CARDS" -> if (userProfile.lastActiveItemLabel.isNotEmpty()) {
+                                if (isEn) "Card: ${userProfile.lastActiveItemLabel}" else "कार्ड: ${userProfile.lastActiveItemLabel}"
+                            } else "$subjectDisplayName - $levelPrefix 1"
+                            "LEVEL_2_TRACING" -> if (userProfile.lastActiveItemLabel.isNotEmpty()) {
+                                if (isEn) "Tracing: '${userProfile.lastActiveItemLabel}'" else "स्लेट पर लिखना: '${userProfile.lastActiveItemLabel}'"
+                            } else "$subjectDisplayName - $levelPrefix 2"
+                            "LEVEL_3_WORD_BUILDER" -> if (userProfile.lastActiveItemLabel.isNotEmpty()) {
+                                if (isEn) "Word Blend: '${userProfile.lastActiveItemLabel}'" else "शब्द निर्माण: '${userProfile.lastActiveItemLabel}'"
+                            } else "$subjectDisplayName - $levelPrefix 3"
+                            "GAME" -> if (userProfile.lastActiveGameKey != null) {
+                                if (isEn) "Game: ${userProfile.lastActiveGameKey}" else "खेल: ${userProfile.lastActiveGameKey}"
+                            } else if (isEn) "Games Hub" else "खेल संसार"
+                            else -> "$subjectDisplayName - $levelPrefix $activeUnlockedLevel"
+                        }
+
                         Text(
-                            text = "$subjectDisplayName - $levelPrefix $activeUnlockedLevel",
+                            text = resumeTitle,
                             fontWeight = FontWeight.ExtraBold,
                             fontSize = 18.sp,
                             color = if (isDark) Color.White else Color(0xFF3E2723)
@@ -358,7 +374,7 @@ fun DashboardScreen(
                             topHighlightColor = Color(0xFFFFAB40)
                         ) {
                             Text(
-                                text = if (isEn) "Continue ▶" else "आगे बढ़ो ▶",
+                                text = if (isEn) "Resume Now ▶" else "वहीं से शुरू करें ▶",
                                 color = Color.White,
                                 fontWeight = FontWeight.Black,
                                 fontSize = 14.sp

@@ -44,6 +44,7 @@ import com.kidslearning.chutki.audio.HindiTtsManager
 import com.kidslearning.chutki.audio.SoundEffectHelper
 import com.kidslearning.chutki.data.BalloonRoundData
 import com.kidslearning.chutki.data.ContentRepository
+import com.kidslearning.chutki.data.UserPreferencesManager
 import com.kidslearning.chutki.theme.CandyOrange
 import com.kidslearning.chutki.ui.components.ClayButton
 import com.kidslearning.chutki.ui.components.ClayCard
@@ -59,19 +60,28 @@ fun BalloonPopGame(
     isDarkMode: Boolean,
     isEnglish: Boolean = false,
     ttsManager: HindiTtsManager?,
+    userPrefs: UserPreferencesManager? = null,
     onBack: () -> Unit,
     onReward: (xp: Int, stars: Int) -> Unit
 ) {
-    var gameLevel by remember { mutableIntStateOf(1) }
-    var roundScore by remember { mutableIntStateOf(0) }
+    val (savedLevel, savedScore) = remember {
+        userPrefs?.getGameProgress("BALLOON_POP") ?: Pair(1, 0)
+    }
+    var gameLevel by remember { mutableIntStateOf(savedLevel.coerceAtLeast(1)) }
+    var roundScore by remember { mutableIntStateOf(savedScore.coerceAtLeast(0)) }
     var currentStreak by remember { mutableIntStateOf(0) }
-    var roundCount by remember { mutableIntStateOf(1) }
+    var roundCount by remember { mutableIntStateOf(savedScore.coerceAtLeast(0) + 1) }
 
     // Buffer of last 4 used item IDs to prevent immediate repeats
     val recentBuffer = remember { mutableStateListOf<Int>() }
 
     var currentRound by remember {
         mutableStateOf(ContentRepository.generateBalloonPopRound(gameLevel, recentBuffer, isEnglish))
+    }
+
+    // Persist game level and score automatically
+    LaunchedEffect(gameLevel, roundScore) {
+        userPrefs?.saveGameProgress("BALLOON_POP", gameLevel, roundScore, roundCount)
     }
 
     var poppedChar by remember { mutableStateOf<String?>(null) }

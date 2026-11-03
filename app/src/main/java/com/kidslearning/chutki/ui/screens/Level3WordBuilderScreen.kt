@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.sp
 import com.kidslearning.chutki.audio.HindiTtsManager
 import com.kidslearning.chutki.audio.SoundEffectHelper
 import com.kidslearning.chutki.data.LearningContentRepository
+import com.kidslearning.chutki.data.UserPreferencesManager
 import com.kidslearning.chutki.model.SubjectType
 import com.kidslearning.chutki.theme.CandyOrange
 import com.kidslearning.chutki.theme.CandyYellow
@@ -57,6 +58,7 @@ fun Level3WordBuilderScreen(
     subject: SubjectType,
     isDarkMode: Boolean,
     ttsManager: HindiTtsManager?,
+    userPrefs: UserPreferencesManager? = null,
     onBack: () -> Unit,
     onNavigateToQuiz: () -> Unit,
     onAddReward: (xp: Int, stars: Int) -> Unit = { _, _ -> },
@@ -66,7 +68,13 @@ fun Level3WordBuilderScreen(
         LearningContentRepository.getWordBlends(subject.id)
     }
 
-    var blendIndex by remember { mutableIntStateOf(0) }
+    val savedIndex = remember(subject.id) {
+        userPrefs?.getLastBlendIndex(subject.id) ?: 0
+    }
+
+    var blendIndex by remember(subject.id) {
+        mutableIntStateOf(savedIndex.coerceIn(0, (blends.size - 1).coerceAtLeast(0)))
+    }
     val currentBlend = blends.getOrNull(blendIndex) ?: blends.first()
 
     var isMerged by remember { mutableStateOf(false) }
@@ -81,10 +89,11 @@ fun Level3WordBuilderScreen(
         label = "merge_scale"
     )
 
-    // Reset when changing blend
+    // Reset when changing blend & persist progress
     LaunchedEffect(blendIndex) {
         isMerged = false
         showConfetti = false
+        userPrefs?.setLastBlendIndex(subject.id, blendIndex, currentBlend.resultWord)
         val intro = when (subject) {
             SubjectType.HINDI -> "चलो दो अक्षर जोड़कर नया शब्द बनाते हैं! '${currentBlend.char1}' और '${currentBlend.char2}' को मिलाओ!"
             SubjectType.ENGLISH -> "Let's blend two letters! '${currentBlend.char1}' plus '${currentBlend.char2}'!"
@@ -357,21 +366,37 @@ fun Level3WordBuilderScreen(
             // 6. Bottom Navigation Controls
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
+                if (blendIndex > 0) {
+                    ClayButton(
+                        onClick = { blendIndex-- },
+                        modifier = Modifier.weight(0.4f),
+                        primaryColor = Color(0xFF78909C),
+                        shadowColor = Color(0xFF455A64),
+                        topHighlightColor = Color(0xFF90A4AE)
+                    ) {
+                        Text(
+                            text = "◀ पिछला",
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 14.sp
+                        )
+                    }
+                }
                 if (blendIndex < blends.size - 1) {
                     ClayButton(
                         onClick = {
                             blendIndex++
                         },
-                        modifier = Modifier.weight(1f),
+                        modifier = Modifier.weight(if (blendIndex > 0) 0.6f else 1f),
                         primaryColor = accentColor,
                         shadowColor = accentColor.copy(alpha = 0.7f),
                         topHighlightColor = accentColor.copy(alpha = 0.9f)
                     ) {
                         Text(
-                            text = "अगला शब्द बनाओ 🧩",
+                            text = "अगला शब्द ▶",
                             color = Color.White,
                             fontWeight = FontWeight.Bold,
                             fontSize = 15.sp
@@ -380,13 +405,13 @@ fun Level3WordBuilderScreen(
                 } else {
                     ClayButton(
                         onClick = onNavigateToQuiz,
-                        modifier = Modifier.weight(1f),
+                        modifier = Modifier.weight(if (blendIndex > 0) 0.6f else 1f),
                         primaryColor = CorrectGreen,
                         shadowColor = Color(0xFF27AE60),
                         topHighlightColor = Color(0xFF58D68D)
                     ) {
                         Text(
-                            text = "लेवल 4: क्विज और खेल 🎯",
+                            text = "लेवल 4: खेल 🎯",
                             color = Color.White,
                             fontWeight = FontWeight.Black,
                             fontSize = 15.sp

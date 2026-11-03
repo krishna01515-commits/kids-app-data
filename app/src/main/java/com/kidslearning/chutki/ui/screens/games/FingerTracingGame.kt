@@ -46,6 +46,7 @@ import com.kidslearning.chutki.audio.HindiTtsManager
 import com.kidslearning.chutki.audio.SoundEffectHelper
 import com.kidslearning.chutki.data.ContentRepository
 import com.kidslearning.chutki.data.TracingRoundData
+import com.kidslearning.chutki.data.UserPreferencesManager
 import com.kidslearning.chutki.theme.CandyOrange
 import com.kidslearning.chutki.theme.CorrectGreen
 import com.kidslearning.chutki.ui.components.ClayButton
@@ -66,11 +67,15 @@ fun FingerTracingGame(
     isDarkMode: Boolean,
     isEnglish: Boolean = false,
     ttsManager: HindiTtsManager?,
+    userPrefs: UserPreferencesManager? = null,
     onBack: () -> Unit,
     onReward: (xp: Int, stars: Int) -> Unit
 ) {
-    var gameLevel by remember { mutableIntStateOf(1) }
-    var lettersCompletedCount by remember { mutableIntStateOf(0) }
+    val (savedLevel, savedScore) = remember {
+        userPrefs?.getGameProgress("FINGER_TRACING") ?: Pair(1, 0)
+    }
+    var gameLevel by remember { mutableIntStateOf(savedLevel.coerceAtLeast(1)) }
+    var lettersCompletedCount by remember { mutableIntStateOf(savedScore.coerceAtLeast(0)) }
     var currentStreak by remember { mutableIntStateOf(0) }
 
     // Buffer of last 4 used item IDs to prevent immediate repeats
@@ -78,6 +83,11 @@ fun FingerTracingGame(
 
     var currentRound by remember {
         mutableStateOf(ContentRepository.generateTracingRound(gameLevel, recentBuffer, isEnglish))
+    }
+
+    // Persist game progress
+    LaunchedEffect(gameLevel, lettersCompletedCount) {
+        userPrefs?.saveGameProgress("FINGER_TRACING", gameLevel, lettersCompletedCount)
     }
 
     val chalkColors = listOf(

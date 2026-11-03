@@ -168,17 +168,32 @@ fun ChutkiKidsApp(
                                     currentScreen = AppNavDestination.SUBJECT_LEVELS
                                 },
                                 onResumeLesson = {
-                                    val activeUnlocked = when (selectedSubject) {
-                                        SubjectType.HINDI -> userProfile.hindiUnlockedLevel
-                                        SubjectType.ENGLISH -> userProfile.englishUnlockedLevel
-                                        SubjectType.MATH -> userProfile.mathUnlockedLevel
-                                    }
-                                    currentScreen = when (activeUnlocked) {
-                                        1 -> AppNavDestination.LEVEL_1_CARDS
-                                        2 -> AppNavDestination.LEVEL_2_TRACING
-                                        3 -> AppNavDestination.LEVEL_3_WORD_BUILDER
-                                        4 -> AppNavDestination.QUIZ
-                                        else -> AppNavDestination.LEVEL_1_CARDS
+                                    val lastProg = userPrefs.getLastActiveProgram()
+                                    if (lastProg.type == "GAME") {
+                                        currentScreen = AppNavDestination.QUIZ
+                                    } else {
+                                        val targetSubject = SubjectType.entries.find { it.id == lastProg.subjectId } ?: selectedSubject
+                                        selectedSubject = targetSubject
+                                        userPrefs.setCurrentSubject(targetSubject.id)
+                                        currentScreen = when (lastProg.type) {
+                                            "LEVEL_1_CARDS" -> AppNavDestination.LEVEL_1_CARDS
+                                            "LEVEL_2_TRACING" -> AppNavDestination.LEVEL_2_TRACING
+                                            "LEVEL_3_WORD_BUILDER" -> AppNavDestination.LEVEL_3_WORD_BUILDER
+                                            "QUIZ" -> AppNavDestination.QUIZ
+                                            else -> {
+                                                val activeUnlocked = when (targetSubject) {
+                                                    SubjectType.HINDI -> userProfile.hindiUnlockedLevel
+                                                    SubjectType.ENGLISH -> userProfile.englishUnlockedLevel
+                                                    SubjectType.MATH -> userProfile.mathUnlockedLevel
+                                                }
+                                                when (activeUnlocked) {
+                                                    1 -> AppNavDestination.LEVEL_1_CARDS
+                                                    2 -> AppNavDestination.LEVEL_2_TRACING
+                                                    3 -> AppNavDestination.LEVEL_3_WORD_BUILDER
+                                                    else -> AppNavDestination.QUIZ
+                                                }
+                                            }
+                                        }
                                     }
                                 },
                                 onToggleDarkMode = {
@@ -217,6 +232,7 @@ fun ChutkiKidsApp(
                                 subject = selectedSubject,
                                 isDarkMode = userProfile.isDarkMode,
                                 ttsManager = ttsManager,
+                                userPrefs = userPrefs,
                                 onBack = {
                                     currentScreen = AppNavDestination.SUBJECT_LEVELS
                                 },
@@ -234,6 +250,7 @@ fun ChutkiKidsApp(
                             SmartSlateTracingScreen(
                                 subject = selectedSubject,
                                 ttsManager = ttsManager,
+                                userPrefs = userPrefs,
                                 onBackClick = {
                                     currentScreen = AppNavDestination.SUBJECT_LEVELS
                                 },
@@ -252,6 +269,7 @@ fun ChutkiKidsApp(
                                 subject = selectedSubject,
                                 isDarkMode = userProfile.isDarkMode,
                                 ttsManager = ttsManager,
+                                userPrefs = userPrefs,
                                 onBack = {
                                     currentScreen = AppNavDestination.SUBJECT_LEVELS
                                 },
@@ -271,6 +289,7 @@ fun ChutkiKidsApp(
                                 isDarkMode = userProfile.isDarkMode,
                                 isEnglish = userProfile.isEnglish,
                                 ttsManager = ttsManager,
+                                userPrefs = userPrefs,
                                 onBack = {
                                     currentScreen = AppNavDestination.DASHBOARD
                                 },

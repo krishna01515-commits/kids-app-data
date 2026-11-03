@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.sp
 import com.kidslearning.chutki.audio.HindiTtsManager
 import com.kidslearning.chutki.audio.SoundEffectHelper
 import com.kidslearning.chutki.data.LearningContentRepository
+import com.kidslearning.chutki.data.UserPreferencesManager
 import com.kidslearning.chutki.model.SubjectType
 import com.kidslearning.chutki.theme.CandyOrange
 import com.kidslearning.chutki.theme.CandyYellow
@@ -191,6 +192,7 @@ fun Level1AlphabetCardsScreen(
     subject: SubjectType,
     isDarkMode: Boolean,
     ttsManager: HindiTtsManager?,
+    userPrefs: UserPreferencesManager? = null,
     onBack: () -> Unit,
     onNavigateToLevel2: () -> Unit,
     onCardLearned: (cardId: String) -> Unit = {}
@@ -199,15 +201,22 @@ fun Level1AlphabetCardsScreen(
         LearningContentRepository.getAlphabetCards(subject.id)
     }
 
-    var currentIndex by remember { mutableIntStateOf(0) }
+    val savedIndex = remember(subject.id) {
+        userPrefs?.getLastCardIndex(subject.id) ?: 0
+    }
+
+    var currentIndex by remember(subject.id) {
+        mutableIntStateOf(savedIndex.coerceIn(0, (cards.size - 1).coerceAtLeast(0)))
+    }
     val currentCard = cards.getOrNull(currentIndex) ?: cards.first()
     val currentTheme = remember(currentIndex) {
         cardThemes[currentIndex % cardThemes.size]
     }
 
-    // Trigger TTS speech & mark card learned whenever card changes
+    // Trigger TTS speech, mark card learned & persist current index whenever card changes
     LaunchedEffect(currentIndex) {
         onCardLearned(currentCard.id)
+        userPrefs?.setLastCardIndex(subject.id, currentIndex, "${currentCard.char} (${currentCard.wordHindi})")
         ttsManager?.speak(currentCard.hindiAudioSentence)
     }
 

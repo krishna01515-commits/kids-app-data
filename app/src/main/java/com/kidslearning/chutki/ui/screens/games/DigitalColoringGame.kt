@@ -48,6 +48,7 @@ import com.kidslearning.chutki.audio.SoundEffectHelper
 import com.kidslearning.chutki.theme.CandyOrange
 import com.kidslearning.chutki.theme.CandyYellow
 import com.kidslearning.chutki.theme.CorrectGreen
+import com.kidslearning.chutki.data.UserPreferencesManager
 import com.kidslearning.chutki.ui.components.ClayButton
 import com.kidslearning.chutki.ui.components.ClayCard
 import com.kidslearning.chutki.ui.components.StarConfettiOverlay
@@ -73,6 +74,7 @@ fun DigitalColoringGame(
     isDarkMode: Boolean,
     isEnglish: Boolean = false,
     ttsManager: HindiTtsManager?,
+    userPrefs: UserPreferencesManager? = null,
     onBack: () -> Unit,
     onReward: (xp: Int, stars: Int) -> Unit
 ) {
@@ -91,8 +93,15 @@ fun DigitalColoringGame(
         )
     }
 
-    var sketchIdx by remember { mutableIntStateOf(0) }
+    val (savedLevel, savedScore) = remember {
+        userPrefs?.getGameProgress("DIGITAL_COLORING") ?: Pair(1, 0)
+    }
+    var sketchIdx by remember { mutableIntStateOf(savedScore.coerceIn(0, 5)) }
     val currentSketch = sketches[sketchIdx % sketches.size]
+
+    LaunchedEffect(sketchIdx) {
+        userPrefs?.saveGameProgress("DIGITAL_COLORING", 1, sketchIdx)
+    }
 
     val palette = listOf(
         Color(0xFFFF1744), // Red

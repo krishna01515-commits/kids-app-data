@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.sp
 import com.kidslearning.chutki.audio.HindiTtsManager
 import com.kidslearning.chutki.audio.SoundEffectHelper
 import com.kidslearning.chutki.theme.CandyOrange
+import com.kidslearning.chutki.data.UserPreferencesManager
 import com.kidslearning.chutki.ui.components.ClayButton
 import com.kidslearning.chutki.ui.components.ClayCard
 import com.kidslearning.chutki.ui.components.StarConfettiOverlay
@@ -56,9 +57,15 @@ fun MusicalPianoGame(
     isDarkMode: Boolean,
     isEnglish: Boolean = false,
     ttsManager: HindiTtsManager?,
+    userPrefs: UserPreferencesManager? = null,
     onBack: () -> Unit,
     onReward: (xp: Int, stars: Int) -> Unit
 ) {
+    val (savedLevel, savedScore) = remember {
+        userPrefs?.getGameProgress("MUSICAL_PIANO") ?: Pair(1, 0)
+    }
+    var notesPlayedCount by remember { mutableIntStateOf(savedScore.coerceAtLeast(0)) }
+
     val pianoKeys = remember {
         listOf(
             PianoKey("सा", "C", 261.63, Color(0xFFFF1744)),
@@ -72,10 +79,15 @@ fun MusicalPianoGame(
         )
     }
 
-    var notesPlayedCount by remember { mutableIntStateOf(0) }
     var activeNoteIndex by remember { mutableStateOf<Int?>(null) }
     var showConfetti by remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
+
+    LaunchedEffect(notesPlayedCount) {
+        if (notesPlayedCount > 0) {
+            userPrefs?.saveGameProgress("MUSICAL_PIANO", 1, notesPlayedCount)
+        }
+    }
 
     LaunchedEffect(Unit) {
         ttsManager?.stop()

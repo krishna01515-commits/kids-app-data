@@ -36,7 +36,14 @@ data class UserProfile(
     val lettersTracedCount: Int = 0,
     val wordsBuiltCount: Int = 0,
     val quizzesSolvedCount: Int = 0,
-    val unlockedBadgesCount: Int = 0
+    val unlockedBadgesCount: Int = 0,
+
+    // --- Last Active Learning & Gaming Progress (For Auto-Resume) ---
+    val lastActiveType: String = "LEVEL_1_CARDS", // "LEVEL_1_CARDS", "LEVEL_2_TRACING", "LEVEL_3_WORD_BUILDER", "GAME", "QUIZ"
+    val lastActiveSubjectId: String = "hindi",
+    val lastActiveLevel: Int = 1,
+    val lastActiveItemLabel: String = "",
+    val lastActiveGameKey: String? = null
 ) {
     val isEnglish: Boolean get() = appLanguage.equals("en", ignoreCase = true)
 }

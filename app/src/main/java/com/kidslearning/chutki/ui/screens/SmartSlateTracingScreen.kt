@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.sp
 import com.kidslearning.chutki.audio.HindiTtsManager
 import com.kidslearning.chutki.audio.SoundEffectHelper
 import com.kidslearning.chutki.data.LearningContentRepository
+import com.kidslearning.chutki.data.UserPreferencesManager
 import com.kidslearning.chutki.model.SubjectType
 
 enum class AlphabetType { CAPITAL, SMALL, HINDI, MATH }
@@ -49,6 +50,7 @@ fun SmartSlateTracingScreen(
     onNextLetter: () -> Unit = {},
     subject: SubjectType? = null,
     ttsManager: HindiTtsManager? = null,
+    userPrefs: UserPreferencesManager? = null,
     onNavigateToLevel3: (() -> Unit)? = null,
     onLetterTraced: ((String) -> Unit)? = null
 ) {
@@ -80,12 +82,24 @@ fun SmartSlateTracingScreen(
         }
     }
 
+    val subId = subject?.id ?: when (selectedType) {
+        AlphabetType.HINDI -> "hindi"
+        AlphabetType.MATH -> "math"
+        else -> "english"
+    }
+
     var letterIndex by remember(selectedType) {
-        val initialIdx = currentLetterList.indexOf(currentLetter)
+        val savedIdx = userPrefs?.getLastTracingIndex(subId) ?: -1
+        val initialIdx = if (savedIdx in currentLetterList.indices) savedIdx else currentLetterList.indexOf(currentLetter)
         mutableIntStateOf(if (initialIdx >= 0) initialIdx else 0)
     }
 
     val activeChar = currentLetterList.getOrElse(letterIndex) { currentLetter }
+
+    // Persist tracing position whenever letterIndex / activeChar changes
+    LaunchedEffect(letterIndex, activeChar) {
+        userPrefs?.setLastTracingIndex(subId, letterIndex, activeChar)
+    }
 
     // Fetch dynamic hint from repository if available
     val activeHint = remember(activeChar, selectedType) {
