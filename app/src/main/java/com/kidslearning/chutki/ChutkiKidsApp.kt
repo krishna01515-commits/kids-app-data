@@ -48,6 +48,7 @@ import com.kidslearning.chutki.ui.screens.Level2TracingScreen
 import com.kidslearning.chutki.ui.screens.Level3WordBuilderScreen
 import com.kidslearning.chutki.ui.screens.ProfileSettingsScreen
 import com.kidslearning.chutki.ui.screens.QuizScreen
+import com.kidslearning.chutki.ui.screens.SmartSlateTracingScreen
 import com.kidslearning.chutki.ui.screens.SubjectLevelsScreen
 import com.kidslearning.chutki.ui.screens.WelcomeDialogScreen
 
@@ -230,11 +231,10 @@ fun ChutkiKidsApp(
                         }
 
                         AppNavDestination.LEVEL_2_TRACING -> {
-                            Level2TracingScreen(
+                            SmartSlateTracingScreen(
                                 subject = selectedSubject,
-                                isDarkMode = userProfile.isDarkMode,
                                 ttsManager = ttsManager,
-                                onBack = {
+                                onBackClick = {
                                     currentScreen = AppNavDestination.SUBJECT_LEVELS
                                 },
                                 onNavigateToLevel3 = {

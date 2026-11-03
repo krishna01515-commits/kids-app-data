@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
-		"android-studio-lite.sdkPath": "C:\\Users\\Dharmendra Singh\\AppData\\Local\\Android\\Sdk"
+		"android-studio-lite.sdkPath": "C:\\Users\\Dharmendra Singh\\AppData\\Local\\Android\\Sdk",
+		"android-studio-lite.executable": "c:\\Users\\Dharmendra Singh\\Downloads\\anti gravity\\app\\src\\test\\java\\com\\kidslearning\\chutki\\ExportJsonTest.kt"
 	}
 }

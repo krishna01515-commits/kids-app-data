@@ -33,8 +33,8 @@ object LearningContentRepository {
             ),
             LevelInfo(
                 levelNumber = 2,
-                titleHindi = "लेवल 2: उंगली से लिखना सीखो",
-                subtitleHindi = "स्क्रीन पर जादू की तरह उंगली फेरो और लिखो",
+                titleHindi = if (isMath) "लेवल 2: जादुई स्लेट - 1 से 100 लिखना सीखो" else "लेवल 2: जादुई स्लेट ✍️",
+                subtitleHindi = "स्क्रीन पर जादुई स्लेट पर अक्षर व संख्या लिखना सीखो",
                 iconEmoji = "✍️",
                 isUnlocked = unlockedLevel >= 2,
                 starsEarned = getStars(2),
