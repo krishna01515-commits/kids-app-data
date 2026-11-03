@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder
 import com.kidslearning.chutki.data.ContentRepository
 import com.kidslearning.chutki.data.LearningContentRepository
 import com.kidslearning.chutki.data.MasterAppContent
+import com.kidslearning.chutki.data.WordBlendsDataProvider
 import org.junit.Test
 import java.io.File
 
@@ -24,12 +25,15 @@ class ExportJsonTest {
             "math" to LearningContentRepository.getMathCards1To100()
         )
 
-        // 3. Collect all word blends
+        // 3. Collect all word blends (200 words each for Hindi, English, Math)
         val wordBlendsMap = mapOf(
-            "hindi" to LearningContentRepository.getWordBlends("hindi"),
-            "english" to LearningContentRepository.getWordBlends("english"),
-            "math" to LearningContentRepository.getWordBlends("math")
+            "hindi" to WordBlendsDataProvider.getHindiWordBlends200(),
+            "english" to WordBlendsDataProvider.getEnglishWordBlends200(),
+            "math" to WordBlendsDataProvider.getMathWordBlends200()
         )
+        require(wordBlendsMap["hindi"]?.size == 200) { "Hindi blends must be 200, got ${wordBlendsMap["hindi"]?.size}" }
+        require(wordBlendsMap["english"]?.size == 200) { "English blends must be 200, got ${wordBlendsMap["english"]?.size}" }
+        require(wordBlendsMap["math"]?.size == 200) { "Math blends must be 200, got ${wordBlendsMap["math"]?.size}" }
 
         // 4. Collect all quizzes
         val quizzesMap = mapOf(
