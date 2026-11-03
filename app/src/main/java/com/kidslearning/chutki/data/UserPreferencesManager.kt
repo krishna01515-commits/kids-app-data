@@ -149,6 +149,13 @@ class UserPreferencesManager(context: Context) {
         if (hindiPct >= 20 || xp >= 600) badges++
         if (rank <= 3 && xp >= 700) badges++
 
+        val hindiTrophy = prefs.getBoolean("championship_trophy_hindi", false)
+        val englishTrophy = prefs.getBoolean("championship_trophy_english", false)
+        val mathTrophy = prefs.getBoolean("championship_trophy_math", false)
+        val hasChampionship = hindiTrophy || englishTrophy || mathTrophy || prefs.getBoolean("has_championship_trophy", false)
+        val trophiesCount = (if (hindiTrophy) 1 else 0) + (if (englishTrophy) 1 else 0) + (if (mathTrophy) 1 else 0)
+        if (hasChampionship) badges++
+
         val lastType = prefs.getString("last_active_program_type", "LEVEL_1_CARDS") ?: "LEVEL_1_CARDS"
         val lastSubject = prefs.getString("last_active_subject", "hindi") ?: "hindi"
         val lastLevel = prefs.getInt("last_active_level", 1)
@@ -187,6 +194,12 @@ class UserPreferencesManager(context: Context) {
             wordsBuiltCount = totalWords,
             quizzesSolvedCount = totalQuiz,
             unlockedBadgesCount = badges,
+
+            hasChampionshipTrophy = hasChampionship,
+            hindiTrophyWon = hindiTrophy,
+            englishTrophyWon = englishTrophy,
+            mathTrophyWon = mathTrophy,
+            championshipTrophiesCount = trophiesCount,
 
             lastActiveType = lastType,
             lastActiveSubjectId = lastSubject,
@@ -372,7 +385,8 @@ class UserPreferencesManager(context: Context) {
                 if (count >= 4) 3 else if (count >= 2) 2 else 1
             }
             5 -> {
-                if (unlocked >= 5) 3 else 0
+                val hasTrophy = prefs.getBoolean("championship_trophy_$sub", false)
+                if (hasTrophy) 3 else if (unlocked >= 5) 1 else 0
             }
             else -> 0
         }
@@ -406,11 +420,61 @@ class UserPreferencesManager(context: Context) {
                 ((count.toFloat() / 8) * 100).toInt().coerceIn(0, 100)
             }
             5 -> {
+                val hasTrophy = prefs.getBoolean("championship_trophy_$sub", false)
                 val unlocked = prefs.getInt("${sub}_unlocked_level", 1)
-                if (unlocked >= 5) 100 else 0
+                if (hasTrophy) 100 else if (unlocked >= 5) 50 else 0
             }
             else -> 0
         }
+    }
+
+    /**
+     * Record Grand Championship Won for Level 5:
+     * - Saves championship trophy for the subject and overall
+     * - Awards +200 XP and +10 Stars
+     * - Records Level 5 Championship in last active program for resume
+     */
+    fun recordChampionshipWon(subjectId: String) {
+        val sub = subjectId.lowercase()
+        val isFirstTime = !prefs.getBoolean("championship_trophy_$sub", false)
+
+        val xpBonus = if (isFirstTime) 200 else 100
+        val starBonus = if (isFirstTime) 10 else 5
+
+        val currentXp = prefs.getInt("total_xp", 0) + xpBonus
+        val currentStars = prefs.getInt("total_stars", 0) + starBonus
+
+        prefs.edit()
+            .putBoolean("championship_trophy_$sub", true)
+            .putBoolean("has_championship_trophy", true)
+            .putInt("total_xp", currentXp)
+            .putInt("total_stars", currentStars)
+            .apply()
+
+        setLastChampionshipProgress(
+            subjectId = sub,
+            roundNumber = 3,
+            roundLabel = "महा मुकाबला मास्टर 🏆"
+        )
+
+        _userProfileState.value = buildProfile()
+    }
+
+    fun setLastChampionshipProgress(subjectId: String, roundNumber: Int, roundLabel: String = "") {
+        val sub = subjectId.lowercase()
+        prefs.edit()
+            .putString("last_active_program_type", "LEVEL_5_CHAMPIONSHIP")
+            .putString("last_active_subject", sub)
+            .putInt("last_active_level", 5)
+            .putInt("last_active_item_index", roundNumber)
+            .putString("last_active_item_label", roundLabel)
+            .apply()
+        _userProfileState.value = buildProfile()
+    }
+
+    fun hasWonChampionship(subjectId: String): Boolean {
+        val sub = subjectId.lowercase()
+        return prefs.getBoolean("championship_trophy_$sub", false)
     }
 
     fun setDarkMode(isDark: Boolean) {

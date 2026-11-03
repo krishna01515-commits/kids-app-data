@@ -101,14 +101,26 @@ fun LeaderboardScreen(
                             KidAvatarView(avatarKey = userProfile.avatarEmoji, size = 48.dp)
                             Spacer(modifier = Modifier.width(10.dp))
                             Column {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Text(
+                                        text = "${userProfile.name} ${if (userProfile.isEnglish) "(You)" else "(आप)"}",
+                                        fontWeight = FontWeight.ExtraBold,
+                                        fontSize = 16.sp,
+                                        color = Color(0xFF3E2723)
+                                    )
+                                    if (userProfile.hasChampionshipTrophy) {
+                                        Spacer(modifier = Modifier.width(4.dp))
+                                        Text(text = "🏆", fontSize = 16.sp)
+                                    }
+                                }
                                 Text(
-                                    text = "${userProfile.name} ${if (userProfile.isEnglish) "(You)" else "(आप)"}",
-                                    fontWeight = FontWeight.ExtraBold,
-                                    fontSize = 16.sp,
-                                    color = Color(0xFF3E2723)
-                                )
-                                Text(
-                                    text = if (userProfile.isEnglish) "🔥 ${userProfile.currentStreakDays} day streak • ${userProfile.unlockedBadgesCount}/8 badges" else "🔥 ${userProfile.currentStreakDays} दिन स्ट्रिक • ${userProfile.unlockedBadgesCount}/8 बैज",
+                                    text = if (userProfile.hasChampionshipTrophy) {
+                                        if (userProfile.isEnglish) "🏆 Championship Master • ${userProfile.unlockedBadgesCount}/9 badges"
+                                        else "🏆 महा मुकाबला मास्टर • ${userProfile.unlockedBadgesCount}/9 बैज"
+                                    } else {
+                                        if (userProfile.isEnglish) "🔥 ${userProfile.currentStreakDays} day streak • ${userProfile.unlockedBadgesCount}/9 badges"
+                                        else "🔥 ${userProfile.currentStreakDays} दिन स्ट्रिक • ${userProfile.unlockedBadgesCount}/9 बैज"
+                                    },
                                     fontSize = 12.sp,
                                     fontWeight = FontWeight.Bold,
                                     color = Color(0xFFD84315)

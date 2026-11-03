@@ -132,6 +132,15 @@ class HindiTtsManager(context: Context) : TextToSpeech.OnInitListener {
         }
     }
 
+    fun celebrateChampionshipWin(kidName: String, subjectName: String, isEnglish: Boolean = false) {
+        val message = if (isEnglish) {
+            "Heartiest congratulations to our Super Kid $kidName! You have completed all 3 rounds, conquered the Grand Championship, and earned the Golden Master Trophy in $subjectName! You are a brilliant superstar!"
+        } else {
+            "अरे वाह! बहुत-बहुत बधाई हमारे नन्हे उस्ताद $kidName! आपने तीनों राउंड पार करके $subjectName का महा मुकाबला जीत लिया है और आपको मिलती है सुनहरी मास्टर ट्रॉफी! आप सचमुच जीनियस हैं!"
+        }
+        speak(message)
+    }
+
     fun release() {
         tts?.stop()
         tts?.shutdown()

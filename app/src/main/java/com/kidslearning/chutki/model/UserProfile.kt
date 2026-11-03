@@ -38,6 +38,13 @@ data class UserProfile(
     val quizzesSolvedCount: Int = 0,
     val unlockedBadgesCount: Int = 0,
 
+    // --- Championship Trophy Status (Level 5 Mega Challenge) ---
+    val hasChampionshipTrophy: Boolean = false,
+    val hindiTrophyWon: Boolean = false,
+    val englishTrophyWon: Boolean = false,
+    val mathTrophyWon: Boolean = false,
+    val championshipTrophiesCount: Int = 0,
+
     // --- Last Active Learning & Gaming Progress (For Auto-Resume) ---
     val lastActiveType: String = "LEVEL_1_CARDS", // "LEVEL_1_CARDS", "LEVEL_2_TRACING", "LEVEL_3_WORD_BUILDER", "GAME", "QUIZ"
     val lastActiveSubjectId: String = "hindi",

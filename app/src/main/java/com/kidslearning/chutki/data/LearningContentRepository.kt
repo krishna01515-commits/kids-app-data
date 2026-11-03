@@ -63,8 +63,8 @@ object LearningContentRepository {
             ),
             LevelInfo(
                 levelNumber = 5,
-                titleHindi = "लेवल 5: महा मुकाबला और ट्रॉफी",
-                subtitleHindi = "सब कुछ याद करके मास्टर बैज अनलॉक करो",
+                titleHindi = "लेवल 5: महा मुकाबला और मास्टर ट्रॉफी 🏆",
+                subtitleHindi = "तीनों राउंड जीतो और सुनहरी ट्रॉफी हासिल करो!",
                 iconEmoji = "🏆",
                 isUnlocked = unlockedLevel >= 5,
                 starsEarned = getStars(5),
@@ -1634,7 +1634,8 @@ object LearningContentRepository {
             Badge("b_quiz_champ", "क्विज चैम्पियन", "सवालों के सही जवाब देने पर", "🧠", quiz >= 3 || xp >= 350, if (quiz >= 3 || xp >= 350) "सक्रिय" else ""),
             Badge("b_math_star", "गणित का सितारा", "संख्या जोड़ना सीखने पर", "🔢", mathPct > 0 || xp >= 450, if (mathPct > 0 || xp >= 450) "सक्रिय" else ""),
             Badge("b_varnamala_master", "वर्णमाला सम्राट", "पूरी हिंदी वर्णमाला सीखने पर", "👑", hindiPct >= 20 || xp >= 600, if (hindiPct >= 20 || xp >= 600) "सक्रिय" else ""),
-            Badge("b_super_kid", "सुपर किड ऑलराउंडर", "लीडरबोर्ड टॉप 3 और 700+ XP पाने पर", "🏆", rank <= 3 && xp >= 700, if (rank <= 3 && xp >= 700) "सक्रिय" else "")
+            Badge("b_super_kid", "सुपर किड ऑलराउंडर", "लीडरबोर्ड टॉप 3 और 700+ XP पाने पर", "🎖️", rank <= 3 && xp >= 700, if (rank <= 3 && xp >= 700) "सक्रिय" else ""),
+            Badge("b_championship_trophy", "महा मुकाबला मास्टर", "लेवल 5 में सुनहरी मास्टर ट्रॉफी जीतने पर", "🏆", userProfile?.hasChampionshipTrophy == true, if (userProfile?.hasChampionshipTrophy == true) "सक्रिय" else "")
         )
     }
 

@@ -79,6 +79,26 @@ object SoundEffectHelper {
         }
     }
 
+    fun playChampionshipFanfare() {
+        scope.launch {
+            // Triumphant orchestral brass fanfare with victory chords
+            playToneSequence(
+                listOf(
+                    Pair(523.25, 140), // C5
+                    Pair(523.25, 140), // C5
+                    Pair(523.25, 140), // C5
+                    Pair(659.25, 260), // E5
+                    Pair(783.99, 200), // G5
+                    Pair(1046.50, 460), // C6
+                    Pair(880.00, 180), // A5
+                    Pair(1046.50, 180), // C6
+                    Pair(1174.66, 180), // D6
+                    Pair(1318.51, 620)  // E6 Grand Finish
+                )
+            )
+        }
+    }
+
     fun playComboSound(combo: Int) {
         scope.launch {
             val baseFreq = (480.0 + (combo * 70.0)).coerceAtMost(1200.0)

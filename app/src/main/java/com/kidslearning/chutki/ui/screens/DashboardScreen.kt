@@ -84,16 +84,27 @@ fun DashboardScreen(
                     Spacer(modifier = Modifier.width(10.dp))
 
                     Column {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text(
+                                text = if (isEn) "Hello, ${userProfile.name} 👋" else "नमस्ते, ${userProfile.name} 👋",
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Bold,
+                                color = if (isDark) Color(0xFFF0F2FF) else Color(0xFF2C3E50)
+                            )
+                            if (userProfile.hasChampionshipTrophy) {
+                                Spacer(modifier = Modifier.width(6.dp))
+                                Text(text = "🏆", fontSize = 16.sp)
+                            }
+                        }
                         Text(
-                            text = if (isEn) "Hello, ${userProfile.name} 👋" else "नमस्ते, ${userProfile.name} 👋",
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold,
-                            color = if (isDark) Color(0xFFF0F2FF) else Color(0xFF2C3E50)
-                        )
-                        Text(
-                            text = if (isEn) "Little Star • Age ${userProfile.age} yrs" else "नन्हे सितारे • उम्र ${userProfile.age} वर्ष",
+                            text = if (userProfile.hasChampionshipTrophy) {
+                                if (isEn) "🏆 Master Champion • Age ${userProfile.age} yrs" else "🏆 मास्टर चैंपियन • उम्र ${userProfile.age} वर्ष"
+                            } else {
+                                if (isEn) "Little Star • Age ${userProfile.age} yrs" else "नन्हे सितारे • उम्र ${userProfile.age} वर्ष"
+                            },
                             fontSize = 12.sp,
-                            color = if (isDark) Color(0xFFA5B0E0) else Color(0xFF78909C)
+                            color = if (userProfile.hasChampionshipTrophy) Color(0xFFFFB300) else if (isDark) Color(0xFFA5B0E0) else Color(0xFF78909C),
+                            fontWeight = if (userProfile.hasChampionshipTrophy) FontWeight.Bold else FontWeight.Normal
                         )
                     }
                 }
@@ -323,6 +334,12 @@ fun DashboardScreen(
                             "LEVEL_3_WORD_BUILDER" -> if (userProfile.lastActiveItemLabel.isNotEmpty()) {
                                 if (isEn) "Word Blend: '${userProfile.lastActiveItemLabel}'" else "शब्द निर्माण: '${userProfile.lastActiveItemLabel}'"
                             } else "$subjectDisplayName - $levelPrefix 3"
+                            "LEVEL_4_QUIZ" -> if (userProfile.lastActiveItemLabel.isNotEmpty()) {
+                                if (isEn) "Quiz: '${userProfile.lastActiveItemLabel}'" else "क्विज: '${userProfile.lastActiveItemLabel}'"
+                            } else "$subjectDisplayName - $levelPrefix 4"
+                            "LEVEL_5_CHAMPIONSHIP" -> if (userProfile.lastActiveItemLabel.isNotEmpty()) {
+                                if (isEn) "Championship: ${userProfile.lastActiveItemLabel}" else "महा मुकाबला: ${userProfile.lastActiveItemLabel}"
+                            } else "$subjectDisplayName - $levelPrefix 5 🏆"
                             "GAME" -> if (userProfile.lastActiveGameKey != null) {
                                 if (isEn) "Game: ${userProfile.lastActiveGameKey}" else "खेल: ${userProfile.lastActiveGameKey}"
                             } else if (isEn) "Games Hub" else "खेल संसार"

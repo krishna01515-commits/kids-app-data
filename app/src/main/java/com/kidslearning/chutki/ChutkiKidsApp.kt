@@ -47,6 +47,7 @@ import com.kidslearning.chutki.ui.screens.Level1AlphabetCardsScreen
 import com.kidslearning.chutki.ui.screens.Level2TracingScreen
 import com.kidslearning.chutki.ui.screens.Level3WordBuilderScreen
 import com.kidslearning.chutki.ui.screens.Level4QuizScreen
+import com.kidslearning.chutki.ui.screens.Level5ChampionshipScreen
 import com.kidslearning.chutki.ui.screens.ProfileSettingsScreen
 import com.kidslearning.chutki.ui.screens.QuizScreen
 import com.kidslearning.chutki.ui.screens.SmartSlateTracingScreen
@@ -61,6 +62,7 @@ enum class AppNavDestination {
     LEVEL_2_TRACING,
     LEVEL_3_WORD_BUILDER,
     LEVEL_4_QUIZ,
+    LEVEL_5_CHAMPIONSHIP,
     QUIZ,
     LEADERBOARD,
     PROFILE
@@ -104,7 +106,8 @@ fun ChutkiKidsApp(
             AppNavDestination.LEVEL_1_CARDS,
             AppNavDestination.LEVEL_2_TRACING,
             AppNavDestination.LEVEL_3_WORD_BUILDER,
-            AppNavDestination.LEVEL_4_QUIZ -> {
+            AppNavDestination.LEVEL_4_QUIZ,
+            AppNavDestination.LEVEL_5_CHAMPIONSHIP -> {
                 currentScreen = AppNavDestination.SUBJECT_LEVELS
             }
             AppNavDestination.SUBJECT_LEVELS,
@@ -183,6 +186,7 @@ fun ChutkiKidsApp(
                                             "LEVEL_2_TRACING" -> AppNavDestination.LEVEL_2_TRACING
                                             "LEVEL_3_WORD_BUILDER" -> AppNavDestination.LEVEL_3_WORD_BUILDER
                                             "LEVEL_4_QUIZ" -> AppNavDestination.LEVEL_4_QUIZ
+                                            "LEVEL_5_CHAMPIONSHIP" -> AppNavDestination.LEVEL_5_CHAMPIONSHIP
                                             "QUIZ" -> AppNavDestination.QUIZ
                                             else -> {
                                                 val activeUnlocked = when (targetSubject) {
@@ -195,6 +199,7 @@ fun ChutkiKidsApp(
                                                     2 -> AppNavDestination.LEVEL_2_TRACING
                                                     3 -> AppNavDestination.LEVEL_3_WORD_BUILDER
                                                     4 -> AppNavDestination.LEVEL_4_QUIZ
+                                                    5 -> AppNavDestination.LEVEL_5_CHAMPIONSHIP
                                                     else -> AppNavDestination.QUIZ
                                                 }
                                             }
@@ -226,6 +231,7 @@ fun ChutkiKidsApp(
                                         2 -> AppNavDestination.LEVEL_2_TRACING
                                         3 -> AppNavDestination.LEVEL_3_WORD_BUILDER
                                         4 -> AppNavDestination.LEVEL_4_QUIZ
+                                        5 -> AppNavDestination.LEVEL_5_CHAMPIONSHIP
                                         else -> AppNavDestination.LEVEL_1_CARDS
                                     }
                                 }
@@ -306,6 +312,21 @@ fun ChutkiKidsApp(
                                 },
                                 onNavigateToNextLevel = {
                                     userPrefs.unlockLevel(selectedSubject.id, 5)
+                                    currentScreen = AppNavDestination.LEVEL_5_CHAMPIONSHIP
+                                }
+                            )
+                        }
+
+                        AppNavDestination.LEVEL_5_CHAMPIONSHIP -> {
+                            Level5ChampionshipScreen(
+                                subject = selectedSubject,
+                                userProfile = userProfile,
+                                userPrefs = userPrefs,
+                                ttsManager = ttsManager,
+                                onBack = {
+                                    currentScreen = AppNavDestination.SUBJECT_LEVELS
+                                },
+                                onCelebrationDone = {
                                     currentScreen = AppNavDestination.SUBJECT_LEVELS
                                 }
                             )
