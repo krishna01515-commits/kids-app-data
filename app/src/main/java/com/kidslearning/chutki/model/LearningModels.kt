@@ -58,7 +58,8 @@ data class TracingLetter(
     val titleHindi: String,
     val hintHindi: String,
     val guideDots: List<Pair<Float, Float>>, // normalized 0f to 1f coordinates
-    val audioPromptHindi: String
+    val audioPromptHindi: String,
+    val strokePaths: List<List<Pair<Float, Float>>> = emptyList()
 )
 
 data class WordBlend(

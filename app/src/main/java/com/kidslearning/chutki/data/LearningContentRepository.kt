@@ -1032,7 +1032,7 @@ object LearningContentRepository {
     fun getTracingLetters(subjectId: String): List<TracingLetter> {
         val cards = getAlphabetCards(subjectId)
         return cards.map { card ->
-            val (hint, dots) = getTracingLetterDetails(card.char, subjectId)
+            val tracingData = TracingPathHelper.getLetterTracingData(card.char, subjectId)
             TracingLetter(
                 char = card.char,
                 subjectId = subjectId,
@@ -1041,13 +1041,14 @@ object LearningContentRepository {
                     "english" -> "Letter '${card.char}' लिखो"
                     else -> "संख्या '${card.char}' लिखो"
                 },
-                hintHindi = hint,
-                guideDots = dots,
+                hintHindi = tracingData.hintHindi,
+                guideDots = tracingData.guideDots,
                 audioPromptHindi = when (subjectId.lowercase()) {
                     "hindi" -> "${card.char} से ${card.wordHindi}! चलो स्लेट पर '${card.char}' लिखना सीखें!"
                     "english" -> "${card.char} for ${card.wordEnglish}! Let's write '${card.char}' on the slate!"
                     else -> "संख्या ${card.char}! चलो स्लेट पर '${card.char}' लिखना सीखें!"
-                }
+                },
+                strokePaths = tracingData.strokePaths
             )
         }
     }

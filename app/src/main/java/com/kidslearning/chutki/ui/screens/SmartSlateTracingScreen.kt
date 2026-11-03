@@ -29,12 +29,12 @@ import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kidslearning.chutki.audio.HindiTtsManager
 import com.kidslearning.chutki.audio.SoundEffectHelper
 import com.kidslearning.chutki.data.LearningContentRepository
+import com.kidslearning.chutki.data.TracingPathHelper
 import com.kidslearning.chutki.model.SubjectType
 import com.kidslearning.chutki.model.TracingLetter
 import kotlinx.coroutines.delay
@@ -43,7 +43,7 @@ import kotlinx.coroutines.launch
 data class TracingStroke(
     val points: List<Offset>,
     val color: Color,
-    val strokeWidth: Float = 36f
+    val strokeWidth: Float = 32f
 )
 
 data class TracingValidationResult(
@@ -96,17 +96,17 @@ fun SmartSlateTracingScreen(
             }
             SubjectType.ENGLISH -> {
                 if (selectedSubTabIndex == 1) {
-                    // Small letters (a-z)
+                    // Small letters (a-z) with exact stroke paths
                     ('a'..'z').map { smallChar ->
-                        val upperChar = smallChar.uppercase()
-                        val parentItem = allSubjectTracingLetters.find { it.char == upperChar }
+                        val smallData = TracingPathHelper.getLetterTracingData(smallChar.toString(), "english")
                         TracingLetter(
                             char = smallChar.toString(),
                             subjectId = "english",
                             titleHindi = "Letter '$smallChar' लिखो",
-                            hintHindi = "छोटा '$smallChar' लिखें। " + (parentItem?.hintHindi ?: ""),
-                            guideDots = parentItem?.guideDots ?: emptyList(),
-                            audioPromptHindi = "Letter '$smallChar' लिखो!"
+                            hintHindi = smallData.hintHindi,
+                            guideDots = smallData.guideDots,
+                            audioPromptHindi = "Letter '$smallChar' लिखो!",
+                            strokePaths = smallData.strokePaths
                         )
                     }
                 } else {
@@ -130,45 +130,67 @@ fun SmartSlateTracingScreen(
     }
 
     val currentItem = filteredLetters.getOrElse(letterIndex) {
-        filteredLetters.firstOrNull() ?: TracingLetter(
-            char = currentLetter,
-            subjectId = activeSubject.id,
-            titleHindi = "अक्षर '$currentLetter' लिखो",
-            hintHindi = letterHint,
-            guideDots = emptyList(),
-            audioPromptHindi = "लिखो '$currentLetter'"
-        )
+        filteredLetters.firstOrNull() ?: run {
+            val fallbackData = TracingPathHelper.getLetterTracingData(currentLetter, activeSubject.id)
+            TracingLetter(
+                char = currentLetter,
+                subjectId = activeSubject.id,
+                titleHindi = "अक्षर '$currentLetter' लिखो",
+                hintHindi = fallbackData.hintHindi,
+                guideDots = fallbackData.guideDots,
+                audioPromptHindi = "लिखो '$currentLetter'",
+                strokePaths = fallbackData.strokePaths
+            )
+        }
     }
 
     val activeChar = currentItem.char
     val activeHint = currentItem.hintHindi.ifBlank { letterHint }
-    val guideDots = currentItem.guideDots
+
+    // Stroke paths and Guide dots (Dots sit EXACTLY in the middle of each stroke line!)
+    val strokePaths = remember(currentItem) {
+        if (currentItem.strokePaths.isNotEmpty()) {
+            currentItem.strokePaths
+        } else {
+            val fetched = TracingPathHelper.getLetterTracingData(activeChar, activeSubject.id)
+            fetched.strokePaths
+        }
+    }
+
+    val allDots = remember(currentItem, strokePaths) {
+        strokePaths.flatten().distinct()
+    }
 
     // Drawing state
     val userStrokes = remember { mutableStateListOf<TracingStroke>() }
-    var currentPoints = remember { mutableStateListOf<Offset>() }
+    val currentPoints = remember { mutableStateListOf<Offset>() }
     var selectedColor by remember { mutableStateOf(Color(0xFFFFEB3B)) } // Magic yellow chalk
 
-    // Canvas size for accuracy calculations
+    // Track which dots have been touched/hit
+    val hitDotIndices = remember { mutableStateListOf<Int>() }
+
+    // Canvas dimensions
     var canvasWidth by remember { mutableFloatStateOf(0f) }
     var canvasHeight by remember { mutableFloatStateOf(0f) }
 
     // Feedback states
-    var feedbackMessage by remember { mutableStateOf("उंगली से डॉट्स को मिलाते हुए अक्षर बनाओ!") }
+    var feedbackMessage by remember { mutableStateOf("लाइन के बीच के डॉट्स को मिलाते हुए अक्षर बनाओ!") }
     var feedbackStatus by remember { mutableStateOf<Boolean?>(null) } // null: idle, true: correct, false: wrong
     var showDemoGuide by remember { mutableStateOf(false) }
+
+    val coroutineScope = rememberCoroutineScope()
 
     // Demo wand animation
     val demoProgress = remember { Animatable(0f) }
     LaunchedEffect(showDemoGuide, activeChar) {
-        if (showDemoGuide && guideDots.size > 1) {
+        if (showDemoGuide && allDots.size > 1) {
             while (showDemoGuide) {
                 demoProgress.snapTo(0f)
                 demoProgress.animateTo(
                     targetValue = 1f,
-                    animationSpec = tween(durationMillis = 2200, easing = LinearEasing)
+                    animationSpec = tween(durationMillis = 2600, easing = LinearEasing)
                 )
-                delay(400)
+                delay(500)
             }
         }
     }
@@ -177,8 +199,9 @@ fun SmartSlateTracingScreen(
     LaunchedEffect(activeChar) {
         userStrokes.clear()
         currentPoints.clear()
+        hitDotIndices.clear()
         feedbackStatus = null
-        feedbackMessage = "उंगली से डॉट्स को मिलाते हुए अक्षर बनाओ!"
+        feedbackMessage = "लाइन के बीच के डॉट्स को मिलाते हुए अक्षर बनाओ!"
         val prompt = when (activeSubject) {
             SubjectType.HINDI -> "जादुई स्लेट पर लिखो अक्षर '$activeChar'"
             SubjectType.ENGLISH -> "Write letter '$activeChar' on the slate"
@@ -187,34 +210,59 @@ fun SmartSlateTracingScreen(
         ttsManager?.speak(prompt)
     }
 
-    // Color Palette
+    // Chalk Color Palette
     val chalkColors = listOf(
-        Color(0xFFFFEB3B), // Yellow
-        Color(0xFF00E676), // Green
-        Color(0xFF00E5FF), // Cyan
-        Color(0xFFFF4081), // Pink
-        Color(0xFFFF9100), // Orange
-        Color(0xFFFFFFFF)  // White
+        Color(0xFFFFEB3B), // Magic Yellow
+        Color(0xFF00E676), // Neon Green
+        Color(0xFF00E5FF), // Cyan Blue
+        Color(0xFFFF4081), // Pink Candy
+        Color(0xFFFF9100), // Bright Orange
+        Color(0xFFFFFFFF)  // Chalk White
     )
 
-    // Check which checkpoints have been hit by the user's chalk strokes
-    val hitCheckpoints = remember(userStrokes.size, currentPoints.size, canvasWidth, canvasHeight) {
-        if (canvasWidth <= 0f || canvasHeight <= 0f || guideDots.isEmpty()) {
-            emptyList()
-        } else {
-            val allPts = userStrokes.flatMap { it.points } + currentPoints
-            val threshold = (minOf(canvasWidth, canvasHeight) * 0.15f).coerceIn(65f, 105f)
-            guideDots.map { (nx, ny) ->
-                val target = Offset(nx * canvasWidth, ny * canvasHeight)
-                allPts.any { p -> (p - target).getDistance() <= threshold }
+    // Helper: Checks touch point or segment against allDots
+    fun checkPointHit(px: Float, py: Float, radius: Float) {
+        allDots.forEachIndexed { idx, (nx, ny) ->
+            if (!hitDotIndices.contains(idx)) {
+                val dx = px - nx * canvasWidth
+                val dy = py - ny * canvasHeight
+                if (dx * dx + dy * dy <= radius * radius) {
+                    hitDotIndices.add(idx)
+                    SoundEffectHelper.playPopSound()
+                }
             }
+        }
+    }
+
+    fun checkSegmentHit(a: Offset, b: Offset, radius: Float) {
+        allDots.forEachIndexed { idx, (nx, ny) ->
+            if (!hitDotIndices.contains(idx)) {
+                val dotTarget = Offset(nx * canvasWidth, ny * canvasHeight)
+                val dist = distanceToSegment(dotTarget, a, b)
+                if (dist <= radius) {
+                    hitDotIndices.add(idx)
+                    SoundEffectHelper.playPopSound()
+                }
+            }
+        }
+    }
+
+    fun checkSuccessCondition() {
+        val requiredCount = (allDots.size * 0.70f).toInt().coerceAtLeast(minOf(2, allDots.size))
+        if (hitDotIndices.size >= requiredCount && feedbackStatus != true) {
+            feedbackStatus = true
+            feedbackMessage = "शाबाश! बिल्कुल सही लिखा! 🎉"
+            showDemoGuide = false
+            SoundEffectHelper.playCorrectChime()
+            ttsManager?.speak("शाबाश! बिल्कुल सही लिखा!")
+            onLetterTraced?.invoke(activeChar)
         }
     }
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF131722)) // Deep dark slate background
+            .background(Color(0xFF11141E)) // Deep dark slate background
             .padding(12.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -242,13 +290,13 @@ fun SmartSlateTracingScreen(
                 Text(
                     text = headerTitle,
                     color = Color.White,
-                    fontSize = 18.sp,
+                    fontSize = 17.sp,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
                     text = "${if (activeSubject == SubjectType.MATH) "संख्या" else "अक्षर"} '$activeChar' (${letterIndex + 1}/${filteredLetters.size})",
                     color = Color(0xFFFFB300),
-                    fontSize = 14.sp,
+                    fontSize = 13.sp,
                     fontWeight = FontWeight.SemiBold
                 )
             }
@@ -259,8 +307,9 @@ fun SmartSlateTracingScreen(
                     SoundEffectHelper.playPopSound()
                     userStrokes.clear()
                     currentPoints.clear()
+                    hitDotIndices.clear()
                     feedbackStatus = null
-                    feedbackMessage = "उंगली से डॉट्स को मिलाते हुए अक्षर बनाओ!"
+                    feedbackMessage = "लाइन के बीच के डॉट्स को मिलाते हुए अक्षर बनाओ!"
                 },
                 modifier = Modifier
                     .clip(CircleShape)
@@ -288,6 +337,7 @@ fun SmartSlateTracingScreen(
                             letterIndex = 0
                             userStrokes.clear()
                             currentPoints.clear()
+                            hitDotIndices.clear()
                             feedbackStatus = null
                         }
                     },
@@ -312,7 +362,7 @@ fun SmartSlateTracingScreen(
         // --- 3. Priya Didi Guidance Box ---
         Card(
             modifier = Modifier.fillMaxWidth(),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFF1E2337)),
+            colors = CardDefaults.cardColors(containerColor = Color(0xFF1B2032)),
             shape = RoundedCornerShape(16.dp),
             border = BorderStroke(1.dp, Color(0xFF3F51B5))
         ) {
@@ -320,7 +370,7 @@ fun SmartSlateTracingScreen(
                 Text(
                     text = "“$activeHint”",
                     color = Color.White,
-                    fontSize = 14.sp,
+                    fontSize = 13.sp,
                     fontWeight = FontWeight.Medium
                 )
                 Spacer(modifier = Modifier.height(4.dp))
@@ -329,16 +379,19 @@ fun SmartSlateTracingScreen(
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    TextButton(onClick = {
-                        showDemoGuide = !showDemoGuide
-                        if (showDemoGuide) {
-                            ttsManager?.speak("जादू देखो! पीले डॉट्स को मिलाते हुए उंगली फेरें!")
-                        }
-                    }) {
+                    TextButton(
+                        onClick = {
+                            showDemoGuide = !showDemoGuide
+                            if (showDemoGuide) {
+                                ttsManager?.speak("जादू देखो! लाइन के बीच में चमकते डॉट्स को मिलाओ!")
+                            }
+                        },
+                        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 2.dp)
+                    ) {
                         Text(
                             text = if (showDemoGuide) "🪄 गाइड छिपाएं" else "🪄 जादू देखो (कैसे लिखें?)",
                             color = Color(0xFF80D8FF),
-                            fontSize = 13.sp,
+                            fontSize = 12.sp,
                             fontWeight = FontWeight.Bold
                         )
                     }
@@ -346,10 +399,18 @@ fun SmartSlateTracingScreen(
                     // Status Indicator
                     if (feedbackStatus != null) {
                         Text(
-                            text = if (feedbackStatus == true) "✅ शाबाश! बहुत अच्छा" else "❌ गलत है! फिर से लिखें",
+                            text = if (feedbackStatus == true) "✅ शाबाश! बहुत अच्छा" else "❌ गलत बनावट! फिर लिखें",
                             color = if (feedbackStatus == true) Color(0xFF00E676) else Color(0xFFFF5252),
                             fontWeight = FontWeight.Black,
-                            fontSize = 13.sp
+                            fontSize = 12.sp
+                        )
+                    } else {
+                        // Dot progress counter
+                        Text(
+                            text = "डॉट्स: ${hitDotIndices.size}/${allDots.size}",
+                            color = Color(0xFFFFD54F),
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold
                         )
                     }
                 }
@@ -358,116 +419,166 @@ fun SmartSlateTracingScreen(
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        // --- 4. Black Slate Canvas with Dotted Letter & Touch Detector ---
+        // --- 4. Black Slate Canvas: Tracing Line + Dots Right in the Middle ---
         Box(
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(24.dp))
-                .background(Color(0xFF0D0F15))
+                .background(Color(0xFF0B0E14))
                 .border(3.dp, Color(0xFFFF9800), RoundedCornerShape(24.dp))
         ) {
             Canvas(
                 modifier = Modifier
                     .fillMaxSize()
                     .pointerInput(activeChar) {
+                        val hitRadius = 38.dp.toPx()
                         detectDragGestures(
                             onDragStart = { offset ->
-                                currentPoints = mutableStateListOf(offset)
+                                currentPoints.clear()
+                                currentPoints.add(offset)
+                                checkPointHit(offset.x, offset.y, hitRadius)
+                                checkSuccessCondition()
                             },
                             onDrag = { change, _ ->
+                                change.consume()
+                                val prev = currentPoints.lastOrNull()
                                 currentPoints.add(change.position)
+                                if (prev != null) {
+                                    checkSegmentHit(prev, change.position, hitRadius)
+                                } else {
+                                    checkPointHit(change.position.x, change.position.y, hitRadius)
+                                }
+                                checkSuccessCondition()
                             },
                             onDragEnd = {
                                 if (currentPoints.isNotEmpty()) {
                                     userStrokes.add(
                                         TracingStroke(
                                             points = currentPoints.toList(),
-                                            color = selectedColor
+                                            color = selectedColor,
+                                            strokeWidth = 32f
                                         )
                                     )
-                                    currentPoints = mutableStateListOf()
+                                    currentPoints.clear()
+                                    checkSuccessCondition()
                                 }
+                            },
+                            onDragCancel = {
+                                currentPoints.clear()
                             }
                         )
                     }
             ) {
                 canvasWidth = size.width
                 canvasHeight = size.height
-
                 val w = size.width
                 val h = size.height
 
-                // Draw Slate Guide Lines
-                drawLine(
-                    color = Color(0x33FFFFFF),
-                    start = Offset(30f, h * 0.25f),
-                    end = Offset(w - 30f, h * 0.25f),
-                    strokeWidth = 2f
-                )
-                drawLine(
-                    color = Color(0x33FFFFFF),
-                    start = Offset(30f, h * 0.50f),
-                    end = Offset(w - 30f, h * 0.50f),
-                    strokeWidth = 2f
-                )
-                drawLine(
-                    color = Color(0x33FFFFFF),
-                    start = Offset(30f, h * 0.75f),
-                    end = Offset(w - 30f, h * 0.75f),
-                    strokeWidth = 2f
-                )
+                // 4A. Traditional Notebook / Slate Guide Lines
+                val guideLineColor = Color(0x18FFFFFF)
+                drawLine(guideLineColor, Offset(24f, h * 0.18f), Offset(w - 24f, h * 0.18f), strokeWidth = 2f)
+                drawLine(guideLineColor, Offset(24f, h * 0.48f), Offset(w - 24f, h * 0.48f), strokeWidth = 2f)
+                drawLine(guideLineColor, Offset(24f, h * 0.78f), Offset(w - 24f, h * 0.78f), strokeWidth = 2f)
 
-                // Dotted Template Character (Native Canvas Text to Path)
-                val fontSize = if (activeChar.length > 2) h * 0.36f else if (activeChar.length > 1) h * 0.44f else h * 0.55f
-                val textPaint = Paint().apply {
-                    textSize = fontSize
-                    color = android.graphics.Color.argb(80, 255, 255, 255)
+                // 4B. Soft Watermark Character in Background (Subtle outline silhouette)
+                val watermarkPaint = Paint().apply {
+                    textSize = if (activeChar.length > 2) h * 0.42f else if (activeChar.length > 1) h * 0.50f else h * 0.58f
+                    color = android.graphics.Color.argb(20, 255, 255, 255)
                     textAlign = Paint.Align.CENTER
                     isAntiAlias = true
-                    style = Paint.Style.STROKE
-                    strokeWidth = 14f
-                    pathEffect = android.graphics.DashPathEffect(floatArrayOf(24f, 18f), 0f)
+                    isFakeBoldText = true
                 }
-
                 drawContext.canvas.nativeCanvas.drawText(
                     activeChar,
                     w / 2,
-                    h * 0.68f,
-                    textPaint
+                    h * 0.65f,
+                    watermarkPaint
                 )
 
-                // Draw Interactive Checkpoints (Turn Green when touched!)
-                if (guideDots.isNotEmpty()) {
-                    guideDots.forEachIndexed { i, (nx, ny) ->
-                        val cx = nx * w
-                        val cy = ny * h
-                        val isHit = hitCheckpoints.getOrElse(i) { false }
-
-                        // Outer halo
-                        drawCircle(
-                            color = if (isHit) Color(0x4400E676) else Color(0x33FFD54F),
-                            radius = if (isHit) 12.dp.toPx() else 8.dp.toPx(),
-                            center = Offset(cx, cy)
-                        )
-                        // Core dot
-                        drawCircle(
-                            color = if (isHit) Color(0xFF00E676) else Color(0xFFFFD54F),
-                            radius = if (isHit) 6.dp.toPx() else 5.dp.toPx(),
-                            center = Offset(cx, cy)
-                        )
-                        // White reflection inside hit dots
-                        if (isHit) {
-                            drawCircle(
-                                color = Color.White,
-                                radius = 2.5.dp.toPx(),
-                                center = Offset(cx, cy)
-                            )
+                // 4C. TRACING LINES (The exact road/track for the child to trace)
+                strokePaths.forEach { strokePoints ->
+                    if (strokePoints.size >= 2) {
+                        val path = Path().apply {
+                            strokePoints.forEachIndexed { i, (nx, ny) ->
+                                val px = nx * w
+                                val py = ny * h
+                                if (i == 0) moveTo(px, py) else lineTo(px, py)
+                            }
                         }
+
+                        // Wide translucent chalk road (lane)
+                        drawPath(
+                            path = path,
+                            color = Color(0x28FFFFFF),
+                            style = Stroke(
+                                width = 30.dp.toPx(),
+                                cap = StrokeCap.Round,
+                                join = StrokeJoin.Round
+                            )
+                        )
+
+                        // Clear dashed tracing centerline
+                        drawPath(
+                            path = path,
+                            color = Color(0xB380D8FF), // Cyan chalk dashed tracing line
+                            style = Stroke(
+                                width = 4.5.dp.toPx(),
+                                cap = StrokeCap.Round,
+                                join = StrokeJoin.Round,
+                                pathEffect = PathEffect.dashPathEffect(floatArrayOf(15f, 15f), 0f)
+                            )
+                        )
                     }
                 }
 
-                // Draw Completed Strokes
+                // 4D. GUIDE DOTS - Placed EXACTLY in the middle of the tracing lines!
+                val dotNumberPaint = Paint().apply {
+                    textSize = 10.dp.toPx()
+                    color = android.graphics.Color.WHITE
+                    textAlign = Paint.Align.CENTER
+                    isFakeBoldText = true
+                    isAntiAlias = true
+                }
+
+                allDots.forEachIndexed { dotIndex, (nx, ny) ->
+                    val cx = nx * w
+                    val cy = ny * h
+                    val isHit = hitDotIndices.contains(dotIndex)
+
+                    // Outer halo
+                    drawCircle(
+                        color = if (isHit) Color(0x5500E676) else Color(0x33FFD54F),
+                        radius = if (isHit) 18.dp.toPx() else 14.dp.toPx(),
+                        center = Offset(cx, cy)
+                    )
+
+                    // Core dot
+                    drawCircle(
+                        color = if (isHit) Color(0xFF00E676) else Color(0xFFFFB300),
+                        radius = if (isHit) 13.dp.toPx() else 11.dp.toPx(),
+                        center = Offset(cx, cy)
+                    )
+
+                    // Inside: Step number (1, 2, 3...) or white checkmark if completed!
+                    if (isHit) {
+                        drawCircle(
+                            color = Color.White,
+                            radius = 4.dp.toPx(),
+                            center = Offset(cx, cy)
+                        )
+                    } else {
+                        val label = (dotIndex + 1).toString()
+                        drawContext.canvas.nativeCanvas.drawText(
+                            label,
+                            cx,
+                            cy + 3.5.dp.toPx(),
+                            dotNumberPaint
+                        )
+                    }
+                }
+
+                // 4E. User Completed Chalk Strokes
                 for (stroke in userStrokes) {
                     val path = Path()
                     stroke.points.forEachIndexed { index, point ->
@@ -485,7 +596,7 @@ fun SmartSlateTracingScreen(
                     )
                 }
 
-                // Draw Current Live Stroke
+                // 4F. Current Live Chalk Stroke Under Finger
                 if (currentPoints.isNotEmpty()) {
                     val livePath = Path()
                     currentPoints.forEachIndexed { index, point ->
@@ -496,32 +607,32 @@ fun SmartSlateTracingScreen(
                         path = livePath,
                         color = selectedColor,
                         style = Stroke(
-                            width = 36f,
+                            width = 32f,
                             cap = StrokeCap.Round,
                             join = StrokeJoin.Round
                         )
                     )
                 }
 
-                // Animated Magic Wand (When 'जादू देखो' is active)
-                if (showDemoGuide && guideDots.size > 1) {
-                    val totalSegments = guideDots.size - 1
+                // 4G. Animated Magic Wand ("🪄 जादू देखो") - Smoothly follows each stroke in order!
+                if (showDemoGuide && allDots.size > 1) {
+                    val totalSegments = allDots.size - 1
                     val currentStep = (demoProgress.value * totalSegments).toInt().coerceIn(0, totalSegments - 1)
                     val frac = (demoProgress.value * totalSegments) - currentStep
-                    val (x1, y1) = guideDots[currentStep]
-                    val (x2, y2) = guideDots[(currentStep + 1).coerceAtMost(guideDots.size - 1)]
+                    val (x1, y1) = allDots[currentStep]
+                    val (x2, y2) = allDots[(currentStep + 1).coerceAtMost(allDots.size - 1)]
                     val wandX = (x1 + (x2 - x1) * frac) * w
                     val wandY = (y1 + (y2 - y1) * frac) * h
 
-                    // Glowing magic wand tip
+                    // Glowing magic wand star
                     drawCircle(
                         color = Color(0x66FFEB3B),
-                        radius = 20.dp.toPx(),
+                        radius = 22.dp.toPx(),
                         center = Offset(wandX, wandY)
                     )
                     drawCircle(
                         color = Color(0xFFFFD54F),
-                        radius = 12.dp.toPx(),
+                        radius = 13.dp.toPx(),
                         center = Offset(wandX, wandY)
                     )
                     drawCircle(
@@ -535,13 +646,13 @@ fun SmartSlateTracingScreen(
             // Text Hint when guide is shown
             if (showDemoGuide) {
                 Text(
-                    text = "👉 चमकते डॉट्स को मिलाते हुए लिखें",
+                    text = "👉 लाइन के बीच में डॉट्स 1, 2, 3... को मिलाते हुए लिखें",
                     color = Color(0xFFFFEB3B),
-                    fontSize = 13.sp,
+                    fontSize = 12.sp,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .align(Alignment.TopCenter)
-                        .padding(top = 12.dp)
+                        .padding(top = 10.dp)
                         .background(Color(0xDD000000), RoundedCornerShape(12.dp))
                         .padding(horizontal = 12.dp, vertical = 6.dp)
                 )
@@ -577,13 +688,12 @@ fun SmartSlateTracingScreen(
             Button(
                 onClick = {
                     val allPoints = userStrokes.flatMap { it.points } + currentPoints
-
                     val validation = validateSmartTracing(
                         userPoints = allPoints,
-                        guideDots = guideDots,
+                        guideDots = allDots,
+                        hitDotCount = hitDotIndices.size,
                         canvasWidth = canvasWidth,
-                        canvasHeight = canvasHeight,
-                        letter = activeChar
+                        canvasHeight = canvasHeight
                     )
 
                     if (validation.isCorrect) {
@@ -656,87 +766,62 @@ fun SmartSlateTracingScreen(
 }
 
 /**
- * High-Precision Tracing Validation:
- * Strictly verifies whether the child followed the actual shape and checkpoints of the letter.
- * Prevents random scribbles, stray marks, or drawing wrong letters from falsely passing!
+ * Calculates perpendicular distance from point p to line segment (a, b).
+ * Enables 100% reliable touch detection even when the child moves finger quickly!
+ */
+fun distanceToSegment(p: Offset, a: Offset, b: Offset): Float {
+    val dx = b.x - a.x
+    val dy = b.y - a.y
+    val l2 = dx * dx + dy * dy
+    if (l2 == 0f) return (p - a).getDistance()
+    val t = (((p.x - a.x) * dx + (p.y - a.y) * dy) / l2).coerceIn(0f, 1f)
+    val proj = Offset(a.x + t * dx, a.y + t * dy)
+    return (p - proj).getDistance()
+}
+
+/**
+ * Validates the child's chalk drawing:
+ * Checks dot checkpoints, minimum stroke effort, and stray mark prevention.
  */
 fun validateSmartTracing(
     userPoints: List<Offset>,
     guideDots: List<Pair<Float, Float>>,
+    hitDotCount: Int,
     canvasWidth: Float,
-    canvasHeight: Float,
-    letter: String
+    canvasHeight: Float
 ): TracingValidationResult {
-    // 1. Minimum points check (At least 16 recorded touch points)
-    if (userPoints.size < 16 || canvasWidth <= 0f || canvasHeight <= 0f) {
+    if (userPoints.size < 12 || canvasWidth <= 0f || canvasHeight <= 0f) {
         return TracingValidationResult(
             isCorrect = false,
-            message = "अक्षर बहुत कम लिखा है! उंगली से पूरा अक्षर बनाएं।"
+            message = "अक्षर बहुत कम लिखा है! उंगली से डॉट्स को मिलाओ।"
         )
     }
 
-    // 2. Minimum stroke length check
-    var totalDistance = 0f
-    for (i in 0 until userPoints.size - 1) {
-        totalDistance += (userPoints[i + 1] - userPoints[i]).getDistance()
-    }
-    val minDistance = canvasWidth * 0.35f
-    if (totalDistance < minDistance) {
+    val requiredHits = (guideDots.size * 0.65f).toInt().coerceAtLeast(minOf(2, guideDots.size))
+    if (hitDotCount < requiredHits) {
         return TracingValidationResult(
             isCorrect = false,
-            message = "अक्षर अधूरा है! पूरी रेखाएं खींचें।"
+            message = "लाइन के बीच वाले चमकते डॉट्स पर उंगली फेरें!"
         )
     }
 
-    // 3. Fallback checkpoints if letter has no dots
-    val checkpoints = if (guideDots.isNotEmpty()) {
-        guideDots
-    } else {
-        listOf(
-            Pair(0.50f, 0.25f),
-            Pair(0.50f, 0.45f),
-            Pair(0.50f, 0.65f)
-        )
-    }
+    // Stray scribbling detection: check bounds envelope
+    val minX = (guideDots.minOf { it.first } * canvasWidth - 120f).coerceAtLeast(0f)
+    val maxX = (guideDots.maxOf { it.first } * canvasWidth + 120f).coerceAtMost(canvasWidth)
+    val minY = (guideDots.minOf { it.second } * canvasHeight - 120f).coerceAtLeast(0f)
+    val maxY = (guideDots.maxOf { it.second } * canvasHeight + 120f).coerceAtMost(canvasHeight)
 
-    // 4. Checkpoint Hit Detection:
-    // The child's strokes MUST pass through the key landmarks of this exact letter
-    val hitThreshold = (minOf(canvasWidth, canvasHeight) * 0.15f).coerceIn(65f, 105f)
-
-    val hitCount = checkpoints.count { (nx, ny) ->
-        val target = Offset(nx * canvasWidth, ny * canvasHeight)
-        userPoints.any { p -> (p - target).getDistance() <= hitThreshold }
-    }
-
-    // Must hit at least 60% of the letter's checkpoints (minimum 2)
-    val requiredHits = (checkpoints.size * 0.60f).toInt().coerceAtLeast(2)
-    if (hitCount < requiredHits) {
+    val insideCount = userPoints.count { p -> p.x in minX..maxX && p.y in minY..maxY }
+    val ratio = insideCount.toFloat() / userPoints.size
+    if (ratio < 0.60f) {
         return TracingValidationResult(
             isCorrect = false,
-            message = "गलत बनावट! चमकते डॉट्स पर उंगली फेरें।"
-        )
-    }
-
-    // 5. Envelope / Stray Scribble Detection:
-    // The child shouldn't be scribbling wild lines outside the letter region
-    val minDotX = (checkpoints.minOf { it.first } * canvasWidth - hitThreshold * 1.5f).coerceAtLeast(0f)
-    val maxDotX = (checkpoints.maxOf { it.first } * canvasWidth + hitThreshold * 1.5f).coerceAtMost(canvasWidth)
-    val minDotY = (checkpoints.minOf { it.second } * canvasHeight - hitThreshold * 1.5f).coerceAtLeast(0f)
-    val maxDotY = (checkpoints.maxOf { it.second } * canvasHeight + hitThreshold * 1.5f).coerceAtMost(canvasHeight)
-
-    val pointsInEnvelope = userPoints.count { p ->
-        p.x in minDotX..maxDotX && p.y in minDotY..maxDotY
-    }
-    val envelopeRatio = pointsInEnvelope.toFloat() / userPoints.size
-    if (envelopeRatio < 0.60f) {
-        return TracingValidationResult(
-            isCorrect = false,
-            message = "स्लेट पर बाहर नहीं, केवल अक्षर पर लिखें!"
+            message = "स्लेट पर बाहर नहीं, केवल अक्षर की लाइन पर लिखें!"
         )
     }
 
     return TracingValidationResult(
         isCorrect = true,
-        message = "बहुत खूब! सही लिखा!"
+        message = "शाबाश! बहुत अच्छा लिखा!"
     )
 }
