@@ -340,6 +340,15 @@ fun DashboardScreen(
                             "LEVEL_5_CHAMPIONSHIP" -> if (userProfile.lastActiveItemLabel.isNotEmpty()) {
                                 if (isEn) "Championship: ${userProfile.lastActiveItemLabel}" else "महा मुकाबला: ${userProfile.lastActiveItemLabel}"
                             } else "$subjectDisplayName - $levelPrefix 5 🏆"
+                            "LEVEL_6_STORIES_RHYMES" -> if (userProfile.lastActiveItemLabel.isNotEmpty()) {
+                                if (isEn) "Stories: '${userProfile.lastActiveItemLabel}'" else "कहानियाँ: '${userProfile.lastActiveItemLabel}'"
+                            } else "$subjectDisplayName - $levelPrefix 6 📖"
+                            "LEVEL_7_COLORS_SHAPES" -> if (userProfile.lastActiveItemLabel.isNotEmpty()) {
+                                if (isEn) "Colors & Shapes: '${userProfile.lastActiveItemLabel}'" else "रंग व आकार: '${userProfile.lastActiveItemLabel}'"
+                            } else "$subjectDisplayName - $levelPrefix 7 🎨"
+                            "LEVEL_8_GENERAL_KNOWLEDGE" -> if (userProfile.lastActiveItemLabel.isNotEmpty()) {
+                                if (isEn) "GK Fun: '${userProfile.lastActiveItemLabel}'" else "दुनिया की पहचान: '${userProfile.lastActiveItemLabel}'"
+                            } else "$subjectDisplayName - $levelPrefix 8 🌍"
                             "GAME" -> if (userProfile.lastActiveGameKey != null) {
                                 if (isEn) "Game: ${userProfile.lastActiveGameKey}" else "खेल: ${userProfile.lastActiveGameKey}"
                             } else if (isEn) "Games Hub" else "खेल संसार"

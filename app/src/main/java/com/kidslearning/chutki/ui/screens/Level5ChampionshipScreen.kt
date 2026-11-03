@@ -1335,8 +1335,8 @@ private fun GrandCelebrationView(
             primaryColor = CorrectGreen
         ) {
             Text(
-                text = "🏆 ट्रॉफी सुरक्षित करें और आगे बढ़ें",
-                fontSize = 16.sp,
+                text = "🏆 ट्रॉफी सुरक्षित करें और आगे बढ़ें (लेवल 6 अनलॉक 📖)",
+                fontSize = 15.sp,
                 fontWeight = FontWeight.Black,
                 color = Color.White
             )

@@ -106,7 +106,7 @@ fun SubjectLevelsScreen(
                     )
                     Text(
                         text = if (userProfile.isEnglish) {
-                            "Learning Path (Levels 1 to 5) • Progress: ${
+                            "Learning Path (Levels 1 to 8) • Progress: ${
                                 when (subject) {
                                     SubjectType.HINDI -> userProfile.hindiProgressPercent
                                     SubjectType.ENGLISH -> userProfile.englishProgressPercent
@@ -114,7 +114,7 @@ fun SubjectLevelsScreen(
                                 }
                             }%"
                         } else {
-                            "सीखने का मार्ग (लेवल 1 से 5) • प्रगति: ${
+                            "सीखने का मार्ग (लेवल 1 से 8) • प्रगति: ${
                                 when (subject) {
                                     SubjectType.HINDI -> userProfile.hindiProgressPercent
                                     SubjectType.ENGLISH -> userProfile.englishProgressPercent

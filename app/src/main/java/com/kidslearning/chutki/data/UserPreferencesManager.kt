@@ -388,12 +388,25 @@ class UserPreferencesManager(context: Context) {
                 val hasTrophy = prefs.getBoolean("championship_trophy_$sub", false)
                 if (hasTrophy) 3 else if (unlocked >= 5) 1 else 0
             }
+            6 -> {
+                val count = getCompletedSet("${sub}_stories_completed").size
+                if (count >= 3) 3 else if (count >= 1) 2 else if (unlocked >= 6) 1 else 0
+            }
+            7 -> {
+                val count = getCompletedSet("${sub}_shapes_completed").size
+                if (count >= 3) 3 else if (count >= 1) 2 else if (unlocked >= 7) 1 else 0
+            }
+            8 -> {
+                val count = getCompletedSet("${sub}_gk_completed").size
+                if (count >= 4) 3 else if (count >= 1) 2 else if (unlocked >= 8) 1 else 0
+            }
             else -> 0
         }
     }
 
     fun getLevelPercent(subjectId: String, levelNumber: Int): Int {
         val sub = subjectId.lowercase()
+        val unlocked = prefs.getInt("${sub}_unlocked_level", 1)
         return when (levelNumber) {
             1 -> {
                 val max = when (sub) { "hindi" -> 49; "english" -> 26; else -> 100 }
@@ -421,8 +434,19 @@ class UserPreferencesManager(context: Context) {
             }
             5 -> {
                 val hasTrophy = prefs.getBoolean("championship_trophy_$sub", false)
-                val unlocked = prefs.getInt("${sub}_unlocked_level", 1)
                 if (hasTrophy) 100 else if (unlocked >= 5) 50 else 0
+            }
+            6 -> {
+                val count = getCompletedSet("${sub}_stories_completed").size
+                ((count.toFloat() / 4) * 100).toInt().coerceIn(if (unlocked >= 6) 25 else 0, 100)
+            }
+            7 -> {
+                val count = getCompletedSet("${sub}_shapes_completed").size
+                ((count.toFloat() / 4) * 100).toInt().coerceIn(if (unlocked >= 7) 25 else 0, 100)
+            }
+            8 -> {
+                val count = getCompletedSet("${sub}_gk_completed").size
+                ((count.toFloat() / 6) * 100).toInt().coerceIn(if (unlocked >= 8) 20 else 0, 100)
             }
             else -> 0
         }
@@ -444,9 +468,13 @@ class UserPreferencesManager(context: Context) {
         val currentXp = prefs.getInt("total_xp", 0) + xpBonus
         val currentStars = prefs.getInt("total_stars", 0) + starBonus
 
+        val currentUnlocked = prefs.getInt("${sub}_unlocked_level", 1)
+        val newUnlocked = maxOf(currentUnlocked, 6)
+
         prefs.edit()
             .putBoolean("championship_trophy_$sub", true)
             .putBoolean("has_championship_trophy", true)
+            .putInt("${sub}_unlocked_level", newUnlocked)
             .putInt("total_xp", currentXp)
             .putInt("total_stars", currentStars)
             .apply()
@@ -460,6 +488,49 @@ class UserPreferencesManager(context: Context) {
         _userProfileState.value = buildProfile()
     }
 
+    fun recordStoryCompleted(subjectId: String, storyId: String) {
+        val sub = subjectId.lowercase()
+        val key = "${sub}_stories_completed"
+        val set = getCompletedSet(key)
+        val isFirstTime = set.add(storyId)
+
+        if (isFirstTime) {
+            saveCompletedSet(key, set)
+            val currentUnlocked = prefs.getInt("${sub}_unlocked_level", 1)
+            val newUnlocked = maxOf(currentUnlocked, 7) // Unlocks Level 7 Colors & Shapes
+            unlockLevel(sub, newUnlocked)
+            addXpAndStars(xpToAdd = 30, starsToAdd = 2)
+        }
+    }
+
+    fun recordShapeActivity(subjectId: String, activityId: String) {
+        val sub = subjectId.lowercase()
+        val key = "${sub}_shapes_completed"
+        val set = getCompletedSet(key)
+        val isFirstTime = set.add(activityId)
+
+        if (isFirstTime) {
+            saveCompletedSet(key, set)
+            val currentUnlocked = prefs.getInt("${sub}_unlocked_level", 1)
+            val newUnlocked = maxOf(currentUnlocked, 8) // Unlocks Level 8 General Knowledge
+            unlockLevel(sub, newUnlocked)
+            addXpAndStars(xpToAdd = 35, starsToAdd = 2)
+        }
+    }
+
+    fun recordGkActivity(subjectId: String, cardId: String) {
+        val sub = subjectId.lowercase()
+        val key = "${sub}_gk_completed"
+        val set = getCompletedSet(key)
+        val isFirstTime = set.add(cardId)
+
+        if (isFirstTime) {
+            saveCompletedSet(key, set)
+            addXpAndStars(xpToAdd = 40, starsToAdd = 3)
+            _userProfileState.value = buildProfile()
+        }
+    }
+
     fun setLastChampionshipProgress(subjectId: String, roundNumber: Int, roundLabel: String = "") {
         val sub = subjectId.lowercase()
         prefs.edit()
@@ -468,6 +539,22 @@ class UserPreferencesManager(context: Context) {
             .putInt("last_active_level", 5)
             .putInt("last_active_item_index", roundNumber)
             .putString("last_active_item_label", roundLabel)
+            .apply()
+        _userProfileState.value = buildProfile()
+    }
+
+    fun recordLastActiveProgram(
+        type: String,
+        subjectId: String,
+        levelNumber: Int,
+        itemLabel: String = ""
+    ) {
+        val sub = subjectId.lowercase()
+        prefs.edit()
+            .putString("last_active_program_type", type)
+            .putString("last_active_subject", sub)
+            .putInt("last_active_level", levelNumber)
+            .putString("last_active_item_label", itemLabel)
             .apply()
         _userProfileState.value = buildProfile()
     }

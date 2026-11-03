@@ -48,6 +48,9 @@ import com.kidslearning.chutki.ui.screens.Level2TracingScreen
 import com.kidslearning.chutki.ui.screens.Level3WordBuilderScreen
 import com.kidslearning.chutki.ui.screens.Level4QuizScreen
 import com.kidslearning.chutki.ui.screens.Level5ChampionshipScreen
+import com.kidslearning.chutki.ui.screens.Level6StoriesRhymesScreen
+import com.kidslearning.chutki.ui.screens.Level7ColorsShapesScreen
+import com.kidslearning.chutki.ui.screens.Level8GeneralKnowledgeScreen
 import com.kidslearning.chutki.ui.screens.ProfileSettingsScreen
 import com.kidslearning.chutki.ui.screens.QuizScreen
 import com.kidslearning.chutki.ui.screens.SmartSlateTracingScreen
@@ -63,6 +66,9 @@ enum class AppNavDestination {
     LEVEL_3_WORD_BUILDER,
     LEVEL_4_QUIZ,
     LEVEL_5_CHAMPIONSHIP,
+    LEVEL_6_STORIES_RHYMES,
+    LEVEL_7_COLORS_SHAPES,
+    LEVEL_8_GENERAL_KNOWLEDGE,
     QUIZ,
     LEADERBOARD,
     PROFILE
@@ -107,7 +113,10 @@ fun ChutkiKidsApp(
             AppNavDestination.LEVEL_2_TRACING,
             AppNavDestination.LEVEL_3_WORD_BUILDER,
             AppNavDestination.LEVEL_4_QUIZ,
-            AppNavDestination.LEVEL_5_CHAMPIONSHIP -> {
+            AppNavDestination.LEVEL_5_CHAMPIONSHIP,
+            AppNavDestination.LEVEL_6_STORIES_RHYMES,
+            AppNavDestination.LEVEL_7_COLORS_SHAPES,
+            AppNavDestination.LEVEL_8_GENERAL_KNOWLEDGE -> {
                 currentScreen = AppNavDestination.SUBJECT_LEVELS
             }
             AppNavDestination.SUBJECT_LEVELS,
@@ -187,6 +196,9 @@ fun ChutkiKidsApp(
                                             "LEVEL_3_WORD_BUILDER" -> AppNavDestination.LEVEL_3_WORD_BUILDER
                                             "LEVEL_4_QUIZ" -> AppNavDestination.LEVEL_4_QUIZ
                                             "LEVEL_5_CHAMPIONSHIP" -> AppNavDestination.LEVEL_5_CHAMPIONSHIP
+                                            "LEVEL_6_STORIES_RHYMES" -> AppNavDestination.LEVEL_6_STORIES_RHYMES
+                                            "LEVEL_7_COLORS_SHAPES" -> AppNavDestination.LEVEL_7_COLORS_SHAPES
+                                            "LEVEL_8_GENERAL_KNOWLEDGE" -> AppNavDestination.LEVEL_8_GENERAL_KNOWLEDGE
                                             "QUIZ" -> AppNavDestination.QUIZ
                                             else -> {
                                                 val activeUnlocked = when (targetSubject) {
@@ -200,6 +212,9 @@ fun ChutkiKidsApp(
                                                     3 -> AppNavDestination.LEVEL_3_WORD_BUILDER
                                                     4 -> AppNavDestination.LEVEL_4_QUIZ
                                                     5 -> AppNavDestination.LEVEL_5_CHAMPIONSHIP
+                                                    6 -> AppNavDestination.LEVEL_6_STORIES_RHYMES
+                                                    7 -> AppNavDestination.LEVEL_7_COLORS_SHAPES
+                                                    8 -> AppNavDestination.LEVEL_8_GENERAL_KNOWLEDGE
                                                     else -> AppNavDestination.QUIZ
                                                 }
                                             }
@@ -232,6 +247,9 @@ fun ChutkiKidsApp(
                                         3 -> AppNavDestination.LEVEL_3_WORD_BUILDER
                                         4 -> AppNavDestination.LEVEL_4_QUIZ
                                         5 -> AppNavDestination.LEVEL_5_CHAMPIONSHIP
+                                        6 -> AppNavDestination.LEVEL_6_STORIES_RHYMES
+                                        7 -> AppNavDestination.LEVEL_7_COLORS_SHAPES
+                                        8 -> AppNavDestination.LEVEL_8_GENERAL_KNOWLEDGE
                                         else -> AppNavDestination.LEVEL_1_CARDS
                                     }
                                 }
@@ -327,6 +345,50 @@ fun ChutkiKidsApp(
                                     currentScreen = AppNavDestination.SUBJECT_LEVELS
                                 },
                                 onCelebrationDone = {
+                                    currentScreen = AppNavDestination.SUBJECT_LEVELS
+                                }
+                            )
+                        }
+
+                        AppNavDestination.LEVEL_6_STORIES_RHYMES -> {
+                            Level6StoriesRhymesScreen(
+                                subject = selectedSubject,
+                                userProfile = userProfile,
+                                userPrefs = userPrefs,
+                                ttsManager = ttsManager,
+                                onBack = {
+                                    currentScreen = AppNavDestination.SUBJECT_LEVELS
+                                },
+                                onNavigateToLevel7 = {
+                                    userPrefs.unlockLevel(selectedSubject.id, 7)
+                                    currentScreen = AppNavDestination.LEVEL_7_COLORS_SHAPES
+                                }
+                            )
+                        }
+
+                        AppNavDestination.LEVEL_7_COLORS_SHAPES -> {
+                            Level7ColorsShapesScreen(
+                                subject = selectedSubject,
+                                userProfile = userProfile,
+                                userPrefs = userPrefs,
+                                ttsManager = ttsManager,
+                                onBack = {
+                                    currentScreen = AppNavDestination.SUBJECT_LEVELS
+                                },
+                                onNavigateToLevel8 = {
+                                    userPrefs.unlockLevel(selectedSubject.id, 8)
+                                    currentScreen = AppNavDestination.LEVEL_8_GENERAL_KNOWLEDGE
+                                }
+                            )
+                        }
+
+                        AppNavDestination.LEVEL_8_GENERAL_KNOWLEDGE -> {
+                            Level8GeneralKnowledgeScreen(
+                                subject = selectedSubject,
+                                userProfile = userProfile,
+                                userPrefs = userPrefs,
+                                ttsManager = ttsManager,
+                                onBack = {
                                     currentScreen = AppNavDestination.SUBJECT_LEVELS
                                 }
                             )

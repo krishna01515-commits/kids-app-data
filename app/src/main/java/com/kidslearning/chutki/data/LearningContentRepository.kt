@@ -70,6 +70,36 @@ object LearningContentRepository {
                 starsEarned = getStars(5),
                 xpReward = 200,
                 completionPercent = getPercent(5)
+            ),
+            LevelInfo(
+                levelNumber = 6,
+                titleHindi = "लेवल 6: सुनहरी कहानियाँ और राइम्स 📖",
+                subtitleHindi = "कहानियाँ सुनो, गाओ और सीखो",
+                iconEmoji = "📖",
+                isUnlocked = unlockedLevel >= 6,
+                starsEarned = getStars(6),
+                xpReward = 150,
+                completionPercent = getPercent(6)
+            ),
+            LevelInfo(
+                levelNumber = 7,
+                titleHindi = "लेवल 7: रंग और आकार खोज 🎨",
+                subtitleHindi = "आकार पहचानो, वस्तुएं मिलाओ और रंग भरो",
+                iconEmoji = "🎨",
+                isUnlocked = unlockedLevel >= 7,
+                starsEarned = getStars(7),
+                xpReward = 150,
+                completionPercent = getPercent(7)
+            ),
+            LevelInfo(
+                levelNumber = 8,
+                titleHindi = "लेवल 8: दुनिया की पहचान 🌍",
+                subtitleHindi = "जानवरों की आवाजें, शरीर के अंग और फल-सब्जियां",
+                iconEmoji = "🌍",
+                isUnlocked = unlockedLevel >= 8,
+                starsEarned = getStars(8),
+                xpReward = 200,
+                completionPercent = getPercent(8)
             )
         )
     }
@@ -1669,4 +1699,418 @@ object LearningContentRepository {
             user.copy(rank = index + 1)
         }
     }
+
+    // 8. Level 6: Stories & Rhymes Data Provider
+    fun getStoriesAndRhymes(subjectId: String): List<StoryRhyme> {
+        return when (subjectId.lowercase()) {
+            "english" -> listOf(
+                StoryRhyme(
+                    id = "en_twinkle",
+                    titleHindi = "ट्विंकल ट्विंकल लिटिल स्टार ⭐",
+                    titleEnglish = "Twinkle Twinkle Little Star ⭐",
+                    emoji = "⭐",
+                    linesHindi = listOf(
+                        "ट्विंकल ट्विंकल लिटिल स्टार,",
+                        "हाउ आई वंडर व्हाट यू आर!",
+                        "अप अबव द वर्ल्ड सो हाई,",
+                        "लाइक अ डायमंड इन द स्काई!"
+                    ),
+                    linesEnglish = listOf(
+                        "Twinkle, twinkle, little star,",
+                        "How I wonder what you are!",
+                        "Up above the world so high,",
+                        "Like a diamond in the sky!"
+                    ),
+                    moralHindi = "सितारे रात के आसमान को मोतियों जैसे चमकाते हैं।",
+                    moralEnglish = "Stars make the night sky shine bright and beautiful."
+                ),
+                StoryRhyme(
+                    id = "en_abc",
+                    titleHindi = "ए बी सी फ़ोनिक्स गीत 🔤",
+                    titleEnglish = "The ABC Phonics Song 🔤",
+                    emoji = "🔤",
+                    linesHindi = listOf(
+                        "ए बी सी डी ई एफ जी,",
+                        "कम एंड सिंग अलॉन्ग विथ मी!",
+                        "एच आई जे के एल एम एन,",
+                        "नाउ आई नो माय ए-बी-सी!"
+                    ),
+                    linesEnglish = listOf(
+                        "A B C D E F G,",
+                        "Come and sing along with me!",
+                        "H I J K L M N,",
+                        "Now I know my A-B-C!"
+                    ),
+                    moralHindi = "गीत गाकर अक्षर याद रखना बहुत आसान होता है!",
+                    moralEnglish = "Singing songs makes learning alphabets super easy!"
+                ),
+                StoryRhyme(
+                    id = "en_baa_baa",
+                    titleHindi = "बाबा ब्लैक शीप 🐑",
+                    titleEnglish = "Baa Baa Black Sheep 🐑",
+                    emoji = "🐑",
+                    linesHindi = listOf(
+                        "बाबा ब्लैक शीप, हैव यू एनी वूल?",
+                        "येस सर, येस सर, थ्री बैग्स फुल!",
+                        "वन फॉर द मास्टर, वन फॉर द डेम,",
+                        "एंड वन फॉर द लिटिल बॉय डाउन द लेन!"
+                    ),
+                    linesEnglish = listOf(
+                        "Baa, baa, black sheep, have you any wool?",
+                        "Yes, sir, yes, sir, three bags full!",
+                        "One for the master, and one for the dame,",
+                        "And one for the little boy who lives down the lane!"
+                    ),
+                    moralHindi = "भेड़ से हमें गर्म ऊन मिलता है जिससे स्वेटर बनते हैं।",
+                    moralEnglish = "Sheep give us warm wool for winter sweaters."
+                ),
+                StoryRhyme(
+                    id = "en_humpty",
+                    titleHindi = "हम्प्टी डम्प्टी 🥚",
+                    titleEnglish = "Humpty Dumpty 🥚",
+                    emoji = "🥚",
+                    linesHindi = listOf(
+                        "हम्प्टी डम्प्टी सैट ऑन अ वॉल,",
+                        "हम्प्टी डम्प्टी हैड अ ग्रेट फॉल!",
+                        "ऑल द किंग्स हॉर्सेस एंड किंग्स मेन,",
+                        "कुडंट पुट हम्प्टी टुगेदर अगेन!"
+                    ),
+                    linesEnglish = listOf(
+                        "Humpty Dumpty sat on a wall,",
+                        "Humpty Dumpty had a great fall!",
+                        "All the king's horses and all the king's men,",
+                        "Couldn't put Humpty together again!"
+                    ),
+                    moralHindi = "ऊंची दीवारों पर चढ़ते समय सावधानी रखनी चाहिए।",
+                    moralEnglish = "Always be careful when climbing high places."
+                )
+            )
+            "math" -> listOf(
+                StoryRhyme(
+                    id = "math_monkeys",
+                    titleHindi = "3 नन्हें बंदर (घटाव की कहानी) 🐒",
+                    titleEnglish = "3 Little Monkeys (Subtraction) 🐒",
+                    emoji = "🐒",
+                    linesHindi = listOf(
+                        "3 नन्हें बंदर पेड़ पर थे, उछल-कूद वो करते थे!",
+                        "एक बंदर नीचे कूदा, मम्मा को आवाज लगाई!",
+                        "बताओ अब पेड़ पर कितने बंदर बचे?",
+                        "3 में से 1 गया, बचे सिर्फ 2 बंदर! (3 - 1 = 2)"
+                    ),
+                    linesEnglish = listOf(
+                        "3 little monkeys jumping in the tree!",
+                        "One jumped down and bumped his knee!",
+                        "Mama called the doctor and the doctor said,",
+                        "Only 2 monkeys left in the tree! (3 - 1 = 2)"
+                    ),
+                    moralHindi = "चीजें अलग होने पर संख्या घटती है - इसे घटाव कहते हैं!",
+                    moralEnglish = "When things go away, the count decreases - that's subtraction!"
+                ),
+                StoryRhyme(
+                    id = "math_birds",
+                    titleHindi = "5 नन्हीं चिड़िया 🐦",
+                    titleEnglish = "5 Little Birds 🐦",
+                    emoji = "🐦",
+                    linesHindi = listOf(
+                        "5 रंग-बिरंगी चिड़िया डाल पर बैठी गाती थीं!",
+                        "एक चिड़िया फुर्र से उड़ गई, दूर गगन में खो गई!",
+                        "बताओ अब डाल पर कितनी चिड़िया बचीं?",
+                        "5 में से 1 गई, बचीं 4 चिड़िया! (5 - 1 = 4)"
+                    ),
+                    linesEnglish = listOf(
+                        "5 little birds sitting on a tree,",
+                        "One flew away, happy and free!",
+                        "How many birds are sitting now?",
+                        "5 minus 1 leaves 4 on the tree! (5 - 1 = 4)"
+                    ),
+                    moralHindi = "उलटी गिनती से हम घटाना सीखते हैं।",
+                    moralEnglish = "Counting backward helps us learn subtraction."
+                ),
+                StoryRhyme(
+                    id = "math_fish",
+                    titleHindi = "1 से 10 तक मछली पकड़ी 🐠",
+                    titleEnglish = "1 2 3 4 5 Once I Caught A Fish 🐠",
+                    emoji = "🐠",
+                    linesHindi = listOf(
+                        "1, 2, 3, 4, 5, एक बार मैंने पकड़ी मछली!",
+                        "6, 7, 8, 9, 10, फिर मैंने उसको छोड़ दिया!",
+                        "तुमने उसको क्यों छोड़ा? क्योंकि उसने उंगली काट ली!",
+                        "कौन सी उंगली काटी? सीधे हाथ की छोटी उंगली!"
+                    ),
+                    linesEnglish = listOf(
+                        "1, 2, 3, 4, 5, Once I caught a fish alive!",
+                        "6, 7, 8, 9, 10, Then I let it go again!",
+                        "Why did you let it go? Because it bit my finger so!",
+                        "Which finger did it bite? This little finger on the right!"
+                    ),
+                    moralHindi = "1 से 10 तक की गिनती गीत के साथ पक्की होती है।",
+                    moralEnglish = "Rhythm makes counting from 1 to 10 super fun."
+                ),
+                StoryRhyme(
+                    id = "math_apples",
+                    titleHindi = "सेब की टोकरी (जोड़ की कहानी) 🍎",
+                    titleEnglish = "The Apple Basket (Addition) 🍎",
+                    emoji = "🍎",
+                    linesHindi = listOf(
+                        "2 लाल मीठे सेब टोकरी में रखे थे!",
+                        "मम्मा ने बाजार से लाकर 2 और सेब रख दिए!",
+                        "गिनो और बताओ टोकरी में कुल कितने सेब हो गए?",
+                        "2 और 2 मिलकर बनते हैं पूरे 4 सेब! (2 + 2 = 4)"
+                    ),
+                    linesEnglish = listOf(
+                        "2 sweet red apples sitting in a tray,",
+                        "Mama brought 2 more from the shop today!",
+                        "Count them together, how many in store?",
+                        "2 plus 2 makes exactly 4! (2 + 2 = 4)"
+                    ),
+                    moralHindi = "चीजें साथ लाने पर संख्या बढ़ती है - इसे जोड़ कहते हैं!",
+                    moralEnglish = "Putting things together increases the count - that's addition!"
+                )
+            )
+            else -> listOf( // Hindi default
+                StoryRhyme(
+                    id = "hi_chanda",
+                    titleHindi = "चंदा मामा दूर के 🌙",
+                    titleEnglish = "Chanda Mama 🌙",
+                    emoji = "🌙",
+                    linesHindi = listOf(
+                        "चंदा मामा दूर के, पुए पकाएं बूर के।",
+                        "आप खाएं थाली में, मुन्ने को दें प्याली में।",
+                        "प्याली गई टूट, मुन्ना गया रूठ!",
+                        "लाएंगे नई प्यालियां, बजा बजा के तालियां!"
+                    ),
+                    linesEnglish = listOf(
+                        "Chanda Mama shines from afar, sweet moon in the sky,",
+                        "Eating sweets and singing a gentle lullaby!",
+                        "When the little cup breaks, baby gets a little sad,",
+                        "Clap your hands and smile, baby is super glad!"
+                    ),
+                    moralHindi = "चंदा मामा रात में शीतलता और मीठे सपने लाते हैं।",
+                    moralEnglish = "The moon brings gentle light and sweet dreams."
+                ),
+                StoryRhyme(
+                    id = "hi_machhli",
+                    titleHindi = "मछली जल की रानी है 🐟",
+                    titleEnglish = "Fish - Queen of Water 🐟",
+                    emoji = "🐟",
+                    linesHindi = listOf(
+                        "मछली जल की रानी है, जीवन उसका पानी है।",
+                        "हाथ लगाओ तो डर जाएगी, बाहर निकालो तो मर जाएगी।",
+                        "पानी में डालो तो तैर जाएगी, सारा पानी पी जाएगी!",
+                        "रंग-बिरंगी प्यारी मछली, जल की दुनिया की रानी!"
+                    ),
+                    linesEnglish = listOf(
+                        "Fish is the lovely queen of the sea and stream,",
+                        "Water is her life, gentle and serene!",
+                        "Touch her gently and she swims away so fast,",
+                        "Swimming happy and free till the day has passed!"
+                    ),
+                    moralHindi = "मछली पानी के बिना जीवित नहीं रह सकती, जल ही उसका घर है।",
+                    moralEnglish = "Water is the natural home for fish."
+                ),
+                StoryRhyme(
+                    id = "hi_titli",
+                    titleHindi = "तितली उड़ी बस पर चढ़ी 🦋",
+                    titleEnglish = "Little Butterfly 🦋",
+                    emoji = "🦋",
+                    linesHindi = listOf(
+                        "तितली उड़ी बस पर चढ़ी, सीट ना मिली तो रोने लगी।",
+                        "ड्राइवर ने बोला आजा मेरे पास, तितली बोली ना बाबा ना!",
+                        "मेरा घर है पास, फूलों की बगिया खास!",
+                        "पंख फैलाकर उड़ती जाऊँ, आसमान को छूती जाऊँ!"
+                    ),
+                    linesEnglish = listOf(
+                        "A colorful butterfly flew high in the air,",
+                        "Sat on a yellow bus without any care!",
+                        "She said my home is nearby among the lovely flowers,",
+                        "Dancing happily in the sunshine for hours!"
+                    ),
+                    moralHindi = "फूलों की बगिया तितलियों का सबसे प्यारा ठिकाना है।",
+                    moralEnglish = "Flower gardens are the favorite homes of butterflies."
+                ),
+                StoryRhyme(
+                    id = "hi_hathi",
+                    titleHindi = "हाथी राजा कहाँ चले 🐘",
+                    titleEnglish = "Royal Elephant 🐘",
+                    emoji = "🐘",
+                    linesHindi = listOf(
+                        "हाथी राजा बहुत बड़े, सूँड हिलाकर कहाँ चले?",
+                        "मेरे घर भी आओ ना, हलवा पूड़ी खाओ ना!",
+                        "आओ बैठो कुर्सी पर, कुर्सी बोली चटर-पटर!",
+                        "हाथी राजा हँसते-हँसते, आगे बढ़ते जाते हैं!"
+                    ),
+                    linesEnglish = listOf(
+                        "Gentle big elephant swaying his trunk so grand,",
+                        "Walking proudly through the sunny golden sand!",
+                        "Come to my little home, eat some yummy treat,",
+                        "The friendliest giant you could ever meet!"
+                    ),
+                    moralHindi = "हाथी शांत और शक्तिशाली प्राणी होता है, हमें जीवों से प्यार करना चाहिए।",
+                    moralEnglish = "Elephants are gentle giants; always be kind to animals."
+                )
+            )
+        }
+    }
+
+    // 9. Level 7: Colors & Shapes Explorer Data
+    fun getShapesAndColors(): List<ShapeInfo> {
+        return listOf(
+            ShapeInfo(
+                id = "shape_circle",
+                nameHindi = "गोला / वृत्त (Circle)",
+                nameEnglish = "Circle (गोला)",
+                shapeEmoji = "⭕",
+                realObjects = listOf(
+                    ShapeMatchObject("रोटी", "Roti (Bread)", "🫓", "गोल-मटोल गरम रोटी"),
+                    ShapeMatchObject("सूरज", "Sun", "☀️", "आसमान का गोल सूरज"),
+                    ShapeMatchObject("फुटबॉल", "Football", "⚽", "खेलने वाली गोल गेंद"),
+                    ShapeMatchObject("सिक्का", "Coin", "🪙", "गोल चमकता सिक्का")
+                )
+            ),
+            ShapeInfo(
+                id = "shape_triangle",
+                nameHindi = "त्रिभुज (Triangle)",
+                nameEnglish = "Triangle (त्रिभुज)",
+                shapeEmoji = "🔺",
+                realObjects = listOf(
+                    ShapeMatchObject("समोसा", "Samosa", "🥟", "3 कोनों वाला स्वादिष्ट समोसा"),
+                    ShapeMatchObject("पिज़्ज़ा स्लाइस", "Pizza Slice", "🍕", "त्रिकोणी पिज़्ज़ा स्लाइस"),
+                    ShapeMatchObject("पहाड़", "Mountain Peak", "🏔️", "त्रिकोणी ऊंची पहाड़ी"),
+                    ShapeMatchObject("तंबू", "Camping Tent", "⛺", "3 कोनों वाला कैंपिंग तंबू")
+                )
+            ),
+            ShapeInfo(
+                id = "shape_square",
+                nameHindi = "वर्ग / चौकोर (Square)",
+                nameEnglish = "Square (चौकोर)",
+                shapeEmoji = "🟥",
+                realObjects = listOf(
+                    ShapeMatchObject("लूडो पासा", "Ludo Dice", "🎲", "बराबर 4 भुजाओं वाला पासा"),
+                    ShapeMatchObject("कैरम बोर्ड", "Carrom Board", "🔲", "चौकोर कैरम बोर्ड"),
+                    ShapeMatchObject("गिफ्ट बॉक्स", "Gift Box", "📦", "चौकोर उपहार का डिब्बा"),
+                    ShapeMatchObject("खिड़की", "Window", "🪟", "कमरे की चौकोर खिड़की")
+                )
+            ),
+            ShapeInfo(
+                id = "shape_star",
+                nameHindi = "तारा / सितारा (Star)",
+                nameEnglish = "Star (तारा)",
+                shapeEmoji = "⭐",
+                realObjects = listOf(
+                    ShapeMatchObject("रात का तारा", "Night Star", "🌟", "आसमान में 5 कोनों वाला तारा"),
+                    ShapeMatchObject("स्टारफिश", "Starfish", "🪸", "समुद्र का सितारा जीव"),
+                    ShapeMatchObject("गोल्ड मेडल", "Gold Medal", "🎖️", "विजेता का चमकता मेडल")
+                )
+            ),
+            ShapeInfo(
+                id = "shape_oval",
+                nameHindi = "अंडाकार (Oval)",
+                nameEnglish = "Oval (अंडाकार)",
+                shapeEmoji = "🏉",
+                realObjects = listOf(
+                    ShapeMatchObject("अंडा", "Egg", "🥚", "सफेद अंडाकार अंडा"),
+                    ShapeMatchObject("तरबूज", "Watermelon", "🍉", "मीठा अंडाकार तरबूज"),
+                    ShapeMatchObject("रग्बी बॉल", "Rugby Ball", "🏈", "अंडाकार खेल गेंद")
+                )
+            )
+        )
+    }
+
+    fun getColoringOutlines(subjectId: String): List<ColoringOutline> {
+        return when (subjectId.lowercase()) {
+            "english" -> listOf(
+                ColoringOutline("en_A", "Letter A", "Letter A", "A", 0xFFFF5252),
+                ColoringOutline("en_B", "Letter B", "Letter B", "B", 0xFF448AFF),
+                ColoringOutline("en_C", "Letter C", "Letter C", "C", 0xFFFFD700),
+                ColoringOutline("en_star", "Star Shape", "Star Shape", "⭐", 0xFFFF9800)
+            )
+            "math" -> listOf(
+                ColoringOutline("m_1", "Number 1", "Number 1", "1", 0xFF00E676),
+                ColoringOutline("m_5", "Number 5", "Number 5", "5", 0xFFFF4081),
+                ColoringOutline("m_7", "Number 7", "Number 7", "7", 0xFF00E5FF),
+                ColoringOutline("m_triangle", "Triangle", "Triangle", "🔺", 0xFFFF9100)
+            )
+            else -> listOf(
+                ColoringOutline("hi_a", "अक्षर 'अ'", "Letter 'अ'", "अ", 0xFFFF5252),
+                ColoringOutline("hi_aa", "अक्षर 'आ'", "Letter 'आ'", "आ", 0xFFFFD700),
+                ColoringOutline("hi_ka", "अक्षर 'क'", "Letter 'क'", "क", 0xFF00E676),
+                ColoringOutline("hi_circle", "गोला (वृत्त)", "Circle Shape", "⭕", 0xFF448AFF)
+            )
+        }
+    }
+
+    // 10. Level 8: General Knowledge Cards
+    fun getGkCards(): List<GkCard> {
+        return listOf(
+            // Animals & Sounds
+            GkCard("gk_lion", GkCategory.ANIMAL, "शेर", "Lion", "🦁", "दहाड़ (Roar - गर्जना)", "Roars loudly", "शेर को जंगल का राजा कहा जाता है।", "Lion is called the King of the Jungle."),
+            GkCard("gk_elephant", GkCategory.ANIMAL, "हाथी", "Elephant", "🐘", "चिंघाड़ (Trumpet)", "Trumpets happily", "हाथी की लंबी सूँड होती है और वह बहुत समझदार होता है।", "Elephants have long trunks and are very gentle."),
+            GkCard("gk_dog", GkCategory.ANIMAL, "कुत्ता", "Dog", "🐕", "भौंकना (Woof Woof / भऊँ-भऊँ)", "Barks 'Woof Woof'", "कुत्ता मनुष्य का सबसे वफादार दोस्त माना जाता है।", "Dogs are loyal and friendly pets."),
+            GkCard("gk_cat", GkCategory.ANIMAL, "बिल्ली", "Cat", "🐱", "म्याऊँ-म्याऊँ (Meow Meow)", "Says 'Meow Meow'", "बिल्ली दूध बहुत चाव से पीती है और चुपके से चलती है।", "Cats love milk and can jump very high."),
+            GkCard("gk_cow", GkCategory.ANIMAL, "गाय", "Cow", "🐮", "राँभना (Moo Moo / अम्बा-अम्बा)", "Says 'Moo Moo'", "गाय हमें पौष्टिक और मीठा दूध देती है।", "Cows give us nutritious healthy milk."),
+            GkCard("gk_peacock", GkCategory.ANIMAL, "मोर", "Peacock", "🦚", "पिऊ-पिऊ (Piu Piu)", "Calls 'Piu Piu'", "मोर भारत का राष्ट्रीय पक्षी है और बारिश में पंख फैलाकर नाचता है।", "Peacock is the national bird of India."),
+
+            // Body Parts
+            GkCard("gk_eyes", GkCategory.BODY_PART, "आँखें", "Eyes", "👁️", "देखने के लिए (To See)", "Helps us see", "आँखों से हम रंग-बिरंगी दुनिया और किताबें देखते हैं।", "Eyes allow us to see the beautiful colors of nature."),
+            GkCard("gk_ears", GkCategory.BODY_PART, "कान", "Ears", "👂", "सुनने के लिए (To Hear)", "Helps us hear", "कानों से हम मम्मी-पापा की आवाज और मीठा संगीत सुनते हैं।", "Ears help us listen to music and pleasant sounds."),
+            GkCard("gk_nose", GkCategory.BODY_PART, "नाक", "Nose", "👃", "सूंघने के लिए (To Smell)", "Helps us smell", "नाक से हम ताजी हवा में सांस लेते हैं और फूलों की खुशबू सूंघते हैं।", "Nose helps us breathe and enjoy floral fragrance."),
+            GkCard("gk_hands", GkCategory.BODY_PART, "हाथ", "Hands", "✋", "लिखने व ताली बजाने के लिए", "To write & clap", "हाथों से हम सुंदर लिखते हैं, खिलौने पकड़ते हैं और ताली बजाते हैं।", "Hands help us write, hold things and clap."),
+            GkCard("gk_feet", GkCategory.BODY_PART, "पैर", "Feet & Legs", "🦵", "दौड़ने और कूदने के लिए", "To run & jump", "पैरों की मदद से हम स्कूल जाते हैं, दौड़ते हैं और खेलते हैं।", "Feet carry us forward to run, jump and play."),
+
+            // Fruits & Vegetables
+            GkCard("gk_apple", GkCategory.FRUIT_VEGETABLE, "सेब", "Apple", "🍎", "मीठा और कुरकुरा फल", "Sweet & crunchy", "रोज़ एक सेब खाने से डॉक्टर के पास नहीं जाना पड़ता।", "An apple a day keeps the doctor away."),
+            GkCard("gk_mango", GkCategory.FRUIT_VEGETABLE, "आम", "Mango", "🥭", "फलों का राजा", "King of fruits", "पीला-पीला आम बहुत मीठा और रसीला होता है।", "Mango is juicy, sweet and loved by all kids."),
+            GkCard("gk_carrot", GkCategory.FRUIT_VEGETABLE, "गाजर", "Carrot", "🥕", "पौष्टिक लाल सब्जी", "Crispy vegetable", "गाजर खाने से आँखों की रोशनी तेज होती है।", "Carrots are rich in vitamins for healthy eyes."),
+            GkCard("gk_tomato", GkCategory.FRUIT_VEGETABLE, "टमाटर", "Tomato", "🍅", "लाल रसीला टमाटर", "Juicy red salad", "टमाटर खून बढ़ाता है और सेहतमंद बनाता है।", "Tomatoes make yummy soup and boost immunity.")
+        )
+    }
 }
+
+data class StoryRhyme(
+    val id: String,
+    val titleHindi: String,
+    val titleEnglish: String,
+    val emoji: String,
+    val linesHindi: List<String>,
+    val linesEnglish: List<String>,
+    val moralHindi: String,
+    val moralEnglish: String,
+    val funFactHindi: String = ""
+)
+
+data class ShapeMatchObject(
+    val nameHindi: String,
+    val nameEnglish: String,
+    val emoji: String,
+    val description: String
+)
+
+data class ShapeInfo(
+    val id: String,
+    val nameHindi: String,
+    val nameEnglish: String,
+    val shapeEmoji: String,
+    val realObjects: List<ShapeMatchObject>
+)
+
+data class ColoringOutline(
+    val id: String,
+    val titleHindi: String,
+    val titleEnglish: String,
+    val characterOrSymbol: String,
+    val defaultHintColorHex: Long
+)
+
+enum class GkCategory { ANIMAL, BODY_PART, FRUIT_VEGETABLE }
+
+data class GkCard(
+    val id: String,
+    val category: GkCategory,
+    val nameHindi: String,
+    val nameEnglish: String,
+    val emoji: String,
+    val soundOrRoleHindi: String,
+    val soundOrRoleEnglish: String,
+    val funFactHindi: String,
+    val funFactEnglish: String
+)
