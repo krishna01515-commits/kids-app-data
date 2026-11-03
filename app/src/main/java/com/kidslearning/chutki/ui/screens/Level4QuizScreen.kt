@@ -225,7 +225,6 @@ fun Level4QuizScreen(
                             pose = if (isCorrectAnswer == true) TeacherPose.CHEERING_STARS
                             else if (hasUsedSecondChance) TeacherPose.THINKING
                             else TeacherPose.POINTING_AT_CARD,
-                            avatarKey = userPrefs?.userProfileState?.value?.avatarEmoji ?: "girl",
                             isSpeaking = false
                         )
 

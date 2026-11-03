@@ -374,11 +374,10 @@ fun DashboardScreen(
                         }
                     }
 
-                    // 3D Guide Avatar (Chutki / Chintu)
+                    // Teacher Priya Didi
                     TeacherAvatar3D(
                         size = 135.dp,
                         pose = TeacherPose.POINTING_AT_CARD,
-                        avatarKey = userProfile.avatarEmoji,
                         isSpeaking = false
                     )
                 }

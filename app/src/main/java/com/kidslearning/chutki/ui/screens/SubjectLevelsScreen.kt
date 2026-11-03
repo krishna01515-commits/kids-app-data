@@ -151,7 +151,6 @@ fun SubjectLevelsScreen(
                     TeacherAvatar3D(
                         size = 110.dp,
                         pose = TeacherPose.POINTING_AT_CARD,
-                        avatarKey = userProfile.avatarEmoji,
                         isSpeaking = false
                     )
 

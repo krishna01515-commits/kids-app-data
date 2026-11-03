@@ -113,11 +113,10 @@ fun WelcomeDialogScreen(
 
                 Spacer(modifier = Modifier.height(14.dp))
 
-                // 3D Avatar (Chutki / Chintu)
+                // 3D Teacher Priya Didi
                 TeacherAvatar3D(
                     size = 175.dp,
                     pose = TeacherPose.WELCOME_WAVE,
-                    avatarKey = selectedAvatar,
                     isSpeaking = true,
                     onClick = {
                         ttsManager?.welcomeKidsGreeting(kidName)

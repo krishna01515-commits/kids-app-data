@@ -29,22 +29,17 @@ class ProcessAvatarsTest {
         val girlFlipped = flipHorizontal(girlTransparent)
         val boyFlipped = flipHorizontal(boyTransparent)
 
-        // Save avatar_girl and avatar_boy
+        // Save avatar_girl and avatar_boy (Student avatars)
         ImageIO.write(girlTransparent, "png", File(outDir, "avatar_girl.png"))
         ImageIO.write(girlFlipped, "png", File(outDir, "avatar_girl_flipped.png"))
         ImageIO.write(boyTransparent, "png", File(outDir, "avatar_boy.png"))
         ImageIO.write(boyFlipped, "png", File(outDir, "avatar_boy_flipped.png"))
-
-        // Also update teacher_priya and teacher_priya_flipped with the high-res 3D Girl
-        ImageIO.write(girlTransparent, "png", File(outDir, "teacher_priya.png"))
-        ImageIO.write(girlFlipped, "png", File(outDir, "teacher_priya_flipped.png"))
 
         println("Successfully processed and saved:")
         println(" - avatar_girl.png (${girlTransparent.width}x${girlTransparent.height})")
         println(" - avatar_girl_flipped.png")
         println(" - avatar_boy.png (${boyTransparent.width}x${boyTransparent.height})")
         println(" - avatar_boy_flipped.png")
-        println(" - teacher_priya.png & teacher_priya_flipped.png")
     }
 
     private fun makeBackgroundTransparent(src: BufferedImage): BufferedImage {

@@ -46,7 +46,6 @@ fun TeacherAvatar3D(
     pose: TeacherPose = TeacherPose.POINTING_AT_CARD,
     isSpeaking: Boolean = true,
     flipHorizontal: Boolean = false,
-    avatarKey: String = "girl",
     onClick: (() -> Unit)? = null
 ) {
     val infiniteTransition = rememberInfiniteTransition(label = "tutor_animation")
@@ -73,7 +72,7 @@ fun TeacherAvatar3D(
         label = "tutor_speak"
     )
 
-    // Star sparkle animation at hand/thumb
+    // Star sparkle animation at pen tip
     val sparkleScale by infiniteTransition.animateFloat(
         initialValue = 0.7f,
         targetValue = 1.3f,
@@ -84,21 +83,11 @@ fun TeacherAvatar3D(
         label = "sparkle_scale"
     )
 
-    // Aspect ratio of the 3D photos is 768:1024 = 3:4
-    val avatarWidth = size * 0.75f
+    // Aspect ratio of the original Priya Didi teacher image is 377:661
+    val avatarWidth = size * 0.57f
     val avatarHeight = size
 
     val shouldFlip = flipHorizontal || (pose == TeacherPose.POINTING_AT_CARD && !flipHorizontal)
-
-    val isBoy = avatarKey.contains("boy", ignoreCase = true) ||
-            avatarKey == "👦" ||
-            avatarKey.contains("chintu", ignoreCase = true)
-
-    val imageRes = if (isBoy) {
-        if (shouldFlip) R.drawable.avatar_boy_flipped else R.drawable.avatar_boy
-    } else {
-        if (shouldFlip) R.drawable.avatar_girl_flipped else R.drawable.avatar_girl
-    }
 
     Box(
         modifier = modifier
@@ -121,24 +110,26 @@ fun TeacherAvatar3D(
                 )
         )
 
-        // 3D Avatar Image (Uploaded 3D character with transparent background)
+        // 3D Teacher Model Image (Priya Didi)
         Image(
-            painter = painterResource(id = imageRes),
-            contentDescription = if (isBoy) "3D Boy Avatar" else "3D Girl Avatar",
+            painter = painterResource(
+                id = if (shouldFlip) R.drawable.teacher_priya_flipped else R.drawable.teacher_priya
+            ),
+            contentDescription = "3D Teacher Priya Didi",
             modifier = Modifier
                 .fillMaxSize()
                 .scale(speakingScale),
             contentScale = ContentScale.Fit
         )
 
-        // Glowing sparkle star near the thumb
+        // Glowing sparkle star near the pointer/pen
         if (pose == TeacherPose.POINTING_AT_CARD || isSpeaking || pose == TeacherPose.CHEERING_STARS) {
             Box(
                 modifier = Modifier
                     .align(if (shouldFlip) Alignment.TopEnd else Alignment.TopStart)
                     .offset(
-                        x = if (shouldFlip) (-4).dp else 4.dp,
-                        y = (avatarHeight * 0.38f)
+                        x = if (shouldFlip) (-2).dp else 2.dp,
+                        y = (avatarHeight * 0.32f)
                     )
                     .scale(sparkleScale)
             ) {
