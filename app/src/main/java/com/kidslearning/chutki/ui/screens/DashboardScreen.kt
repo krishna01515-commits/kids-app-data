@@ -37,6 +37,7 @@ import com.kidslearning.chutki.theme.MintGreen
 import com.kidslearning.chutki.theme.SkyBlue
 import com.kidslearning.chutki.ui.components.ClayButton
 import com.kidslearning.chutki.ui.components.ClayCard
+import com.kidslearning.chutki.ui.components.KidAvatarView
 import com.kidslearning.chutki.ui.components.StreakBadge
 import com.kidslearning.chutki.ui.components.TeacherAvatar3D
 import com.kidslearning.chutki.ui.components.TeacherPose
@@ -75,19 +76,10 @@ fun DashboardScreen(
             ) {
                 // Kid Info
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Box(
-                        modifier = Modifier
-                            .size(52.dp)
-                            .clip(CircleShape)
-                            .background(
-                                Brush.radialGradient(
-                                    listOf(CandyYellow, CandyOrange)
-                                )
-                            ),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = userProfile.avatarEmoji, fontSize = 28.sp)
-                    }
+                    KidAvatarView(
+                        avatarKey = userProfile.avatarEmoji,
+                        size = 52.dp
+                    )
 
                     Spacer(modifier = Modifier.width(10.dp))
 
@@ -382,10 +374,11 @@ fun DashboardScreen(
                         }
                     }
 
-                    // Priya Didi pointing (New 3D Model with Glasses & Stylus)
+                    // 3D Guide Avatar (Chutki / Chintu)
                     TeacherAvatar3D(
                         size = 135.dp,
                         pose = TeacherPose.POINTING_AT_CARD,
+                        avatarKey = userProfile.avatarEmoji,
                         isSpeaking = false
                     )
                 }

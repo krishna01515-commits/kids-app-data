@@ -35,6 +35,7 @@ import com.kidslearning.chutki.theme.CandyYellow
 import com.kidslearning.chutki.theme.GoldenStar
 import com.kidslearning.chutki.theme.StreakFire
 import com.kidslearning.chutki.ui.components.ClayCard
+import com.kidslearning.chutki.ui.components.KidAvatarView
 
 @Composable
 fun LeaderboardScreen(
@@ -97,7 +98,7 @@ fun LeaderboardScreen(
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            Text(text = userProfile.avatarEmoji, fontSize = 34.sp)
+                            KidAvatarView(avatarKey = userProfile.avatarEmoji, size = 48.dp)
                             Spacer(modifier = Modifier.width(10.dp))
                             Column {
                                 Text(
@@ -220,7 +221,7 @@ fun LeaderboardScreen(
                             color = Color(0xFFBF360C)
                         )
                         Spacer(modifier = Modifier.width(10.dp))
-                        Text(text = userProfile.avatarEmoji, fontSize = 28.sp)
+                        KidAvatarView(avatarKey = userProfile.avatarEmoji, size = 42.dp)
                         Spacer(modifier = Modifier.width(8.dp))
                         Column {
                             Text(
@@ -291,7 +292,7 @@ fun LeaderboardScreen(
                             color = if (isDarkMode) Color(0xFFA5B0E0) else Color(0xFF78909C),
                             modifier = Modifier.width(32.dp)
                         )
-                        Text(text = user.avatarEmoji, fontSize = 24.sp)
+                        KidAvatarView(avatarKey = user.avatarEmoji, size = 38.dp)
                         Spacer(modifier = Modifier.width(10.dp))
                         Column {
                             Text(

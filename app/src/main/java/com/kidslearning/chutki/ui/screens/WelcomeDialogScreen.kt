@@ -1,6 +1,7 @@
 package com.kidslearning.chutki.ui.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -38,6 +39,7 @@ import com.kidslearning.chutki.theme.CandyOrange
 import com.kidslearning.chutki.theme.CandyYellow
 import com.kidslearning.chutki.ui.components.ClayButton
 import com.kidslearning.chutki.ui.components.ClayCard
+import com.kidslearning.chutki.ui.components.KidAvatarView
 import com.kidslearning.chutki.ui.components.TeacherAvatar3D
 import com.kidslearning.chutki.ui.components.TeacherPose
 
@@ -111,10 +113,11 @@ fun WelcomeDialogScreen(
 
                 Spacer(modifier = Modifier.height(14.dp))
 
-                // 3D Girl Tutor (New 3D Model with Glasses & Stylus)
+                // 3D Avatar (Chutki / Chintu)
                 TeacherAvatar3D(
                     size = 175.dp,
                     pose = TeacherPose.WELCOME_WAVE,
+                    avatarKey = selectedAvatar,
                     isSpeaking = true,
                     onClick = {
                         ttsManager?.welcomeKidsGreeting(kidName)
@@ -170,34 +173,77 @@ fun WelcomeDialogScreen(
 
                 Spacer(modifier = Modifier.height(14.dp))
 
-                // Avatar Selector
+                // 3D Avatar Selector (Girl Chutki vs Boy Cheeku)
                 Text(
-                    text = "अपना पसंदीदा दोस्त चुनो:",
+                    text = "अपना पसंदीदा 3D अवतार चुनो:",
                     fontSize = 14.sp,
-                    fontWeight = FontWeight.SemiBold,
+                    fontWeight = FontWeight.Bold,
                     color = Color(0xFF546E7A)
                 )
 
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(10.dp))
 
                 Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceEvenly
+                    modifier = Modifier.fillMaxWidth(0.9f),
+                    horizontalArrangement = Arrangement.SpaceEvenly,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    avatarList.take(6).forEach { avatar ->
-                        val isSelected = avatar == selectedAvatar
-                        Box(
-                            modifier = Modifier
-                                .size(44.dp)
-                                .clip(CircleShape)
-                                .background(
-                                    if (isSelected) CandyOrange else Color(0xFFFFF3E0)
-                                )
-                                .clickable { selectedAvatar = avatar },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(text = avatar, fontSize = 22.sp)
-                        }
+                    // Girl Avatar: Chutki
+                    val isGirlSelected = !selectedAvatar.contains("boy", ignoreCase = true) && selectedAvatar != "👦"
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(18.dp))
+                            .background(if (isGirlSelected) Color(0xFFFFEBEE) else Color.Transparent)
+                            .border(
+                                width = if (isGirlSelected) 2.5.dp else 1.dp,
+                                color = if (isGirlSelected) CandyOrange else Color.LightGray.copy(alpha = 0.5f),
+                                shape = RoundedCornerShape(18.dp)
+                            )
+                            .clickable { selectedAvatar = "girl" }
+                            .padding(8.dp)
+                    ) {
+                        KidAvatarView(
+                            avatarKey = "girl",
+                            size = 56.dp,
+                            borderColor = if (isGirlSelected) CandyOrange else Color.Transparent
+                        )
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = "चुटकी 👧",
+                            fontSize = 13.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = if (isGirlSelected) CandyOrange else Color(0xFF546E7A)
+                        )
+                    }
+
+                    // Boy Avatar: Cheeku
+                    val isBoySelected = selectedAvatar.contains("boy", ignoreCase = true) || selectedAvatar == "👦"
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(18.dp))
+                            .background(if (isBoySelected) Color(0xFFE1F5FE) else Color.Transparent)
+                            .border(
+                                width = if (isBoySelected) 2.5.dp else 1.dp,
+                                color = if (isBoySelected) Color(0xFF0288D1) else Color.LightGray.copy(alpha = 0.5f),
+                                shape = RoundedCornerShape(18.dp)
+                            )
+                            .clickable { selectedAvatar = "boy" }
+                            .padding(8.dp)
+                    ) {
+                        KidAvatarView(
+                            avatarKey = "boy",
+                            size = 56.dp,
+                            borderColor = if (isBoySelected) Color(0xFF0288D1) else Color.Transparent
+                        )
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = "चीकू 👦",
+                            fontSize = 13.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = if (isBoySelected) Color(0xFF0288D1) else Color(0xFF546E7A)
+                        )
                     }
                 }
 

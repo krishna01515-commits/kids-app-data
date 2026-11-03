@@ -1641,19 +1641,19 @@ object LearningContentRepository {
     // 7. Community Leaderboard (Real-time dynamic ranking with user's actual XP, avatar and name)
     fun getLeaderboard(currentUser: UserProfile? = null): List<LeaderboardUser> {
         val peers = listOf(
-            LeaderboardUser(rank = 0, name = "अन्वी शर्मा", avatarEmoji = "👧", xp = 620, streakDays = 14),
-            LeaderboardUser(rank = 0, name = "विहान पटेल", avatarEmoji = "🚀", xp = 520, streakDays = 9),
-            LeaderboardUser(rank = 0, name = "सान्वी गुप्ता", avatarEmoji = "🐱", xp = 420, streakDays = 8),
-            LeaderboardUser(rank = 0, name = "कबीर सिंह", avatarEmoji = "👦", xp = 310, streakDays = 4),
-            LeaderboardUser(rank = 0, name = "रिया वर्मा", avatarEmoji = "🦄", xp = 220, streakDays = 3),
-            LeaderboardUser(rank = 0, name = "अद्वैत जोशी", avatarEmoji = "🤖", xp = 120, streakDays = 2),
-            LeaderboardUser(rank = 0, name = "परी मेहता", avatarEmoji = "🌟", xp = 50, streakDays = 1)
+            LeaderboardUser(rank = 0, name = "अन्वी शर्मा", avatarEmoji = "girl", xp = 620, streakDays = 14),
+            LeaderboardUser(rank = 0, name = "विहान पटेल", avatarEmoji = "boy", xp = 520, streakDays = 9),
+            LeaderboardUser(rank = 0, name = "सान्वी गुप्ता", avatarEmoji = "girl", xp = 420, streakDays = 8),
+            LeaderboardUser(rank = 0, name = "कबीर सिंह", avatarEmoji = "boy", xp = 310, streakDays = 4),
+            LeaderboardUser(rank = 0, name = "रिया वर्मा", avatarEmoji = "girl", xp = 220, streakDays = 3),
+            LeaderboardUser(rank = 0, name = "अद्वैत जोशी", avatarEmoji = "boy", xp = 120, streakDays = 2),
+            LeaderboardUser(rank = 0, name = "परी मेहता", avatarEmoji = "girl", xp = 50, streakDays = 1)
         )
 
         val kid = LeaderboardUser(
             rank = 0,
             name = "${currentUser?.name ?: "आरव"} (आप)",
-            avatarEmoji = currentUser?.avatarEmoji ?: "🦁",
+            avatarEmoji = currentUser?.avatarEmoji ?: "girl",
             xp = currentUser?.totalXp ?: 0,
             streakDays = currentUser?.currentStreakDays ?: 1,
             isCurrentUser = true

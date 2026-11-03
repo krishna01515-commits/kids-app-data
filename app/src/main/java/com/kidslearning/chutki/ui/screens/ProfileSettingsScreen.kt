@@ -1,6 +1,7 @@
 package com.kidslearning.chutki.ui.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -45,6 +46,7 @@ import com.kidslearning.chutki.theme.CandyYellow
 import com.kidslearning.chutki.theme.CorrectGreen
 import com.kidslearning.chutki.ui.components.ClayButton
 import com.kidslearning.chutki.ui.components.ClayCard
+import com.kidslearning.chutki.ui.components.KidAvatarView
 
 @Composable
 fun ProfileSettingsScreen(
@@ -179,51 +181,95 @@ fun ProfileSettingsScreen(
                         .padding(18.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    // Big Avatar Circle
-                    Box(
-                        modifier = Modifier
-                            .size(76.dp)
-                            .clip(CircleShape)
-                            .background(
-                                Brush.radialGradient(listOf(CandyYellow, CandyOrange))
-                            ),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = selectedAvatar, fontSize = 42.sp)
-                    }
+                    // Big 3D Avatar Image
+                    KidAvatarView(
+                        avatarKey = selectedAvatar,
+                        size = 80.dp,
+                        borderWidth = 3.dp,
+                        borderColor = CandyOrange
+                    )
 
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    // Change Avatar Row
+                    // Choose 3D Avatar (Girl / Boy)
                     Text(
-                        text = if (userProfile.isEnglish) "Choose Avatar:" else "अवतार चुनें:",
+                        text = if (userProfile.isEnglish) "Choose 3D Avatar:" else "3D अवतार चुनें:",
                         fontSize = 13.sp,
                         fontWeight = FontWeight.Bold,
                         color = CandyOrange
                     )
 
-                    Spacer(modifier = Modifier.height(6.dp))
+                    Spacer(modifier = Modifier.height(8.dp))
 
                     Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceEvenly
+                        modifier = Modifier.fillMaxWidth(0.85f),
+                        horizontalArrangement = Arrangement.SpaceEvenly,
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
-                        avatars.forEach { av ->
-                            val isChosen = av == selectedAvatar
-                            Box(
-                                modifier = Modifier
-                                    .size(36.dp)
-                                    .clip(CircleShape)
-                                    .background(if (isChosen) CandyOrange else Color(0xFFFFF3E0))
-                                    .clickable {
-                                        selectedAvatar = av
-                                        profileSavedBanner = ""
-                                        SoundEffectHelper.playPopSound()
-                                    },
-                                contentAlignment = Alignment.Center
-                            ) {
-                                Text(text = av, fontSize = 18.sp)
-                            }
+                        // Girl option: Chutki
+                        val isGirl = !selectedAvatar.contains("boy", ignoreCase = true) && selectedAvatar != "👦"
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(16.dp))
+                                .background(if (isGirl) Color(0xFFFFEBEE) else Color.Transparent)
+                                .border(
+                                    width = if (isGirl) 2.5.dp else 1.dp,
+                                    color = if (isGirl) CandyOrange else Color.LightGray.copy(alpha = 0.5f),
+                                    shape = RoundedCornerShape(16.dp)
+                                )
+                                .clickable {
+                                    selectedAvatar = "girl"
+                                    profileSavedBanner = ""
+                                    SoundEffectHelper.playPopSound()
+                                }
+                                .padding(horizontal = 14.dp, vertical = 8.dp)
+                        ) {
+                            KidAvatarView(
+                                avatarKey = "girl",
+                                size = 52.dp,
+                                borderColor = if (isGirl) CandyOrange else Color.Transparent
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "चुटकी 👧",
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = if (isGirl) CandyOrange else Color.Gray
+                            )
+                        }
+
+                        // Boy option: Cheeku
+                        val isBoy = selectedAvatar.contains("boy", ignoreCase = true) || selectedAvatar == "👦"
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(16.dp))
+                                .background(if (isBoy) Color(0xFFE1F5FE) else Color.Transparent)
+                                .border(
+                                    width = if (isBoy) 2.5.dp else 1.dp,
+                                    color = if (isBoy) Color(0xFF0288D1) else Color.LightGray.copy(alpha = 0.5f),
+                                    shape = RoundedCornerShape(16.dp)
+                                )
+                                .clickable {
+                                    selectedAvatar = "boy"
+                                    profileSavedBanner = ""
+                                    SoundEffectHelper.playPopSound()
+                                }
+                                .padding(horizontal = 14.dp, vertical = 8.dp)
+                        ) {
+                            KidAvatarView(
+                                avatarKey = "boy",
+                                size = 52.dp,
+                                borderColor = if (isBoy) Color(0xFF0288D1) else Color.Transparent
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "चीकू 👦",
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = if (isBoy) Color(0xFF0288D1) else Color.Gray
+                            )
                         }
                     }
 

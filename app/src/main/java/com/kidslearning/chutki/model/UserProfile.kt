@@ -4,7 +4,7 @@ data class UserProfile(
     val id: String = "guest_kid_1",
     val name: String = "आरव (नन्हे उस्ताद)",
     val age: Int = 5,
-    val avatarEmoji: String = "🦁", // Lion, Girl 👧, Boy 👦, Astronaut 🚀, Kitten 🐱, Robot 🤖
+    val avatarEmoji: String = "girl", // 3D Girl (Chutki) or 3D Boy (Cheeku)
     val totalXp: Int = 0,
     val totalStars: Int = 0,
     val currentStreakDays: Int = 1,

@@ -159,7 +159,7 @@ class UserPreferencesManager(context: Context) {
             id = prefs.getString("user_id", "kid_default") ?: "kid_default",
             name = prefs.getString("kid_name", "आरव (नन्हे उस्ताद)") ?: "आरव (नन्हे उस्ताद)",
             age = prefs.getInt("kid_age", 5),
-            avatarEmoji = prefs.getString("kid_avatar", "🦁") ?: "🦁",
+            avatarEmoji = prefs.getString("kid_avatar", "girl") ?: "girl",
             totalXp = xp,
             totalStars = stars,
             currentStreakDays = streak,

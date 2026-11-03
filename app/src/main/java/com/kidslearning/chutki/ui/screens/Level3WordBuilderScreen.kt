@@ -340,6 +340,7 @@ fun Level3WordBuilderScreen(
                             TeacherAvatar3D(
                                 size = 88.dp,
                                 pose = if (isMerged) TeacherPose.CHEERING_STARS else TeacherPose.POINTING_AT_CARD,
+                                avatarKey = userPrefs?.userProfileState?.value?.avatarEmoji ?: "girl",
                                 isSpeaking = isMerged
                             )
 
