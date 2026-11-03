@@ -9,11 +9,72 @@ package com.kidslearning.chutki.data
  */
 object TracingPathHelper {
 
+    enum class GuideNodeType {
+        START, // 🟢 Start Point
+        MID,   // 🟡 Mid Curve / Direction
+        END    // 🏁 Finish Point
+    }
+
+    data class GuideNode(
+        val x: Float,
+        val y: Float,
+        val type: GuideNodeType,
+        val strokeIndex: Int = 0,
+        val label: String = ""
+    )
+
     data class LetterTracingData(
         val hintHindi: String,
         val strokePaths: List<List<Pair<Float, Float>>>,
-        val guideDots: List<Pair<Float, Float>>
+        val guideDots: List<Pair<Float, Float>>,
+        val guideNodes: List<GuideNode> = emptyList()
     )
+
+    fun extractGuideNodes(strokePaths: List<List<Pair<Float, Float>>>): List<GuideNode> {
+        val nodes = mutableListOf<GuideNode>()
+        strokePaths.forEachIndexed { strokeIdx, stroke ->
+            if (stroke.isNotEmpty()) {
+                // 1. Start node 🟢 (Clean start beacon)
+                nodes.add(
+                    GuideNode(
+                        x = stroke.first().first,
+                        y = stroke.first().second,
+                        type = GuideNodeType.START,
+                        strokeIndex = strokeIdx,
+                        label = if (strokePaths.size > 1) "${strokeIdx + 1}" else "▶"
+                    )
+                )
+
+                // 2. Mid Curve node 🟡 (Only for long curved paths with >= 4 points)
+                if (stroke.size >= 4) {
+                    val midPt = stroke[stroke.size / 2]
+                    nodes.add(
+                        GuideNode(
+                            x = midPt.first,
+                            y = midPt.second,
+                            type = GuideNodeType.MID,
+                            strokeIndex = strokeIdx,
+                            label = "➜"
+                        )
+                    )
+                }
+
+                // 3. Finish node 🏁
+                if (stroke.size >= 2) {
+                    nodes.add(
+                        GuideNode(
+                            x = stroke.last().first,
+                            y = stroke.last().second,
+                            type = GuideNodeType.END,
+                            strokeIndex = strokeIdx,
+                            label = "🏁"
+                        )
+                    )
+                }
+            }
+        }
+        return nodes
+    }
 
     fun getLetterTracingData(char: String, subjectId: String = ""): LetterTracingData {
         val trimmed = char.trim()
