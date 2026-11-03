@@ -46,6 +46,7 @@ import com.kidslearning.chutki.ui.screens.LeaderboardScreen
 import com.kidslearning.chutki.ui.screens.Level1AlphabetCardsScreen
 import com.kidslearning.chutki.ui.screens.Level2TracingScreen
 import com.kidslearning.chutki.ui.screens.Level3WordBuilderScreen
+import com.kidslearning.chutki.ui.screens.Level4QuizScreen
 import com.kidslearning.chutki.ui.screens.ProfileSettingsScreen
 import com.kidslearning.chutki.ui.screens.QuizScreen
 import com.kidslearning.chutki.ui.screens.SmartSlateTracingScreen
@@ -59,6 +60,7 @@ enum class AppNavDestination {
     LEVEL_1_CARDS,
     LEVEL_2_TRACING,
     LEVEL_3_WORD_BUILDER,
+    LEVEL_4_QUIZ,
     QUIZ,
     LEADERBOARD,
     PROFILE
@@ -101,7 +103,8 @@ fun ChutkiKidsApp(
         when (currentScreen) {
             AppNavDestination.LEVEL_1_CARDS,
             AppNavDestination.LEVEL_2_TRACING,
-            AppNavDestination.LEVEL_3_WORD_BUILDER -> {
+            AppNavDestination.LEVEL_3_WORD_BUILDER,
+            AppNavDestination.LEVEL_4_QUIZ -> {
                 currentScreen = AppNavDestination.SUBJECT_LEVELS
             }
             AppNavDestination.SUBJECT_LEVELS,
@@ -179,6 +182,7 @@ fun ChutkiKidsApp(
                                             "LEVEL_1_CARDS" -> AppNavDestination.LEVEL_1_CARDS
                                             "LEVEL_2_TRACING" -> AppNavDestination.LEVEL_2_TRACING
                                             "LEVEL_3_WORD_BUILDER" -> AppNavDestination.LEVEL_3_WORD_BUILDER
+                                            "LEVEL_4_QUIZ" -> AppNavDestination.LEVEL_4_QUIZ
                                             "QUIZ" -> AppNavDestination.QUIZ
                                             else -> {
                                                 val activeUnlocked = when (targetSubject) {
@@ -190,6 +194,7 @@ fun ChutkiKidsApp(
                                                     1 -> AppNavDestination.LEVEL_1_CARDS
                                                     2 -> AppNavDestination.LEVEL_2_TRACING
                                                     3 -> AppNavDestination.LEVEL_3_WORD_BUILDER
+                                                    4 -> AppNavDestination.LEVEL_4_QUIZ
                                                     else -> AppNavDestination.QUIZ
                                                 }
                                             }
@@ -220,7 +225,7 @@ fun ChutkiKidsApp(
                                         1 -> AppNavDestination.LEVEL_1_CARDS
                                         2 -> AppNavDestination.LEVEL_2_TRACING
                                         3 -> AppNavDestination.LEVEL_3_WORD_BUILDER
-                                        4 -> AppNavDestination.QUIZ
+                                        4 -> AppNavDestination.LEVEL_4_QUIZ
                                         else -> AppNavDestination.LEVEL_1_CARDS
                                     }
                                 }
@@ -275,10 +280,33 @@ fun ChutkiKidsApp(
                                 },
                                 onNavigateToQuiz = {
                                     userPrefs.unlockLevel(selectedSubject.id, 4)
-                                    currentScreen = AppNavDestination.QUIZ
+                                    currentScreen = AppNavDestination.LEVEL_4_QUIZ
                                 },
                                 onWordBuilt = { wordId ->
                                     userPrefs.recordWordBuilt(selectedSubject.id, wordId)
+                                }
+                            )
+                        }
+
+                        AppNavDestination.LEVEL_4_QUIZ -> {
+                            Level4QuizScreen(
+                                subject = selectedSubject,
+                                isDarkMode = userProfile.isDarkMode,
+                                isEnglish = userProfile.isEnglish,
+                                ttsManager = ttsManager,
+                                userPrefs = userPrefs,
+                                onBack = {
+                                    currentScreen = AppNavDestination.SUBJECT_LEVELS
+                                },
+                                onAddReward = { xp, stars ->
+                                    userPrefs.addXpAndStars(xp, stars)
+                                },
+                                onQuizAnswered = { questionId ->
+                                    userPrefs.recordQuizAnswered(selectedSubject.id, questionId)
+                                },
+                                onNavigateToNextLevel = {
+                                    userPrefs.unlockLevel(selectedSubject.id, 5)
+                                    currentScreen = AppNavDestination.SUBJECT_LEVELS
                                 }
                             )
                         }

@@ -1182,173 +1182,432 @@ object LearningContentRepository {
         if (dynamicQuizzes.isNotEmpty()) {
             return dynamicQuizzes
         }
+        return getDefaultQuizzes(subjectId)
+    }
+
+    fun getDefaultQuizzes(subjectId: String): List<QuizQuestion> {
         return when (subjectId.lowercase()) {
             "hindi" -> listOf(
+                // 1. पहचानी मैं कौन हूँ पहेलियाँ (Riddles)
                 QuizQuestion(
                     id = 101,
                     subjectId = "hindi",
-                    questionHindi = "इनमें से 'क' से कबूतर कौन सा है?",
-                    promptEmoji = "🕊️",
-                    options = listOf("ग", "क", "म", "न"),
-                    correctIndex = 1,
-                    praiseHindi = "शाबाश! बिल्कुल सही! 'क' से कबूतर!",
-                    explanationHindi = "क अक्षर से कबूतर बनता है।"
+                    questionHindi = "पहेली: लाल-लाल हूँ, मीठे दानों से भरा, सेहत बनाऊँ बताओ मैं कौन? 🔴",
+                    promptEmoji = "🔴",
+                    options = listOf("अ से अनार", "आ से आम", "इ से इमली", "उ से उल्लू"),
+                    correctIndex = 0,
+                    praiseHindi = "शाबाश! बिल्कुल सही! अ से अनार!",
+                    explanationHindi = "अनार लाल मीठे दानों से भरा रसीला फल होता है।"
                 ),
                 QuizQuestion(
                     id = 102,
                     subjectId = "hindi",
-                    questionHindi = "'आम' का पहला अक्षर क्या है?",
+                    questionHindi = "पहेली: पीला-पीला मीठा-मीठा, फलों का राजा कहलाता। पहचानो मैं कौन? 🥭",
                     promptEmoji = "🥭",
-                    options = listOf("अ", "ई", "आ", "उ"),
-                    correctIndex = 2,
-                    praiseHindi = "अरे वाह! बहुत खूब! 'आ' से आम!",
-                    explanationHindi = "आम शब्द 'आ' से शुरू होता है।"
+                    options = listOf("क से केला", "आ से आम", "स से सेब", "अ से अंगूर"),
+                    correctIndex = 1,
+                    praiseHindi = "अरे वाह! बहुत खूब! फलों का राजा आ से आम!",
+                    explanationHindi = "आम को सभी फलों का राजा कहा जाता है।"
                 ),
                 QuizQuestion(
                     id = 103,
                     subjectId = "hindi",
-                    questionHindi = "क + ल मिलकर कौन सा शब्द बनता है?",
-                    promptEmoji = "🧩",
-                    options = listOf("कम", "कल", "कट", "कस"),
+                    questionHindi = "पहेली: जल ही मेरा जीवन है, हाथ लगाओ तो डर जाऊँगी! पहचानो मैं कौन? 🐟",
+                    promptEmoji = "🌊",
+                    options = listOf("ब से बत्तख", "म से मछली", "क से कछुआ", "म से मेंढक"),
                     correctIndex = 1,
-                    praiseHindi = "शानदार! क + ल = कल!",
-                    explanationHindi = "क और ल जोड़ने पर 'कल' बनता है।"
+                    praiseHindi = "कमाल कर दिया! मछली जल की रानी है!",
+                    explanationHindi = "मछली पानी में तैरती है और 'म' अक्षर से शुरू होती है।"
                 ),
                 QuizQuestion(
                     id = 104,
                     subjectId = "hindi",
-                    questionHindi = "'मछली' का पहला अक्षर कौन सा है?",
-                    promptEmoji = "🐟",
-                    options = listOf("प", "फ", "ब", "म"),
-                    correctIndex = 3,
-                    praiseHindi = "अरे वाह! म से मछली जल की रानी!",
-                    explanationHindi = "मछली शब्द 'म' अक्षर से शुरू होता है।"
+                    questionHindi = "पहेली: जंगल का राजा कहलाता, जिसकी दहाड़ से सब कांपे! बताओ कौन हूँ मैं? 🦁",
+                    promptEmoji = "👑",
+                    options = listOf("श से शेर", "भ से भालू", "ह से हाथी", "च से चीता"),
+                    correctIndex = 0,
+                    praiseHindi = "अद्भुत! जंगल का राजा श से शेर!",
+                    explanationHindi = "शेर जंगल का शक्तिशाली राजा होता है।"
                 ),
                 QuizQuestion(
                     id = 105,
                     subjectId = "hindi",
-                    questionHindi = "ज + ल मिलकर क्या बनता है?",
-                    promptEmoji = "💧",
-                    options = listOf("जल", "जग", "जन", "जब"),
-                    correctIndex = 0,
-                    praiseHindi = "बहुत खूब! ज + ल = जल (पानी)!",
-                    explanationHindi = "ज और ल मिलकर जल बनता है।"
+                    questionHindi = "पहेली: बादलों को देख पंख फैलाकर नाचे, भारत का राष्ट्रीय पक्षी कौन? 🦚",
+                    promptEmoji = "🌧️",
+                    options = listOf("क से कौआ", "त से तोता", "म से मोर", "च से चिड़िया"),
+                    correctIndex = 2,
+                    praiseHindi = "शाबाश! हमारा राष्ट्रीय पक्षी म से मोर!",
+                    explanationHindi = "मोर बारिश देखकर खुशी से पंख फैलाकर नाचता है।"
                 ),
+
+                // 2. चित्र पहचानो (Picture Match)
                 QuizQuestion(
                     id = 106,
                     subjectId = "hindi",
-                    questionHindi = "इनमें से 'त' से तरबूज कौन सा है?",
-                    promptEmoji = "🍉",
-                    options = listOf("द", "थ", "त", "ध"),
-                    correctIndex = 2,
-                    praiseHindi = "शाबाश! 'त' से मीठा तरबूज!",
-                    explanationHindi = "त वर्ण से तरबूज बनता है।"
+                    questionHindi = "चित्र पहचानो: हवा में सर्र-सर्र उड़ने वाली यह क्या है? 🪁",
+                    promptEmoji = "🪁",
+                    options = listOf("प से पतंग", "ग से गेंद", "क से कार", "ज से जहाज"),
+                    correctIndex = 0,
+                    praiseHindi = "बहुत खूब! प से रंग-बिरंगी पतंग!",
+                    explanationHindi = "पतंग डोरी के सहारे नीले आसमान में उड़ती है।"
                 ),
                 QuizQuestion(
                     id = 107,
                     subjectId = "hindi",
-                    questionHindi = "ब + स मिलकर कौन सा वाहन बनता है?",
-                    promptEmoji = "🚌",
-                    options = listOf("बल", "बस", "बक", "बम"),
-                    correctIndex = 1,
-                    praiseHindi = "कमाल कर दिया! ब + स = बस!",
-                    explanationHindi = "ब और स मिलकर 'बस' बनता है।"
+                    questionHindi = "चित्र पहचानो: रोज़ स्कूल ले जाने वाला यह बैग क्या कहलाता है? 🎒",
+                    promptEmoji = "🎒",
+                    options = listOf("ब से बस्ता", "क से कलम", "क से किताब", "ब से बोतल"),
+                    correctIndex = 0,
+                    praiseHindi = "वाह! ब से स्कूल का बस्ता!",
+                    explanationHindi = "बस्ते में बच्चे किताबें और कॉपियाँ स्कूल ले जाते हैं।"
                 ),
                 QuizQuestion(
                     id = 108,
                     subjectId = "hindi",
-                    questionHindi = "वर्णमाला का अंतिम संयुक्त व्यंजन कौन सा है?",
-                    promptEmoji = "📚",
-                    options = listOf("क्ष", "त्र", "ज्ञ", "ह"),
-                    correctIndex = 2,
-                    praiseHindi = "अद्भुत! 'ज्ञ' से ज्ञानी!",
-                    explanationHindi = "ज्ञानी का 'ज्ञ' संयुक्त व्यंजन है।"
+                    questionHindi = "चित्र पहचानो: खेतों में जुताई करने वाली बड़ी गाड़ी कौन सी है? 🚜",
+                    promptEmoji = "🚜",
+                    options = listOf("ट से ट्रैक्टर", "ब से बस", "क से कार", "र से रेल"),
+                    correctIndex = 0,
+                    praiseHindi = "शानदार! ट से किसान का साथी ट्रैक्टर!",
+                    explanationHindi = "ट्रैक्टर खेतों में खेती करने के काम आता है।"
+                ),
+
+                // 3. गायब अक्षर (Missing Letters)
+                QuizQuestion(
+                    id = 109,
+                    subjectId = "hindi",
+                    questionHindi = "गायब अक्षर भरो: क + [ ? ] = 'कल' (आने वाला दिन) 📅",
+                    promptEmoji = "क + ❓ = कल",
+                    options = listOf("म", "ल", "र", "ब"),
+                    correctIndex = 1,
+                    praiseHindi = "शानदार! क + ल = कल!",
+                    explanationHindi = "क में ल जोड़ने पर 'कल' शब्द बनता है।"
+                ),
+                QuizQuestion(
+                    id = 110,
+                    subjectId = "hindi",
+                    questionHindi = "गायब अक्षर भरो: [ ? ] + र = 'घर' (प्यारा आशियाना) 🏠",
+                    promptEmoji = "❓ + र = घर",
+                    options = listOf("घ", "ध", "च", "क"),
+                    correctIndex = 0,
+                    praiseHindi = "अरे वाह! घ + र = घर!",
+                    explanationHindi = "घ और र मिलकर प्यारा 'घर' बनता है।"
+                ),
+                QuizQuestion(
+                    id = 111,
+                    subjectId = "hindi",
+                    questionHindi = "गायब अक्षर भरो: फ + [ ? ] = 'फल' (मीठे-मीठे फ्रूट्स) 🍎",
+                    promptEmoji = "फ + ❓ = फल",
+                    options = listOf("न", "ल", "ट", "स"),
+                    correctIndex = 1,
+                    praiseHindi = "बहुत बढ़िया! फ + ल = फल!",
+                    explanationHindi = "फ में ल जोड़ने से 'फल' शब्द बनता है।"
+                ),
+                QuizQuestion(
+                    id = 112,
+                    subjectId = "hindi",
+                    questionHindi = "गायब अक्षर भरो: ब + [ ? ] = 'बस' (सड़क पर दौड़ने वाली) 🚌",
+                    promptEmoji = "ब + ❓ = बस",
+                    options = listOf("स", "र", "ल", "म"),
+                    correctIndex = 0,
+                    praiseHindi = "कमाल! ब + स = बस!",
+                    explanationHindi = "ब और स मिलकर 'बस' बनता है।"
+                ),
+                QuizQuestion(
+                    id = 113,
+                    subjectId = "hindi",
+                    questionHindi = "गायब अक्षर भरो: न + [ ? ] = 'नल' (पानी देने वाला) 🚰",
+                    promptEmoji = "न + ❓ = नल",
+                    options = listOf("ल", "क", "ट", "प"),
+                    correctIndex = 0,
+                    praiseHindi = "शाबाश! न + ल = नल!",
+                    explanationHindi = "न और ल मिलकर 'नल' बनता है।"
+                ),
+                QuizQuestion(
+                    id = 114,
+                    subjectId = "hindi",
+                    questionHindi = "गायब अक्षर भरो: ज + [ ? ] = 'जग' (पानी का बर्तन) 🥛",
+                    promptEmoji = "ज + ❓ = जग",
+                    options = listOf("ग", "म", "न", "ब"),
+                    correctIndex = 0,
+                    praiseHindi = "वाह! ज + ग = जग!",
+                    explanationHindi = "ज में ग जोड़ने पर 'जग' बनता है।"
                 )
             )
 
             "english" -> listOf(
+                // 1. Phonics Sound Match
                 QuizQuestion(
                     id = 201,
                     subjectId = "english",
-                    questionHindi = "Which letter is for 'Apple' 🍎?",
-                    promptEmoji = "🍎",
-                    options = listOf("B", "A", "C", "D"),
-                    correctIndex = 1,
-                    praiseHindi = "Superb! A is for Apple!",
-                    explanationHindi = "Apple starts with letter A."
+                    questionHindi = "Phonics Sound: '/b/ /b/ Ball' ⚽ — Which letter makes this sound?",
+                    promptEmoji = "⚽ Buh... Buh... Ball",
+                    options = listOf("B", "D", "P", "T"),
+                    correctIndex = 0,
+                    praiseHindi = "Awesome! Letter B makes the /b/ sound in Ball!",
+                    explanationHindi = "B is for Ball. Sound: /b/ /b/ Ball!"
                 ),
                 QuizQuestion(
                     id = 202,
                     subjectId = "english",
-                    questionHindi = "What does 'G + O' make?",
-                    promptEmoji = "🏃",
-                    options = listOf("GO", "NO", "TO", "SO"),
-                    correctIndex = 0,
-                    praiseHindi = "Awesome! G + O makes GO!",
-                    explanationHindi = "G and O blend together as GO."
+                    questionHindi = "Phonics Sound: '/k/ /k/ Cat' 🐱 — Which letter begins this word?",
+                    promptEmoji = "🐱 Kuh... Kuh... Cat",
+                    options = listOf("S", "C", "K", "G"),
+                    correctIndex = 1,
+                    praiseHindi = "Superb! Letter C makes the /k/ sound in Cat!",
+                    explanationHindi = "C sounds like /k/ in Cat, Cup, and Car!"
                 ),
                 QuizQuestion(
                     id = 203,
                     subjectId = "english",
-                    questionHindi = "Which letter makes the sound of 'Cat' 🐱?",
-                    promptEmoji = "🐱",
-                    options = listOf("D", "F", "C", "P"),
+                    questionHindi = "Phonics Sound: '/d/ /d/ Duck' 🦆 — Which letter makes this sound?",
+                    promptEmoji = "🦆 Duh... Duh... Duck",
+                    options = listOf("B", "P", "D", "T"),
                     correctIndex = 2,
-                    praiseHindi = "Great Job! C for Cat!",
-                    explanationHindi = "C sounds like /k/ in Cat."
+                    praiseHindi = "Brilliant! Letter D makes /d/ for Duck!",
+                    explanationHindi = "D is for Duck and Dog. Sound: /d/ /d/ Duck!"
                 ),
                 QuizQuestion(
                     id = 204,
                     subjectId = "english",
-                    questionHindi = "Which letter is for 'Lion' 🦁?",
-                    promptEmoji = "🦁",
-                    options = listOf("L", "M", "N", "O"),
+                    questionHindi = "Phonics Sound: '/s/ /s/ Sun' ☀️ — Which letter makes the shining sound?",
+                    promptEmoji = "☀️ Sss... Sss... Sun",
+                    options = listOf("C", "S", "Z", "X"),
+                    correctIndex = 1,
+                    praiseHindi = "Great Job! S makes the /s/ sound like a smiling Sun!",
+                    explanationHindi = "S is for Sun, Star, and Snake!"
+                ),
+                QuizQuestion(
+                    id = 205,
+                    subjectId = "english",
+                    questionHindi = "Phonics Sound: '/p/ /p/ Pen' 🖊️ — Which letter pops the sound /p/?",
+                    promptEmoji = "🖊️ Puh... Puh... Pen",
+                    options = listOf("B", "D", "P", "Q"),
+                    correctIndex = 2,
+                    praiseHindi = "Wonderful! P is for Pen and Peacock!",
+                    explanationHindi = "Letter P makes the popping /p/ sound!"
+                ),
+
+                // 2. Rhyming Words Match
+                QuizQuestion(
+                    id = 206,
+                    subjectId = "english",
+                    questionHindi = "Rhyming Word: What rhymes with 'CAT' 🐱? (Sound: -AT)",
+                    promptEmoji = "🐱 C-AT ➔ ?",
+                    options = listOf("DOG", "BAT", "PIG", "CUP"),
+                    correctIndex = 1,
+                    praiseHindi = "Bravo! CAT and BAT are rhyming words!",
+                    explanationHindi = "CAT and BAT end with the same -AT sound!"
+                ),
+                QuizQuestion(
+                    id = 207,
+                    subjectId = "english",
+                    questionHindi = "Rhyming Word: What rhymes with 'SUN' ☀️? (Sound: -UN)",
+                    promptEmoji = "☀️ S-UN ➔ ?",
+                    options = listOf("RUN", "HOP", "SIT", "CAR"),
                     correctIndex = 0,
-                    praiseHindi = "Brilliant! L is for Lion!",
-                    explanationHindi = "Lion starts with letter L."
+                    praiseHindi = "Superstar! SUN and RUN are rhyming twins!",
+                    explanationHindi = "SUN and RUN share the rhyming -UN sound!"
+                ),
+                QuizQuestion(
+                    id = 208,
+                    subjectId = "english",
+                    questionHindi = "Rhyming Word: What rhymes with 'PEN' 🖊️? (Sound: -EN)",
+                    promptEmoji = "🖊️ P-EN ➔ ?",
+                    options = listOf("BOX", "HEN", "RAT", "LOG"),
+                    correctIndex = 1,
+                    praiseHindi = "Spot on! PEN and HEN rhyme together!",
+                    explanationHindi = "PEN and HEN end with the same -EN family sound!"
+                ),
+                QuizQuestion(
+                    id = 209,
+                    subjectId = "english",
+                    questionHindi = "Rhyming Word: What rhymes with 'HOP' 🦘? (Sound: -OP)",
+                    promptEmoji = "🦘 H-OP ➔ ?",
+                    options = listOf("MOP", "HAT", "BUS", "NET"),
+                    correctIndex = 0,
+                    praiseHindi = "Fantastic! HOP and MOP sound the same!",
+                    explanationHindi = "HOP and MOP belong to the -OP rhyming word family!"
+                ),
+
+                // 3. Animal/Object Riddles
+                QuizQuestion(
+                    id = 210,
+                    subjectId = "english",
+                    questionHindi = "Riddle: I have a long trunk and big floppy ears 🐘. Who am I?",
+                    promptEmoji = "🐘 ❓",
+                    options = listOf("Lion", "Elephant", "Monkey", "Giraffe"),
+                    correctIndex = 1,
+                    praiseHindi = "Hurray! E for huge friendly Elephant!",
+                    explanationHindi = "Elephants have long trunks and start with letter E."
+                ),
+                QuizQuestion(
+                    id = 211,
+                    subjectId = "english",
+                    questionHindi = "Riddle: I buzz around sweet flowers and make golden honey 🍯. Who am I?",
+                    promptEmoji = "🍯 ❓",
+                    options = listOf("Honeybee", "Butterfly", "Ant", "Spider"),
+                    correctIndex = 0,
+                    praiseHindi = "Sweet answer! B is for buzzing Honeybee!",
+                    explanationHindi = "Honeybees collect nectar and produce sweet honey."
+                ),
+                QuizQuestion(
+                    id = 212,
+                    subjectId = "english",
+                    questionHindi = "Riddle: I am green with a red beak, and I can talk like you! 🦜 Who am I?",
+                    promptEmoji = "🦜 ❓",
+                    options = listOf("Crow", "Owl", "Parrot", "Duck"),
+                    correctIndex = 2,
+                    praiseHindi = "Brilliant! P is for colourful Parrot!",
+                    explanationHindi = "Parrots have green feathers and red curved beaks."
+                ),
+                QuizQuestion(
+                    id = 213,
+                    subjectId = "english",
+                    questionHindi = "Riddle: I have two hands and a round face, but no legs. I go 'Tick-Tock' ⏰. Who am I?",
+                    promptEmoji = "⏰ ❓",
+                    options = listOf("Clock", "Television", "Phone", "Book"),
+                    correctIndex = 0,
+                    praiseHindi = "You got it! C is for ticking Clock!",
+                    explanationHindi = "A clock shows time with its hour and minute hands."
                 )
             )
 
             else -> listOf( // Math
+                // 1. Object Count & Tap
                 QuizQuestion(
                     id = 301,
                     subjectId = "math",
-                    questionHindi = "1 + 1 कितना होता है?",
-                    promptEmoji = "🍎 + 🍎",
-                    options = listOf("1", "3", "2", "4"),
-                    correctIndex = 2,
-                    praiseHindi = "बहुत बढ़िया! 1 + 1 = 2!",
-                    explanationHindi = "एक और एक जोड़ने पर दो बनता है।"
+                    questionHindi = "गुब्बारे गिनो और बताओ: कितने रंग-बिरंगे गुब्बारे हैं? 🎈🎈🎈",
+                    promptEmoji = "🎈 🎈 🎈",
+                    options = listOf("2", "3", "4", "5"),
+                    correctIndex = 1,
+                    praiseHindi = "शाबाश! कुल ३ (तीन) गुब्बारे हैं!",
+                    explanationHindi = "एक, दो, तीन! कुल 3 गुब्बारे हैं।"
                 ),
                 QuizQuestion(
                     id = 302,
                     subjectId = "math",
-                    questionHindi = "इनमें से कौन सा अंक '3' है?",
-                    promptEmoji = "🛺 (तीन पहिए)",
-                    options = listOf("5", "3", "2", "1"),
+                    questionHindi = "सेब गिनो और सही संख्या चुनो: 🍎🍎🍎🍎🍎",
+                    promptEmoji = "🍎 🍎 🍎 🍎 🍎",
+                    options = listOf("4", "5", "6", "7"),
                     correctIndex = 1,
-                    praiseHindi = "शाबाश! यह अंक ३ (Three) है!",
-                    explanationHindi = "रिक्शा के ३ पहिए होते हैं।"
+                    praiseHindi = "बहुत खूब! कुल ५ (पाँच) मीठे सेब हैं!",
+                    explanationHindi = "1, 2, 3, 4, 5 — कुल 5 सेब हैं।"
                 ),
                 QuizQuestion(
                     id = 303,
                     subjectId = "math",
-                    questionHindi = "2 + 2 कितना होता है?",
-                    promptEmoji = "🎈🎈 + 🎈🎈",
-                    options = listOf("4", "5", "3", "6"),
-                    correctIndex = 0,
-                    praiseHindi = "कमाल कर दिया! 2 + 2 = 4!",
-                    explanationHindi = "दो और दो जोड़ने पर चार बनता है।"
+                    questionHindi = "चमकते सितारे गिनो: कितने तारे हैं? ⭐⭐",
+                    promptEmoji = "⭐ ⭐",
+                    options = listOf("1", "2", "3", "4"),
+                    correctIndex = 1,
+                    praiseHindi = "अरे वाह! पूरे २ (दो) चमकते सितारे!",
+                    explanationHindi = "आसमान में दो तारे चमक रहे हैं।"
                 ),
                 QuizQuestion(
                     id = 304,
                     subjectId = "math",
-                    questionHindi = "5 + 5 कितना होता है?",
-                    promptEmoji = "🖐️ + 🖐️",
-                    options = listOf("8", "9", "10", "12"),
-                    correctIndex = 2,
-                    praiseHindi = "शाबाश! 5 + 5 = 10 (दस)!",
-                    explanationHindi = "दोनों हाथों की दस उंगलियाँ होती हैं।"
+                    questionHindi = "दौड़ती गाड़ियाँ गिनो: कुल कितनी कारें हैं? 🚗🚗🚗🚗",
+                    promptEmoji = "🚗 🚗 🚗 🚗",
+                    options = listOf("3", "4", "5", "6"),
+                    correctIndex = 1,
+                    praiseHindi = "कमाल! कुल ४ (चार) गाड़ियाँ हैं!",
+                    explanationHindi = "गाड़ियों की संख्या 4 (चार) है।"
+                ),
+                QuizQuestion(
+                    id = 305,
+                    subjectId = "math",
+                    questionHindi = "स्वादिष्ट आइसक्रीम गिनो: 🍦🍦🍦🍦🍦🍦",
+                    promptEmoji = "🍦 🍦 🍦 🍦 🍦 🍦",
+                    options = listOf("5", "6", "7", "8"),
+                    correctIndex = 1,
+                    praiseHindi = "वाह भाई वाह! ६ (छह) ठंडी आइसक्रीम!",
+                    explanationHindi = "1 से 6 तक गिनने पर कुल 6 आइसक्रीम हैं।"
+                ),
+
+                // 2. Shape Riddles (आकार पहेली)
+                QuizQuestion(
+                    id = 306,
+                    subjectId = "math",
+                    questionHindi = "आकार पहेली: मेरे ३ कोने और ३ भुजाएँ होती हैं (जैसे समोसा) 🔺 बताओ मैं कौन हूँ?",
+                    promptEmoji = "🔺",
+                    options = listOf("त्रिभुज (Triangle)", "वर्ग (Square)", "गोला (Circle)", "तारा (Star)"),
+                    correctIndex = 0,
+                    praiseHindi = "अद्भुत! ३ कोनों वाला त्रिभुज (Triangle)!",
+                    explanationHindi = "त्रिभुज में तीन कोण और तीन भुजाएँ होती हैं।"
+                ),
+                QuizQuestion(
+                    id = 307,
+                    subjectId = "math",
+                    questionHindi = "आकार पहेली: मेरी चारों भुजाएँ एकदम बराबर होती हैं (जैसे कैरम बोर्ड) 🟥 बताओ मैं कौन?",
+                    promptEmoji = "🟥",
+                    options = listOf("वर्ग (Square)", "आयत (Rectangle)", "गोला (Circle)", "अंडाकार (Oval)"),
+                    correctIndex = 0,
+                    praiseHindi = "शाबाश! चार बराबर भुजाओं वाला वर्ग (Square)!",
+                    explanationHindi = "वर्ग (Square) की चारों भुजाएँ समान होती हैं।"
+                ),
+                QuizQuestion(
+                    id = 308,
+                    subjectId = "math",
+                    questionHindi = "आकार पहेली: मेरा कोई कोना नहीं होता, मैं पहिए और सिक्के जैसा गोल हूँ 🟡 बताओ मैं कौन?",
+                    promptEmoji = "🟡",
+                    options = listOf("गोला / वृत्त (Circle)", "त्रिभुज (Triangle)", "तारा (Star)", "वर्ग (Square)"),
+                    correctIndex = 0,
+                    praiseHindi = "बहुत खूब! गोल-मटोल वृत्त (Circle)!",
+                    explanationHindi = "सर्कल बिल्कुल गोल होता है और इसका कोई कोना नहीं होता।"
+                ),
+                QuizQuestion(
+                    id = 309,
+                    subjectId = "math",
+                    questionHindi = "आकार पहेली: रात में आसमान में ५ नुकीले कोनों के साथ चमकता हूँ ⭐ बताओ मैं कौन?",
+                    promptEmoji = "⭐",
+                    options = listOf("तारा (Star)", "चाँद (Moon)", "सूरज (Sun)", "गोला (Circle)"),
+                    correctIndex = 0,
+                    praiseHindi = "शानदार! चमकता हुआ सितारा (Star)!",
+                    explanationHindi = "तारे के पाँच नुकीले कोने होते हैं।"
+                ),
+
+                // 3. Missing Number Train (संख्या रेलगाड़ी)
+                QuizQuestion(
+                    id = 310,
+                    subjectId = "math",
+                    questionHindi = "रेलगाड़ी में गायब संख्या बताओ: [ 11 ] ➔ [ 12 ] ➔ [ ? ] ➔ [ 14 ] 🚂",
+                    promptEmoji = "🚂 [11] ➔ [12] ➔ [❓] ➔ [14]",
+                    options = listOf("13", "15", "10", "16"),
+                    correctIndex = 0,
+                    praiseHindi = "छुक-छुक! बिल्कुल सही! 12 के बाद 13 आता है!",
+                    explanationHindi = "गिनती का सही क्रम: 11, 12, 13, 14!"
+                ),
+                QuizQuestion(
+                    id = 311,
+                    subjectId = "math",
+                    questionHindi = "रेलगाड़ी में गायब संख्या बताओ: [ 21 ] ➔ [ 22 ] ➔ [ 23 ] ➔ [ ? ] 🚂",
+                    promptEmoji = "🚂 [21] ➔ [22] ➔ [23] ➔ [❓]",
+                    options = listOf("24", "25", "20", "26"),
+                    correctIndex = 0,
+                    praiseHindi = "कमाल कर दिया! 23 के बाद 24 आता है!",
+                    explanationHindi = "गिनती का क्रम: 21, 22, 23, 24!"
+                ),
+                QuizQuestion(
+                    id = 312,
+                    subjectId = "math",
+                    questionHindi = "रेलगाड़ी में गायब संख्या बताओ: [ 5 ] ➔ [ ? ] ➔ [ 7 ] ➔ [ 8 ] 🚂",
+                    promptEmoji = "🚂 [5] ➔ [❓] ➔ [7] ➔ [8]",
+                    options = listOf("6", "4", "9", "10"),
+                    correctIndex = 0,
+                    praiseHindi = "सुपर! 5 और 7 के बीच में 6 आता है!",
+                    explanationHindi = "गिनती का सही क्रम: 5, 6, 7, 8!"
+                ),
+                QuizQuestion(
+                    id = 313,
+                    subjectId = "math",
+                    questionHindi = "रेलगाड़ी में शतक पूरा करो: [ 97 ] ➔ [ 98 ] ➔ [ 99 ] ➔ [ ? ] 🚂",
+                    promptEmoji = "🚂 [97] ➔ [98] ➔ [99] ➔ [❓]",
+                    options = listOf("100", "96", "101", "90"),
+                    correctIndex = 0,
+                    praiseHindi = "वाह! शानदार शतक! 99 के बाद 100 आता है!",
+                    explanationHindi = "99 के बाद सैकड़ा यानी 100 आता है!"
                 )
             )
         }

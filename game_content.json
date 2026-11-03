@@ -8532,246 +8532,606 @@
       {
         "id": 101,
         "subjectId": "hindi",
-        "questionHindi": "इनमें से 'क' से कबूतर कौन सा है?",
-        "promptEmoji": "🕊️",
+        "questionHindi": "पहेली: लाल-लाल हूँ, मीठे दानों से भरा, सेहत बनाऊँ बताओ मैं कौन? 🔴",
+        "promptEmoji": "🔴",
         "options": [
-          "ग",
-          "क",
-          "म",
-          "न"
+          "अ से अनार",
+          "आ से आम",
+          "इ से इमली",
+          "उ से उल्लू"
         ],
-        "correctIndex": 1,
-        "praiseHindi": "शाबाश! बिल्कुल सही! 'क' से कबूतर!",
-        "explanationHindi": "क अक्षर से कबूतर बनता है।"
+        "correctIndex": 0,
+        "praiseHindi": "शाबाश! बिल्कुल सही! अ से अनार!",
+        "explanationHindi": "अनार लाल मीठे दानों से भरा रसीला फल होता है।"
       },
       {
         "id": 102,
         "subjectId": "hindi",
-        "questionHindi": "'आम' का पहला अक्षर क्या है?",
+        "questionHindi": "पहेली: पीला-पीला मीठा-मीठा, फलों का राजा कहलाता। पहचानो मैं कौन? 🥭",
         "promptEmoji": "🥭",
         "options": [
-          "अ",
-          "ई",
-          "आ",
-          "उ"
+          "क से केला",
+          "आ से आम",
+          "स से सेब",
+          "अ से अंगूर"
         ],
-        "correctIndex": 2,
-        "praiseHindi": "अरे वाह! बहुत खूब! 'आ' से आम!",
-        "explanationHindi": "आम शब्द 'आ' से शुरू होता है।"
+        "correctIndex": 1,
+        "praiseHindi": "अरे वाह! बहुत खूब! फलों का राजा आ से आम!",
+        "explanationHindi": "आम को सभी फलों का राजा कहा जाता है।"
       },
       {
         "id": 103,
         "subjectId": "hindi",
-        "questionHindi": "क + ल मिलकर कौन सा शब्द बनता है?",
-        "promptEmoji": "🧩",
+        "questionHindi": "पहेली: जल ही मेरा जीवन है, हाथ लगाओ तो डर जाऊँगी! पहचानो मैं कौन? 🐟",
+        "promptEmoji": "🌊",
         "options": [
-          "कम",
-          "कल",
-          "कट",
-          "कस"
+          "ब से बत्तख",
+          "म से मछली",
+          "क से कछुआ",
+          "म से मेंढक"
         ],
         "correctIndex": 1,
-        "praiseHindi": "शानदार! क + ल = कल!",
-        "explanationHindi": "क और ल जोड़ने पर 'कल' बनता है।"
+        "praiseHindi": "कमाल कर दिया! मछली जल की रानी है!",
+        "explanationHindi": "मछली पानी में तैरती है और 'म' अक्षर से शुरू होती है।"
       },
       {
         "id": 104,
         "subjectId": "hindi",
-        "questionHindi": "'मछली' का पहला अक्षर कौन सा है?",
-        "promptEmoji": "🐟",
+        "questionHindi": "पहेली: जंगल का राजा कहलाता, जिसकी दहाड़ से सब कांपे! बताओ कौन हूँ मैं? 🦁",
+        "promptEmoji": "👑",
         "options": [
-          "प",
-          "फ",
-          "ब",
-          "म"
+          "श से शेर",
+          "भ से भालू",
+          "ह से हाथी",
+          "च से चीता"
         ],
-        "correctIndex": 3,
-        "praiseHindi": "अरे वाह! म से मछली जल की रानी!",
-        "explanationHindi": "मछली शब्द 'म' अक्षर से शुरू होता है।"
+        "correctIndex": 0,
+        "praiseHindi": "अद्भुत! जंगल का राजा श से शेर!",
+        "explanationHindi": "शेर जंगल का शक्तिशाली राजा होता है।"
       },
       {
         "id": 105,
         "subjectId": "hindi",
-        "questionHindi": "ज + ल मिलकर क्या बनता है?",
-        "promptEmoji": "💧",
+        "questionHindi": "पहेली: बादलों को देख पंख फैलाकर नाचे, भारत का राष्ट्रीय पक्षी कौन? 🦚",
+        "promptEmoji": "🌧️",
         "options": [
-          "जल",
-          "जग",
-          "जन",
-          "जब"
+          "क से कौआ",
+          "त से तोता",
+          "म से मोर",
+          "च से चिड़िया"
         ],
-        "correctIndex": 0,
-        "praiseHindi": "बहुत खूब! ज + ल = जल (पानी)!",
-        "explanationHindi": "ज और ल मिलकर जल बनता है।"
+        "correctIndex": 2,
+        "praiseHindi": "शाबाश! हमारा राष्ट्रीय पक्षी म से मोर!",
+        "explanationHindi": "मोर बारिश देखकर खुशी से पंख फैलाकर नाचता है।"
       },
       {
         "id": 106,
         "subjectId": "hindi",
-        "questionHindi": "इनमें से 'त' से तरबूज कौन सा है?",
-        "promptEmoji": "🍉",
+        "questionHindi": "चित्र पहचानो: हवा में सर्र-सर्र उड़ने वाली यह क्या है? 🪁",
+        "promptEmoji": "🪁",
         "options": [
-          "द",
-          "थ",
-          "त",
-          "ध"
+          "प से पतंग",
+          "ग से गेंद",
+          "क से कार",
+          "ज से जहाज"
         ],
-        "correctIndex": 2,
-        "praiseHindi": "शाबाश! 'त' से मीठा तरबूज!",
-        "explanationHindi": "त वर्ण से तरबूज बनता है।"
+        "correctIndex": 0,
+        "praiseHindi": "बहुत खूब! प से रंग-बिरंगी पतंग!",
+        "explanationHindi": "पतंग डोरी के सहारे नीले आसमान में उड़ती है।"
       },
       {
         "id": 107,
         "subjectId": "hindi",
-        "questionHindi": "ब + स मिलकर कौन सा वाहन बनता है?",
-        "promptEmoji": "🚌",
+        "questionHindi": "चित्र पहचानो: रोज़ स्कूल ले जाने वाला यह बैग क्या कहलाता है? 🎒",
+        "promptEmoji": "🎒",
         "options": [
-          "बल",
-          "बस",
-          "बक",
-          "बम"
+          "ब से बस्ता",
+          "क से कलम",
+          "क से किताब",
+          "ब से बोतल"
         ],
-        "correctIndex": 1,
-        "praiseHindi": "कमाल कर दिया! ब + स = बस!",
-        "explanationHindi": "ब और स मिलकर 'बस' बनता है।"
+        "correctIndex": 0,
+        "praiseHindi": "वाह! ब से स्कूल का बस्ता!",
+        "explanationHindi": "बस्ते में बच्चे किताबें और कॉपियाँ स्कूल ले जाते हैं।"
       },
       {
         "id": 108,
         "subjectId": "hindi",
-        "questionHindi": "वर्णमाला का अंतिम संयुक्त व्यंजन कौन सा है?",
-        "promptEmoji": "📚",
+        "questionHindi": "चित्र पहचानो: खेतों में जुताई करने वाली बड़ी गाड़ी कौन सी है? 🚜",
+        "promptEmoji": "🚜",
         "options": [
-          "क्ष",
-          "त्र",
-          "ज्ञ",
-          "ह"
+          "ट से ट्रैक्टर",
+          "ब से बस",
+          "क से कार",
+          "र से रेल"
         ],
-        "correctIndex": 2,
-        "praiseHindi": "अद्भुत! 'ज्ञ' से ज्ञानी!",
-        "explanationHindi": "ज्ञानी का 'ज्ञ' संयुक्त व्यंजन है।"
+        "correctIndex": 0,
+        "praiseHindi": "शानदार! ट से किसान का साथी ट्रैक्टर!",
+        "explanationHindi": "ट्रैक्टर खेतों में खेती करने के काम आता है।"
+      },
+      {
+        "id": 109,
+        "subjectId": "hindi",
+        "questionHindi": "गायब अक्षर भरो: क + [ ? ] = 'कल' (आने वाला दिन) 📅",
+        "promptEmoji": "क + ❓ = कल",
+        "options": [
+          "म",
+          "ल",
+          "र",
+          "ब"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "शानदार! क + ल = कल!",
+        "explanationHindi": "क में ल जोड़ने पर 'कल' शब्द बनता है।"
+      },
+      {
+        "id": 110,
+        "subjectId": "hindi",
+        "questionHindi": "गायब अक्षर भरो: [ ? ] + र = 'घर' (प्यारा आशियाना) 🏠",
+        "promptEmoji": "❓ + र = घर",
+        "options": [
+          "घ",
+          "ध",
+          "च",
+          "क"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "अरे वाह! घ + र = घर!",
+        "explanationHindi": "घ और र मिलकर प्यारा 'घर' बनता है।"
+      },
+      {
+        "id": 111,
+        "subjectId": "hindi",
+        "questionHindi": "गायब अक्षर भरो: फ + [ ? ] = 'फल' (मीठे-मीठे फ्रूट्स) 🍎",
+        "promptEmoji": "फ + ❓ = फल",
+        "options": [
+          "न",
+          "ल",
+          "ट",
+          "स"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "बहुत बढ़िया! फ + ल = फल!",
+        "explanationHindi": "फ में ल जोड़ने से 'फल' शब्द बनता है।"
+      },
+      {
+        "id": 112,
+        "subjectId": "hindi",
+        "questionHindi": "गायब अक्षर भरो: ब + [ ? ] = 'बस' (सड़क पर दौड़ने वाली) 🚌",
+        "promptEmoji": "ब + ❓ = बस",
+        "options": [
+          "स",
+          "र",
+          "ल",
+          "म"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "कमाल! ब + स = बस!",
+        "explanationHindi": "ब और स मिलकर 'बस' बनता है।"
+      },
+      {
+        "id": 113,
+        "subjectId": "hindi",
+        "questionHindi": "गायब अक्षर भरो: न + [ ? ] = 'नल' (पानी देने वाला) 🚰",
+        "promptEmoji": "न + ❓ = नल",
+        "options": [
+          "ल",
+          "क",
+          "ट",
+          "प"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "शाबाश! न + ल = नल!",
+        "explanationHindi": "न और ल मिलकर 'नल' बनता है।"
+      },
+      {
+        "id": 114,
+        "subjectId": "hindi",
+        "questionHindi": "गायब अक्षर भरो: ज + [ ? ] = 'जग' (पानी का बर्तन) 🥛",
+        "promptEmoji": "ज + ❓ = जग",
+        "options": [
+          "ग",
+          "म",
+          "न",
+          "ब"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "वाह! ज + ग = जग!",
+        "explanationHindi": "ज में ग जोड़ने पर 'जग' बनता है।"
       }
     ],
     "english": [
       {
         "id": 201,
         "subjectId": "english",
-        "questionHindi": "Which letter is for 'Apple' 🍎?",
-        "promptEmoji": "🍎",
+        "questionHindi": "Phonics Sound: '/b/ /b/ Ball' ⚽ — Which letter makes this sound?",
+        "promptEmoji": "⚽ Buh... Buh... Ball",
         "options": [
           "B",
-          "A",
-          "C",
-          "D"
+          "D",
+          "P",
+          "T"
         ],
-        "correctIndex": 1,
-        "praiseHindi": "Superb! A is for Apple!",
-        "explanationHindi": "Apple starts with letter A."
+        "correctIndex": 0,
+        "praiseHindi": "Awesome! Letter B makes the /b/ sound in Ball!",
+        "explanationHindi": "B is for Ball. Sound: /b/ /b/ Ball!"
       },
       {
         "id": 202,
         "subjectId": "english",
-        "questionHindi": "What does 'G + O' make?",
-        "promptEmoji": "🏃",
+        "questionHindi": "Phonics Sound: '/k/ /k/ Cat' 🐱 — Which letter begins this word?",
+        "promptEmoji": "🐱 Kuh... Kuh... Cat",
         "options": [
-          "GO",
-          "NO",
-          "TO",
-          "SO"
+          "S",
+          "C",
+          "K",
+          "G"
         ],
-        "correctIndex": 0,
-        "praiseHindi": "Awesome! G + O makes GO!",
-        "explanationHindi": "G and O blend together as GO."
+        "correctIndex": 1,
+        "praiseHindi": "Superb! Letter C makes the /k/ sound in Cat!",
+        "explanationHindi": "C sounds like /k/ in Cat, Cup, and Car!"
       },
       {
         "id": 203,
         "subjectId": "english",
-        "questionHindi": "Which letter makes the sound of 'Cat' 🐱?",
-        "promptEmoji": "🐱",
+        "questionHindi": "Phonics Sound: '/d/ /d/ Duck' 🦆 — Which letter makes this sound?",
+        "promptEmoji": "🦆 Duh... Duh... Duck",
         "options": [
+          "B",
+          "P",
           "D",
-          "F",
-          "C",
-          "P"
+          "T"
         ],
         "correctIndex": 2,
-        "praiseHindi": "Great Job! C for Cat!",
-        "explanationHindi": "C sounds like /k/ in Cat."
+        "praiseHindi": "Brilliant! Letter D makes /d/ for Duck!",
+        "explanationHindi": "D is for Duck and Dog. Sound: /d/ /d/ Duck!"
       },
       {
         "id": 204,
         "subjectId": "english",
-        "questionHindi": "Which letter is for 'Lion' 🦁?",
-        "promptEmoji": "🦁",
+        "questionHindi": "Phonics Sound: '/s/ /s/ Sun' ☀️ — Which letter makes the shining sound?",
+        "promptEmoji": "☀️ Sss... Sss... Sun",
         "options": [
-          "L",
-          "M",
-          "N",
-          "O"
+          "C",
+          "S",
+          "Z",
+          "X"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "Great Job! S makes the /s/ sound like a smiling Sun!",
+        "explanationHindi": "S is for Sun, Star, and Snake!"
+      },
+      {
+        "id": 205,
+        "subjectId": "english",
+        "questionHindi": "Phonics Sound: '/p/ /p/ Pen' 🖊️ — Which letter pops the sound /p/?",
+        "promptEmoji": "🖊️ Puh... Puh... Pen",
+        "options": [
+          "B",
+          "D",
+          "P",
+          "Q"
+        ],
+        "correctIndex": 2,
+        "praiseHindi": "Wonderful! P is for Pen and Peacock!",
+        "explanationHindi": "Letter P makes the popping /p/ sound!"
+      },
+      {
+        "id": 206,
+        "subjectId": "english",
+        "questionHindi": "Rhyming Word: What rhymes with 'CAT' 🐱? (Sound: -AT)",
+        "promptEmoji": "🐱 C-AT ➔ ?",
+        "options": [
+          "DOG",
+          "BAT",
+          "PIG",
+          "CUP"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "Bravo! CAT and BAT are rhyming words!",
+        "explanationHindi": "CAT and BAT end with the same -AT sound!"
+      },
+      {
+        "id": 207,
+        "subjectId": "english",
+        "questionHindi": "Rhyming Word: What rhymes with 'SUN' ☀️? (Sound: -UN)",
+        "promptEmoji": "☀️ S-UN ➔ ?",
+        "options": [
+          "RUN",
+          "HOP",
+          "SIT",
+          "CAR"
         ],
         "correctIndex": 0,
-        "praiseHindi": "Brilliant! L is for Lion!",
-        "explanationHindi": "Lion starts with letter L."
+        "praiseHindi": "Superstar! SUN and RUN are rhyming twins!",
+        "explanationHindi": "SUN and RUN share the rhyming -UN sound!"
+      },
+      {
+        "id": 208,
+        "subjectId": "english",
+        "questionHindi": "Rhyming Word: What rhymes with 'PEN' 🖊️? (Sound: -EN)",
+        "promptEmoji": "🖊️ P-EN ➔ ?",
+        "options": [
+          "BOX",
+          "HEN",
+          "RAT",
+          "LOG"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "Spot on! PEN and HEN rhyme together!",
+        "explanationHindi": "PEN and HEN end with the same -EN family sound!"
+      },
+      {
+        "id": 209,
+        "subjectId": "english",
+        "questionHindi": "Rhyming Word: What rhymes with 'HOP' 🦘? (Sound: -OP)",
+        "promptEmoji": "🦘 H-OP ➔ ?",
+        "options": [
+          "MOP",
+          "HAT",
+          "BUS",
+          "NET"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "Fantastic! HOP and MOP sound the same!",
+        "explanationHindi": "HOP and MOP belong to the -OP rhyming word family!"
+      },
+      {
+        "id": 210,
+        "subjectId": "english",
+        "questionHindi": "Riddle: I have a long trunk and big floppy ears 🐘. Who am I?",
+        "promptEmoji": "🐘 ❓",
+        "options": [
+          "Lion",
+          "Elephant",
+          "Monkey",
+          "Giraffe"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "Hurray! E for huge friendly Elephant!",
+        "explanationHindi": "Elephants have long trunks and start with letter E."
+      },
+      {
+        "id": 211,
+        "subjectId": "english",
+        "questionHindi": "Riddle: I buzz around sweet flowers and make golden honey 🍯. Who am I?",
+        "promptEmoji": "🍯 ❓",
+        "options": [
+          "Honeybee",
+          "Butterfly",
+          "Ant",
+          "Spider"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "Sweet answer! B is for buzzing Honeybee!",
+        "explanationHindi": "Honeybees collect nectar and produce sweet honey."
+      },
+      {
+        "id": 212,
+        "subjectId": "english",
+        "questionHindi": "Riddle: I am green with a red beak, and I can talk like you! 🦜 Who am I?",
+        "promptEmoji": "🦜 ❓",
+        "options": [
+          "Crow",
+          "Owl",
+          "Parrot",
+          "Duck"
+        ],
+        "correctIndex": 2,
+        "praiseHindi": "Brilliant! P is for colourful Parrot!",
+        "explanationHindi": "Parrots have green feathers and red curved beaks."
+      },
+      {
+        "id": 213,
+        "subjectId": "english",
+        "questionHindi": "Riddle: I have two hands and a round face, but no legs. I go 'Tick-Tock' ⏰. Who am I?",
+        "promptEmoji": "⏰ ❓",
+        "options": [
+          "Clock",
+          "Television",
+          "Phone",
+          "Book"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "You got it! C is for ticking Clock!",
+        "explanationHindi": "A clock shows time with its hour and minute hands."
       }
     ],
     "math": [
       {
         "id": 301,
         "subjectId": "math",
-        "questionHindi": "1 + 1 कितना होता है?",
-        "promptEmoji": "🍎 + 🍎",
+        "questionHindi": "गुब्बारे गिनो और बताओ: कितने रंग-बिरंगे गुब्बारे हैं? 🎈🎈🎈",
+        "promptEmoji": "🎈 🎈 🎈",
         "options": [
-          "1",
-          "3",
           "2",
-          "4"
+          "3",
+          "4",
+          "5"
         ],
-        "correctIndex": 2,
-        "praiseHindi": "बहुत बढ़िया! 1 + 1 = 2!",
-        "explanationHindi": "एक और एक जोड़ने पर दो बनता है।"
+        "correctIndex": 1,
+        "praiseHindi": "शाबाश! कुल ३ (तीन) गुब्बारे हैं!",
+        "explanationHindi": "एक, दो, तीन! कुल 3 गुब्बारे हैं।"
       },
       {
         "id": 302,
         "subjectId": "math",
-        "questionHindi": "इनमें से कौन सा अंक '3' है?",
-        "promptEmoji": "🛺 (तीन पहिए)",
+        "questionHindi": "सेब गिनो और सही संख्या चुनो: 🍎🍎🍎🍎🍎",
+        "promptEmoji": "🍎 🍎 🍎 🍎 🍎",
         "options": [
+          "4",
           "5",
-          "3",
-          "2",
-          "1"
+          "6",
+          "7"
         ],
         "correctIndex": 1,
-        "praiseHindi": "शाबाश! यह अंक ३ (Three) है!",
-        "explanationHindi": "रिक्शा के ३ पहिए होते हैं।"
+        "praiseHindi": "बहुत खूब! कुल ५ (पाँच) मीठे सेब हैं!",
+        "explanationHindi": "1, 2, 3, 4, 5 — कुल 5 सेब हैं।"
       },
       {
         "id": 303,
         "subjectId": "math",
-        "questionHindi": "2 + 2 कितना होता है?",
-        "promptEmoji": "🎈🎈 + 🎈🎈",
+        "questionHindi": "चमकते सितारे गिनो: कितने तारे हैं? ⭐⭐",
+        "promptEmoji": "⭐ ⭐",
         "options": [
-          "4",
-          "5",
+          "1",
+          "2",
           "3",
-          "6"
+          "4"
         ],
-        "correctIndex": 0,
-        "praiseHindi": "कमाल कर दिया! 2 + 2 = 4!",
-        "explanationHindi": "दो और दो जोड़ने पर चार बनता है।"
+        "correctIndex": 1,
+        "praiseHindi": "अरे वाह! पूरे २ (दो) चमकते सितारे!",
+        "explanationHindi": "आसमान में दो तारे चमक रहे हैं।"
       },
       {
         "id": 304,
         "subjectId": "math",
-        "questionHindi": "5 + 5 कितना होता है?",
-        "promptEmoji": "🖐️ + 🖐️",
+        "questionHindi": "दौड़ती गाड़ियाँ गिनो: कुल कितनी कारें हैं? 🚗🚗🚗🚗",
+        "promptEmoji": "🚗 🚗 🚗 🚗",
         "options": [
-          "8",
-          "9",
-          "10",
-          "12"
+          "3",
+          "4",
+          "5",
+          "6"
         ],
-        "correctIndex": 2,
-        "praiseHindi": "शाबाश! 5 + 5 = 10 (दस)!",
-        "explanationHindi": "दोनों हाथों की दस उंगलियाँ होती हैं।"
+        "correctIndex": 1,
+        "praiseHindi": "कमाल! कुल ४ (चार) गाड़ियाँ हैं!",
+        "explanationHindi": "गाड़ियों की संख्या 4 (चार) है।"
+      },
+      {
+        "id": 305,
+        "subjectId": "math",
+        "questionHindi": "स्वादिष्ट आइसक्रीम गिनो: 🍦🍦🍦🍦🍦🍦",
+        "promptEmoji": "🍦 🍦 🍦 🍦 🍦 🍦",
+        "options": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "correctIndex": 1,
+        "praiseHindi": "वाह भाई वाह! ६ (छह) ठंडी आइसक्रीम!",
+        "explanationHindi": "1 से 6 तक गिनने पर कुल 6 आइसक्रीम हैं।"
+      },
+      {
+        "id": 306,
+        "subjectId": "math",
+        "questionHindi": "आकार पहेली: मेरे ३ कोने और ३ भुजाएँ होती हैं (जैसे समोसा) 🔺 बताओ मैं कौन हूँ?",
+        "promptEmoji": "🔺",
+        "options": [
+          "त्रिभुज (Triangle)",
+          "वर्ग (Square)",
+          "गोला (Circle)",
+          "तारा (Star)"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "अद्भुत! ३ कोनों वाला त्रिभुज (Triangle)!",
+        "explanationHindi": "त्रिभुज में तीन कोण और तीन भुजाएँ होती हैं।"
+      },
+      {
+        "id": 307,
+        "subjectId": "math",
+        "questionHindi": "आकार पहेली: मेरी चारों भुजाएँ एकदम बराबर होती हैं (जैसे कैरम बोर्ड) 🟥 बताओ मैं कौन?",
+        "promptEmoji": "🟥",
+        "options": [
+          "वर्ग (Square)",
+          "आयत (Rectangle)",
+          "गोला (Circle)",
+          "अंडाकार (Oval)"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "शाबाश! चार बराबर भुजाओं वाला वर्ग (Square)!",
+        "explanationHindi": "वर्ग (Square) की चारों भुजाएँ समान होती हैं।"
+      },
+      {
+        "id": 308,
+        "subjectId": "math",
+        "questionHindi": "आकार पहेली: मेरा कोई कोना नहीं होता, मैं पहिए और सिक्के जैसा गोल हूँ 🟡 बताओ मैं कौन?",
+        "promptEmoji": "🟡",
+        "options": [
+          "गोला / वृत्त (Circle)",
+          "त्रिभुज (Triangle)",
+          "तारा (Star)",
+          "वर्ग (Square)"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "बहुत खूब! गोल-मटोल वृत्त (Circle)!",
+        "explanationHindi": "सर्कल बिल्कुल गोल होता है और इसका कोई कोना नहीं होता।"
+      },
+      {
+        "id": 309,
+        "subjectId": "math",
+        "questionHindi": "आकार पहेली: रात में आसमान में ५ नुकीले कोनों के साथ चमकता हूँ ⭐ बताओ मैं कौन?",
+        "promptEmoji": "⭐",
+        "options": [
+          "तारा (Star)",
+          "चाँद (Moon)",
+          "सूरज (Sun)",
+          "गोला (Circle)"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "शानदार! चमकता हुआ सितारा (Star)!",
+        "explanationHindi": "तारे के पाँच नुकीले कोने होते हैं।"
+      },
+      {
+        "id": 310,
+        "subjectId": "math",
+        "questionHindi": "रेलगाड़ी में गायब संख्या बताओ: [ 11 ] ➔ [ 12 ] ➔ [ ? ] ➔ [ 14 ] 🚂",
+        "promptEmoji": "🚂 [11] ➔ [12] ➔ [❓] ➔ [14]",
+        "options": [
+          "13",
+          "15",
+          "10",
+          "16"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "छुक-छुक! बिल्कुल सही! 12 के बाद 13 आता है!",
+        "explanationHindi": "गिनती का सही क्रम: 11, 12, 13, 14!"
+      },
+      {
+        "id": 311,
+        "subjectId": "math",
+        "questionHindi": "रेलगाड़ी में गायब संख्या बताओ: [ 21 ] ➔ [ 22 ] ➔ [ 23 ] ➔ [ ? ] 🚂",
+        "promptEmoji": "🚂 [21] ➔ [22] ➔ [23] ➔ [❓]",
+        "options": [
+          "24",
+          "25",
+          "20",
+          "26"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "कमाल कर दिया! 23 के बाद 24 आता है!",
+        "explanationHindi": "गिनती का क्रम: 21, 22, 23, 24!"
+      },
+      {
+        "id": 312,
+        "subjectId": "math",
+        "questionHindi": "रेलगाड़ी में गायब संख्या बताओ: [ 5 ] ➔ [ ? ] ➔ [ 7 ] ➔ [ 8 ] 🚂",
+        "promptEmoji": "🚂 [5] ➔ [❓] ➔ [7] ➔ [8]",
+        "options": [
+          "6",
+          "4",
+          "9",
+          "10"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "सुपर! 5 और 7 के बीच में 6 आता है!",
+        "explanationHindi": "गिनती का सही क्रम: 5, 6, 7, 8!"
+      },
+      {
+        "id": 313,
+        "subjectId": "math",
+        "questionHindi": "रेलगाड़ी में शतक पूरा करो: [ 97 ] ➔ [ 98 ] ➔ [ 99 ] ➔ [ ? ] 🚂",
+        "promptEmoji": "🚂 [97] ➔ [98] ➔ [99] ➔ [❓]",
+        "options": [
+          "100",
+          "96",
+          "101",
+          "90"
+        ],
+        "correctIndex": 0,
+        "praiseHindi": "वाह! शानदार शतक! 99 के बाद 100 आता है!",
+        "explanationHindi": "99 के बाद सैकड़ा यानी 100 आता है!"
       }
     ]
   }

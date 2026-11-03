@@ -37,9 +37,9 @@ class ExportJsonTest {
 
         // 4. Collect all quizzes
         val quizzesMap = mapOf(
-            "hindi" to LearningContentRepository.getQuizzes("hindi"),
-            "english" to LearningContentRepository.getQuizzes("english"),
-            "math" to LearningContentRepository.getQuizzes("math")
+            "hindi" to LearningContentRepository.getDefaultQuizzes("hindi"),
+            "english" to LearningContentRepository.getDefaultQuizzes("english"),
+            "math" to LearningContentRepository.getDefaultQuizzes("math")
         )
 
         // 5. Build master structure

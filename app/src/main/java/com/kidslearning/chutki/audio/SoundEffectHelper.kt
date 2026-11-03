@@ -40,6 +40,18 @@ object SoundEffectHelper {
         }
     }
 
+    fun playCoinSound() {
+        scope.launch {
+            // Cheerful bright Mario-style coin pickup sound (B5: 987.77Hz, E6: 1318.51Hz)
+            playToneSequence(
+                listOf(
+                    Pair(987.77, 80),
+                    Pair(1318.51, 280)
+                )
+            )
+        }
+    }
+
     fun playStarTwinkle() {
         scope.launch {
             playToneSequence(

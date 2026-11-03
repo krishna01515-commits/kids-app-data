@@ -543,6 +543,25 @@ class UserPreferencesManager(context: Context) {
         _userProfileState.value = buildProfile()
     }
 
+    // Level 4: Last Quiz Question Index per subject
+    fun getLastQuizIndex(subjectId: String): Int {
+        return prefs.getInt("last_quiz_index_${subjectId.lowercase()}", 0)
+    }
+
+    fun setLastQuizIndex(subjectId: String, index: Int, questionText: String = "") {
+        val sub = subjectId.lowercase()
+        prefs.edit()
+            .putInt("last_quiz_index_$sub", index)
+            .putString("last_quiz_question_$sub", questionText)
+            .putString("last_active_program_type", "LEVEL_4_QUIZ")
+            .putString("last_active_subject", sub)
+            .putInt("last_active_level", 4)
+            .putInt("last_active_item_index", index)
+            .putString("last_active_item_label", questionText.take(24))
+            .apply()
+        _userProfileState.value = buildProfile()
+    }
+
     // =========================================================================
     // 2. GAMING PROGRESS (All Games)
     // =========================================================================
